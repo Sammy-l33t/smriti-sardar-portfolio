@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0c0c0c">
-  <title>Admin Portal | Inquiries Dispatch | Smriti Sardar</title>
+  <meta name="theme-color" content="#070a12">
+  <title>Executive Inquiries Terminal | Smriti Sardar</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230c0c0c'/><text x='50' y='65' font-family='Arial,sans-serif' font-size='48' font-weight='bold' fill='%23d92615' text-anchor='middle'>SS</text></svg>">
+  <!-- Favicon with Bespoke Anamorphic Optical Emblem -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' fill='none'><circle cx='18' cy='18' r='16' fill='%23070a12' stroke='%2300f0b5' stroke-width='1.5'/><circle cx='18' cy='18' r='13' stroke='%2300d2ff' stroke-width='1'/><path d='M14 12 C11 12 9 13.5 9 15.5 C9 18 13.5 17.5 13.5 20 C13.5 22 11.5 23 9 23' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/><path d='M26 12 C23 12 21 13.5 21 15.5 C21 18 25.5 17.5 25.5 20 C25.5 22 23.5 23 21 23' stroke='%2300f0b5' stroke-width='2' stroke-linecap='round'/><circle cx='18' cy='18' r='2' fill='%2300f0b5'/></svg>">
 
   <!-- Typography: Bebas Neue, DM Sans, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Core Base Styles & Admin Theme -->
+  <!-- Core Stylesheet & Admin Theme -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="admin.css">
 
@@ -23,53 +23,59 @@
   <script src="assets/js/lucide.min.js"></script>
 </head>
 <body class="admin-body">
-  <!-- Cinematic Telemetry Grid Background -->
+  <!-- Living Celestial Aurora Mesh Background -->
+  <div class="admin-aurora-bg" aria-hidden="true"></div>
   <div class="admin-grid-bg" aria-hidden="true"></div>
 
   <!-- =========================================================================
-       1. AUTHENTICATION VIEW (Default if not logged in)
+       1. EXECUTIVE AUTHENTICATION TERMINAL VIEW
        ========================================================================= -->
   <section id="loginView" class="admin-auth-wrapper">
     <div class="admin-login-card">
       <div class="admin-login-header">
         <div class="admin-login-brand">
-          <svg width="42" height="42" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="1" y="1" width="34" height="34" rx="9" fill="#141414" stroke="rgba(255, 255, 255, 0.16)" stroke-width="1.2"/>
-            <path d="M5.5 9.5V5.5H9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M26.5 5.5H30.5V9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M5.5 26.5V30.5H9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M26.5 30.5H30.5V26.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M15 11.5H10.5C9.4 11.5 8.5 12.4 8.5 13.5V14.5C8.5 15.6 9.4 16.5 10.5 16.5H13C14.1 16.5 15 17.4 15 18.5V20.5C15 21.6 14.1 22.5 13 22.5H8.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M25.5 11.5H21C19.9 11.5 19 12.4 19 13.5V14.5C19 15.6 19.9 16.5 21 16.5H23.5C24.6 16.5 25.5 17.4 25.5 18.5V20.5C25.5 21.6 24.6 22.5 23.5 22.5H19" stroke="#D92615" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="28.5" cy="7.5" r="2" fill="#D92615"/>
+          <svg class="brand-monogram-svg" width="46" height="46" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Smriti Sardar Optical Emblem">
+            <defs>
+              <linearGradient id="adminLoginIris" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#00f0b5" />
+                <stop offset="50%" stop-color="#00d2ff" />
+                <stop offset="100%" stop-color="#f59e0b" />
+              </linearGradient>
+              <radialGradient id="adminLoginFlare" cx="18" cy="18" r="6" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="40%" stop-color="#00f0b5" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#00d2ff" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <circle cx="18" cy="18" r="16.5" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.2" />
+            <circle cx="18" cy="18" r="14.2" stroke="url(#adminLoginIris)" stroke-width="1.1" stroke-opacity="0.75" />
+            <line x1="18" y1="1.5" x2="18" y2="4" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="18" y1="32" x2="18" y2="34.5" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="1.5" y1="18" x2="4" y2="18" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="32" y1="18" x2="34.5" y2="18" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <g class="iris-blades-group">
+              <path d="M18 4.5 C22 11, 23 15, 27 18" stroke="rgba(0, 240, 181, 0.3)" stroke-width="0.9" />
+              <path d="M31.5 18 C25 22, 21 23, 18 27" stroke="rgba(0, 210, 255, 0.3)" stroke-width="0.9" />
+              <path d="M18 31.5 C14 25, 13 21, 9 18" stroke="rgba(0, 240, 181, 0.3)" stroke-width="0.9" />
+              <path d="M4.5 18 C11 14, 15 13, 18 9" stroke="rgba(0, 210, 255, 0.3)" stroke-width="0.9" />
+            </g>
+            <path d="M15.5 11.5 C11.5 11.5, 8.5 13.5, 8.5 15.8 C8.5 18.5, 14 17.5, 14 20.2 C14 22.2, 11.5 23.5, 8.5 23.5" stroke="#FFFFFF" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M27.5 11.5 C23.5 11.5, 20.5 13.5, 20.5 15.8 C20.5 18.5, 26 17.5, 26 20.2 C26 22.2, 23.5 23.5, 20.5 23.5" stroke="url(#adminLoginIris)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="18" cy="18" r="5" fill="url(#adminLoginFlare)" class="flare-pulse-ring" />
+            <circle cx="18" cy="18" r="1.8" fill="#ffffff" />
           </svg>
         </div>
-        <h1 class="admin-login-title">ADMIN DISPATCH</h1>
-        <p class="admin-login-sub">Smriti Sardar // Inquiries Console</p>
+        <h1 class="admin-login-title">EXECUTIVE CONSOLE</h1>
+        <p class="admin-login-sub">Smriti Sardar // Inquiries Dispatch Terminal</p>
       </div>
 
-      <!-- Demo Quick-Fill Credentials Box -->
-      <div class="demo-creds-box">
-        <div class="demo-creds-header">
-          <span class="demo-creds-label">
-            <i data-lucide="shield-check" class="icon-xs"></i>
-            DEMO CREDENTIALS
-          </span>
-          <button type="button" class="demo-fill-btn" id="demoFillBtn">
-            <i data-lucide="sparkles" class="icon-xs"></i>
-            Quick Login
-          </button>
-        </div>
-        <div class="demo-creds-list">
-          Email: <code>admin@smritisardar.com</code><br>
-          Pass: <code>smriti2026</code>
-        </div>
-      </div>
+      <!-- Error Alert (Displayed on incorrect credentials) -->
+      <div id="authErrorAlert" class="auth-error-banner hidden" role="alert"></div>
 
-      <!-- Login Form -->
+      <!-- Professional Login Form -->
       <form id="loginForm" class="auth-form" novalidate>
         <div class="auth-form-group">
-          <label for="adminEmail" class="auth-label">Administrator Email</label>
+          <label for="adminEmail" class="auth-label">Administrator Account</label>
           <div class="auth-input-wrap">
             <i data-lucide="mail" class="auth-input-icon"></i>
             <input type="email" id="adminEmail" class="auth-input" placeholder="admin@smritisardar.com" required autocomplete="username">
@@ -77,7 +83,7 @@
         </div>
 
         <div class="auth-form-group">
-          <label for="adminPassword" class="auth-label">Terminal Password</label>
+          <label for="adminPassword" class="auth-label">Security Key</label>
           <div class="auth-input-wrap">
             <i data-lucide="lock" class="auth-input-icon"></i>
             <input type="password" id="adminPassword" class="auth-input" placeholder="••••••••••••" required autocomplete="current-password">
@@ -90,13 +96,13 @@
         <div class="auth-remember-row">
           <label class="auth-remember-label">
             <input type="checkbox" id="rememberMe" checked>
-            <span>Remember this device</span>
+            <span>Keep workstation authenticated</span>
           </label>
         </div>
 
         <button type="submit" class="auth-submit-btn" id="loginBtn">
-          <span>Authorize & Enter Console</span>
-          <i data-lucide="log-in" class="icon-sm"></i>
+          <span>Authenticate &amp; Enter</span>
+          <i data-lucide="arrow-right" class="icon-sm"></i>
         </button>
       </form>
 
@@ -117,30 +123,50 @@
     <header class="admin-appbar">
       <div class="admin-appbar-inner">
         <div class="admin-brand-cluster">
-          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="1" y="1" width="34" height="34" rx="9" fill="#141414" stroke="rgba(255, 255, 255, 0.16)" stroke-width="1.2"/>
-            <path d="M5.5 9.5V5.5H9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M26.5 5.5H30.5V9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M5.5 26.5V30.5H9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M26.5 30.5H30.5V26.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M15 11.5H10.5C9.4 11.5 8.5 12.4 8.5 13.5V14.5C8.5 15.6 9.4 16.5 10.5 16.5H13C14.1 16.5 15 17.4 15 18.5V20.5C15 21.6 14.1 22.5 13 22.5H8.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M25.5 11.5H21C19.9 11.5 19 12.4 19 13.5V14.5C19 15.6 19.9 16.5 21 16.5H23.5C24.6 16.5 25.5 17.4 25.5 18.5V20.5C25.5 21.6 24.6 22.5 23.5 22.5H19" stroke="#D92615" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="28.5" cy="7.5" r="2" fill="#D92615"/>
+          <svg class="brand-monogram-svg" width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Smriti Sardar Optical Emblem">
+            <defs>
+              <linearGradient id="adminTopIris" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#00f0b5" />
+                <stop offset="50%" stop-color="#00d2ff" />
+                <stop offset="100%" stop-color="#f59e0b" />
+              </linearGradient>
+              <radialGradient id="adminTopFlare" cx="18" cy="18" r="6" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="40%" stop-color="#00f0b5" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#00d2ff" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <circle cx="18" cy="18" r="16.5" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.2" />
+            <circle cx="18" cy="18" r="14.2" stroke="url(#adminTopIris)" stroke-width="1.1" stroke-opacity="0.75" />
+            <line x1="18" y1="1.5" x2="18" y2="4" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="18" y1="32" x2="18" y2="34.5" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="1.5" y1="18" x2="4" y2="18" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="32" y1="18" x2="34.5" y2="18" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <g class="iris-blades-group">
+              <path d="M18 4.5 C22 11, 23 15, 27 18" stroke="rgba(0, 240, 181, 0.3)" stroke-width="0.9" />
+              <path d="M31.5 18 C25 22, 21 23, 18 27" stroke="rgba(0, 210, 255, 0.3)" stroke-width="0.9" />
+              <path d="M18 31.5 C14 25, 13 21, 9 18" stroke="rgba(0, 240, 181, 0.3)" stroke-width="0.9" />
+              <path d="M4.5 18 C11 14, 15 13, 18 9" stroke="rgba(0, 210, 255, 0.3)" stroke-width="0.9" />
+            </g>
+            <path d="M15.5 11.5 C11.5 11.5, 8.5 13.5, 8.5 15.8 C8.5 18.5, 14 17.5, 14 20.2 C14 22.2, 11.5 23.5, 8.5 23.5" stroke="#FFFFFF" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M27.5 11.5 C23.5 11.5, 20.5 13.5, 20.5 15.8 C20.5 18.5, 26 17.5, 26 20.2 C26 22.2, 23.5 23.5, 20.5 23.5" stroke="url(#adminTopIris)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="18" cy="18" r="5" fill="url(#adminTopFlare)" class="flare-pulse-ring" />
+            <circle cx="18" cy="18" r="1.8" fill="#ffffff" />
           </svg>
           <div class="admin-brand-title">
             <span class="admin-brand-main">SMRITI SARDAR</span>
-            <span class="admin-brand-sub">INQUIRIES DISPATCH TERMINAL</span>
+            <span class="admin-brand-sub">LEADS DISPATCH OS</span>
           </div>
-          <div class="admin-status-beacon" title="Local storage real-time event listener active">
+          <div class="admin-status-beacon" title="Live real-time local storage synchronization active">
             <span class="beacon-pulse"></span>
-            <span>LIVE SYNC</span>
+            <span>DISPATCH SYNCED</span>
           </div>
         </div>
 
         <div class="admin-clock-wrap">
           <i data-lucide="clock" class="icon-xs"></i>
           <span id="clockIST">--:--:-- IST</span>
-          <span style="opacity: 0.4;">|</span>
+          <span style="opacity: 0.35;">|</span>
           <span id="clockUTC">--:--:-- UTC</span>
         </div>
 
@@ -149,17 +175,13 @@
             <i data-lucide="external-link" class="icon-xs"></i>
             <span>Live Site</span>
           </a>
-          <button type="button" class="admin-top-btn btn-accent" id="simulateLeadBtn" title="Simulate a new incoming contact inquiry">
-            <i data-lucide="plus" class="icon-xs"></i>
-            <span>Simulate Lead</span>
-          </button>
-          <button type="button" class="admin-top-btn" id="exportCsvBtn" title="Download all leads as a CSV spreadsheet">
+          <button type="button" class="admin-top-btn btn-accent" id="exportCsvBtn" title="Download all leads as a structured CSV spreadsheet">
             <i data-lucide="download" class="icon-xs"></i>
             <span>Export CSV</span>
           </button>
           <button type="button" class="admin-top-btn btn-danger" id="logoutBtn" title="Sign out from this terminal">
             <i data-lucide="log-out" class="icon-xs"></i>
-            <span>Logout</span>
+            <span>Exit Terminal</span>
           </button>
         </div>
       </div>
@@ -171,31 +193,31 @@
       <section class="admin-stats-grid" aria-label="Key Performance Metrics">
         <div class="admin-stat-card">
           <div class="stat-info">
-            <span class="stat-label">Total Inquiries</span>
+            <span class="stat-label">Total Verified Leads</span>
             <span class="stat-value" id="statTotal">0</span>
-            <span class="stat-meta">Lifetime contact requests</span>
+            <span class="stat-meta">Lifetime inquiries received</span>
           </div>
-          <div class="stat-icon-pill red">
+          <div class="stat-icon-pill mint">
             <i data-lucide="inbox" class="icon-md"></i>
           </div>
         </div>
 
         <div class="admin-stat-card">
           <div class="stat-info">
-            <span class="stat-label">Unread Inquiries</span>
+            <span class="stat-label">Unread Leads</span>
             <span class="stat-value" id="statUnread">0</span>
-            <span class="stat-meta">Awaiting your response</span>
+            <span class="stat-meta">Awaiting response</span>
           </div>
-          <div class="stat-icon-pill amber">
+          <div class="stat-icon-pill cyan">
             <i data-lucide="alert-circle" class="icon-md"></i>
           </div>
         </div>
 
         <div class="admin-stat-card">
           <div class="stat-info">
-            <span class="stat-label">Replied / Active</span>
+            <span class="stat-label">Contacted / In Discussion</span>
             <span class="stat-value" id="statReplied">0</span>
-            <span class="stat-meta">Engaged discussions</span>
+            <span class="stat-meta">Active client conversations</span>
           </div>
           <div class="stat-icon-pill green">
             <i data-lucide="check-circle-2" class="icon-md"></i>
@@ -204,11 +226,11 @@
 
         <div class="admin-stat-card">
           <div class="stat-info">
-            <span class="stat-label">Top Request Scope</span>
-            <span class="stat-value" id="statTopScope" style="font-size: 1.6rem; margin-top: 0.2rem;">Expedition</span>
-            <span class="stat-meta">Highest client demand</span>
+            <span class="stat-label">Top Demand Scope</span>
+            <span class="stat-value" id="statTopScope" style="font-size: 1.6rem; margin-top: 0.2rem;">Awaiting</span>
+            <span class="stat-meta">Primary client interest</span>
           </div>
-          <div class="stat-icon-pill blue">
+          <div class="stat-icon-pill amber">
             <i data-lucide="film" class="icon-md"></i>
           </div>
         </div>
@@ -219,7 +241,7 @@
         <!-- Tabs -->
         <div class="admin-tabs-row" role="tablist">
           <button type="button" class="admin-filter-tab active" id="tabAll" role="tab">
-            <span>All Requests</span>
+            <span>All Leads</span>
             <span class="tab-badge" id="countAll">0</span>
           </button>
           <button type="button" class="admin-filter-tab" id="tabUnread" role="tab">
@@ -227,7 +249,7 @@
             <span class="tab-badge" id="countUnread">0</span>
           </button>
           <button type="button" class="admin-filter-tab" id="tabReplied" role="tab">
-            <span>Replied</span>
+            <span>Contacted</span>
             <span class="tab-badge" id="countReplied">0</span>
           </button>
           <button type="button" class="admin-filter-tab" id="tabArchived" role="tab">
@@ -240,7 +262,7 @@
         <div class="admin-search-row">
           <div class="admin-search-wrap">
             <i data-lucide="search" class="admin-search-icon"></i>
-            <input type="text" id="searchInput" class="admin-search-input" placeholder="Search by client name, email, scope, or message keywords...">
+            <input type="text" id="searchInput" class="admin-search-input" placeholder="Search by client name, email, project scope, or keywords...">
           </div>
 
           <select id="scopeFilter" class="admin-select" aria-label="Filter by project scope">
@@ -256,7 +278,7 @@
             <option value="oldest">Sort: Oldest First</option>
           </select>
 
-          <button type="button" class="admin-btn-secondary" id="clearFiltersBtn" title="Clear search and filters">
+          <button type="button" class="admin-btn-secondary" id="clearFiltersBtn" title="Reset filters to default">
             <i data-lucide="refresh-cw" class="icon-xs"></i>
             <span>Reset</span>
           </button>
@@ -265,7 +287,7 @@
 
       <!-- Inquiries Feed -->
       <div id="inquiriesFeed" class="admin-inquiries-feed" aria-live="polite">
-        <!-- Inquiries cards rendered dynamically via admin.js -->
+        <!-- Leads rendered dynamically via admin.js -->
       </div>
 
       <!-- Empty State -->
@@ -273,19 +295,19 @@
         <div class="empty-icon-wrap">
           <i data-lucide="inbox" class="icon-lg"></i>
         </div>
-        <h3 class="empty-state-title">NO INQUIRIES FOUND</h3>
-        <p class="empty-state-sub">There are currently no inquiries matching your active filter criteria. Check another tab or click Simulate Lead to test.</p>
+        <h3 class="empty-state-title">TERMINAL READY // NO LEADS RECORDED</h3>
+        <p class="empty-state-sub">Your inquiries database is clean. When clients fill out the contact form on your portfolio website, their briefs and contact information will instantly sync and appear here in real time.</p>
       </div>
     </main>
   </section>
 
   <!-- =========================================================================
-       3. INQUIRY DETAIL MODAL / DOSSIER DRAWER
+       3. CLIENT INQUIRY DOSSIER DRAWER / MODAL
        ========================================================================= -->
   <div id="inquiryModal" class="admin-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="admin-modal-card">
       <div class="admin-modal-header">
-        <h3 class="admin-modal-title" id="modalTitle">CLIENT DOSSIER &amp; INQUIRY</h3>
+        <h3 class="admin-modal-title" id="modalTitle">CLIENT PROJECT DOSSIER</h3>
         <button type="button" class="admin-modal-close" id="modalCloseBtn" aria-label="Close modal">
           <i data-lucide="x" class="icon-sm"></i>
         </button>
@@ -295,52 +317,52 @@
         <div class="detail-dossier-grid">
           <div class="dossier-item">
             <span class="dossier-lbl">Client Name</span>
-            <span class="dossier-val" id="modalName">Elena Rostova</span>
+            <span class="dossier-val" id="modalName">Client Name</span>
           </div>
           <div class="dossier-item">
             <span class="dossier-lbl">Email Address</span>
-            <span class="dossier-val" id="modalEmail">elena@alpineproductions.com</span>
+            <span class="dossier-val" id="modalEmail">email@domain.com</span>
           </div>
           <div class="dossier-item">
             <span class="dossier-lbl">Project Scope</span>
             <span class="dossier-val" id="modalScope">Documentary / Expedition</span>
           </div>
           <div class="dossier-item">
-            <span class="dossier-lbl">Timestamp</span>
-            <span class="dossier-val" id="modalTime">Oct 29, 2026, 14:32:00</span>
+            <span class="dossier-lbl">Received Timestamp</span>
+            <span class="dossier-val" id="modalTime">Date</span>
           </div>
         </div>
 
         <div>
-          <label class="auth-label" style="display:block; margin-bottom:0.4rem;">Status</label>
+          <label class="auth-label" style="display:block; margin-bottom:0.4rem;">Lead Disposition Status</label>
           <select id="modalStatusSelect" class="admin-select" style="width:100%;">
-            <option value="unread">Unread / New Dispatch</option>
-            <option value="replied">Replied / In Progress</option>
+            <option value="unread">Unread / New Lead</option>
+            <option value="replied">Contacted / In Discussion</option>
             <option value="archived">Archived</option>
           </select>
         </div>
 
         <div>
-          <label class="auth-label" style="display:block; margin-bottom:0.4rem;">Project Message &amp; Vision</label>
+          <label class="auth-label" style="display:block; margin-bottom:0.4rem;">Project Brief &amp; Vision</label>
           <div class="detail-message-box" id="modalMessage"></div>
         </div>
 
         <div>
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
-            <label for="modalNotes" class="auth-label" style="margin:0;">Internal Admin Notes (Private)</label>
-            <button type="button" class="admin-btn-secondary" id="modalSaveNotesBtn" style="padding:0.25rem 0.6rem; font-size:0.7rem;">
+            <label for="modalNotes" class="auth-label" style="margin:0;">Internal Notes (Private to Smriti)</label>
+            <button type="button" class="admin-btn-secondary" id="modalSaveNotesBtn" style="padding:0.25rem 0.65rem; font-size:0.72rem;">
               <i data-lucide="check" class="icon-xs"></i> Save Note
             </button>
           </div>
-          <textarea id="modalNotes" class="admin-notes-area" rows="3" placeholder="Add private notes regarding budget quotes, camera equipment required, or follow-up dates..."></textarea>
+          <textarea id="modalNotes" class="admin-notes-area" rows="3" placeholder="Jot down notes regarding day rate quote, camera package, shoot dates, or call schedule..."></textarea>
         </div>
       </div>
 
       <div class="admin-modal-footer">
-        <div style="display:flex; gap:0.5rem;">
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
           <a id="modalReplyBtn" href="#" class="btn-inquiry-action primary" style="padding:0.55rem 1rem; font-size:0.8rem;">
             <i data-lucide="send" class="icon-xs"></i>
-            <span>Reply via Email</span>
+            <span>Email Client</span>
           </a>
           <button type="button" id="modalCopyBtn" class="btn-inquiry-action" style="padding:0.55rem 0.85rem; font-size:0.8rem;">
             <i data-lucide="copy" class="icon-xs"></i>
@@ -350,84 +372,16 @@
 
         <button type="button" id="modalDeleteBtn" class="btn-inquiry-action danger" style="padding:0.55rem 0.85rem; font-size:0.8rem;">
           <i data-lucide="trash-2" class="icon-xs"></i>
-          <span>Delete File</span>
+          <span>Delete Lead</span>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- =========================================================================
-       4. SIMULATE INCOMING LEAD MODAL
-       ========================================================================= -->
-  <div id="simulateModal" class="admin-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="simModalTitle">
-    <div class="admin-modal-card">
-      <div class="admin-modal-header">
-        <h3 class="admin-modal-title" id="simModalTitle">SIMULATE INCOMING CONTACT INQUIRY</h3>
-        <button type="button" class="admin-modal-close" id="simulateCloseBtn" aria-label="Close modal">
-          <i data-lucide="x" class="icon-sm"></i>
-        </button>
-      </div>
-
-      <form id="simulateForm" style="display:flex; flex-direction:column; overflow-y:auto;">
-        <div class="admin-modal-body">
-          <div>
-            <label class="auth-label" style="display:block; margin-bottom:0.4rem;">Select Quick Template Preset</label>
-            <div class="preset-pills-row">
-              <button type="button" class="preset-pill" data-preset="expedition">
-                <i data-lucide="sparkles" class="icon-xs"></i> Himalayan Expedition Doc
-              </button>
-              <button type="button" class="preset-pill" data-preset="brand">
-                <i data-lucide="sparkles" class="icon-xs"></i> Nordic Trail Commercial
-              </button>
-              <button type="button" class="preset-pill" data-preset="drone">
-                <i data-lucide="sparkles" class="icon-xs"></i> CineLifter Drone Pilot
-              </button>
-            </div>
-          </div>
-
-          <div class="auth-form-group">
-            <label for="simName" class="auth-label">Sender Name</label>
-            <input type="text" id="simName" class="auth-input" placeholder="e.g. David Lin" required style="padding-left:1rem;">
-          </div>
-
-          <div class="auth-form-group">
-            <label for="simEmail" class="auth-label">Email Address</label>
-            <input type="email" id="simEmail" class="auth-input" placeholder="e.g. david@nationalfilm.org" required style="padding-left:1rem;">
-          </div>
-
-          <div class="auth-form-group">
-            <label for="simScope" class="auth-label">Project Scope</label>
-            <select id="simScope" class="admin-select" style="width:100%;">
-              <option value="Documentary / Expedition">Documentary / Expedition</option>
-              <option value="Commercial / Brand Film">Commercial / Brand Film</option>
-              <option value="Drone Cinematography">Drone Cinematography</option>
-              <option value="Video Editing / Color">Video Editing / Color</option>
-            </select>
-          </div>
-
-          <div class="auth-form-group">
-            <label for="simMessage" class="auth-label">Project Message</label>
-            <textarea id="simMessage" class="auth-input" rows="4" placeholder="Simulated project scope description..." required style="padding-left:1rem;"></textarea>
-          </div>
-        </div>
-
-        <div class="admin-modal-footer">
-          <button type="button" class="btn-inquiry-action" id="cancelSimBtn" onclick="document.getElementById('simulateModal').classList.add('hidden');">Cancel</button>
-          <button type="submit" class="auth-submit-btn" style="margin:0; padding:0.55rem 1.25rem;">
-            <span>Dispatch Simulated Inquiry</span>
-            <i data-lucide="send" class="icon-xs"></i>
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- =========================================================================
-       5. TOAST NOTIFICATION
-       ========================================================================= -->
+  <!-- Toast Notification Portal -->
   <div class="admin-toast-portal">
     <div id="adminToast" class="admin-toast" role="status" aria-live="polite">
-      <i data-lucide="check-circle-2" class="icon-sm" style="color:var(--admin-green);"></i>
+      <i data-lucide="check-circle-2" class="icon-sm" style="color:var(--admin-mint);"></i>
       <span id="toastText">Action completed successfully</span>
     </div>
   </div>

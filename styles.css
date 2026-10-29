@@ -1,44 +1,45 @@
 /* ==========================================================================
-   SMRITI SARDAR PORTFOLIO — KAELORIAN EDITORIAL DESIGN SYSTEM
-   Theme: Kaelorian Studio Architecture (Matte Obsidian, Crisp Hairline Borders,
-          Condensed Heroic Bebas Neue Typography, DM Sans Editorial Flow,
-          Vermilion Red Accent [#d92615] & High-Contrast Monochrome Badges)
+   SMRITI SARDAR PORTFOLIO — CELESTIAL AURORA DESIGN SYSTEM
+   Theme: Midnight Obsidian Velvet, Luminous Bioluminescent Emerald (#00f0b5),
+          Arctic Cyan (#00d2ff), Warm Golden Hour Amber (#f59e0b),
+          Heroic Bebas Neue Display & High-Fidelity Micro-Interactions
    ========================================================================== */
 
 /* --- 1. DESIGN TOKENS --- */
 :root {
   /* Tone 1: Canvas & Surfaces */
-  --tone-1-canvas: #0c0c0c;                  /* Kaelorian Matte Obsidian */
-  --tone-1-surface: #141414;                 /* Dark Basalt Surface */
-  --tone-1-surface-glass: rgba(18, 18, 18, 0.78); /* Translucent Glass */
-  --tone-1-surface-elevated: rgba(22, 22, 22, 0.95); /* Modals & Floating Menus */
-  --tone-1-border: rgba(255, 255, 255, 0.1); /* 1px Crisp Hairline Border */
-  --tone-1-border-subtle: rgba(255, 255, 255, 0.06); /* Edge lighting */
+  --tone-1-canvas: #070a12;                  /* Deep Celestial Noir */
+  --tone-1-surface: #0c1220;                 /* Velvet Oceanic Slate */
+  --tone-1-surface-glass: rgba(12, 18, 32, 0.82); /* Translucent Glass */
+  --tone-1-surface-elevated: rgba(15, 23, 40, 0.96); /* Modals & Floating Menus */
+  --tone-1-border: rgba(255, 255, 255, 0.08); /* 1px Crisp Hairline Border */
+  --tone-1-border-subtle: rgba(0, 240, 181, 0.15); /* Luminous Mint Edge Lighting */
 
   /* Tone 2: Headings & Titles */
   --tone-2-title: #ffffff;                   /* Crisp Alabaster White */
-  --tone-2-title-muted: #e4e4e7;             /* Sub-heading White */
-  --tone-2-gradient: linear-gradient(180deg, #ffffff 60%, #a1a1aa 100%);
+  --tone-2-title-muted: #e2e8f0;             /* Sub-heading White */
+  --tone-2-gradient: linear-gradient(180deg, #ffffff 60%, #94a3b8 100%);
 
   /* Tone 3: Descriptions & Copy */
-  --tone-3-copy: #8f8f8f;                    /* Kaelorian Muted Grey */
-  --tone-3-copy-dim: #525252;                /* Dim Slate for minor hints */
-  --tone-3-copy-bright: #d4d4d4;             /* Bright Slate for lead text */
+  --tone-3-copy: #94a3b8;                    /* Soothing Slate Gray */
+  --tone-3-copy-dim: #64748b;                /* Dim Slate for minor hints */
+  --tone-3-copy-bright: #cbd5e1;             /* Bright Slate for lead text */
 
-  /* Tone 4: Primary Brand & Interactive Accent (Kaelorian Vermilion Red) */
-  --tone-4-primary: #d92615;                 /* Kaelorian Red */
-  --tone-4-violet: #fa4e3e;                  /* Ember Red Hover */
-  --tone-4-primary-hover: #fa4e3e;           /* Bright Vermilion Hover */
-  --tone-4-gradient: linear-gradient(135deg, #d92615 0%, #fa4e3e 100%);
-  --tone-4-glow: rgba(217, 38, 21, 0.35);   /* Vermilion Soft Glow */
-  --tone-4-spotlight: rgba(217, 38, 21, 0.22); /* MagicCard Spotlight */
-  --tone-4-ring: rgba(217, 38, 21, 0.5);    /* Focus Ring */
+  /* Tone 4: Primary Brand & Interactive Accent (Bioluminescent Aurora Mint) */
+  --tone-4-primary: #00f0b5;                 /* Bioluminescent Aurora Mint */
+  --tone-4-violet: #00d2ff;                  /* Arctic Ice Cyan */
+  --tone-4-primary-hover: #34f5c5;           /* Bright Mint Hover */
+  --tone-4-gradient: linear-gradient(135deg, #00f0b5 0%, #00d2ff 60%, #38bdf8 100%);
+  --tone-4-glow: rgba(0, 240, 181, 0.28);    /* Soft Mint Glow */
+  --tone-4-spotlight: rgba(0, 240, 181, 0.16); /* MagicCard Spotlight */
+  --tone-4-ring: rgba(0, 240, 181, 0.4);     /* Focus Ring */
 
   /* Tone 5: Secondary Highlight & Telemetry */
-  --tone-5-cyan: #06b6d4;                    /* Vibrant Cyan Telemetry */
+  --tone-5-cyan: #38bdf8;                    /* Vibrant Arctic Cyan Telemetry */
+  --tone-5-amber: #f59e0b;                   /* Warm Golden Hour Amber */
   --tone-5-emerald: #10b981;                 /* Status Beacon Emerald */
-  --tone-5-glow: rgba(217, 38, 21, 0.35);    /* Glow */
-  --tone-5-badge-bg: rgba(255, 255, 255, 0.04); /* Kaelorian Minimal Badge Tint */
+  --tone-5-glow: rgba(0, 240, 181, 0.28);    /* Glow */
+  --tone-5-badge-bg: rgba(0, 240, 181, 0.06); /* Minimal Badge Tint */
 
   /* Typography */
   --font-display: "Bebas Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -85,15 +86,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ambient Living Celestial Aurora Mesh */
+.ambient-aurora-mesh {
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 18% 22%, rgba(0, 240, 181, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 82% 78%, rgba(0, 210, 255, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.025) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+  animation: auroraPulseMesh 12s ease-in-out infinite alternate;
+}
+
+@keyframes auroraPulseMesh {
+  0% { opacity: 0.75; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.05); }
+}
+
 /* Ambient Radial Mesh & Fine Matrix Grid */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(217, 38, 21, 0.08), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 240, 181, 0.08), transparent),
     radial-gradient(ellipse 60% 40% at 90% 70%, rgba(255, 255, 255, 0.02), transparent),
-    radial-gradient(ellipse 50% 50% at 10% 40%, rgba(217, 38, 21, 0.04), transparent),
+    radial-gradient(ellipse 50% 50% at 10% 40%, rgba(0, 210, 255, 0.05), transparent),
     linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
@@ -205,10 +224,11 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
+  /* Luminous Mint & Arctic Cyan radial spotlight following cursor */
   background: radial-gradient(
     480px circle at var(--mouse-x, -600px) var(--mouse-y, -600px),
-    rgba(217, 38, 21, 0.35),
-    rgba(255, 255, 255, 0.08) 35%,
+    rgba(0, 240, 181, 0.28),
+    rgba(0, 210, 255, 0.08) 35%,
     transparent 55%
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -228,7 +248,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   border-radius: inherit;
   background: radial-gradient(
     400px circle at var(--mouse-x, -600px) var(--mouse-y, -600px),
-    rgba(217, 38, 21, 0.06),
+    rgba(0, 240, 181, 0.05),
     transparent 50%
   );
   pointer-events: none;
@@ -243,7 +263,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .magic-card:hover {
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(0, 240, 181, 0.3);
 }
 
 /* --- 7. MAGIC UI: ANIMATED BORDER BEAM --- */
@@ -260,7 +280,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   z-index: 3;
 }
 
-/* Conic gradient rotating border beam blending Kaelorian Red & White */
+/* Conic gradient rotating border beam blending Aurora Mint & Arctic Cyan */
 .border-beam::after {
   content: "";
   position: absolute;
@@ -273,7 +293,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
     transparent 0deg,
     transparent 280deg,
     var(--tone-4-primary) 320deg,
-    #fa4e3e 345deg,
+    var(--tone-4-violet) 345deg,
     #ffffff 360deg
   );
   animation: border-beam-spin 7.5s linear infinite;
@@ -304,15 +324,16 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   padding: 0.7rem 1.35rem;
   border-radius: var(--radius-full);
   border: 1px solid transparent;
-  transition: all 0.2s var(--ease-smooth);
+  transition: all 0.25s var(--ease-smooth);
   white-space: nowrap;
   user-select: none;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
 }
 
 .btn:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
 .btn:focus-visible {
@@ -320,18 +341,35 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   box-shadow: 0 0 0 2px var(--tone-1-canvas), 0 0 0 4px var(--tone-4-ring);
 }
 
-/* Kaelorian Vermilion Red CTA Button */
+/* Luminous Aurora Mint CTA Button with Light Sweep Shimmer */
 .btn-primary {
-  background: var(--tone-4-primary);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 16px -2px var(--tone-4-glow);
+  background: linear-gradient(135deg, var(--tone-4-primary) 0%, var(--tone-4-violet) 100%);
+  color: #070a12;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 20px -2px var(--tone-4-glow), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.75s ease;
+}
+
+.btn-primary:hover::before {
+  left: 150%;
 }
 
 .btn-primary:hover {
-  background: var(--tone-4-primary-hover);
-  box-shadow: 0 6px 24px -2px rgba(250, 78, 62, 0.6);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -4px rgba(0, 240, 181, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  color: #05080f;
 }
 
 .btn-primary:active {
@@ -516,19 +554,39 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   justify-content: center;
   line-height: 0;
   position: relative;
-  transition: transform 0.25s var(--ease-out-expo), filter 0.25s ease;
+  transition: transform 0.35s var(--ease-out-expo), filter 0.35s ease;
 }
 
 .brand-monogram-svg {
   display: block;
-  width: 34px;
-  height: 34px;
-  transition: all 0.25s ease;
+  width: 36px;
+  height: 36px;
+  transition: all 0.35s ease;
+}
+
+/* Lens Aperture Iris Rotation & Anamorphic Flare Breath */
+.iris-blades-group {
+  transform-origin: 18px 18px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .brand-wordmark:hover .brand-monogram {
-  transform: scale(1.06);
-  filter: drop-shadow(0 0 10px rgba(217, 38, 21, 0.45));
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 16px rgba(0, 240, 181, 0.5));
+}
+
+.brand-wordmark:hover .iris-blades-group {
+  transform: rotate(25deg);
+}
+
+.flare-pulse-ring {
+  animation: flareBreathe 3s ease-in-out infinite alternate;
+  transform-origin: 18px 18px;
+}
+
+@keyframes flareBreathe {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.18); opacity: 0.95; }
 }
 
 .brand-text-block {
@@ -551,7 +609,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--tone-3-copy);
+  color: var(--tone-4-primary);
   line-height: 1;
 }
 
@@ -598,8 +656,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .nav-admin-btn:hover {
   color: #fff;
-  border-color: rgba(217, 38, 21, 0.5);
-  background: rgba(217, 38, 21, 0.15);
+  border-color: rgba(0, 240, 181, 0.5);
+  background: rgba(0, 240, 181, 0.12);
   transform: translateY(-1px);
 }
 
@@ -784,8 +842,9 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .director-slate-hud:hover {
-  border-color: rgba(217, 38, 21, 0.35);
-  box-shadow: 0 12px 35px -8px rgba(217, 38, 21, 0.18);
+  border-color: rgba(0, 240, 181, 0.4);
+  box-shadow: 0 15px 35px -8px rgba(0, 240, 181, 0.18);
+  transform: translateY(-2px);
 }
 
 .slate-index-pill {
@@ -1279,30 +1338,32 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.45rem 0.9rem;
+  padding: 0.45rem 0.95rem;
   font-size: 0.8125rem;
   font-weight: 500;
   border-radius: var(--radius-full);
   border: 1px solid var(--tone-1-border);
-  background: rgba(20, 20, 20, 0.7);
+  background: rgba(14, 21, 36, 0.7);
   color: var(--tone-3-copy);
   backdrop-filter: blur(8px);
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .filter-chip:hover {
   background: rgba(255, 255, 255, 0.08);
   color: var(--tone-2-title);
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(0, 240, 181, 0.3);
+  transform: translateY(-1px);
 }
 
 .filter-chip.active {
-  background: #ffffff;
-  color: #0c0c0c;
-  border-color: #ffffff;
-  font-weight: 600;
-  box-shadow: 0 4px 16px -2px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, var(--tone-4-primary) 0%, var(--tone-4-violet) 100%);
+  color: #070a12;
+  border-color: var(--tone-4-primary);
+  font-weight: 700;
+  box-shadow: 0 4px 20px -2px var(--tone-4-glow);
+  transform: translateY(-2px);
 }
 
 .chip-icon {
@@ -1320,7 +1381,9 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .filter-chip.active .chip-count {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.25);
+  color: #070a12;
+  font-weight: 700;
 }
 
 /* --- 14. ASYMMETRICAL BENTO FILMOGRAPHY GRID --- */
@@ -1334,10 +1397,14 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  position: relative;
 }
 
 .project-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-8px) scale(1.012);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 240, 181, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 240, 181, 0.35);
 }
 
 /* Featured & Panoramic Bento Project Cards spanning full width */
@@ -1367,17 +1434,17 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.5s var(--ease-out-expo);
+  transition: transform 0.6s var(--ease-out-expo);
 }
 
 .project-card:hover .card-img {
-  transform: scale(1.04);
+  transform: scale(1.06);
 }
 
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.1) 0%, rgba(9, 9, 11, 0.8) 100%);
+  background: linear-gradient(180deg, rgba(7, 10, 18, 0.1) 0%, rgba(7, 10, 18, 0.85) 100%);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -1391,7 +1458,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   letter-spacing: 0.05em;
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-full);
-  background: rgba(12, 12, 12, 0.88);
+  background: rgba(12, 18, 32, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
   backdrop-filter: blur(8px);
@@ -1402,18 +1469,18 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   height: 2.5rem;
   border-radius: 50%;
   background: var(--tone-4-primary);
-  color: #ffffff;
+  color: #070a12;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
   box-shadow: 0 4px 14px var(--tone-4-glow);
 }
 
 .project-card:hover .card-play-action {
-  transform: scale(1.1);
-  background: var(--tone-4-primary-hover);
-  box-shadow: 0 6px 20px rgba(250, 78, 62, 0.6);
+  transform: scale(1.18);
+  background: #34f5c5;
+  box-shadow: 0 0 24px rgba(0, 240, 181, 0.6);
 }
 
 .card-tag-pill {
@@ -1668,13 +1735,19 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   width: 2.25rem;
   height: 2.25rem;
   border-radius: var(--radius);
-  background: rgba(217, 38, 21, 0.1);
-  border: 1px solid rgba(217, 38, 21, 0.25);
+  background: rgba(0, 240, 181, 0.1);
+  border: 1px solid rgba(0, 240, 181, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--tone-4-primary);
   flex-shrink: 0;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.value-item:hover .value-icon {
+  transform: scale(1.08);
+  background: rgba(0, 240, 181, 0.18);
 }
 
 .value-item h4 {
@@ -1709,19 +1782,31 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   padding: 1.75rem;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 240, 181, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 240, 181, 0.08);
 }
 
 .pillar-icon-box {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: var(--radius);
-  background: rgba(217, 38, 21, 0.1);
-  border: 1px solid rgba(217, 38, 21, 0.25);
+  background: rgba(0, 240, 181, 0.1);
+  border: 1px solid rgba(0, 240, 181, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--tone-4-primary);
   margin-bottom: 1.25rem;
+  transition: transform 0.25s ease;
+}
+
+.pillar-card:hover .pillar-icon-box {
+  transform: scale(1.1);
 }
 
 .pillar-card h3 {
@@ -1938,29 +2023,31 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .choice-chip {
-  padding: 0.4rem 0.75rem;
+  padding: 0.45rem 0.85rem;
   font-size: 0.78125rem;
   font-weight: 500;
   border-radius: var(--radius-full);
   border: 1px solid var(--tone-1-border);
-  background: rgba(24, 24, 28, 0.6);
+  background: rgba(14, 21, 36, 0.6);
   color: var(--tone-3-copy);
-  transition: all 0.18s;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .choice-chip:hover {
   background: rgba(255, 255, 255, 0.08);
   color: var(--tone-2-title);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 240, 181, 0.3);
+  transform: translateY(-1px);
 }
 
 .choice-chip.active {
-  background: #ffffff;
-  color: #0c0c0c;
-  border-color: #ffffff;
-  font-weight: 600;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.25);
+  background: linear-gradient(135deg, var(--tone-4-primary) 0%, var(--tone-4-violet) 100%);
+  color: #070a12;
+  border-color: var(--tone-4-primary);
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(0, 240, 181, 0.35);
+  transform: translateY(-2px);
 }
 
 .submit-btn {
@@ -2013,13 +2100,19 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   width: 2.25rem;
   height: 2.25rem;
   border-radius: var(--radius);
-  background: rgba(217, 38, 21, 0.1);
-  border: 1px solid rgba(217, 38, 21, 0.25);
+  background: rgba(0, 240, 181, 0.1);
+  border: 1px solid rgba(0, 240, 181, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--tone-4-primary);
   flex-shrink: 0;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.direct-card:hover .direct-icon {
+  transform: scale(1.08);
+  background: rgba(0, 240, 181, 0.18);
 }
 
 .direct-info {
@@ -2056,7 +2149,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 /* --- 19. FOOTER --- */
 .site-footer {
   border-top: 1px solid var(--tone-1-border);
-  background: rgba(9, 9, 11, 0.95);
+  background: rgba(7, 10, 18, 0.95);
   position: relative;
   z-index: 2;
   padding: 3rem 0;
@@ -2102,8 +2195,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--tone-5-emerald);
-  box-shadow: 0 0 6px rgba(16, 185, 129, 0.7);
+  background: var(--tone-4-primary);
+  box-shadow: 0 0 8px var(--tone-4-primary);
 }
 
 .build-lbl {
@@ -2127,7 +2220,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .commit-pill:hover {
-  background: rgba(217, 38, 21, 0.15);
+  background: rgba(0, 240, 181, 0.12);
   border-color: var(--tone-4-primary);
   color: #fff;
 }
@@ -2169,8 +2262,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .footer-link.admin-link:hover {
   color: #fff;
-  border-color: rgba(217, 38, 21, 0.5);
-  background: rgba(217, 38, 21, 0.1);
+  border-color: rgba(0, 240, 181, 0.5);
+  background: rgba(0, 240, 181, 0.12);
 }
 
 .drawer-link.drawer-admin {
@@ -2368,8 +2461,10 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .dialog-close-btn:hover {
-  background: rgba(217, 38, 21, 0.2);
+  background: rgba(0, 240, 181, 0.18);
   border-color: var(--tone-4-primary);
+  color: #fff;
+  transform: rotate(90deg);
 }
 
 .dialog-media-container {

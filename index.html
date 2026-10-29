@@ -3,9 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0c0c0c">
+  <meta name="theme-color" content="#070a12">
   <meta name="description" content="Smriti Sardar — Filmmaker, Cinematographer & Senior Video Editor. Shaping stories of people, places, and purpose across Himalayan expeditions, documentaries, and branded films.">
   <title>Smriti Sardar — Filmmaker, Cinematographer & Senior Video Editor</title>
+
+  <!-- Bespoke Anamorphic Lens & Dual Infinity S Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' fill='none'><circle cx='18' cy='18' r='16' fill='%23070a12' stroke='%2300f0b5' stroke-width='1.5'/><circle cx='18' cy='18' r='13' stroke='%2300d2ff' stroke-width='1'/><path d='M14 12 C11 12 9 13.5 9 15.5 C9 18 13.5 17.5 13.5 20 C13.5 22 11.5 23 9 23' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/><path d='M26 12 C23 12 21 13.5 21 15.5 C21 18 25.5 17.5 25.5 20 C25.5 22 23.5 23 21 23' stroke='%2300f0b5' stroke-width='2' stroke-linecap='round'/><circle cx='18' cy='18' r='2' fill='%2300f0b5'/></svg>">
 
   <!-- Kaelorian Google Fonts: Bebas Neue (Condensed Display), DM Sans (Editorial Body), Inter, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,14 +28,15 @@
       theme: {
         extend: {
           colors: {
-            kaelorian: {
-              bg: '#0c0c0c',
-              surface: '#141414',
-              card: '#181818',
-              border: 'rgba(255, 255, 255, 0.1)',
-              red: '#d92615',
-              redHover: '#fa4e3e',
-              muted: '#8f8f8f',
+            brand: {
+              bg: '#070a12',
+              surface: '#0c1220',
+              card: '#111827',
+              border: 'rgba(255, 255, 255, 0.08)',
+              mint: '#00f0b5',
+              cyan: '#00d2ff',
+              amber: '#f59e0b',
+              muted: '#94a3b8',
               white: '#ffffff'
             }
           },
@@ -56,9 +60,12 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-[#0c0c0c] text-[#8f8f8f] font-sans antialiased selection:bg-[#d92615]/30 selection:text-white">
+<body class="bg-[#070a12] text-[#94a3b8] font-sans antialiased selection:bg-[#00f0b5]/25 selection:text-white">
   <!-- Scroll Progress Indicator -->
   <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Living Celestial Ambient Aurora Mesh -->
+  <div class="ambient-aurora-mesh" aria-hidden="true"></div>
 
   <!-- Ambient Film Grain -->
   <div class="film-grain" aria-hidden="true"></div>
@@ -68,15 +75,35 @@
     <div class="header-container">
       <a class="brand-wordmark" href="#home" aria-label="Smriti Sardar Homepage">
         <span class="brand-monogram">
-          <svg class="brand-monogram-svg" width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="1" y="1" width="34" height="34" rx="9" fill="#141414" stroke="rgba(255, 255, 255, 0.16)" stroke-width="1.2"/>
-            <path d="M5.5 9.5V5.5H9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M26.5 5.5H30.5V9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M5.5 26.5V30.5H9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M26.5 30.5H30.5V26.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-            <path d="M15 11.5H10.5C9.4 11.5 8.5 12.4 8.5 13.5V14.5C8.5 15.6 9.4 16.5 10.5 16.5H13C14.1 16.5 15 17.4 15 18.5V20.5C15 21.6 14.1 22.5 13 22.5H8.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M25.5 11.5H21C19.9 11.5 19 12.4 19 13.5V14.5C19 15.6 19.9 16.5 21 16.5H23.5C24.6 16.5 25.5 17.4 25.5 18.5V20.5C25.5 21.6 24.6 22.5 23.5 22.5H19" stroke="#D92615" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="28.5" cy="7.5" r="2" fill="#D92615"/>
+          <svg class="brand-monogram-svg" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Smriti Sardar Optical Emblem">
+            <defs>
+              <linearGradient id="navSsIrisGrad" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#00f0b5" />
+                <stop offset="50%" stop-color="#00d2ff" />
+                <stop offset="100%" stop-color="#f59e0b" />
+              </linearGradient>
+              <radialGradient id="navSsFlareGrad" cx="18" cy="18" r="6" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="40%" stop-color="#00f0b5" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#00d2ff" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <circle cx="18" cy="18" r="16.5" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.2" />
+            <circle cx="18" cy="18" r="14.2" stroke="url(#navSsIrisGrad)" stroke-width="1.1" stroke-opacity="0.75" />
+            <line x1="18" y1="1.5" x2="18" y2="4" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="18" y1="32" x2="18" y2="34.5" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="1.5" y1="18" x2="4" y2="18" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="32" y1="18" x2="34.5" y2="18" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+            <g class="iris-blades-group">
+              <path d="M18 4.5 C22 11, 23 15, 27 18" stroke="rgba(0, 240, 181, 0.3)" stroke-width="0.9" />
+              <path d="M31.5 18 C25 22, 21 23, 18 27" stroke="rgba(0, 210, 255, 0.3)" stroke-width="0.9" />
+              <path d="M18 31.5 C14 25, 13 21, 9 18" stroke="rgba(0, 240, 181, 0.3)" stroke-width="0.9" />
+              <path d="M4.5 18 C11 14, 15 13, 18 9" stroke="rgba(0, 210, 255, 0.3)" stroke-width="0.9" />
+            </g>
+            <path d="M15.5 11.5 C11.5 11.5, 8.5 13.5, 8.5 15.8 C8.5 18.5, 14 17.5, 14 20.2 C14 22.2, 11.5 23.5, 8.5 23.5" stroke="#FFFFFF" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M27.5 11.5 C23.5 11.5, 20.5 13.5, 20.5 15.8 C20.5 18.5, 26 17.5, 26 20.2 C26 22.2, 23.5 23.5, 20.5 23.5" stroke="url(#navSsIrisGrad)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="18" cy="18" r="5" fill="url(#navSsFlareGrad)" class="flare-pulse-ring" />
+            <circle cx="18" cy="18" r="1.8" fill="#ffffff" />
           </svg>
         </span>
         <div class="brand-text-block">
@@ -844,15 +871,35 @@
       <div class="footer-left">
         <a class="brand-wordmark" href="#home" aria-label="Smriti Sardar Homepage">
           <span class="brand-monogram">
-            <svg class="brand-monogram-svg" width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="1" y="1" width="34" height="34" rx="9" fill="#141414" stroke="rgba(255, 255, 255, 0.16)" stroke-width="1.2"/>
-              <path d="M5.5 9.5V5.5H9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-              <path d="M26.5 5.5H30.5V9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-              <path d="M5.5 26.5V30.5H9.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-              <path d="M26.5 30.5H30.5V26.5" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.2" stroke-linecap="round"/>
-              <path d="M15 11.5H10.5C9.4 11.5 8.5 12.4 8.5 13.5V14.5C8.5 15.6 9.4 16.5 10.5 16.5H13C14.1 16.5 15 17.4 15 18.5V20.5C15 21.6 14.1 22.5 13 22.5H8.5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M25.5 11.5H21C19.9 11.5 19 12.4 19 13.5V14.5C19 15.6 19.9 16.5 21 16.5H23.5C24.6 16.5 25.5 17.4 25.5 18.5V20.5C25.5 21.6 24.6 22.5 23.5 22.5H19" stroke="#D92615" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="28.5" cy="7.5" r="2" fill="#D92615"/>
+            <svg class="brand-monogram-svg" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Smriti Sardar Optical Emblem">
+              <defs>
+                <linearGradient id="footerSsIrisGrad" x1="2" y1="2" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#00f0b5" />
+                  <stop offset="50%" stop-color="#00d2ff" />
+                  <stop offset="100%" stop-color="#f59e0b" />
+                </linearGradient>
+                <radialGradient id="footerSsFlareGrad" cx="18" cy="18" r="6" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#ffffff" />
+                  <stop offset="40%" stop-color="#00f0b5" stop-opacity="0.8" />
+                  <stop offset="100%" stop-color="#00d2ff" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <circle cx="18" cy="18" r="16.5" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.2" />
+              <circle cx="18" cy="18" r="14.2" stroke="url(#footerSsIrisGrad)" stroke-width="1.1" stroke-opacity="0.75" />
+              <line x1="18" y1="1.5" x2="18" y2="4" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="18" y1="32" x2="18" y2="34.5" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="1.5" y1="18" x2="4" y2="18" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="32" y1="18" x2="34.5" y2="18" stroke="#00f0b5" stroke-width="1.5" stroke-linecap="round" />
+              <g class="iris-blades-group">
+                <path d="M18 4.5 C22 11, 23 15, 27 18" stroke="rgba(0, 240, 181, 0.3)" stroke-width="0.9" />
+                <path d="M31.5 18 C25 22, 21 23, 18 27" stroke="rgba(0, 210, 255, 0.3)" stroke-width="0.9" />
+                <path d="M18 31.5 C14 25, 13 21, 9 18" stroke="rgba(0, 240, 181, 0.3)" stroke-width="0.9" />
+                <path d="M4.5 18 C11 14, 15 13, 18 9" stroke="rgba(0, 210, 255, 0.3)" stroke-width="0.9" />
+              </g>
+              <path d="M15.5 11.5 C11.5 11.5, 8.5 13.5, 8.5 15.8 C8.5 18.5, 14 17.5, 14 20.2 C14 22.2, 11.5 23.5, 8.5 23.5" stroke="#FFFFFF" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M27.5 11.5 C23.5 11.5, 20.5 13.5, 20.5 15.8 C20.5 18.5, 26 17.5, 26 20.2 C26 22.2, 23.5 23.5, 20.5 23.5" stroke="url(#footerSsIrisGrad)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="18" cy="18" r="5" fill="url(#footerSsFlareGrad)" class="flare-pulse-ring" />
+              <circle cx="18" cy="18" r="1.8" fill="#ffffff" />
             </svg>
           </span>
           <div class="brand-text-block">
