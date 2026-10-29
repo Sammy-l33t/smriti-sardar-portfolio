@@ -51,6 +51,27 @@ Continuous smooth CSS marquee banner featuring Smriti's cinematic statement acro
 - **One-Click Email Copy**: Instant clipboard copy with visual feedback toast.
 - **Live GitHub Commit Tracker**: Directly fetches and displays the live commit short SHA and commit message link from GitHub REST API.
 - **Mobile Navigation Drawer**: Responsive slide-down navigation drawer with auto-close on desktop resize.
+- **Admin Inquiries Portal (`/admin` / `admin.html`)**: Bespoke authenticated inquiries dispatch console for managing all incoming contact requests with live storage sync, status filters, CSV export, and email client responses.
+
+---
+
+## 🛡️ Admin Inquiries Portal (`/admin`)
+
+An exclusive, password-authenticated terminal console for Smriti Sardar to review, manage, and dispatch responses to all incoming contact requests from the portfolio's contact form.
+
+### Demo Access
+- **URL**: `admin.html` (or `/admin` on Vercel deployment)
+- **Demo Email**: `admin@smritisardar.com`
+- **Demo Password**: `smriti2026`
+- **One-Click Demo Button**: Available on the login screen for instantaneous authorized preview.
+
+### Capabilities
+1. **Live Real-Time Synchronization**: Any inquiry submitted via the public contact form (`index.html`) is immediately broadcasted via `localStorage` and `window.dispatchEvent('storage')` to the admin console without page refreshes.
+2. **KPI Telemetry**: Real-time counter of total inquiries, unread leads, replied dispatches, and top requested production scope.
+3. **Multi-Criterion Filtering**: Filter by status (*All*, *Unread*, *Replied*, *Archived*), project scope (*Documentary*, *Commercial*, *Drone*, *Color/Editing*), sort order (*Newest*, *Oldest*), and full-text keyword search.
+4. **Client Dossier Drawer**: Detailed modal view with direct `mailto:` reply (pre-filled subject & greeting), copy dossier to clipboard, and private internal admin notes.
+5. **CSV Export**: One-click download of all lifetime leads into a clean, UTF-8 formatted CSV spreadsheet.
+6. **Inquiry Simulator**: Integrated testing modal to simulate new incoming client inquiries from templates (Himalayan Expedition Doc, Nordic Commercial, CineLifter Pilot).
 
 ---
 

@@ -298,11 +298,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameInput = document.querySelector("#senderName");
     const emailInput = document.querySelector("#senderEmail");
     const messageInput = document.querySelector("#senderMessage");
+    const activeChip = document.querySelector(".choice-chip.active");
+    const scopeVal = activeChip?.getAttribute("data-val") || activeChip?.textContent?.trim() || "Documentary / Expedition";
 
     if (!nameInput?.value.trim() || !emailInput?.value.trim() || !messageInput?.value.trim()) {
       showSnackbar("Please fill in all required fields.", "alert-triangle");
       return;
     }
+
+    const senderName = nameInput.value.trim();
+    const senderEmail = emailInput.value.trim();
+    const senderMessage = messageInput.value.trim();
 
     if (submitBtn) {
       submitBtn.classList.add("loading");
@@ -310,12 +316,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setTimeout(() => {
+      // Create new inquiry record
+      const newInquiry = {
+        id: "inq_" + Date.now() + "_" + Math.random().toString(36).substring(2, 7),
+        name: senderName,
+        email: senderEmail,
+        scope: scopeVal,
+        message: senderMessage,
+        timestamp: new Date().toISOString(),
+        status: "unread",
+        notes: ""
+      };
+
+      try {
+        const stored = localStorage.getItem("smriti_contact_inquiries");
+        const inquiries = stored ? JSON.parse(stored) : [];
+        inquiries.unshift(newInquiry);
+        localStorage.setItem("smriti_contact_inquiries", JSON.stringify(inquiries));
+        // Dispatch event for any open admin tabs to update immediately
+        window.dispatchEvent(new Event("storage"));
+      } catch (err) {
+        console.warn("Local storage write error:", err);
+      }
+
       if (submitBtn) {
         submitBtn.classList.remove("loading");
         submitBtn.disabled = false;
       }
       contactForm.reset();
-      showSnackbar("Message sent! Smriti will respond within 24 hours.", "send");
+      showSnackbar("Inquiry received & recorded! Smriti will respond within 24 hours.", "send");
     }, 950);
   });
 

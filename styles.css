@@ -2132,6 +2132,38 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   color: var(--tone-2-title);
 }
 
+.footer-link.admin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  transition: all 0.2s ease;
+}
+
+.footer-link.admin-link:hover {
+  color: #fff;
+  border-color: rgba(217, 38, 21, 0.5);
+  background: rgba(217, 38, 21, 0.1);
+}
+
+.drawer-link.drawer-admin {
+  margin-top: 0.5rem;
+  color: var(--tone-3-copy);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-top: 0.75rem;
+}
+
+.drawer-link.drawer-admin:hover {
+  color: var(--tone-4-primary);
+}
+
 .back-to-top-btn {
   display: inline-flex;
   align-items: center;
