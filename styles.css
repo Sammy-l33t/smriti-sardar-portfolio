@@ -707,7 +707,7 @@ img {
   height: 480px;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: #0f151b;
+  background: var(--tone-dark-surface);
 }
 
 .hero-active-img {
@@ -1036,7 +1036,7 @@ img {
   width: 100%;
   height: 320px;
   overflow: hidden;
-  background: #0f151b;
+  background: var(--tone-dark-surface);
 }
 
 .project-featured .card-media-wrapper {
@@ -1224,7 +1224,7 @@ img {
   position: relative;
   width: 82%;
   height: 480px;
-  background: #0f151b;
+  background: var(--tone-dark-surface);
 }
 
 .about-img {
@@ -1270,7 +1270,7 @@ img {
   height: 280px;
   border: 4px solid var(--tone-dark-base);
   box-shadow: var(--elevation-4);
-  background: #0f151b;
+  background: var(--tone-dark-surface);
 }
 
 .about-thumb {
@@ -2041,7 +2041,7 @@ img {
   position: relative;
   width: 100%;
   height: 340px;
-  background: #0f151b;
+  background: var(--tone-dark-surface);
 }
 
 .dialog-img {
@@ -2158,7 +2158,7 @@ img {
   width: 100%;
   height: 380px;
   overflow: hidden;
-  background: #000;
+  background: var(--tone-dark-base);
   display: flex;
   align-items: center;
   justify-content: center;
