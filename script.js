@@ -155,11 +155,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const subtitle = card.getAttribute("data-subtitle") || "";
     const img = card.getAttribute("data-img") || "";
     const desc = card.getAttribute("data-desc") || "";
-    const role = card.getAttribute("data-role") || "Editor, Colorist";
-    const tools = card.getAttribute("data-tools") || "DaVinci Resolve, Premiere Pro";
-    const aspect = card.getAttribute("data-aspect") || "16:9 UHD";
+    const role = card.getAttribute("data-role") || "Cinematographer, Editor";
+    const tools = card.getAttribute("data-tools") || "DaVinci Resolve Studio 19, Sony Cinema Line";
+    const aspect = card.getAttribute("data-aspect") || "2.39:1 Cinema Scope";
     const year = card.getAttribute("data-year") || "2026";
-    const cat = card.querySelector(".category-name")?.textContent || "SELECTED WORK";
+    const cat = card.querySelector(".category-name")?.textContent || "SELECTED FILMOGRAPHY";
 
     if (dialogImg) dialogImg.src = img;
     if (dialogTitle) dialogTitle.textContent = title;
@@ -246,19 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 9. SERVICE ACCORDION
-  const serviceCards = document.querySelectorAll(".service-accordion-card");
-  serviceCards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const isOpen = card.classList.contains("open");
-      serviceCards.forEach((c) => c.classList.remove("open"));
-      if (!isOpen) {
-        card.classList.add("open");
-      }
-    });
-  });
-
-  // 10. PROJECT TYPE CHOICE CHIPS
+  // 9. PROJECT TYPE CHOICE CHIPS
   const choiceChips = document.querySelectorAll(".choice-chip");
   choiceChips.forEach((chip) => {
     chip.addEventListener("click", () => {
@@ -267,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 11. MATERIAL SNACKBAR (TOAST)
+  // 10. MATERIAL SNACKBAR (TOAST)
   const snackbar = document.querySelector("#muiSnackbar");
   const snackbarMsg = document.querySelector("#snackbarMsg");
   const snackbarIcon = document.querySelector("#snackbarIcon");
@@ -292,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (snackbarTimeout) clearTimeout(snackbarTimeout);
   });
 
-  // 12. CONTACT FORM SUBMISSION
+  // 11. CONTACT FORM SUBMISSION
   const contactForm = document.querySelector("#contactForm");
   const submitBtn = document.querySelector("#submitBtn");
 
@@ -323,10 +311,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1100);
   });
 
-  // 13. COPY EMAIL TO CLIPBOARD
+  // 12. COPY EMAIL TO CLIPBOARD
   const copyEmailCard = document.querySelector("#copyEmailCard");
-  copyEmailCard?.addEventListener("click", async () => {
-    const email = "smritisardar.edit@gmail.com";
+  copyEmailCard?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const email = "smritisardar010@gmail.com";
     try {
       await navigator.clipboard.writeText(email);
       showSnackbar("Email copied to clipboard: " + email, "content_copy");
@@ -335,7 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 14. FLOATING ACTION BUTTON (FAB) MENU
+  // 13. FLOATING ACTION BUTTON (FAB) MENU
   const fabWrapper = document.querySelector(".fab-wrapper");
   const fabBtn = document.querySelector("#fabBtn");
 
@@ -349,7 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 15. INTERSECTION OBSERVER FOR SCROLL ANIMATIONS
+  // 14. INTERSECTION OBSERVER FOR SCROLL ANIMATIONS
   const animateItems = document.querySelectorAll(".animate-on-scroll");
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver((entries) => {
