@@ -1,59 +1,60 @@
-# Smriti Sardar — Filmmaker & Video Editor Portfolio
+# Smriti Sardar — Wildlife & Himalayan Expedition Cinematographer Portfolio
 
-A zero-overhead, ultra-high-performance cinematic personal portfolio for **Smriti Sardar** built with a **shadcn/ui + Magic UI** aesthetic (Linear / Vercel / Raycast SaaS style), featuring a rich **5-Tone Color Architecture** and a **3-Tier Typography System**, using pure native HTML5, CSS3, Tailwind CSS, and vanilla JavaScript (~2KB). Deployed statically on Vercel with zero runtime framework overhead.
-
----
-
-## 🎨 5-Tone Color Architecture
-
-The entire portfolio adheres strictly to an intentional 5-tone color hierarchy defined in `:root` and Tailwind config:
-
-1. **Tone 1 (Canvas & Elevated Glassmorphic Surfaces)**:
-   - Deep Obsidian background (`#09090b` / `zinc-950`)
-   - Translucent glassmorphic card surfaces (`#121216` / `bg-zinc-900/60` / `rgba(18, 18, 22, 0.65)`)
-   - Crisp 1px borders (`#27272a` / `border-zinc-800/80`)
-2. **Tone 2 (Reserved Strictly for Titles & Headings)**:
-   - Crisp Alabaster White (`#f8fafc`) with subtle linear gradient highlights strictly reserved for H1, H2, H3, and H4 headings.
-3. **Tone 3 (Reserved Strictly for Descriptions & Body Copy)**:
-   - Cool Slate Muted (`#94a3b8` / `text-slate-400`), Slate bright (`#cbd5e1`), and Slate dim (`#64748b`) strictly reserved for subtitles, descriptions, and paragraph text to enforce immediate visual contrast against titles.
-4. **Tone 4 (Primary Brand & Interactive Accent)**:
-   - Electric Indigo / Violet (`#6366f1` to `#8b5cf6`) reserved for primary CTA buttons, active states, focus rings (`focus-visible:ring-2 focus-visible:ring-indigo-500/50`), active scale (`active:scale-[0.98]`), and spotlight glows.
-5. **Tone 5 (Secondary Highlight & Data Accent)**:
-   - Vibrant Cyan (`#06b6d4`) and Emerald (`#10b981`) reserved for badges, status indicators, KPI trends, and secondary highlights.
+An ultra-high-performance, cinematic personal portfolio for **Smriti Sardar** inspired by world-class **wildlife and expedition photography portfolios** (National Geographic, BBC Earth, Sony Artisan Wildlife Galleries). Built with a **5-Tone Wilderness Color Architecture**, a **3-Tier Editorial Typography System**, and zero-overhead **Magic UI micro-interactions**, using pure native HTML5, CSS3, Tailwind CSS, and vanilla JavaScript (~2KB). Deployed statically on Vercel with zero runtime framework overhead.
 
 ---
 
-## 🔤 3-Tier Complementary Typography System
+## 🌲 Wildlife & Expedition 5-Tone Color Architecture
 
-- **Tier 1 — Display / Titles Font**: **Plus Jakarta Sans** (semi-bold/bold, tight tracking `tracking-tight` / `-0.035em`) for all headings and titles.
-- **Tier 2 — Body / Descriptions Font**: **Inter** (regular/medium, relaxed line-height `leading-relaxed` / `1.65`) for optimal readability on descriptions and UI labels.
-- **Tier 3 — Technical / Numbers Font**: **JetBrains Mono** for numerical stats, code snippets, tags, aspect ratios, and tabular data.
+The entire portfolio is built on a rich, atmospheric wilderness color palette defined in `:root` and Tailwind config:
+
+1. **Tone 1 (Canvas & Elevated Wilderness Surfaces)**:
+   - Deep Forest Moss Obsidian canvas (`#070a08`)
+   - Basalt stone card surfaces (`#0e1411` / `rgba(14, 20, 17, 0.72)`) with 12px glassmorphism blur
+   - Weathered granite 1px borders (`rgba(200, 215, 205, 0.1)`)
+2. **Tone 2 (Reserved Strictly for Titles & Exhibition Headings)**:
+   - Sunlit Sandstone & Mountain Chalk (`#f5f2eb`)
+   - Warm editorial ivory gradient (`linear-gradient(135deg, #ffffff 25%, #f5efe6 60%, #e29d52 100%)`) strictly reserved for headings.
+3. **Tone 3 (Reserved Strictly for Field Notes, Descriptions & Body Copy)**:
+   - Lichen Stone & Mountain Mist (`#98a59c`), Bright Mist (`#cbd5ce`), and Dark Stone (`#657469`) strictly reserved for subtitles, descriptions, and paragraph copy to enforce clear contrast against headings.
+4. **Tone 4 (Primary Brand & Interactive Field Accent)**:
+   - Alpine Amber & Savannah Sun (`#e29d52` to `#c27803`) reserved for primary CTA buttons, active filter chips, focus rings (`focus-visible:ring-2 focus-visible:ring-amber-500/50`), and spotlight glows.
+5. **Tone 5 (Secondary Wilderness Highlight & Ecological Data Accent)**:
+   - Alpine Spruce & Glacial Emerald (`#10b981`) and Glacial Turquoise (`#2dd4bf`) reserved for telemetry badges, status indicators, and the border beam accent.
 
 ---
 
-## ✨ Magic UI Micro-Interactions
+## 🔤 3-Tier Wildlife & Expedition Typography System
 
-### 1. BlurFade Entry (BlurFade)
-Pure CSS `@keyframes blur-fade-in` (animating `opacity: 0` to `1`, `filter: blur(8px)` to `blur(0px)`, and `translateY(12px)` to `0`) with staggered delays as content scrolls into view.
+- **Tier 1 — Exhibition Display Font**: **Cormorant Garamond** (high-elegance editorial serif with light/medium weights) for all headings and titles, providing National Geographic / exhibition gallery presence.
+- **Tier 2 — Modern UI & Field Descriptions Font**: **Plus Jakarta Sans** for navigation and badges; **Inter** for descriptions and body copy.
+- **Tier 3 — Technical & Field Exif Telemetry Font**: **JetBrains Mono** for numerical stats, coordinates (`32°N 78°E`), focal lengths, shutter speeds, sensor specs, and commit hashes.
+
+---
+
+## ✨ Magic UI Micro-Interactions (~2KB Zero Overhead)
+
+### 1. Blur-Fade Entry (BlurFade)
+Pure CSS `@keyframes blur-fade-in` (`opacity: 0 -> 1`, `filter: blur(8px) -> blur(0px)`, `translateY(12px) -> 0`) with staggered delays as content scrolls into view.
 
 ### 2. Interactive Spotlight Cards (MagicCard)
-Cursor-following radial illuminator (`.magic-card`). Dynamically calculates touch and cursor coordinates (`--mouse-x`, `--mouse-y`) to cast an Electric Indigo & Cyan spotlight across the border and card surface on hover.
+Cursor-following radial illuminator (`.magic-card`). Dynamically calculates touch and cursor coordinates (`--mouse-x`, `--mouse-y`) to cast an Alpine Amber (`#e29d52`) and Forest Emerald (`#10b981`) spotlight across the border and card surface on hover.
 
 ### 3. Animated Border Beam (BorderBeam)
-Signature Magic UI rotating perimeter highlight using pure CSS conic gradients and CSS masks blending **Tone 4 (Electric Indigo `#6366f1`) and Tone 5 (Vibrant Cyan `#06b6d4`)**. Showcased on the hero visual card frame and the featured case study card (*Shailaputri*).
+Signature Magic UI rotating perimeter highlight using pure CSS conic gradients and CSS masks blending **Tone 4 (Alpine Amber `#e29d52`) and Tone 5 (Glacial Emerald `#10b981`)**. Showcased on the hero visual card frame and the featured case study card (*Shailaputri*).
 
 ### 4. Number Ticker (NumberTicker)
 Smooth `requestAnimationFrame` counter animation for hero KPI metrics (`100+`, `6,000m+`, `4+1 Yrs`) with automatic thousand separator formatting and view-triggering.
 
 ### 5. Infinite Marquee Ticker
-Continuous smooth CSS marquee banner featuring Smriti's cinematic statement across the screen with Tone 5 Cyan star dividers.
+Continuous smooth CSS marquee banner featuring Smriti's wildlife and alpine expedition statement across the screen with Tone 4 Amber star dividers.
 
 ---
 
 ## 🎬 Core Features
 
 - **Interactive Moment Switcher**: Toggle between 4 distinct photography moments (*Misty Peaks*, *Snow Rig*, *Canyon Sun*, *On Trail*) with smooth crossfade transitions and dynamic captions.
-- **Work Category Filter Tabs**: Instant filtering of filmography across *All*, *Mountaineering & Expeditions*, *Endurance & Sports*, and *Aerial & Landscape*.
+- **Curated Filmography Gallery**: Instant filtering of filmography across *All Works*, *Himalayan Expeditions*, *Endurance & Wilderness*, and *Aerial Topography*.
 - **Dynamic Case Study Modal**: Lightbox popup presenting complete production credits, tools (DaVinci Resolve Studio 19, Sony Cinema Line), aspect ratios (2.39:1 Cinema Scope), and delivery specifications.
 - **4K Showreel Lightbox**: Dedicated video player modal with high-definition backdrop, production metadata, and direct booking trigger.
 - **Sonner-Style Feedback Toast**: Sleek floating dark toast notification for user actions (form submission, email copy, showreel loading).

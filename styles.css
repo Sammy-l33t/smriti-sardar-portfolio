@@ -1,60 +1,58 @@
 /* ==========================================================================
-   SMRITI SARDAR PORTFOLIO — 5-TONE COLOR SYSTEM & 3-TIER TYPOGRAPHY
-   Aesthetic: shadcn/ui (Zinc Dark) + Magic UI Micro-Interactions
-   Architecture:
-     Tone 1 (Canvas & Elevated Surfaces): #09090b / #121216 / #27272a
-     Tone 2 (Reserved Strictly for Titles & Headings): #f8fafc (Plus Jakarta Sans)
-     Tone 3 (Reserved Strictly for Descriptions & Body Copy): #94a3b8 (Inter)
-     Tone 4 (Primary Brand & Interactive Accent): #6366f1 to #8b5cf6 (Electric Indigo/Violet)
-     Tone 5 (Secondary Highlight & Data Accent): #06b6d4 / #10b981 (Vibrant Cyan / Emerald)
+   SMRITI SARDAR — WILDLIFE & EXPEDITION CINEMATOGRAPHY DESIGN SYSTEM
+   Inspiration: National Geographic, BBC Earth, Sony Artisan Wildlife Galleries
+   Palette: Forest Moss Obsidian, Sunlit Sandstone, Lichen Mist, Alpine Amber, Glacial Emerald
+   Typography: Cormorant Garamond (Editorial Display), Plus Jakarta Sans (UI),
+               Inter (Descriptions & Body Copy), JetBrains Mono (Field Exif Telemetry)
    ========================================================================== */
 
-/* --- 1. 5-TONE DESIGN TOKENS & 3-TIER TYPOGRAPHY --- */
+/* --- 1. WILDLIFE & EXPEDITION DESIGN TOKENS --- */
 :root {
   /* ========================================================================
-     5-TONE COLOR ARCHITECTURE
+     5-TONE WILDLIFE & EXPEDITION COLOR ARCHITECTURE
      ======================================================================== */
-  /* Tone 1: Canvas & Elevated Glassmorphic Surfaces */
-  --tone-1-canvas: #09090b;                  /* Deep Obsidian Canvas (zinc-950) */
-  --tone-1-surface: #121216;                 /* Elevated Card Surface */
-  --tone-1-surface-glass: rgba(18, 18, 22, 0.65); /* Translucent Glass Surface */
-  --tone-1-surface-elevated: rgba(22, 22, 28, 0.88); /* Elevated Modals & Floating Menus */
-  --tone-1-border: #27272a;                  /* Crisp 1px Border (zinc-800) */
-  --tone-1-border-subtle: rgba(255, 255, 255, 0.08); /* Card Edge Lighting */
+  /* Tone 1: Canvas & Elevated Wilderness Surfaces */
+  --tone-1-canvas: #070a08;                  /* Deep Forest Moss Obsidian */
+  --tone-1-surface: #0e1411;                 /* Basalt Stone Surface */
+  --tone-1-surface-glass: rgba(14, 20, 17, 0.72); /* Translucent Wilderness Glass */
+  --tone-1-surface-elevated: rgba(18, 26, 22, 0.92); /* Elevated Field Modals & Dialogs */
+  --tone-1-border: rgba(200, 215, 205, 0.1); /* Weathered Granite 1px Border */
+  --tone-1-border-subtle: rgba(226, 157, 82, 0.2); /* Sunlit Ridge Accent Border */
 
-  /* Tone 2: Reserved Strictly for Titles & Headings (H1/H2/H3/H4) */
-  --tone-2-title: #f8fafc;                   /* Crisp Alabaster White */
-  --tone-2-title-muted: #e2e8f0;             /* Sub-heading Light */
-  --tone-2-gradient: linear-gradient(135deg, #ffffff 25%, #c7d2fe 75%, #818cf8 100%);
+  /* Tone 2: Reserved Strictly for Titles & Exhibition Headings */
+  --tone-2-title: #f5f2eb;                   /* Sunlit Sandstone & Mountain Chalk */
+  --tone-2-title-muted: #e6dfd3;             /* Warm Editorial Ivory */
+  --tone-2-gradient: linear-gradient(135deg, #ffffff 25%, #f5efe6 60%, #e29d52 100%);
 
-  /* Tone 3: Reserved Strictly for Descriptions, Subtitles & Paragraph Copy */
-  --tone-3-copy: #94a3b8;                    /* Cool Slate Muted (text-slate-400) */
-  --tone-3-copy-dim: #64748b;                /* Dim Slate for minor timestamps & captions */
-  --tone-3-copy-bright: #cbd5e1;             /* Bright Slate for high-legibility paragraphs */
+  /* Tone 3: Reserved Strictly for Field Notes, Descriptions & Body Copy */
+  --tone-3-copy: #98a59c;                    /* Lichen Stone & Mountain Mist */
+  --tone-3-copy-dim: #657469;                /* Dark Stone for technical keys & captions */
+  --tone-3-copy-bright: #cbd5ce;             /* Bright Mist for lead paragraphs */
 
-  /* Tone 4: Primary Brand & Interactive Accent (CTA Buttons, Active States, Rings, Spotlight) */
-  --tone-4-primary: #6366f1;                 /* Electric Indigo */
-  --tone-4-violet: #8b5cf6;                  /* Vibrant Violet */
-  --tone-4-primary-hover: #4f46e5;           /* Deep Indigo Hover */
-  --tone-4-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  --tone-4-glow: rgba(99, 102, 241, 0.35);   /* CTA Button Soft Glow */
-  --tone-4-spotlight: rgba(99, 102, 241, 0.22); /* MagicCard Spotlight */
-  --tone-4-ring: rgba(99, 102, 241, 0.5);    /* Focus Ring */
+  /* Tone 4: Primary Brand & Interactive Field Accent */
+  --tone-4-primary: #e29d52;                 /* Alpine Amber & Savannah Sun */
+  --tone-4-secondary: #c27803;               /* Deep Ochre Gold */
+  --tone-4-primary-hover: #f5ab5f;           /* Sunlit Ridge Hover */
+  --tone-4-gradient: linear-gradient(135deg, #e29d52 0%, #c27803 100%);
+  --tone-4-glow: rgba(226, 157, 82, 0.35);   /* Warm Amber Sun Glow */
+  --tone-4-spotlight: rgba(226, 157, 82, 0.22); /* MagicCard Spotlight */
+  --tone-4-ring: rgba(226, 157, 82, 0.45);   /* Focus Ring */
 
-  /* Tone 5: Secondary Highlight & Data Accent (Badges, Status Indicators, KPI Trends, Border Beam) */
-  --tone-5-cyan: #06b6d4;                    /* Vibrant Cyan */
-  --tone-5-emerald: #10b981;                 /* Vibrant Emerald */
-  --tone-5-glow: rgba(6, 182, 212, 0.35);    /* Cyan Glow */
-  --tone-5-badge-bg: rgba(6, 182, 212, 0.1); /* Subtle Cyan Badge Tint */
+  /* Tone 5: Secondary Wilderness Highlight & Ecological Data Accent */
+  --tone-5-emerald: #10b981;                 /* Alpine Spruce & Glacial Emerald */
+  --tone-5-cyan: #2dd4bf;                    /* Mountain Glacial Turquoise */
+  --tone-5-glow: rgba(16, 185, 129, 0.4);    /* Emerald Status Pulse */
+  --tone-5-badge-bg: rgba(16, 185, 129, 0.12); /* Subtle Forest Tint */
 
   /* ========================================================================
-     3-TIER COMPLEMENTARY TYPOGRAPHY SYSTEM
+     3-TIER WILDLIFE & EXPEDITION TYPOGRAPHY SYSTEM
      ======================================================================== */
-  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-ui: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", "Plus Jakarta Sans", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Sizing & Radius (shadcn/ui style) */
+  /* Sizing & Radius */
   --radius-sm: 0.375rem;                     /* 6px */
   --radius: 0.5rem;                          /* 8px */
   --radius-lg: 0.75rem;                      /* 12px */
@@ -66,7 +64,7 @@
   --ease-smooth: cubic-bezier(0.2, 0.9, 0.3, 1);
 }
 
-/* --- 2. GLOBAL RESET & FOUNDATIONS --- */
+/* --- 2. GLOBAL RESET & WILDERNESS FOUNDATIONS --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -86,7 +84,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--tone-1-canvas);
   color: var(--tone-3-copy);
-  line-height: 1.65;
+  line-height: 1.7;
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
@@ -94,17 +92,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Linear-style subtle ambient grid & radial mesh */
+/* Atmospheric Mountain Mist & Wilderness Ambient Background */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent),
-    radial-gradient(ellipse 60% 40% at 90% 70%, rgba(6, 182, 212, 0.06), transparent),
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(226, 157, 82, 0.09), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 80%, rgba(16, 185, 129, 0.06), transparent),
+    radial-gradient(ellipse 50% 50% at 10% 40%, rgba(45, 212, 191, 0.04), transparent),
+    linear-gradient(to right, rgba(200, 215, 205, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(200, 215, 205, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 64px 64px, 64px 64px;
   pointer-events: none;
   z-index: 0;
 }
@@ -127,34 +126,34 @@ input, textarea, button {
 }
 
 /* --- 3. TYPOGRAPHY ENFORCEMENT RULES --- */
-/* Strictly enforce Tone 2 + Plus Jakarta Sans on all Headings */
+/* Strictly enforce Tone 2 + Cormorant Garamond on all Headings */
 h1, h2, h3, h4, .hero-title, .section-title, .about-heading, .contact-heading, .card-title, .dialog-title {
   font-family: var(--font-display);
   color: var(--tone-2-title);
-  letter-spacing: -0.035em;
-  font-weight: 700;
+  letter-spacing: -0.015em;
+  font-weight: 600;
 }
 
 /* Strictly enforce Tone 3 + Inter on all Subtitles, Descriptions, & Paragraphs */
 p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dialog-description, .contact-lead, .pillar-section p, .process-step-card p {
   font-family: var(--font-body);
   color: var(--tone-3-copy);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
-/* Technical / Mono Font enforcement */
+/* Technical / Field Exif Telemetry Font enforcement */
 .stat-num, .chip-count, .meta-tag, .badge, .project-number, .step-num, .spec-val, .spec-label, .subhead-lbl, #gitCommitHash, .ticker-content {
   font-family: var(--font-mono);
 }
 
-/* --- 4. SCROLL PROGRESS BAR & FILM GRAIN --- */
+/* --- 4. SCROLL PROGRESS BAR & NATURAL FILM GRAIN --- */
 .scroll-progress-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, var(--tone-4-primary), var(--tone-5-cyan), #ffffff);
+  background: linear-gradient(90deg, var(--tone-4-primary), var(--tone-5-emerald), #ffffff);
   z-index: 1000;
   transition: width 0.08s ease-out;
 }
@@ -164,7 +163,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.025;
+  opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
@@ -208,7 +207,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s var(--ease-out-expo);
 }
 
-/* Tone 4 Electric Indigo spotlight border illumination */
+/* Alpine Amber & Forest Emerald radial spotlight following cursor */
 .magic-card::before {
   content: "";
   position: absolute;
@@ -217,8 +216,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   padding: 1px;
   background: radial-gradient(
     450px circle at var(--mouse-x, -600px) var(--mouse-y, -600px),
-    rgba(99, 102, 241, 0.4),
-    rgba(6, 182, 212, 0.18) 32%,
+    rgba(226, 157, 82, 0.45),
+    rgba(16, 185, 129, 0.2) 32%,
     transparent 55%
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -230,7 +229,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   z-index: 2;
 }
 
-/* Tone 4 subtle surface ambient glow */
+/* Subtle warm ambient surface illumination */
 .magic-card::after {
   content: "";
   position: absolute;
@@ -238,7 +237,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   border-radius: inherit;
   background: radial-gradient(
     400px circle at var(--mouse-x, -600px) var(--mouse-y, -600px),
-    rgba(99, 102, 241, 0.08),
+    rgba(226, 157, 82, 0.08),
     transparent 50%
   );
   pointer-events: none;
@@ -253,7 +252,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .magic-card:hover {
-  border-color: rgba(99, 102, 241, 0.3);
+  border-color: rgba(226, 157, 82, 0.35);
 }
 
 /* --- 7. MAGIC UI: ANIMATED BORDER BEAM --- */
@@ -270,7 +269,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   z-index: 3;
 }
 
-/* Conic gradient rotating border beam blending Tone 4 (Electric Indigo) & Tone 5 (Cyan) */
+/* Conic gradient rotating border beam blending Tone 4 (Alpine Amber) & Tone 5 (Glacial Emerald) */
 .border-beam::after {
   content: "";
   position: absolute;
@@ -282,8 +281,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
     from 0deg at 50% 50%,
     transparent 0deg,
     transparent 280deg,
-    var(--tone-4-primary) 320deg,
-    var(--tone-5-cyan) 345deg,
+    var(--tone-4-primary) 325deg,
+    var(--tone-5-emerald) 345deg,
     #ffffff 360deg
   );
   animation: border-beam-spin 7.5s linear infinite;
@@ -299,17 +298,17 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* --- 8. SHADCN BUTTONS & BADGES --- */
+/* --- 8. BUTTONS & WILDERNESS BADGES --- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-family: var(--font-body);
+  font-family: var(--font-ui);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
-  padding: 0.625rem 1.15rem;
+  padding: 0.65rem 1.2rem;
   border-radius: var(--radius);
   border: 1px solid transparent;
   transition: all 0.2s var(--ease-smooth);
@@ -317,6 +316,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   user-select: none;
   cursor: pointer;
   position: relative;
+  letter-spacing: 0.01em;
 }
 
 .btn:active {
@@ -328,17 +328,18 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   box-shadow: 0 0 0 2px var(--tone-1-canvas), 0 0 0 4px var(--tone-4-ring);
 }
 
-/* Tone 4 Primary CTA Button */
+/* Tone 4 Alpine Amber CTA Button */
 .btn-primary {
   background: var(--tone-4-gradient);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.15);
+  color: #120e09;
+  border-color: rgba(255, 255, 255, 0.25);
   box-shadow: 0 4px 14px -2px var(--tone-4-glow);
+  font-weight: 700;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-  box-shadow: 0 6px 20px -2px rgba(99, 102, 241, 0.5);
+  background: linear-gradient(135deg, #f5ab5f 0%, #d97706 100%);
+  box-shadow: 0 6px 20px -2px rgba(226, 157, 82, 0.5);
   transform: translateY(-1px);
 }
 
@@ -346,16 +347,16 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   transform: scale(0.98);
 }
 
-/* Tone 1 Translucent Outline Button */
+/* Translucent Obsidian/Granite Outline Button */
 .btn-outline {
-  background-color: rgba(24, 24, 28, 0.5);
+  background-color: rgba(20, 30, 24, 0.5);
   border-color: var(--tone-1-border);
   color: var(--tone-2-title);
   backdrop-filter: blur(8px);
 }
 
 .btn-outline:hover {
-  background-color: rgba(99, 102, 241, 0.1);
+  background-color: rgba(226, 157, 82, 0.12);
   border-color: var(--tone-4-primary);
   color: #ffffff;
   transform: translateY(-1px);
@@ -372,8 +373,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .btn-secondary:hover {
-  background-color: #1e1e24;
-  border-color: #3f3f46;
+  background-color: #16221c;
+  border-color: #3f4f44;
 }
 
 .btn-ghost {
@@ -393,7 +394,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .btn-lg {
-  padding: 0.75rem 1.4rem;
+  padding: 0.75rem 1.45rem;
   font-size: 0.9375rem;
   border-radius: var(--radius);
 }
@@ -424,7 +425,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   stroke-width: 1.75;
 }
 
-/* Tone 5 Badges */
+/* Tone 5 Wilderness Badges */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -433,21 +434,21 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-size: 0.72rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.3rem 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--tone-1-border);
   background: var(--tone-5-badge-bg);
-  color: var(--tone-5-cyan);
+  color: var(--tone-5-emerald);
   backdrop-filter: blur(8px);
 }
 
 .badge-outline {
-  border-color: rgba(6, 182, 212, 0.25);
+  border-color: rgba(16, 185, 129, 0.25);
 }
 
 .badge-num {
-  color: var(--tone-5-cyan);
+  color: var(--tone-4-primary);
   font-weight: 600;
 }
 
@@ -456,7 +457,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   height: 6px;
   border-radius: 50%;
   background: var(--tone-5-emerald);
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
   animation: pulse-dot-anim 2s infinite ease-in-out;
 }
 
@@ -477,9 +478,9 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .site-header.elevated {
-  background-color: rgba(9, 9, 11, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background-color: rgba(7, 10, 8, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom-color: var(--tone-1-border);
 }
 
@@ -487,7 +488,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  height: 4.25rem;
+  height: 4.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -497,7 +498,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .brand-wordmark {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.75rem;
   color: var(--tone-2-title);
 }
 
@@ -505,49 +506,54 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
   background: var(--tone-1-surface);
   border: 1px solid var(--tone-1-border);
   border-radius: var(--radius);
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: -0.04em;
-  color: #fff;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--tone-4-primary);
   transition: border-color 0.2s, background 0.2s;
 }
 
 .brand-wordmark:hover .brand-monogram {
   border-color: var(--tone-4-primary);
-  background: rgba(99, 102, 241, 0.15);
+  background: rgba(226, 157, 82, 0.15);
 }
 
 .brand-dot {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--tone-5-cyan);
+  background: var(--tone-4-primary);
 }
 
 .brand-sub {
+  font-family: var(--font-ui);
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--tone-3-copy);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* Nav links */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.35rem;
 }
 
 .nav-item {
-  padding: 0.45rem 0.85rem;
-  font-size: 0.875rem;
-  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--tone-3-copy);
   border-radius: var(--radius);
   transition: color 0.15s, background 0.15s;
@@ -559,7 +565,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .nav-cta {
-  margin-left: 0.75rem;
+  margin-left: 0.85rem;
 }
 
 /* Mobile Hamburger Toggle */
@@ -573,7 +579,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   gap: 5px;
   border-radius: var(--radius);
   border: 1px solid var(--tone-1-border);
-  background: rgba(24, 24, 28, 0.6);
+  background: rgba(14, 20, 17, 0.6);
 }
 
 .menu-toggle .bar {
@@ -599,8 +605,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .mobile-drawer {
   position: fixed;
   inset: 0;
-  top: 4.25rem;
-  background: rgba(9, 9, 11, 0.96);
+  top: 4.5rem;
+  background: rgba(7, 10, 8, 0.97);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-top: 1px solid var(--tone-1-border);
@@ -667,12 +673,12 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .drawer-cta {
   background: var(--tone-4-gradient);
-  color: #ffffff;
+  color: #120e09;
+  font-weight: 700;
 }
 
 .drawer-cta:hover {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #f5ab5f 0%, #d97706 100%);
 }
 
 .drawer-footer {
@@ -695,7 +701,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .drawer-icon-link {
-  color: var(--tone-2-title);
+  color: var(--tone-4-primary);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -731,27 +737,26 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 6.2vw, 4.85rem);
-  font-weight: 800;
+  font-size: clamp(3.4rem, 6.5vw, 5.25rem);
+  font-weight: 600;
   line-height: 1.05;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   color: var(--tone-2-title);
   margin-bottom: 1.5rem;
 }
 
-/* Subtle linear gradient fill for hero emphasis */
 .hero-title .highlight-text {
   background: var(--tone-2-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: italic;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .hero-subtitle {
   font-size: 1.0625rem;
   color: var(--tone-3-copy);
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 2rem;
   max-width: 540px;
 }
@@ -785,7 +790,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .stat-pill {
   flex: 1;
   min-width: 140px;
-  padding: 0.85rem 1rem;
+  padding: 0.9rem 1.1rem;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -793,16 +798,16 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .stat-num {
   font-family: var(--font-mono);
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 700;
-  color: var(--tone-5-cyan);
+  color: var(--tone-4-primary);
   letter-spacing: -0.03em;
 }
 
 .stat-lbl {
   font-size: 0.75rem;
   color: var(--tone-3-copy);
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 /* Hero Visual Frame with Moments Switcher & Border Beam */
@@ -818,16 +823,16 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   border-radius: var(--radius-xl);
   padding: 0.75rem;
   overflow: hidden;
-  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.8);
 }
 
 .hero-image-container {
   position: relative;
   width: 100%;
-  height: 440px;
+  height: 450px;
   border-radius: calc(var(--radius-xl) - 4px);
   overflow: hidden;
-  background: #09090b;
+  background: #050806;
 }
 
 .hero-active-img {
@@ -846,18 +851,18 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .image-gradient-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.1) 0%, rgba(9, 9, 11, 0.75) 100%);
+  background: linear-gradient(180deg, rgba(7, 10, 8, 0.1) 0%, rgba(7, 10, 8, 0.78) 100%);
   pointer-events: none;
 }
 
-/* Floating Context Badges inside Hero Frame */
+/* Floating Field Context Badges */
 .floating-badge {
   position: absolute;
   display: flex;
   align-items: center;
   gap: 0.65rem;
   padding: 0.55rem 0.85rem;
-  background: rgba(9, 9, 11, 0.85);
+  background: rgba(7, 10, 8, 0.88);
   border: 1px solid var(--tone-1-border);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -869,14 +874,15 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .floating-badge strong {
   display: block;
+  font-family: var(--font-ui);
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--tone-2-title);
 }
 
 .floating-badge span {
-  color: var(--tone-3-copy);
   font-size: 0.7rem;
+  color: var(--tone-3-copy);
 }
 
 .badge-top {
@@ -893,7 +899,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .image-switcher-strip {
   margin-top: 0.75rem;
   padding: 0.5rem;
-  background: rgba(18, 18, 22, 0.75);
+  background: rgba(14, 20, 17, 0.8);
   border: 1px solid var(--tone-1-border);
   border-radius: var(--radius);
   display: flex;
@@ -908,7 +914,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-size: 0.6875rem;
   font-weight: 600;
   color: var(--tone-3-copy);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   padding-left: 0.5rem;
 }
 
@@ -920,8 +926,9 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .switch-btn {
   padding: 0.35rem 0.65rem;
+  font-family: var(--font-ui);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: calc(var(--radius) - 2px);
   border: 1px solid transparent;
   color: var(--tone-3-copy);
@@ -935,8 +942,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .switch-btn.active {
   background: var(--tone-4-gradient);
-  color: #ffffff;
-  font-weight: 600;
+  color: #120e09;
+  font-weight: 700;
 }
 
 .hero-photo-caption {
@@ -956,13 +963,13 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   margin-top: 3.5rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--tone-3-copy);
   transition: color 0.2s;
 }
 
 .scroll-cue:hover {
-  color: var(--tone-2-title);
+  color: var(--tone-4-primary);
 }
 
 .scroll-mouse {
@@ -978,7 +985,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .mouse-wheel {
   width: 3px;
   height: 6px;
-  background: var(--tone-5-cyan);
+  background: var(--tone-4-primary);
   border-radius: 2px;
   animation: mouse-scroll 1.8s infinite ease-in-out;
 }
@@ -991,11 +998,11 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 /* --- 11. MARQUEE STATEMENT TICKER --- */
 .ticker-banner {
   width: 100%;
-  background: rgba(18, 18, 22, 0.85);
+  background: rgba(14, 20, 17, 0.88);
   border-top: 1px solid var(--tone-1-border);
   border-bottom: 1px solid var(--tone-1-border);
   overflow: hidden;
-  padding: 0.9rem 0;
+  padding: 0.95rem 0;
   position: relative;
   z-index: 2;
 }
@@ -1003,7 +1010,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .ticker-track {
   display: flex;
   width: fit-content;
-  animation: marquee-infinite 28s linear infinite;
+  animation: marquee-infinite 30s linear infinite;
 }
 
 .ticker-track:hover {
@@ -1019,12 +1026,12 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--tone-3-copy);
 }
 
 .ticker-star {
-  color: var(--tone-5-cyan);
+  color: var(--tone-4-primary);
   font-size: 0.85rem;
 }
 
@@ -1058,16 +1065,16 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.015em;
   color: var(--tone-2-title);
 }
 
 .section-title .highlight-text {
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
   background: var(--tone-2-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1075,9 +1082,9 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .section-lead {
   max-width: 480px;
-  font-size: 0.9375rem;
+  font-size: 0.95rem;
   color: var(--tone-3-copy);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 /* --- 13. WORK CATEGORY FILTER BAR --- */
@@ -1093,12 +1100,13 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.45rem 0.9rem;
+  padding: 0.45rem 0.95rem;
+  font-family: var(--font-ui);
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: var(--radius-full);
   border: 1px solid var(--tone-1-border);
-  background: rgba(24, 24, 28, 0.6);
+  background: rgba(20, 30, 24, 0.6);
   color: var(--tone-3-copy);
   backdrop-filter: blur(8px);
   transition: all 0.2s ease;
@@ -1106,16 +1114,17 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .filter-chip:hover {
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(226, 157, 82, 0.12);
   color: var(--tone-2-title);
-  border-color: rgba(99, 102, 241, 0.4);
+  border-color: rgba(226, 157, 82, 0.4);
 }
 
 .filter-chip.active {
   background: var(--tone-4-gradient);
-  color: #ffffff;
+  color: #120e09;
   border-color: transparent;
-  box-shadow: 0 4px 12px -2px var(--tone-4-glow);
+  font-weight: 700;
+  box-shadow: 0 4px 14px -2px var(--tone-4-glow);
 }
 
 .chip-icon {
@@ -1128,15 +1137,11 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-size: 0.7rem;
   padding: 0.1rem 0.4rem;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.18);
   color: inherit;
 }
 
-.filter-chip.active .chip-count {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-/* --- 14. PROJECTS GRID --- */
+/* --- 14. PROJECTS GALLERY GRID --- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1165,7 +1170,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   width: 100%;
   height: 280px;
   overflow: hidden;
-  background: #09090b;
+  background: #050806;
 }
 
 .project-featured .card-media-wrapper {
@@ -1188,7 +1193,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.1) 0%, rgba(9, 9, 11, 0.8) 100%);
+  background: linear-gradient(180deg, rgba(7, 10, 8, 0.1) 0%, rgba(7, 10, 8, 0.82) 100%);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -1202,9 +1207,9 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   letter-spacing: 0.05em;
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-full);
-  background: rgba(9, 9, 11, 0.85);
-  border: 1px solid rgba(6, 182, 212, 0.35);
-  color: var(--tone-5-cyan);
+  background: rgba(7, 10, 8, 0.85);
+  border: 1px solid rgba(226, 157, 82, 0.35);
+  color: var(--tone-4-primary);
   backdrop-filter: blur(8px);
 }
 
@@ -1212,8 +1217,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
-  color: #18181b;
+  background: rgba(245, 242, 235, 0.9);
+  color: #120e09;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1232,7 +1237,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-family: var(--font-mono);
   font-size: 0.7rem;
   padding: 0.25rem 0.6rem;
-  background: rgba(9, 9, 11, 0.8);
+  background: rgba(7, 10, 8, 0.85);
   border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-full);
   color: var(--tone-3-copy-bright);
@@ -1258,8 +1263,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--tone-5-cyan);
+  letter-spacing: 0.08em;
+  color: var(--tone-4-primary);
 }
 
 .project-number {
@@ -1270,10 +1275,10 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .card-title {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   font-weight: 600;
   line-height: 1.25;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.015em;
   margin-bottom: 0.65rem;
   color: var(--tone-2-title);
 }
@@ -1281,7 +1286,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .card-summary {
   font-size: 0.875rem;
   color: var(--tone-3-copy);
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 1.25rem;
 }
 
@@ -1306,7 +1311,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   padding: 0.2rem 0.5rem;
-  background: rgba(24, 24, 28, 0.7);
+  background: rgba(20, 30, 24, 0.7);
   border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-full);
   color: var(--tone-3-copy);
@@ -1316,8 +1321,9 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  font-family: var(--font-ui);
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--tone-2-title);
   padding: 0.35rem 0.65rem;
   border-radius: var(--radius);
@@ -1327,7 +1333,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .project-card:hover .view-details-btn {
-  background: rgba(99, 102, 241, 0.15);
+  background: rgba(226, 157, 82, 0.15);
   border-color: var(--tone-4-primary);
   color: #fff;
 }
@@ -1350,7 +1356,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--tone-1-border);
-  background: #09090b;
+  background: #070a08;
 }
 
 .primary-layer {
@@ -1382,7 +1388,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   align-items: center;
   gap: 0.65rem;
   padding: 0.55rem 0.85rem;
-  background: rgba(9, 9, 11, 0.88);
+  background: rgba(7, 10, 8, 0.88);
   border: 1px solid var(--tone-1-border);
   backdrop-filter: blur(12px);
   border-radius: var(--radius);
@@ -1397,6 +1403,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .about-image-badge strong {
   display: block;
+  font-family: var(--font-ui);
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--tone-2-title);
@@ -1421,24 +1428,24 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .about-heading {
-  font-size: clamp(2rem, 3.5vw, 2.6rem);
-  font-weight: 700;
+  font-size: clamp(2.25rem, 3.8vw, 3rem);
+  font-weight: 600;
   line-height: 1.15;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.015em;
   margin: 1rem 0 1.25rem;
 }
 
 .about-lead {
   font-size: 1rem;
   color: var(--tone-3-copy-bright);
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 1rem;
 }
 
 .about-text {
   font-size: 0.9375rem;
   color: var(--tone-3-copy);
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 2rem;
 }
 
@@ -1454,15 +1461,15 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.1rem;
 }
 
 .value-icon {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: var(--radius);
-  background: rgba(99, 102, 241, 0.12);
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  background: rgba(226, 157, 82, 0.12);
+  border: 1px solid rgba(226, 157, 82, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1471,7 +1478,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .value-item h4 {
-  font-family: var(--font-display);
+  font-family: var(--font-ui);
   font-size: 0.9375rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
@@ -1481,7 +1488,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .value-item p {
   font-size: 0.8125rem;
   color: var(--tone-3-copy);
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .about-actions {
@@ -1508,8 +1515,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   width: 2.5rem;
   height: 2.5rem;
   border-radius: var(--radius);
-  background: rgba(99, 102, 241, 0.12);
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  background: rgba(226, 157, 82, 0.12);
+  border: 1px solid rgba(226, 157, 82, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1519,9 +1526,9 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .pillar-card h3 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   margin-bottom: 1.25rem;
   color: var(--tone-2-title);
 }
@@ -1539,22 +1546,22 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   display: block;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  color: var(--tone-5-cyan);
+  color: var(--tone-4-primary);
   margin-bottom: 0.35rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .pillar-section p {
   font-size: 0.85rem;
   color: var(--tone-3-copy);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .pillar-section p strong {
   color: var(--tone-2-title-muted);
 }
 
-/* --- 17. CREATIVE PROCESS --- */
+/* --- 17. EXPEDITION WORKFLOW --- */
 .process-banner-box {
   padding: 1.75rem 2rem;
   background: var(--tone-1-surface-glass);
@@ -1592,7 +1599,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .process-step-card h4 {
-  font-family: var(--font-display);
+  font-family: var(--font-ui);
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -1605,7 +1612,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   line-height: 1.6;
 }
 
-/* --- 18. CONTACT SECTION & SHADCN FORM --- */
+/* --- 18. CONTACT SECTION & COMMISSION FORM --- */
 .contact-card-box {
   background: var(--tone-1-surface-glass);
   border: 1px solid var(--tone-1-border);
@@ -1620,10 +1627,10 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .contact-heading {
-  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
-  font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 3.6rem);
+  font-weight: 600;
   line-height: 1.1;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin: 1rem 0 1.25rem;
 }
 
@@ -1631,7 +1638,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   max-width: 720px;
   font-size: 0.95rem;
   color: var(--tone-3-copy);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .contact-columns {
@@ -1641,7 +1648,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   align-items: flex-start;
 }
 
-/* Modern shadcn Form */
+/* Clean Form */
 .shadcn-form {
   display: flex;
   flex-direction: column;
@@ -1659,7 +1666,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--tone-3-copy);
 }
 
@@ -1680,7 +1687,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .shadcn-input, .shadcn-textarea {
   width: 100%;
-  background: rgba(18, 18, 22, 0.7);
+  background: rgba(14, 20, 17, 0.7);
   border: 1px solid var(--tone-1-border);
   border-radius: var(--radius);
   padding: 0.65rem 0.85rem 0.65rem 2.4rem;
@@ -1716,7 +1723,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--tone-3-copy);
 }
 
@@ -1728,26 +1735,27 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .choice-chip {
   padding: 0.4rem 0.75rem;
+  font-family: var(--font-ui);
   font-size: 0.78125rem;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: var(--radius-full);
   border: 1px solid var(--tone-1-border);
-  background: rgba(24, 24, 28, 0.6);
+  background: rgba(20, 30, 24, 0.6);
   color: var(--tone-3-copy);
   transition: all 0.18s;
   cursor: pointer;
 }
 
 .choice-chip:hover {
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(226, 157, 82, 0.12);
   color: var(--tone-2-title);
 }
 
 .choice-chip.active {
   background: var(--tone-4-gradient);
-  color: #ffffff;
+  color: #120e09;
   border-color: transparent;
-  font-weight: 600;
+  font-weight: 700;
   box-shadow: 0 2px 8px -1px var(--tone-4-glow);
 }
 
@@ -1765,8 +1773,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   display: none;
   width: 1rem;
   height: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #ffffff;
+  border: 2px solid rgba(18, 14, 9, 0.3);
+  border-top-color: #120e09;
   border-radius: 50%;
   animation: spin 0.65s linear infinite;
 }
@@ -1801,8 +1809,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   width: 2.25rem;
   height: 2.25rem;
   border-radius: var(--radius);
-  background: rgba(99, 102, 241, 0.12);
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  background: rgba(226, 157, 82, 0.12);
+  border: 1px solid rgba(226, 157, 82, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1820,7 +1828,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   color: var(--tone-3-copy);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 .direct-val {
@@ -1837,14 +1845,14 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .direct-card:hover .direct-action-icon {
-  color: var(--tone-5-cyan);
+  color: var(--tone-4-primary);
   transform: translateX(2px);
 }
 
 /* --- 19. FOOTER --- */
 .site-footer {
   border-top: 1px solid var(--tone-1-border);
-  background: rgba(9, 9, 11, 0.95);
+  background: rgba(7, 10, 8, 0.95);
   position: relative;
   z-index: 2;
   padding: 3rem 0;
@@ -1877,7 +1885,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--tone-3-copy);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .footer-build-tag {
@@ -1891,7 +1899,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   height: 6px;
   border-radius: 50%;
   background: var(--tone-5-emerald);
-  box-shadow: 0 0 6px rgba(16, 185, 129, 0.7);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.8);
 }
 
 .build-lbl {
@@ -1915,7 +1923,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .commit-pill:hover {
-  background: rgba(99, 102, 241, 0.15);
+  background: rgba(226, 157, 82, 0.15);
   border-color: var(--tone-4-primary);
   color: #fff;
 }
@@ -1923,7 +1931,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .commit-icon {
   width: 0.85rem;
   height: 0.85rem;
-  color: var(--tone-5-cyan);
+  color: var(--tone-4-primary);
 }
 
 .footer-links {
@@ -1933,6 +1941,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .footer-link {
+  font-family: var(--font-ui);
   font-size: 0.8125rem;
   color: var(--tone-3-copy);
   transition: color 0.15s;
@@ -1951,13 +1960,13 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   padding: 0.45rem 0.85rem;
   border: 1px solid var(--tone-1-border);
   border-radius: var(--radius);
-  background: rgba(24, 24, 28, 0.5);
+  background: rgba(20, 30, 24, 0.5);
   color: var(--tone-3-copy);
   transition: all 0.2s;
 }
 
 .back-to-top-btn:hover {
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(226, 157, 82, 0.12);
   border-color: var(--tone-4-primary);
   color: var(--tone-2-title);
 }
@@ -1975,7 +1984,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   height: 3.25rem;
   border-radius: 50%;
   background: var(--tone-4-gradient);
-  color: #ffffff;
+  color: #120e09;
   box-shadow: 0 10px 25px -5px var(--tone-4-glow);
   display: flex;
   align-items: center;
@@ -1985,7 +1994,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .fab-main:hover {
   transform: scale(1.06);
-  box-shadow: 0 12px 30px -4px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 12px 30px -4px rgba(226, 157, 82, 0.5);
 }
 
 .fab-icon-close {
@@ -2023,7 +2032,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  background: rgba(18, 18, 22, 0.95);
+  background: rgba(14, 20, 17, 0.95);
   border: 1px solid var(--tone-1-border);
   backdrop-filter: blur(12px);
   color: var(--tone-2-title);
@@ -2036,7 +2045,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .fab-menu-item:hover {
-  background: rgba(99, 102, 241, 0.2);
+  background: rgba(226, 157, 82, 0.2);
   border-color: var(--tone-4-primary);
   transform: scale(1.08);
 }
@@ -2046,14 +2055,14 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   right: 3.5rem;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(9, 9, 11, 0.95);
+  background: rgba(7, 10, 8, 0.95);
   border: 1px solid var(--tone-1-border);
   padding: 0.3rem 0.65rem;
   border-radius: var(--radius);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   white-space: nowrap;
-  color: #fafafa;
+  color: #f5f2eb;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s;
@@ -2063,11 +2072,11 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   opacity: 1;
 }
 
-/* --- 21. MODAL DIALOGS (PROJECT & SHOWREEL) --- */
+/* --- 21. MODAL DIALOGS (PROJECT CASE STUDY & SHOWREEL) --- */
 .dialog-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 90;
@@ -2086,14 +2095,14 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .dialog-card {
-  background: #0d0d11;
+  background: #090e0b;
   border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-xl);
   width: 100%;
   max-width: 760px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95);
   transform: scale(0.96) translateY(10px);
   transition: transform 0.25s var(--ease-out-expo);
   position: relative;
@@ -2110,7 +2119,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  background: rgba(9, 9, 11, 0.85);
+  background: rgba(7, 10, 8, 0.85);
   border: 1px solid var(--tone-1-border);
   color: var(--tone-2-title);
   display: flex;
@@ -2121,7 +2130,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .dialog-close-btn:hover {
-  background: rgba(99, 102, 241, 0.2);
+  background: rgba(226, 157, 82, 0.2);
   border-color: var(--tone-4-primary);
 }
 
@@ -2143,7 +2152,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .dialog-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.2) 0%, #0d0d11 100%);
+  background: linear-gradient(180deg, rgba(7, 10, 8, 0.2) 0%, #090e0b 100%);
 }
 
 .dialog-floating-pill {
@@ -2153,10 +2162,10 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-family: var(--font-mono);
   font-size: 0.72rem;
   padding: 0.3rem 0.75rem;
-  background: rgba(9, 9, 11, 0.85);
-  border: 1px solid rgba(6, 182, 212, 0.4);
+  background: rgba(7, 10, 8, 0.85);
+  border: 1px solid rgba(226, 157, 82, 0.4);
   border-radius: var(--radius-full);
-  color: var(--tone-5-cyan);
+  color: var(--tone-4-primary);
 }
 
 .dialog-body {
@@ -2174,7 +2183,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--tone-5-cyan);
+  color: var(--tone-4-primary);
 }
 
 .dialog-year {
@@ -2185,10 +2194,10 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .dialog-title {
   font-family: var(--font-display);
-  font-size: 1.65rem;
-  font-weight: 700;
+  font-size: 1.85rem;
+  font-weight: 600;
   line-height: 1.2;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.015em;
   margin-bottom: 0.35rem;
   color: var(--tone-2-title);
 }
@@ -2202,7 +2211,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .dialog-description {
   font-size: 0.9375rem;
   color: var(--tone-3-copy-bright);
-  line-height: 1.65;
+  line-height: 1.7;
   margin-bottom: 1.75rem;
 }
 
@@ -2227,7 +2236,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   color: var(--tone-3-copy);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 .spec-val {
@@ -2243,7 +2252,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   gap: 0.85rem;
 }
 
-/* Showreel Modal Specifics */
+/* Showreel Modal */
 .reel-cinematic-banner {
   position: relative;
   width: 100%;
@@ -2262,7 +2271,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .reel-banner-scrim {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, transparent 20%, #0d0d11 90%);
+  background: radial-gradient(circle at center, transparent 20%, #090e0b 90%);
 }
 
 .reel-center-content {
@@ -2281,7 +2290,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   height: 4rem;
   border-radius: 50%;
   background: var(--tone-4-gradient);
-  color: #ffffff;
+  color: #120e09;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2297,8 +2306,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .reel-center-content h3 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 600;
   letter-spacing: 0.04em;
   margin-bottom: 0.35rem;
   color: var(--tone-2-title);
@@ -2331,7 +2340,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .reel-note {
   font-size: 0.875rem;
   color: var(--tone-3-copy-bright);
-  line-height: 1.65;
+  line-height: 1.7;
   margin-bottom: 1.5rem;
 }
 
@@ -2340,17 +2349,17 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   justify-content: flex-end;
 }
 
-/* --- 22. SHADCN / SONNER TOAST NOTIFICATION --- */
+/* --- 22. SONNER TOAST NOTIFICATION --- */
 .toast-sonner {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 100;
-  background: rgba(18, 18, 24, 0.95);
+  background: rgba(14, 20, 17, 0.96);
   border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-lg);
   padding: 0.85rem 1.15rem;
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   display: flex;
@@ -2372,7 +2381,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .toast-icon {
   width: 1.25rem;
   height: 1.25rem;
-  color: var(--tone-5-cyan);
+  color: var(--tone-4-primary);
   flex-shrink: 0;
 }
 
@@ -2556,8 +2565,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2.6rem;
-    letter-spacing: -0.04em;
+    font-size: 2.8rem;
+    letter-spacing: -0.02em;
   }
 
   .hero-image-container {

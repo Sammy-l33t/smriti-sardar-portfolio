@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#09090b">
-  <meta name="description" content="Smriti Sardar — Filmmaker, Cinematographer & Senior Video Editor. Shaping stories of people, places, and purpose across Himalayan expeditions, documentaries, and branded films.">
-  <title>Smriti Sardar — Filmmaker, Cinematographer & Senior Video Editor</title>
+  <meta name="theme-color" content="#070a08">
+  <meta name="description" content="Smriti Sardar — Wildlife & Himalayan Expedition Cinematographer, Senior Video Editor & Licensed Drone Pilot. Documenting high-altitude wildlife, remote mountain cultures, and human resilience over 6,000 meters.">
+  <title>Smriti Sardar — Wildlife & Himalayan Expedition Cinematographer, Senior Editor</title>
 
-  <!-- 3-Tier Google Fonts: Plus Jakarta Sans (Display), Inter (Body), JetBrains Mono (Technical) -->
+  <!-- 3-Tier Google Fonts: Cormorant Garamond (Editorial Display), Plus Jakarta Sans (UI), Inter (Body), JetBrains Mono (Technical) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN with Local Fallback & 5-Tone Architecture Config -->
+  <!-- Tailwind CSS CDN with Local Fallback & Wilderness Custom Config -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     if (!window.tailwind) {
@@ -26,27 +26,28 @@
         extend: {
           colors: {
             tone1: {
-              canvas: '#09090b',
-              surface: '#121216',
-              border: '#27272a'
+              canvas: '#070a08',
+              surface: '#0e1411',
+              border: '#1d2b24'
             },
             tone2: {
-              title: '#f8fafc'
+              title: '#f5f2eb'
             },
             tone3: {
-              copy: '#94a3b8'
+              copy: '#98a59c'
             },
             tone4: {
-              indigo: '#6366f1',
-              violet: '#8b5cf6'
+              amber: '#e29d52',
+              ochre: '#c27803'
             },
             tone5: {
-              cyan: '#06b6d4',
-              emerald: '#10b981'
+              emerald: '#10b981',
+              cyan: '#2dd4bf'
             }
           },
           fontFamily: {
-            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            ui: ['"Plus Jakarta Sans"', 'sans-serif'],
             sans: ['"Inter"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace']
           }
@@ -65,11 +66,11 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-[#09090b] text-[#94a3b8] font-sans antialiased selection:bg-indigo-500/30 selection:text-white">
+<body class="bg-[#070a08] text-[#98a59c] font-sans antialiased selection:bg-[#e29d52]/30 selection:text-white">
   <!-- Scroll Progress Indicator -->
   <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
 
-  <!-- Ambient Film Grain -->
+  <!-- Natural Film Grain -->
   <div class="film-grain" aria-hidden="true"></div>
 
   <!-- Site Header (Navbar) -->
@@ -78,17 +79,17 @@
       <a class="brand-wordmark" href="#home" aria-label="Smriti Sardar Homepage">
         <span class="brand-monogram">SS</span>
         <span class="brand-dot"></span>
-        <span class="brand-sub">Filmmaker & Editor</span>
+        <span class="brand-sub">Expedition & Wildlife Filmmaker</span>
       </a>
 
       <!-- Desktop Navigation -->
       <nav class="nav-links" aria-label="Main Navigation">
-        <a href="#work" class="nav-item">Filmography</a>
-        <a href="#about" class="nav-item">About</a>
-        <a href="#background" class="nav-item">Philosophy & Background</a>
-        <a href="#process" class="nav-item">Process</a>
+        <a href="#work" class="nav-item">Exhibitions</a>
+        <a href="#about" class="nav-item">The Field</a>
+        <a href="#background" class="nav-item">Philosophy</a>
+        <a href="#process" class="nav-item">Workflow</a>
         <a href="#contact" class="btn btn-primary btn-sm nav-cta">
-          <span>Let’s Talk</span>
+          <span>Commission Shoot</span>
           <i data-lucide="arrow-up-right" class="icon-sm"></i>
         </a>
       </nav>
@@ -105,29 +106,29 @@
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="mobile-drawer-content">
         <div class="drawer-header">
-          <span class="drawer-title">Navigation</span>
-          <span class="badge badge-outline"><span class="pulse-dot"></span> Available for Projects</span>
+          <span class="drawer-title">Expedition Index</span>
+          <span class="badge badge-outline"><span class="pulse-dot"></span> Available for Expeditions</span>
         </div>
         <nav class="drawer-nav">
           <a href="#work" class="drawer-link">
             <i data-lucide="film" class="icon-md"></i>
-            <span>Filmography</span>
+            <span>Exhibitions & Filmography</span>
           </a>
           <a href="#about" class="drawer-link">
             <i data-lucide="user" class="icon-md"></i>
-            <span>About Smriti</span>
+            <span>In The Field</span>
           </a>
           <a href="#background" class="drawer-link">
             <i data-lucide="sparkles" class="icon-md"></i>
-            <span>Philosophy & Background</span>
+            <span>Philosophy & Geography</span>
           </a>
           <a href="#process" class="drawer-link">
             <i data-lucide="video" class="icon-md"></i>
-            <span>Creative Process</span>
+            <span>Field Workflow</span>
           </a>
           <a href="#contact" class="drawer-link drawer-cta">
             <i data-lucide="send" class="icon-md"></i>
-            <span>Roll Your Vision</span>
+            <span>Commission Shoot</span>
           </a>
         </nav>
         <div class="drawer-footer">
@@ -151,26 +152,26 @@
         <div class="hero-copy animate-on-scroll">
           <div class="badge badge-outline status-chip">
             <span class="badge-pulse-dot"></span>
-            <span>FILMMAKER · CINEMATOGRAPHER · SENIOR VIDEO EDITOR</span>
+            <span>HIMALAYAN WILDLIFE · EXPEDITION CINEMATOGRAPHY · 6,000M+ RIGS</span>
           </div>
 
           <h1 class="hero-title">
-            More than<br>
-            an <span class="highlight-text">editor.</span>
+            Shaped by<br>
+            the <span class="highlight-text">untamed wild.</span>
           </h1>
 
           <p class="hero-subtitle">
-            A filmmaker shaped by moments and emotion. Driven by stories of people, places, and purpose — from filming over 6,000 meters in the Himalayas to high-tension endurance races, documentaries, and commercial productions.
+            A filmmaker and naturalist shaped by moments of raw wilderness and deep emotion. Driven by stories of untamed habitats, people, and mountain purpose — from tracking alpine wildlife and enduring sub-zero summits above 6,000 meters in the Himalayas to high-tension endurance narratives and cinematic productions.
           </p>
 
           <div class="hero-actions">
             <a href="#work" class="btn btn-primary btn-lg">
-              <span>View Filmography</span>
+              <span>Explore Filmography</span>
               <i data-lucide="arrow-down" class="icon-sm icon-animated"></i>
             </a>
             <button class="btn btn-outline btn-lg" id="openReelBtn" aria-label="Watch Filmmaking Reel">
               <i data-lucide="play" class="icon-sm"></i>
-              <span>Watch Reel 2026</span>
+              <span>Expedition Reel 2026</span>
             </button>
           </div>
 
@@ -178,15 +179,15 @@
           <div class="hero-stats-strip">
             <div class="stat-pill magic-card">
               <span class="stat-num ticker-target" data-target="100" data-suffix="+">100+</span>
-              <span class="stat-lbl">Videos Edited Across India</span>
+              <span class="stat-lbl">Field & Wildlife Edits Across India</span>
             </div>
             <div class="stat-pill magic-card">
               <span class="stat-num ticker-target" data-target="6000" data-suffix="m+" data-comma="true">6,000m+</span>
-              <span class="stat-lbl">High-Altitude Himalayan Shoots</span>
+              <span class="stat-lbl">Sub-Zero Himalayan Altitude Shoots</span>
             </div>
             <div class="stat-pill magic-card">
               <span class="stat-num ticker-target" data-target="5" data-display="4+1 Yrs">4+1 Yrs</span>
-              <span class="stat-lbl">Freelance + Senior Editor</span>
+              <span class="stat-lbl">Freelance + Senior Field Editor</span>
             </div>
           </div>
         </div>
@@ -199,25 +200,25 @@
             <div class="hero-image-container">
               <img id="heroMainImage" 
                    src="assets/images/hero-portrait.jpg" 
-                   alt="Smriti Sardar — Filmmaker & Cinematographer in the Himalayas" 
+                   alt="Smriti Sardar — Wildlife & Expedition Cinematographer in the Himalayas" 
                    class="hero-active-img"
                    loading="eager">
               <div class="image-gradient-overlay"></div>
               
               <!-- Floating Context Badges -->
               <div class="floating-badge badge-top">
-                <i data-lucide="plane" class="icon-md text-cyan-400"></i>
+                <i data-lucide="plane" class="icon-md text-amber-400"></i>
                 <div>
                   <strong>Licensed Drone Pilot</strong>
-                  <span>Cinematic Aerial Perspectives</span>
+                  <span>Aerial Topography & Wildlife Corridors</span>
                 </div>
               </div>
 
               <div class="floating-badge badge-bottom">
-                <i data-lucide="mountain" class="icon-md text-indigo-400"></i>
+                <i data-lucide="mountain" class="icon-md text-emerald-400"></i>
                 <div>
                   <strong>6,000m+ Expeditions</strong>
-                  <span>Himalayan Mountain Documentaries</span>
+                  <span>Himalayan Wildlife & Summit Documentaries</span>
                 </div>
               </div>
             </div>
@@ -226,21 +227,21 @@
             <div class="image-switcher-strip">
               <span class="switcher-label">EXPLORE MOMENTS:</span>
               <div class="switcher-options">
-                <button class="switch-btn active" data-img="assets/images/hero-portrait.jpg" data-caption="Himalayan Sanctuary · Moments & Emotion" aria-label="Switch to portrait in misty mountains">
+                <button class="switch-btn active" data-img="assets/images/hero-portrait.jpg" data-caption="Himalayan Sanctuary · Wildlife Dawn & Cloud Inversions" aria-label="Switch to portrait in misty mountains">
                   <span>Misty Peaks</span>
                 </button>
-                <button class="switch-btn" data-img="assets/images/field-filmmaker.jpg" data-caption="Mount Tharang II Expedition · Sub-Zero Rig at 14,000ft+" aria-label="Switch to snow tripod photo">
+                <button class="switch-btn" data-img="assets/images/field-filmmaker.jpg" data-caption="Mount Tharang II · Sub-Zero 14,000ft+ Field Rig" aria-label="Switch to snow tripod photo">
                   <span>Snow Rig</span>
                 </button>
                 <button class="switch-btn" data-img="assets/images/canyon-adventure.jpg" data-caption="Spiti Valley Remote Canyon · Sun & Earth Palettes" aria-label="Switch to canyon photo">
                   <span>Canyon Sun</span>
                 </button>
-                <button class="switch-btn" data-img="assets/images/expedition-portrait.jpg" data-caption="Endurance Trailhead Ready · Telephoto Setup" aria-label="Switch to portrait with camera">
+                <button class="switch-btn" data-img="assets/images/expedition-portrait.jpg" data-caption="Alpine Trailhead Ready · 600mm Telephoto Rig" aria-label="Switch to portrait with camera">
                   <span>On Trail</span>
                 </button>
               </div>
             </div>
-            <p id="heroPhotoCaption" class="hero-photo-caption">Himalayan Sanctuary · Moments & Emotion</p>
+            <p id="heroPhotoCaption" class="hero-photo-caption">Himalayan Sanctuary · Wildlife Dawn & Cloud Inversions</p>
           </div>
         </div>
       </div>
@@ -260,13 +261,15 @@
           <span class="ticker-star">✳</span>
           <span>6,000M HIMALAYAN EXPEDITIONS</span>
           <span class="ticker-star">✳</span>
+          <span>ALPINE WILDLIFE HABITATS</span>
+          <span class="ticker-star">✳</span>
           <span>LICENSED DRONE PILOT</span>
           <span class="ticker-star">✳</span>
           <span>SENIOR EDITOR AT THE UNSCRIPTED INDIA</span>
           <span class="ticker-star">✳</span>
-          <span>AUTHENTIC & EMOTIONAL STORYTELLING</span>
+          <span>AUTHENTIC MOMENTS & EMOTION</span>
           <span class="ticker-star">✳</span>
-          <span>END-TO-END PRODUCTION</span>
+          <span>SUB-ZERO CINEMA OPTICS</span>
           <span class="ticker-star">✳</span>
         </div>
         <div class="ticker-content" aria-hidden="true">
@@ -274,13 +277,15 @@
           <span class="ticker-star">✳</span>
           <span>6,000M HIMALAYAN EXPEDITIONS</span>
           <span class="ticker-star">✳</span>
+          <span>ALPINE WILDLIFE HABITATS</span>
+          <span class="ticker-star">✳</span>
           <span>LICENSED DRONE PILOT</span>
           <span class="ticker-star">✳</span>
           <span>SENIOR EDITOR AT THE UNSCRIPTED INDIA</span>
           <span class="ticker-star">✳</span>
-          <span>AUTHENTIC & EMOTIONAL STORYTELLING</span>
+          <span>AUTHENTIC MOMENTS & EMOTION</span>
           <span class="ticker-star">✳</span>
-          <span>END-TO-END PRODUCTION</span>
+          <span>SUB-ZERO CINEMA OPTICS</span>
           <span class="ticker-star">✳</span>
         </div>
       </div>
@@ -290,11 +295,11 @@
     <section class="section-container" id="work">
       <div class="section-header animate-on-scroll">
         <div class="header-left">
-          <div class="badge badge-outline"><span class="badge-num">01</span> SELECTED FILMOGRAPHY</div>
-          <h2 class="section-title">Films with <span class="highlight-text">moments and emotion.</span></h2>
+          <div class="badge badge-outline"><span class="badge-num">01</span> CURATED FILMOGRAPHY</div>
+          <h2 class="section-title">Films carved in <span class="highlight-text">stone and wild light.</span></h2>
         </div>
         <p class="section-lead">
-          A curated collection of documentaries, mountaineering expeditions, endurance races, and visual stories created across outdoor, sports, and branded productions.
+          A curated exhibition of real-life mountaineering documentaries, wildlife habitat studies, high-altitude alpine expeditions, and endurance stories.
         </p>
       </div>
 
@@ -302,22 +307,22 @@
       <div class="work-filter-bar animate-on-scroll">
         <button class="filter-chip active" data-filter="all">
           <i data-lucide="layout-grid" class="chip-icon"></i>
-          <span>All Films</span>
+          <span>All Works</span>
           <span class="chip-count">4</span>
         </button>
         <button class="filter-chip" data-filter="mountaineering">
           <i data-lucide="mountain-snow" class="chip-icon"></i>
-          <span>Mountaineering & Expeditions</span>
+          <span>Himalayan Expeditions</span>
           <span class="chip-count">2</span>
         </button>
         <button class="filter-chip" data-filter="endurance">
           <i data-lucide="activity" class="chip-icon"></i>
-          <span>Endurance & Sports</span>
+          <span>Endurance & Wilderness</span>
           <span class="chip-count">1</span>
         </button>
         <button class="filter-chip" data-filter="aerial">
           <i data-lucide="plane" class="chip-icon"></i>
-          <span>Aerial & Landscape</span>
+          <span>Aerial Topography</span>
           <span class="chip-count">1</span>
         </button>
       </div>
@@ -400,12 +405,12 @@
               <span class="project-number">02 / 04</span>
             </div>
             <h3 class="card-title">One Last Loop</h3>
-            <p class="card-summary">Demystifying the relentless psychology of the Backyard Ultra endurance format for India’s ultrarunning community.</p>
+            <p class="card-summary">Demystifying the relentless psychology of the Backyard Ultra endurance format across India’s rugged wilderness trails.</p>
             <div class="card-footer-action">
               <div class="tag-row">
                 <span class="meta-tag">8 mins</span>
-                <span class="meta-tag">Sports Doc</span>
-                <span class="meta-tag">Running Community</span>
+                <span class="meta-tag">Wilderness Doc</span>
+                <span class="meta-tag">Endurance Trail</span>
               </div>
               <button class="view-details-btn">
                 <span>Case Study</span>
@@ -444,7 +449,7 @@
               <span class="project-number">03 / 04</span>
             </div>
             <h3 class="card-title">Above 6,000 Meters</h3>
-            <p class="card-summary">Sub-zero expedition cinematography documenting human resilience on the highest peaks of the Himalayas.</p>
+            <p class="card-summary">Sub-zero expedition cinematography documenting human resilience on the highest glacial peaks of the Himalayas.</p>
             <div class="card-footer-action">
               <div class="tag-row">
                 <span class="meta-tag">6,000m Altitude</span>
@@ -483,11 +488,11 @@
           </div>
           <div class="card-content">
             <div class="card-top-meta">
-              <span class="category-name">AERIAL CINEMATOGRAPHY</span>
+              <span class="category-name">AERIAL TOPOGRAPHY</span>
               <span class="project-number">04 / 04</span>
             </div>
             <h3 class="card-title">Terrain & Light</h3>
-            <p class="card-summary">Expansive aerial perspectives capturing untouched geological horizons and natural lighting gradients.</p>
+            <p class="card-summary">Expansive aerial perspectives capturing untouched geological corridors, rivers, and natural lighting gradients.</p>
             <div class="card-footer-action">
               <div class="tag-row">
                 <span class="meta-tag">Drone Pilot</span>
@@ -504,7 +509,7 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION (BEHIND THE CAMERA) -->
+    <!-- ABOUT SECTION (IN THE FIELD) -->
     <section class="section-container" id="about">
       <div class="about-grid">
         <!-- Visual Composition -->
@@ -515,10 +520,10 @@
                  class="about-img" 
                  loading="lazy">
             <div class="about-image-badge">
-              <i data-lucide="mountain" class="icon-md text-indigo-400"></i>
+              <i data-lucide="mountain" class="icon-md text-amber-400"></i>
               <div>
                 <strong>Over 6,000 Meters</strong>
-                <span>Filming in Extreme Himalayan Altitudes</span>
+                <span>Operating in Sub-Zero Himalayan Altitudes</span>
               </div>
             </div>
           </div>
@@ -537,14 +542,14 @@
 
         <!-- Narrative Content -->
         <div class="about-content animate-on-scroll">
-          <div class="badge badge-outline"><span class="badge-num">02</span> BEHIND THE CAMERA</div>
+          <div class="badge badge-outline"><span class="badge-num">02</span> IN THE FIELD</div>
           <h2 class="about-heading">
             A filmmaker shaped by<br>
             <span class="highlight-text">moments and emotion.</span>
           </h2>
 
           <p class="about-lead">
-            I'm a filmmaker and visual storyteller driven by stories of people, places, and purpose. My work spans documentaries, mountaineering expeditions, endurance races, outdoor adventures, podcasts, fashion campaigns, corporate films, product commercials, and branded content.
+            I'm a filmmaker and visual storyteller driven by stories of people, wildlife, places, and mountain purpose. My work spans documentaries, mountaineering expeditions, endurance races, outdoor adventures, podcasts, fashion campaigns, corporate films, product commercials, and branded content.
           </p>
 
           <p class="about-text">
@@ -580,7 +585,7 @@
 
           <div class="about-actions">
             <a href="#contact" class="btn btn-primary">
-              <span>Roll Your Vision</span>
+              <span>Commission Shoot</span>
               <i data-lucide="arrow-right" class="icon-sm"></i>
             </a>
             <a href="mailto:smritisardar010@gmail.com" class="btn btn-outline">
@@ -663,15 +668,15 @@
       </div>
     </section>
 
-    <!-- CREATIVE PROCESS: FROM SCRIPT TO SCREEN -->
+    <!-- CREATIVE PROCESS: EXPEDITION WORKFLOW -->
     <section class="section-container" id="process">
       <div class="section-header animate-on-scroll">
         <div class="header-left">
-          <div class="badge badge-outline"><span class="badge-num">04</span> CREATIVE PROCESS</div>
-          <h2 class="section-title">From Script to <span class="highlight-text">Screen.</span></h2>
+          <div class="badge badge-outline"><span class="badge-num">04</span> EXPEDITION WORKFLOW</div>
+          <h2 class="section-title">From Concept to <span class="highlight-text">Summit.</span></h2>
         </div>
         <p class="section-lead">
-          We transform ideas into compelling visual stories through strategy, creativity, and cinematic execution.
+          We transform raw wilderness ideas into compelling visual stories through strategy, creativity, and cinematic execution.
         </p>
       </div>
 
@@ -684,8 +689,8 @@
       <div class="process-steps-grid animate-on-scroll">
         <div class="process-step-card magic-card">
           <span class="step-num">01</span>
-          <h4>Concept & Scripting</h4>
-          <p>Defining the emotional core, researching the narrative arc, visual treatments, and meticulous production planning.</p>
+          <h4>Concept & Scouting</h4>
+          <p>Defining the emotional core, researching the narrative arc, terrain scouting, weather mapping, and rigorous field logistics.</p>
         </div>
         <div class="process-step-card magic-card">
           <span class="step-num">02</span>
@@ -709,7 +714,7 @@
     <section class="section-container" id="contact">
       <div class="contact-card-box animate-on-scroll">
         <div class="contact-header">
-          <div class="badge badge-outline"><span class="badge-num">05</span> LET’S ROLL YOUR VISION INTO REALITY</div>
+          <div class="badge badge-outline"><span class="badge-num">05</span> FIELD COMMISSIONS & INQUIRIES</div>
           <h2 class="contact-heading">
             Let’s roll your vision<br>
             into <span class="highlight-text">reality.</span>
@@ -720,7 +725,7 @@
         </div>
 
         <div class="contact-columns">
-          <!-- Clean shadcn Form -->
+          <!-- Clean Form -->
           <form class="shadcn-form" id="contactForm" novalidate>
             <div class="form-item">
               <label for="senderName" class="form-label">Your Full Name</label>
@@ -741,18 +746,18 @@
             <div class="form-choice-group">
               <label class="choice-group-label">PROJECT SCOPE:</label>
               <div class="choice-chips">
-                <button type="button" class="choice-chip active" data-val="Documentary / Expedition">Documentary / Expedition</button>
-                <button type="button" class="choice-chip" data-val="Commercial / Brand Film">Commercial / Brand Film</button>
-                <button type="button" class="choice-chip" data-val="Drone Cinematography">Drone Cinematography</button>
-                <button type="button" class="choice-chip" data-val="Video Editing / Color">Video Editing / Color</button>
+                <button type="button" class="choice-chip active" data-val="Expedition / Documentary">Expedition / Documentary</button>
+                <button type="button" class="choice-chip" data-val="Wildlife & Nature Film">Wildlife & Nature Film</button>
+                <button type="button" class="choice-chip" data-val="Aerial Drone Cinematography">Aerial Drone Cinematography</button>
+                <button type="button" class="choice-chip" data-val="Video Editing / Color Grade">Video Editing / Color Grade</button>
               </div>
             </div>
 
             <div class="form-item">
-              <label for="senderMessage" class="form-label">Project Details</label>
+              <label for="senderMessage" class="form-label">Expedition & Project Details</label>
               <div class="input-wrapper">
                 <i data-lucide="message-square" class="input-icon"></i>
-                <textarea id="senderMessage" class="shadcn-textarea" rows="4" required placeholder="Tell me about your project, timeline, and vision..."></textarea>
+                <textarea id="senderMessage" class="shadcn-textarea" rows="4" required placeholder="Tell me about your project, timeline, location, and vision..."></textarea>
               </div>
             </div>
 
@@ -768,7 +773,7 @@
             <a href="mailto:smritisardar010@gmail.com" class="direct-card magic-card" id="copyEmailCard">
               <div class="direct-icon"><i data-lucide="mail" class="icon-md"></i></div>
               <div class="direct-info">
-                <span class="direct-lbl">EMAIL</span>
+                <span class="direct-lbl">DIRECT EMAIL</span>
                 <span class="direct-val">smritisardar010@gmail.com</span>
               </div>
               <i data-lucide="copy" class="direct-action-icon"></i>
@@ -815,24 +820,24 @@
         </a>
         <div class="footer-copy-group">
           <p class="footer-credit">
-            © <span id="currentYear"></span> SMRITI SARDAR · MORE THAN AN EDITOR. SHAPED BY MOMENTS AND EMOTION.
+            © <span id="currentYear"></span> SMRITI SARDAR · MORE THAN AN EDITOR. SHAPED BY THE UNTAMED WILD.
           </p>
           <div class="footer-build-tag">
             <span class="build-pulse-dot"></span>
             <span class="build-lbl">LATEST COMMIT:</span>
             <a id="gitCommitBadge" href="https://github.com/Sammy-l33t/smriti-sardar-portfolio/commits/main" target="_blank" rel="noopener" class="commit-pill" title="View latest commit on GitHub">
               <i data-lucide="git-commit" class="commit-icon"></i>
-              <code id="gitCommitHash">b4c81c9</code>
+              <code id="gitCommitHash">af6c9d5</code>
             </a>
           </div>
         </div>
       </div>
 
       <div class="footer-links">
-        <a href="#work" class="footer-link">Filmography</a>
-        <a href="#about" class="footer-link">About</a>
+        <a href="#work" class="footer-link">Exhibitions</a>
+        <a href="#about" class="footer-link">The Field</a>
         <a href="#background" class="footer-link">Philosophy</a>
-        <a href="#process" class="footer-link">Process</a>
+        <a href="#process" class="footer-link">Workflow</a>
         <a href="#contact" class="footer-link">Contact</a>
       </div>
 
@@ -942,8 +947,8 @@
             <div class="reel-play-circle" id="mockPlayVideoBtn">
               <i data-lucide="play" class="icon-lg"></i>
             </div>
-            <h3>SMRITI SARDAR — SHOWREEL 2026</h3>
-            <p>Moments & Emotion · 6,000m Expeditions · Endurance Sports · Drone Aerials</p>
+            <h3>SMRITI SARDAR — EXPEDITION REEL</h3>
+            <p>Wildlife & Alpine Expeditions · 6,000m Summits · Endurance Sports · Drone Aerials</p>
           </div>
         </div>
 
@@ -954,7 +959,7 @@
             <div><strong>Field Credentials:</strong> Mount Tharang II & Backyard Ultra BFAI</div>
           </div>
           <p class="reel-note">
-            Featuring authentic cinematography captured across the Himalayas at over 6,000 meters, sports documentaries, and commercial campaigns.
+            Featuring authentic wildlife and expedition cinematography captured across the Himalayas at over 6,000 meters, sports documentaries, and commercial campaigns.
           </p>
           <div class="reel-actions">
             <a href="#contact" class="btn btn-primary" id="reelContactTrigger">
@@ -967,7 +972,7 @@
     </div>
   </div>
 
-  <!-- SHADCN / SONNER TOAST NOTIFICATION -->
+  <!-- SONNER TOAST NOTIFICATION -->
   <div class="toast-sonner" id="muiSnackbar" role="status" aria-live="polite">
     <i data-lucide="check-circle-2" class="toast-icon" id="snackbarIcon"></i>
     <span class="toast-msg" id="snackbarMsg">Message sent successfully!</span>
