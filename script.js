@@ -78,6 +78,16 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = "";
       });
     });
+
+    // Close mobile drawer automatically if window resized to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768 && mobileDrawer.classList.contains("open")) {
+        mobileDrawer.classList.remove("open");
+        menuToggle.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+    }, { passive: true });
   }
 
   // 5. HERO INTERACTIVE PHOTO SWITCHER
