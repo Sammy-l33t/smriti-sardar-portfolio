@@ -1,6 +1,6 @@
 # Smriti Sardar — Filmmaker & Video Editor Portfolio
 
-A zero-overhead, ultra-high-performance cinematic personal portfolio for **Smriti Sardar** built with a **shadcn/ui + Magic UI** aesthetic (Linear / Vercel / Raycast SaaS style), featuring a rich **5-Tone Color Architecture** and a **3-Tier Typography System**, using pure native HTML5, CSS3, Tailwind CSS, and vanilla JavaScript (~2KB). Deployed statically on Vercel with zero runtime framework overhead.
+A zero-overhead, ultra-high-performance cinematic personal portfolio for **Smriti Sardar** built with a **Cinematic Director's Suite & Asymmetrical Bento Grid** architecture, featuring a rich **5-Tone Color Architecture**, a **Floating Studio Dock Navbar**, authentic **Director's Timecode Overlays**, and **Magic UI Micro-Interactions** using native HTML5, CSS3, Tailwind CSS, and vanilla JavaScript (~2KB). Deployed statically on Vercel with zero runtime framework overhead.
 
 ---
 

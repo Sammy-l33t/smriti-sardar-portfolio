@@ -1,64 +1,60 @@
 /* ==========================================================================
-   SMRITI SARDAR PORTFOLIO — 5-TONE COLOR SYSTEM & 3-TIER TYPOGRAPHY
-   Aesthetic: shadcn/ui (Zinc Dark) + Magic UI Micro-Interactions
-   Architecture:
-     Tone 1 (Canvas & Elevated Surfaces): #09090b / #121216 / #27272a
-     Tone 2 (Reserved Strictly for Titles & Headings): #f8fafc (Plus Jakarta Sans)
-     Tone 3 (Reserved Strictly for Descriptions & Body Copy): #94a3b8 (Inter)
+   SMRITI SARDAR PORTFOLIO — CINEMATIC DIRECTOR'S SUITE & BENTO DESIGN SYSTEM
+   Palette:
+     Tone 1 (Canvas & Surfaces): #09090b / #121216 / 1px crisp borders (#27272a)
+     Tone 2 (Headings & Titles): #f8fafc (Plus Jakarta Sans, tracking-tighter)
+     Tone 3 (Descriptions & Copy): #94a3b8 (Inter, relaxed line-height)
      Tone 4 (Primary Brand & Interactive Accent): #6366f1 to #8b5cf6 (Electric Indigo/Violet)
-     Tone 5 (Secondary Highlight & Data Accent): #06b6d4 / #10b981 (Vibrant Cyan / Emerald)
+     Tone 5 (Secondary Highlight & Data Accent): #06b6d4 / #10b981 (Cyan / Emerald)
+   Architecture: Floating Studio Dock, Asymmetrical Bento Grid, Timecode Overlays,
+                 MagicCard Spotlight, Animated Border Beam & Number Ticker
    ========================================================================== */
 
-/* --- 1. 5-TONE DESIGN TOKENS & 3-TIER TYPOGRAPHY --- */
+/* --- 1. DESIGN TOKENS --- */
 :root {
-  /* ========================================================================
-     5-TONE COLOR ARCHITECTURE
-     ======================================================================== */
-  /* Tone 1: Canvas & Elevated Glassmorphic Surfaces */
-  --tone-1-canvas: #09090b;                  /* Deep Obsidian Canvas (zinc-950) */
-  --tone-1-surface: #121216;                 /* Elevated Card Surface */
-  --tone-1-surface-glass: rgba(18, 18, 22, 0.65); /* Translucent Glass Surface */
-  --tone-1-surface-elevated: rgba(22, 22, 28, 0.88); /* Elevated Modals & Floating Menus */
-  --tone-1-border: #27272a;                  /* Crisp 1px Border (zinc-800) */
-  --tone-1-border-subtle: rgba(255, 255, 255, 0.08); /* Card Edge Lighting */
+  /* Tone 1: Canvas & Surfaces */
+  --tone-1-canvas: #09090b;                  /* Deep Obsidian Canvas */
+  --tone-1-surface: #121216;                 /* Dark Basalt Surface */
+  --tone-1-surface-glass: rgba(18, 18, 22, 0.65); /* Translucent Glass */
+  --tone-1-surface-elevated: rgba(22, 22, 28, 0.92); /* Modals & Floating Menus */
+  --tone-1-border: #27272a;                  /* 1px Crisp Border (zinc-800) */
+  --tone-1-border-subtle: rgba(255, 255, 255, 0.08); /* Edge lighting */
 
-  /* Tone 2: Reserved Strictly for Titles & Headings (H1/H2/H3/H4) */
+  /* Tone 2: Headings & Titles */
   --tone-2-title: #f8fafc;                   /* Crisp Alabaster White */
-  --tone-2-title-muted: #e2e8f0;             /* Sub-heading Light */
+  --tone-2-title-muted: #e2e8f0;             /* Sub-heading White */
   --tone-2-gradient: linear-gradient(135deg, #ffffff 25%, #c7d2fe 75%, #818cf8 100%);
 
-  /* Tone 3: Reserved Strictly for Descriptions, Subtitles & Paragraph Copy */
-  --tone-3-copy: #94a3b8;                    /* Cool Slate Muted (text-slate-400) */
-  --tone-3-copy-dim: #64748b;                /* Dim Slate for minor timestamps & captions */
-  --tone-3-copy-bright: #cbd5e1;             /* Bright Slate for high-legibility paragraphs */
+  /* Tone 3: Descriptions & Copy */
+  --tone-3-copy: #94a3b8;                    /* Cool Slate Muted */
+  --tone-3-copy-dim: #64748b;                /* Dim Slate for minor hints */
+  --tone-3-copy-bright: #cbd5e1;             /* Bright Slate for lead text */
 
-  /* Tone 4: Primary Brand & Interactive Accent (CTA Buttons, Active States, Rings, Spotlight) */
+  /* Tone 4: Primary Brand & Interactive Accent */
   --tone-4-primary: #6366f1;                 /* Electric Indigo */
   --tone-4-violet: #8b5cf6;                  /* Vibrant Violet */
   --tone-4-primary-hover: #4f46e5;           /* Deep Indigo Hover */
   --tone-4-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  --tone-4-glow: rgba(99, 102, 241, 0.35);   /* CTA Button Soft Glow */
+  --tone-4-glow: rgba(99, 102, 241, 0.35);   /* CTA Soft Glow */
   --tone-4-spotlight: rgba(99, 102, 241, 0.22); /* MagicCard Spotlight */
   --tone-4-ring: rgba(99, 102, 241, 0.5);    /* Focus Ring */
 
-  /* Tone 5: Secondary Highlight & Data Accent (Badges, Status Indicators, KPI Trends, Border Beam) */
+  /* Tone 5: Secondary Highlight & Data Accent */
   --tone-5-cyan: #06b6d4;                    /* Vibrant Cyan */
   --tone-5-emerald: #10b981;                 /* Vibrant Emerald */
-  --tone-5-glow: rgba(6, 182, 212, 0.35);    /* Cyan Glow */
-  --tone-5-badge-bg: rgba(6, 182, 212, 0.1); /* Subtle Cyan Badge Tint */
+  --tone-5-glow: rgba(6, 182, 212, 0.35);    /* Status Glow */
+  --tone-5-badge-bg: rgba(6, 182, 212, 0.1); /* Cyan Badge Tint */
 
-  /* ========================================================================
-     3-TIER COMPLEMENTARY TYPOGRAPHY SYSTEM
-     ======================================================================== */
+  /* Typography */
   --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Sizing & Radius (shadcn/ui style) */
+  /* Sizing & Radius */
   --radius-sm: 0.375rem;                     /* 6px */
   --radius: 0.5rem;                          /* 8px */
   --radius-lg: 0.75rem;                      /* 12px */
-  --radius-xl: 1rem;                         /* 16px */
+  --radius-xl: 1.25rem;                      /* 20px */
   --radius-full: 9999px;
 
   /* Animation Easings */
@@ -76,7 +72,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 100px;
   font-size: 16px;
   background-color: var(--tone-1-canvas);
   color: var(--tone-2-title);
@@ -94,17 +90,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Linear-style subtle ambient grid & radial mesh */
+/* Ambient Radial Mesh & Fine Matrix Grid */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent),
-    radial-gradient(ellipse 60% 40% at 90% 70%, rgba(6, 182, 212, 0.06), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.14), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 70%, rgba(6, 182, 212, 0.08), transparent),
+    radial-gradient(ellipse 50% 50% at 10% 40%, rgba(139, 92, 246, 0.06), transparent),
     linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
   pointer-events: none;
   z-index: 0;
 }
@@ -126,28 +123,25 @@ input, textarea, button {
   font-family: inherit;
 }
 
-/* --- 3. TYPOGRAPHY ENFORCEMENT RULES --- */
-/* Strictly enforce Tone 2 + Plus Jakarta Sans on all Headings */
+/* --- 3. TYPOGRAPHY ENFORCEMENT --- */
 h1, h2, h3, h4, .hero-title, .section-title, .about-heading, .contact-heading, .card-title, .dialog-title {
   font-family: var(--font-display);
   color: var(--tone-2-title);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.04em;
   font-weight: 700;
 }
 
-/* Strictly enforce Tone 3 + Inter on all Subtitles, Descriptions, & Paragraphs */
 p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dialog-description, .contact-lead, .pillar-section p, .process-step-card p {
   font-family: var(--font-body);
   color: var(--tone-3-copy);
   line-height: 1.65;
 }
 
-/* Technical / Mono Font enforcement */
-.stat-num, .chip-count, .meta-tag, .badge, .project-number, .step-num, .spec-val, .spec-label, .subhead-lbl, #gitCommitHash, .ticker-content {
+.stat-num, .chip-count, .meta-tag, .badge, .project-number, .step-num, .spec-val, .spec-label, .subhead-lbl, #gitCommitHash, .ticker-content, .timecode-overlay {
   font-family: var(--font-mono);
 }
 
-/* --- 4. SCROLL PROGRESS BAR & FILM GRAIN --- */
+/* --- 4. SCROLL PROGRESS BAR & AMBIENT FILM GRAIN --- */
 .scroll-progress-bar {
   position: fixed;
   top: 0;
@@ -200,15 +194,15 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .magic-card {
   position: relative;
   background: var(--tone-1-surface-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--tone-1-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s var(--ease-out-expo);
 }
 
-/* Tone 4 Electric Indigo spotlight border illumination */
+/* Electric Indigo & Cyan radial spotlight following cursor */
 .magic-card::before {
   content: "";
   position: absolute;
@@ -216,9 +210,9 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   border-radius: inherit;
   padding: 1px;
   background: radial-gradient(
-    450px circle at var(--mouse-x, -600px) var(--mouse-y, -600px),
-    rgba(99, 102, 241, 0.4),
-    rgba(6, 182, 212, 0.18) 32%,
+    480px circle at var(--mouse-x, -600px) var(--mouse-y, -600px),
+    rgba(99, 102, 241, 0.42),
+    rgba(6, 182, 212, 0.2) 35%,
     transparent 55%
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -230,7 +224,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   z-index: 2;
 }
 
-/* Tone 4 subtle surface ambient glow */
+/* Subtle surface illumination */
 .magic-card::after {
   content: "";
   position: absolute;
@@ -253,7 +247,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .magic-card:hover {
-  border-color: rgba(99, 102, 241, 0.3);
+  border-color: rgba(99, 102, 241, 0.35);
 }
 
 /* --- 7. MAGIC UI: ANIMATED BORDER BEAM --- */
@@ -299,17 +293,17 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* --- 8. SHADCN BUTTONS & BADGES --- */
+/* --- 8. BUTTONS & BADGES --- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
-  padding: 0.625rem 1.15rem;
+  padding: 0.65rem 1.25rem;
   border-radius: var(--radius);
   border: 1px solid transparent;
   transition: all 0.2s var(--ease-smooth);
@@ -332,13 +326,13 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .btn-primary {
   background: var(--tone-4-gradient);
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.18);
   box-shadow: 0 4px 14px -2px var(--tone-4-glow);
 }
 
 .btn-primary:hover {
   background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-  box-shadow: 0 6px 20px -2px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 6px 20px -2px rgba(99, 102, 241, 0.55);
   transform: translateY(-1px);
 }
 
@@ -355,7 +349,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .btn-outline:hover {
-  background-color: rgba(99, 102, 241, 0.1);
+  background-color: rgba(99, 102, 241, 0.12);
   border-color: var(--tone-4-primary);
   color: #ffffff;
   transform: translateY(-1px);
@@ -372,7 +366,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .btn-secondary:hover {
-  background-color: #1e1e24;
+  background-color: #1a1a22;
   border-color: #3f3f46;
 }
 
@@ -393,7 +387,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .btn-lg {
-  padding: 0.75rem 1.4rem;
+  padding: 0.75rem 1.45rem;
   font-size: 0.9375rem;
   border-radius: var(--radius);
 }
@@ -424,7 +418,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   stroke-width: 1.75;
 }
 
-/* Tone 5 Badges */
+/* Tone 5 Status Badges */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -434,7 +428,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  padding: 0.3rem 0.8rem;
+  padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--tone-1-border);
   background: var(--tone-5-badge-bg);
@@ -447,7 +441,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .badge-num {
-  color: var(--tone-5-cyan);
+  color: var(--tone-4-primary);
   font-weight: 600;
 }
 
@@ -456,7 +450,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   height: 6px;
   border-radius: 50%;
   background: var(--tone-5-emerald);
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.8);
   animation: pulse-dot-anim 2s infinite ease-in-out;
 }
 
@@ -465,32 +459,38 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   50% { opacity: 0.4; transform: scale(0.85); }
 }
 
-/* --- 9. SITE HEADER / NAVBAR --- */
+/* --- 9. FLOATING STUDIO DOCK NAVBAR --- */
 .site-header {
   position: fixed;
-  top: 0;
+  top: 1.25rem;
   left: 0;
   width: 100%;
+  padding: 0 1rem;
   z-index: 50;
-  border-bottom: 1px solid transparent;
-  transition: background-color 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
-}
-
-.site-header.elevated {
-  background-color: rgba(9, 9, 11, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom-color: var(--tone-1-border);
+  pointer-events: none;
 }
 
 .header-container {
-  max-width: 1240px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  height: 4.25rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: rgba(12, 12, 16, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  pointer-events: auto;
+  transition: all 0.25s ease;
+}
+
+.site-header.elevated .header-container {
+  background: rgba(10, 10, 14, 0.92);
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.9);
 }
 
 /* Brand Wordmark */
@@ -499,6 +499,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   align-items: center;
   gap: 0.65rem;
   color: var(--tone-2-title);
+  padding-left: 0.35rem;
 }
 
 .brand-monogram {
@@ -507,20 +508,14 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  background: var(--tone-1-surface);
-  border: 1px solid var(--tone-1-border);
-  border-radius: var(--radius);
-  font-family: var(--font-mono);
-  font-weight: 700;
+  background: var(--tone-4-gradient);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-weight: 800;
   font-size: 0.85rem;
   letter-spacing: -0.04em;
   color: #fff;
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.brand-wordmark:hover .brand-monogram {
-  border-color: var(--tone-4-primary);
-  background: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 2px 8px var(--tone-4-glow);
 }
 
 .brand-dot {
@@ -546,20 +541,21 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .nav-item {
   padding: 0.45rem 0.85rem;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--tone-3-copy);
-  border-radius: var(--radius);
+  border-radius: var(--radius-full);
   transition: color 0.15s, background 0.15s;
 }
 
 .nav-item:hover {
   color: var(--tone-2-title);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .nav-cta {
-  margin-left: 0.75rem;
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1rem;
 }
 
 /* Mobile Hamburger Toggle */
@@ -571,7 +567,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   width: 2.25rem;
   height: 2.25rem;
   gap: 5px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-full);
   border: 1px solid var(--tone-1-border);
   background: rgba(24, 24, 28, 0.6);
 }
@@ -599,10 +595,10 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .mobile-drawer {
   position: fixed;
   inset: 0;
-  top: 4.25rem;
-  background: rgba(9, 9, 11, 0.96);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  top: 5rem;
+  background: rgba(9, 9, 11, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-top: 1px solid var(--tone-1-border);
   opacity: 0;
   pointer-events: none;
@@ -695,7 +691,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .drawer-icon-link {
-  color: var(--tone-2-title);
+  color: var(--tone-4-primary);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -704,7 +700,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .hero-section {
   position: relative;
   z-index: 2;
-  padding-top: 8rem;
+  padding-top: 8.5rem;
   padding-bottom: 5rem;
   max-width: 1240px;
   margin: 0 auto;
@@ -739,7 +735,6 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   margin-bottom: 1.5rem;
 }
 
-/* Subtle linear gradient fill for hero emphasis */
 .hero-title .highlight-text {
   background: var(--tone-2-gradient);
   -webkit-background-clip: text;
@@ -785,7 +780,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .stat-pill {
   flex: 1;
   min-width: 140px;
-  padding: 0.85rem 1rem;
+  padding: 0.85rem 1.15rem;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -793,7 +788,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .stat-num {
   font-family: var(--font-mono);
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--tone-5-cyan);
   letter-spacing: -0.03em;
@@ -802,7 +797,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .stat-lbl {
   font-size: 0.75rem;
   color: var(--tone-3-copy);
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 /* Hero Visual Frame with Moments Switcher & Border Beam */
@@ -818,13 +813,13 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   border-radius: var(--radius-xl);
   padding: 0.75rem;
   overflow: hidden;
-  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.8);
 }
 
 .hero-image-container {
   position: relative;
   width: 100%;
-  height: 440px;
+  height: 450px;
   border-radius: calc(var(--radius-xl) - 4px);
   overflow: hidden;
   background: #09090b;
@@ -846,11 +841,39 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .image-gradient-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.1) 0%, rgba(9, 9, 11, 0.75) 100%);
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.15) 0%, rgba(9, 9, 11, 0.8) 100%);
   pointer-events: none;
 }
 
-/* Floating Context Badges inside Hero Frame */
+/* Timecode Overlay Badge on Hero Media */
+.timecode-overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #ef4444;
+  background: rgba(9, 9, 11, 0.85);
+  border: 1px solid var(--tone-1-border);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+}
+
+.rec-dot {
+  width: 6px;
+  height: 6px;
+  background: #ef4444;
+  border-radius: 50%;
+  animation: pulse-dot-anim 1.5s infinite;
+}
+
+/* Floating Badges */
 .floating-badge {
   position: absolute;
   display: flex;
@@ -937,6 +960,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   background: var(--tone-4-gradient);
   color: #ffffff;
   font-weight: 600;
+  box-shadow: 0 2px 8px -1px var(--tone-4-glow);
 }
 
 .hero-photo-caption {
@@ -962,7 +986,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .scroll-cue:hover {
-  color: var(--tone-2-title);
+  color: var(--tone-4-primary);
 }
 
 .scroll-mouse {
@@ -978,7 +1002,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .mouse-wheel {
   width: 3px;
   height: 6px;
-  background: var(--tone-5-cyan);
+  background: var(--tone-4-primary);
   border-radius: 2px;
   animation: mouse-scroll 1.8s infinite ease-in-out;
 }
@@ -991,7 +1015,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 /* --- 11. MARQUEE STATEMENT TICKER --- */
 .ticker-banner {
   width: 100%;
-  background: rgba(18, 18, 22, 0.85);
+  background: rgba(18, 18, 22, 0.88);
   border-top: 1px solid var(--tone-1-border);
   border-bottom: 1px solid var(--tone-1-border);
   overflow: hidden;
@@ -1057,7 +1081,6 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .section-title {
-  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
   line-height: 1.15;
@@ -1136,7 +1159,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   background: rgba(0, 0, 0, 0.2);
 }
 
-/* --- 14. PROJECTS GRID --- */
+/* --- 14. ASYMMETRICAL BENTO FILMOGRAPHY GRID --- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1153,11 +1176,12 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   transform: translateY(-2px);
 }
 
-/* Featured Project Card */
-.project-featured {
+/* Featured & Panoramic Bento Project Cards spanning full width */
+.project-featured,
+.project-panoramic {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.25fr 0.75fr;
 }
 
 .card-media-wrapper {
@@ -1168,7 +1192,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   background: #09090b;
 }
 
-.project-featured .card-media-wrapper {
+.project-featured .card-media-wrapper,
+.project-panoramic .card-media-wrapper {
   height: 100%;
   min-height: 380px;
 }
@@ -1192,7 +1217,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 .project-year-badge {
@@ -1209,15 +1234,16 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .card-play-action {
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   color: #18181b;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .project-card:hover .card-play-action {
@@ -1232,7 +1258,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-family: var(--font-mono);
   font-size: 0.7rem;
   padding: 0.25rem 0.6rem;
-  background: rgba(9, 9, 11, 0.8);
+  background: rgba(9, 9, 11, 0.85);
   border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-full);
   color: var(--tone-3-copy-bright);
@@ -1240,7 +1266,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .card-content {
-  padding: 1.5rem;
+  padding: 1.65rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1258,7 +1284,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--tone-5-cyan);
 }
 
@@ -1269,9 +1295,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .card-title {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.025em;
   margin-bottom: 0.65rem;
@@ -1454,7 +1479,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.1rem;
 }
 
 .value-icon {
@@ -1471,7 +1496,6 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .value-item h4 {
-  font-family: var(--font-display);
   font-size: 0.9375rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
@@ -1518,7 +1542,6 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .pillar-card h3 {
-  font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -1592,7 +1615,6 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .process-step-card h4 {
-  font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -2068,8 +2090,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 90;
   display: flex;
   align-items: center;
@@ -2093,7 +2115,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   max-width: 760px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95);
   transform: scale(0.96) translateY(10px);
   transition: transform 0.25s var(--ease-out-expo);
   position: relative;
@@ -2184,7 +2206,6 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 .dialog-title {
-  font-family: var(--font-display);
   font-size: 1.65rem;
   font-weight: 700;
   line-height: 1.2;
@@ -2401,6 +2422,10 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 /* --- 23. RESPONSIVE MEDIA QUERIES --- */
 @media (max-width: 1024px) {
+  .site-header {
+    top: 0.75rem;
+  }
+
   .hero-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -2458,6 +2483,10 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 @media (max-width: 768px) {
+  .site-header {
+    top: 0.5rem;
+  }
+
   .nav-links {
     display: none;
   }
@@ -2491,12 +2520,14 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
     gap: 1.5rem;
   }
 
-  .project-featured {
+  .project-featured,
+  .project-panoramic {
     grid-column: auto;
     grid-template-columns: 1fr;
   }
 
-  .project-featured .card-media-wrapper {
+  .project-featured .card-media-wrapper,
+  .project-panoramic .card-media-wrapper {
     min-height: 260px;
     height: 260px;
   }
