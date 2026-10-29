@@ -1,42 +1,36 @@
 /**
  * SMRITI SARDAR PORTFOLIO — INTERACTIVE ENGINE
- * Features: Material Design Ripple Effect, Multi-Screen Navigation Drawer,
- * Category Filter System, Dynamic Project Lightbox Dialog, Showreel Player Modal,
- * Floating Label Form with Feedback Toast, and Elevation Scroll Watcher.
+ * Design System: shadcn/ui (Zinc Dark) + Magic UI Micro-Interactions
+ * Features:
+ *  - Lucide Icons Engine (lucide.createIcons)
+ *  - Magic UI Spotlight Cards (Cursor Radial Illuminator)
+ *  - Magic UI Number Ticker (Smooth rAF KPI Counter)
+ *  - Smooth Scroll Progress & Glass Header Elevation
+ *  - Responsive Mobile Navigation Drawer
+ *  - Interactive Moments Switcher
+ *  - Work Category Filter Tabs
+ *  - Dynamic Case Study Modal & 4K Showreel Lightbox
+ *  - Clean Contact Form with Status Toast (Sonner-style)
+ *  - One-Click Clipboard Copy
+ *  - Live GitHub Commit Hash Tracker via REST API
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. DYNAMIC CURRENT YEAR
+  // --- 1. LUCIDE ICONS INITIALIZER ---
+  function initIcons() {
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+      window.lucide.createIcons();
+    }
+  }
+  initIcons();
+
+  // --- 2. DYNAMIC CURRENT YEAR ---
   const yearEl = document.querySelector("#currentYear");
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // 2. MATERIAL RIPPLE EFFECT ON EVERY USER ACTION
-  document.addEventListener("click", (e) => {
-    const rippleTarget = e.target.closest(".mui-ripple");
-    if (!rippleTarget) return;
-
-    const rect = rippleTarget.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height) * 2;
-    const x = e.clientX - rect.left - size / 2;
-    const y = e.clientY - rect.top - size / 2;
-
-    const wave = document.createElement("span");
-    wave.classList.add("ripple-wave");
-    wave.style.width = size + "px";
-    wave.style.height = size + "px";
-    wave.style.left = x + "px";
-    wave.style.top = y + "px";
-
-    rippleTarget.appendChild(wave);
-
-    setTimeout(() => {
-      wave.remove();
-    }, 650);
-  });
-
-  // 3. SCROLL PROGRESS & APPBAR ELEVATION
+  // --- 3. SCROLL PROGRESS BAR & HEADER GLASS STATE ---
   const appbar = document.querySelector("#appbar");
   const scrollProgressBar = document.querySelector("#scroll-progress");
 
@@ -50,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (appbar) {
-      if (scrollTop > 25) {
+      if (scrollTop > 20) {
         appbar.classList.add("elevated");
       } else {
         appbar.classList.remove("elevated");
@@ -58,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { passive: true });
 
-  // 4. MOBILE DRAWER NAVIGATION
+  // --- 4. MOBILE DRAWER NAVIGATION ---
   const menuToggle = document.querySelector("#menuToggle");
   const mobileDrawer = document.querySelector("#mobileDrawer");
 
@@ -79,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Close mobile drawer automatically if window resized to desktop
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768 && mobileDrawer.classList.contains("open")) {
         mobileDrawer.classList.remove("open");
@@ -90,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
   }
 
-  // 5. HERO INTERACTIVE PHOTO SWITCHER
+  // --- 5. HERO INTERACTIVE PHOTO SWITCHER ---
   const heroMainImg = document.querySelector("#heroMainImage");
   const heroPhotoCaption = document.querySelector("#heroPhotoCaption");
   const switchBtns = document.querySelectorAll(".switch-btn");
@@ -108,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
           heroMainImg.src = newSrc;
           heroMainImg.classList.remove("image-fading");
-        }, 220);
+        }, 200);
       }
 
       if (heroPhotoCaption && newCaption) {
@@ -117,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 6. WORK CATEGORY FILTER
+  // --- 6. WORK CATEGORY FILTER SYSTEM ---
   const filterChips = document.querySelectorAll(".filter-chip");
   const projectCards = document.querySelectorAll(".project-card");
 
@@ -141,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 7. PROJECT DETAILS MODAL / DIALOG
+  // --- 7. PROJECT DETAILS MODAL / DIALOG ---
   const projectDialog = document.querySelector("#projectDialogBackdrop");
   const closeDialogBtn = document.querySelector("#closeDialogBtn");
   const dialogDismissBtn = document.querySelector("#dialogDismissBtn");
@@ -185,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     projectDialog.classList.add("active");
     projectDialog.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    initIcons();
   }
 
   function closeProjectDialog() {
@@ -211,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 8. SHOWREEL MODAL / DIALOG
+  // --- 8. SHOWREEL MODAL / DIALOG ---
   const reelDialog = document.querySelector("#reelDialogBackdrop");
   const openReelBtn = document.querySelector("#openReelBtn");
   const fabReelTrigger = document.querySelector("#fabReelTrigger");
@@ -224,6 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
     reelDialog.classList.add("active");
     reelDialog.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    initIcons();
   }
 
   function closeReelModal() {
@@ -245,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   mockPlayVideoBtn?.addEventListener("click", () => {
-    showSnackbar("Showreel preview loaded in 4K UHD. Full master available on request!", "movie");
+    showSnackbar("Showreel preview loaded in 4K UHD. Full master available on request!", "film");
   });
 
   // Escape key closes open modals
@@ -256,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 9. PROJECT TYPE CHOICE CHIPS
+  // --- 9. PROJECT TYPE CHOICE CHIPS ---
   const choiceChips = document.querySelectorAll(".choice-chip");
   choiceChips.forEach((chip) => {
     chip.addEventListener("click", () => {
@@ -265,17 +260,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 10. MATERIAL SNACKBAR (TOAST)
+  // --- 10. SHADCN / SONNER STYLE TOAST ---
   const snackbar = document.querySelector("#muiSnackbar");
   const snackbarMsg = document.querySelector("#snackbarMsg");
   const snackbarIcon = document.querySelector("#snackbarIcon");
   const snackbarClose = document.querySelector("#snackbarClose");
   let snackbarTimeout = null;
 
-  function showSnackbar(message, icon = "check_circle") {
+  function showSnackbar(message, icon = "check-circle-2") {
     if (!snackbar) return;
     if (snackbarMsg) snackbarMsg.textContent = message;
-    if (snackbarIcon) snackbarIcon.textContent = icon;
+    if (snackbarIcon) {
+      snackbarIcon.setAttribute("data-lucide", icon);
+      initIcons();
+    }
 
     snackbar.classList.add("active");
 
@@ -290,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (snackbarTimeout) clearTimeout(snackbarTimeout);
   });
 
-  // 11. CONTACT FORM SUBMISSION
+  // --- 11. CONTACT FORM SUBMISSION ---
   const contactForm = document.querySelector("#contactForm");
   const submitBtn = document.querySelector("#submitBtn");
 
@@ -302,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const messageInput = document.querySelector("#senderMessage");
 
     if (!nameInput?.value.trim() || !emailInput?.value.trim() || !messageInput?.value.trim()) {
-      showSnackbar("Please fill in all required fields.", "warning");
+      showSnackbar("Please fill in all required fields.", "alert-triangle");
       return;
     }
 
@@ -318,23 +316,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       contactForm.reset();
       showSnackbar("Message sent! Smriti will respond within 24 hours.", "send");
-    }, 1100);
+    }, 950);
   });
 
-  // 12. COPY EMAIL TO CLIPBOARD
+  // --- 12. COPY EMAIL TO CLIPBOARD ---
   const copyEmailCard = document.querySelector("#copyEmailCard");
   copyEmailCard?.addEventListener("click", async (e) => {
     e.preventDefault();
     const email = "smritisardar010@gmail.com";
     try {
       await navigator.clipboard.writeText(email);
-      showSnackbar("Email copied to clipboard: " + email, "content_copy");
+      showSnackbar("Email copied to clipboard: " + email, "copy");
     } catch {
       showSnackbar("Email: " + email, "mail");
     }
   });
 
-  // 13. FLOATING ACTION BUTTON (FAB) MENU
+  // --- 13. QUICK ACTION FAB MENU ---
   const fabWrapper = document.querySelector(".fab-wrapper");
   const fabBtn = document.querySelector("#fabBtn");
 
@@ -348,30 +346,94 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 14. INTERSECTION OBSERVER FOR SCROLL ANIMATIONS
+  // --- 14. MAGIC UI: SPOTLIGHT CARDS (MAGIC-CARD) ---
+  const magicCards = document.querySelectorAll(".magic-card");
+  magicCards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+    });
+  });
+
+  // --- 15. MAGIC UI: NUMBER TICKER ---
+  let tickerAnimated = false;
+  function runNumberTicker() {
+    if (tickerAnimated) return;
+    tickerAnimated = true;
+
+    const tickerItems = document.querySelectorAll(".ticker-target");
+    tickerItems.forEach((item) => {
+      const target = parseFloat(item.getAttribute("data-target")) || 0;
+      const suffix = item.getAttribute("data-suffix") || "";
+      const displayOverride = item.getAttribute("data-display");
+      const useComma = item.getAttribute("data-comma") === "true";
+      const duration = 1600; // ms
+      const startTime = performance.now();
+
+      function updateNumber(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out quad
+        const easeVal = 1 - Math.pow(1 - progress, 3);
+        const currentVal = Math.floor(easeVal * target);
+
+        if (displayOverride && progress === 1) {
+          item.textContent = displayOverride;
+        } else {
+          let formatted = currentVal.toString();
+          if (useComma && currentVal >= 1000) {
+            formatted = currentVal.toLocaleString("en-US");
+          }
+          item.textContent = formatted + suffix;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(updateNumber);
+        } else if (displayOverride) {
+          item.textContent = displayOverride;
+        }
+      }
+
+      requestAnimationFrame(updateNumber);
+    });
+  }
+
+  // --- 16. INTERSECTION OBSERVER FOR BLURFADE & NUMBER TICKER ---
   const animateItems = document.querySelectorAll(".animate-on-scroll");
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("in-view");
+          // Trigger number ticker when hero stats or hero copy enters view
+          if (entry.target.closest(".hero-section") || entry.target.querySelector(".ticker-target")) {
+            runNumberTicker();
+          }
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: "0px 0px -40px 0px",
+      threshold: 0.1,
+      rootMargin: "0px 0px -30px 0px",
     });
 
     animateItems.forEach((el) => observer.observe(el));
   } else {
     animateItems.forEach((el) => el.classList.add("in-view"));
+    runNumberTicker();
   }
 
-  // 15. DYNAMIC GITHUB COMMIT TRACKER
+  // Fallback trigger for number ticker after 500ms
+  setTimeout(() => {
+    runNumberTicker();
+  }, 600);
+
+  // --- 17. LIVE GITHUB COMMIT TRACKER ---
   const gitCommitHash = document.querySelector("#gitCommitHash");
   const gitCommitBadge = document.querySelector("#gitCommitBadge");
 
-  // Fetch live latest commit from GitHub repository
   fetch("https://api.github.com/repos/Sammy-l33t/smriti-sardar-portfolio/commits/main")
     .then((res) => {
       if (!res.ok) throw new Error("GitHub API request failed");

@@ -3,48 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0c0e12">
+  <meta name="theme-color" content="#09090b">
   <meta name="description" content="Smriti Sardar — Filmmaker, Cinematographer & Senior Video Editor. Shaping stories of people, places, and purpose across Himalayan expeditions, documentaries, and branded films.">
   <title>Smriti Sardar — Filmmaker, Cinematographer & Senior Video Editor</title>
 
-  <!-- Google Fonts & Material Symbols -->
+  <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN with Local Fallback -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    if (!window.lucide) {
+      document.write('<script src="assets/js/lucide.min.js"><\/script>');
+    }
+  </script>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Scroll Progress Indicator -->
   <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
 
-  <!-- Ambient Cinematic Grain -->
+  <!-- Ambient Film Grain -->
   <div class="film-grain" aria-hidden="true"></div>
 
-  <!-- Material App Bar (Header) -->
-  <header class="mui-appbar" id="appbar">
-    <div class="appbar-container">
-      <a class="brand-wordmark mui-ripple" href="#home" aria-label="Smriti Sardar Homepage">
+  <!-- Site Header (Navbar) -->
+  <header class="site-header" id="appbar">
+    <div class="header-container">
+      <a class="brand-wordmark" href="#home" aria-label="Smriti Sardar Homepage">
         <span class="brand-monogram">SS</span>
         <span class="brand-dot"></span>
         <span class="brand-sub">Filmmaker & Editor</span>
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="mui-nav-links" aria-label="Main Navigation">
-        <a href="#work" class="nav-item mui-ripple">Filmography</a>
-        <a href="#about" class="nav-item mui-ripple">About</a>
-        <a href="#background" class="nav-item mui-ripple">Philosophy & Background</a>
-        <a href="#process" class="nav-item mui-ripple">Process</a>
-        <a href="#contact" class="nav-cta mui-button mui-btn-contained mui-ripple">
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#work" class="nav-item">Filmography</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#background" class="nav-item">Philosophy & Background</a>
+        <a href="#process" class="nav-item">Process</a>
+        <a href="#contact" class="btn btn-primary btn-sm nav-cta">
           <span>Let’s Talk</span>
-          <span class="material-symbols-outlined">north_east</span>
+          <i data-lucide="arrow-up-right" class="icon-sm"></i>
         </a>
       </nav>
 
       <!-- Mobile Hamburger Toggle -->
-      <button class="mui-icon-button menu-toggle mui-ripple" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span class="bar bar-1"></span>
         <span class="bar bar-2"></span>
         <span class="bar bar-3"></span>
@@ -56,27 +63,27 @@
       <div class="mobile-drawer-content">
         <div class="drawer-header">
           <span class="drawer-title">Navigation</span>
-          <span class="status-badge"><span class="pulse-dot"></span> Available for Projects</span>
+          <span class="badge badge-outline"><span class="pulse-dot"></span> Available for Projects</span>
         </div>
         <nav class="drawer-nav">
-          <a href="#work" class="drawer-link mui-ripple">
-            <span class="material-symbols-outlined">movie</span>
+          <a href="#work" class="drawer-link">
+            <i data-lucide="film" class="icon-md"></i>
             <span>Filmography</span>
           </a>
-          <a href="#about" class="drawer-link mui-ripple">
-            <span class="material-symbols-outlined">person</span>
+          <a href="#about" class="drawer-link">
+            <i data-lucide="user" class="icon-md"></i>
             <span>About Smriti</span>
           </a>
-          <a href="#background" class="drawer-link mui-ripple">
-            <span class="material-symbols-outlined">psychology</span>
+          <a href="#background" class="drawer-link">
+            <i data-lucide="sparkles" class="icon-md"></i>
             <span>Philosophy & Background</span>
           </a>
-          <a href="#process" class="drawer-link mui-ripple">
-            <span class="material-symbols-outlined">auto_videocam</span>
+          <a href="#process" class="drawer-link">
+            <i data-lucide="video" class="icon-md"></i>
             <span>Creative Process</span>
           </a>
-          <a href="#contact" class="drawer-link mui-ripple drawer-cta">
-            <span class="material-symbols-outlined">send</span>
+          <a href="#contact" class="drawer-link drawer-cta">
+            <i data-lucide="send" class="icon-md"></i>
             <span>Roll Your Vision</span>
           </a>
         </nav>
@@ -84,9 +91,9 @@
           <p class="drawer-contact-val">smritisardar010@gmail.com</p>
           <p class="drawer-contact-val">+91 9875641683</p>
           <div class="drawer-socials">
-            <a href="tel:+919875641683" class="drawer-icon-link mui-ripple" aria-label="Call Smriti">Call</a>
-            <a href="https://wa.me/919875641683" target="_blank" rel="noopener" class="drawer-icon-link mui-ripple" aria-label="WhatsApp Smriti">WhatsApp</a>
-            <a href="mailto:smritisardar010@gmail.com" class="drawer-icon-link mui-ripple" aria-label="Email Smriti">Email</a>
+            <a href="tel:+919875641683" class="drawer-icon-link" aria-label="Call Smriti">Call</a>
+            <a href="https://wa.me/919875641683" target="_blank" rel="noopener" class="drawer-icon-link" aria-label="WhatsApp Smriti">WhatsApp</a>
+            <a href="mailto:smritisardar010@gmail.com" class="drawer-icon-link" aria-label="Email Smriti">Email</a>
           </div>
         </div>
       </div>
@@ -99,14 +106,14 @@
       <div class="hero-layout">
         <!-- Hero Copy -->
         <div class="hero-copy animate-on-scroll">
-          <div class="mui-chip status-chip mui-ripple">
-            <span class="status-pulse-dot"></span>
+          <div class="badge badge-outline status-chip">
+            <span class="badge-pulse-dot"></span>
             <span>FILMMAKER · CINEMATOGRAPHER · SENIOR VIDEO EDITOR</span>
           </div>
 
           <h1 class="hero-title">
             More than<br>
-            an <span class="highlight-text"><em>editor.</em></span>
+            an <span class="highlight-text">editor.</span>
           </h1>
 
           <p class="hero-subtitle">
@@ -114,35 +121,38 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#work" class="mui-button mui-btn-primary mui-btn-large mui-ripple">
+            <a href="#work" class="btn btn-primary btn-lg">
               <span>View Filmography</span>
-              <span class="material-symbols-outlined icon-animated">arrow_downward</span>
+              <i data-lucide="arrow-down" class="icon-sm icon-animated"></i>
             </a>
-            <button class="mui-button mui-btn-outlined mui-btn-large mui-ripple" id="openReelBtn" aria-label="Watch Filmmaking Reel">
-              <span class="material-symbols-outlined">play_arrow</span>
+            <button class="btn btn-outline btn-lg" id="openReelBtn" aria-label="Watch Filmmaking Reel">
+              <i data-lucide="play" class="icon-sm"></i>
               <span>Watch Reel 2026</span>
             </button>
           </div>
 
+          <!-- Hero KPI Statistics Strip with Magic UI Number Ticker -->
           <div class="hero-stats-strip">
-            <div class="stat-pill mui-elevation-1">
-              <span class="stat-num">100+</span>
+            <div class="stat-pill magic-card">
+              <span class="stat-num ticker-target" data-target="100" data-suffix="+">100+</span>
               <span class="stat-lbl">Videos Edited Across India</span>
             </div>
-            <div class="stat-pill mui-elevation-1">
-              <span class="stat-num">6,000m+</span>
+            <div class="stat-pill magic-card">
+              <span class="stat-num ticker-target" data-target="6000" data-suffix="m+" data-comma="true">6,000m+</span>
               <span class="stat-lbl">High-Altitude Himalayan Shoots</span>
             </div>
-            <div class="stat-pill mui-elevation-1">
-              <span class="stat-num">4+1 Yrs</span>
+            <div class="stat-pill magic-card">
+              <span class="stat-num ticker-target" data-target="5" data-display="4+1 Yrs">4+1 Yrs</span>
               <span class="stat-lbl">Freelance + Senior Editor</span>
             </div>
           </div>
         </div>
 
-        <!-- Hero Visual Frame with Moment Switcher -->
+        <!-- Hero Visual Frame with Magic UI Border Beam & Moment Switcher -->
         <div class="hero-visual-wrapper animate-on-scroll">
-          <div class="hero-card-frame mui-elevation-4">
+          <div class="hero-card-frame border-beam-wrapper">
+            <div class="border-beam" aria-hidden="true"></div>
+
             <div class="hero-image-container">
               <img id="heroMainImage" 
                    src="assets/images/hero-portrait.jpg" 
@@ -151,17 +161,17 @@
                    loading="eager">
               <div class="image-gradient-overlay"></div>
               
-              <!-- Floating Material Badges -->
-              <div class="floating-badge badge-top mui-elevation-3 mui-ripple">
-                <span class="material-symbols-outlined">flight</span>
+              <!-- Floating Context Badges -->
+              <div class="floating-badge badge-top">
+                <i data-lucide="plane" class="icon-md"></i>
                 <div>
                   <strong>Licensed Drone Pilot</strong>
                   <span>Cinematic Aerial Perspectives</span>
                 </div>
               </div>
 
-              <div class="floating-badge badge-bottom mui-elevation-3 mui-ripple">
-                <span class="material-symbols-outlined">terrain</span>
+              <div class="floating-badge badge-bottom">
+                <i data-lucide="mountain" class="icon-md"></i>
                 <div>
                   <strong>6,000m+ Expeditions</strong>
                   <span>Himalayan Mountain Documentaries</span>
@@ -173,16 +183,16 @@
             <div class="image-switcher-strip">
               <span class="switcher-label">EXPLORE MOMENTS:</span>
               <div class="switcher-options">
-                <button class="switch-btn active mui-ripple" data-img="assets/images/hero-portrait.jpg" data-caption="Himalayan Sanctuary · Moments & Emotion" aria-label="Switch to portrait in misty mountains">
+                <button class="switch-btn active" data-img="assets/images/hero-portrait.jpg" data-caption="Himalayan Sanctuary · Moments & Emotion" aria-label="Switch to portrait in misty mountains">
                   <span>Misty Peaks</span>
                 </button>
-                <button class="switch-btn mui-ripple" data-img="assets/images/field-filmmaker.jpg" data-caption="Mount Tharang II Expedition · Sub-Zero Rig at 14,000ft+" aria-label="Switch to snow tripod photo">
+                <button class="switch-btn" data-img="assets/images/field-filmmaker.jpg" data-caption="Mount Tharang II Expedition · Sub-Zero Rig at 14,000ft+" aria-label="Switch to snow tripod photo">
                   <span>Snow Rig</span>
                 </button>
-                <button class="switch-btn mui-ripple" data-img="assets/images/canyon-adventure.jpg" data-caption="Spiti Valley Remote Canyon · Sun & Earth Palettes" aria-label="Switch to canyon photo">
+                <button class="switch-btn" data-img="assets/images/canyon-adventure.jpg" data-caption="Spiti Valley Remote Canyon · Sun & Earth Palettes" aria-label="Switch to canyon photo">
                   <span>Canyon Sun</span>
                 </button>
-                <button class="switch-btn mui-ripple" data-img="assets/images/expedition-portrait.jpg" data-caption="Endurance Trailhead Ready · Telephoto Setup" aria-label="Switch to portrait with camera">
+                <button class="switch-btn" data-img="assets/images/expedition-portrait.jpg" data-caption="Endurance Trailhead Ready · Telephoto Setup" aria-label="Switch to portrait with camera">
                   <span>On Trail</span>
                 </button>
               </div>
@@ -193,14 +203,14 @@
       </div>
 
       <!-- Scroll cue -->
-      <a href="#work" class="scroll-cue mui-ripple" aria-label="Scroll to portfolio">
+      <a href="#work" class="scroll-cue" aria-label="Scroll to portfolio">
         <span class="scroll-mouse"><span class="mouse-wheel"></span></span>
         <span class="scroll-label">SCROLL TO EXPLORE</span>
       </a>
     </section>
 
-    <!-- CINEMATIC STATEMENT TICKER -->
-    <section class="ticker-banner mui-elevation-1" aria-label="Statement ticker">
+    <!-- CINEMATIC MARQUEE TICKER BANNER -->
+    <section class="ticker-banner" aria-label="Statement ticker">
       <div class="ticker-track">
         <div class="ticker-content">
           <span>FROM SCRIPT TO SCREEN</span>
@@ -237,43 +247,43 @@
     <section class="section-container" id="work">
       <div class="section-header animate-on-scroll">
         <div class="header-left">
-          <div class="mui-chip section-chip"><span class="chip-num">01</span> SELECTED FILMOGRAPHY</div>
-          <h2 class="section-title">Films with <span class="highlight-text"><em>moments and emotion.</em></span></h2>
+          <div class="badge badge-outline"><span class="badge-num">01</span> SELECTED FILMOGRAPHY</div>
+          <h2 class="section-title">Films with <span class="highlight-text">moments and emotion.</span></h2>
         </div>
         <p class="section-lead">
           A curated collection of documentaries, mountaineering expeditions, endurance races, and visual stories created across outdoor, sports, and branded productions.
         </p>
       </div>
 
-      <!-- Work Category Filter Chips -->
+      <!-- Work Category Filter Tabs -->
       <div class="work-filter-bar animate-on-scroll">
-        <button class="mui-chip filter-chip active mui-ripple" data-filter="all">
-          <span class="material-symbols-outlined">grid_view</span>
+        <button class="filter-chip active" data-filter="all">
+          <i data-lucide="layout-grid" class="chip-icon"></i>
           <span>All Films</span>
           <span class="chip-count">4</span>
         </button>
-        <button class="mui-chip filter-chip mui-ripple" data-filter="mountaineering">
-          <span class="material-symbols-outlined">hiking</span>
+        <button class="filter-chip" data-filter="mountaineering">
+          <i data-lucide="mountain-snow" class="chip-icon"></i>
           <span>Mountaineering & Expeditions</span>
           <span class="chip-count">2</span>
         </button>
-        <button class="mui-chip filter-chip mui-ripple" data-filter="endurance">
-          <span class="material-symbols-outlined">directions_run</span>
+        <button class="filter-chip" data-filter="endurance">
+          <i data-lucide="activity" class="chip-icon"></i>
           <span>Endurance & Sports</span>
           <span class="chip-count">1</span>
         </button>
-        <button class="mui-chip filter-chip mui-ripple" data-filter="aerial">
-          <span class="material-symbols-outlined">flight</span>
+        <button class="filter-chip" data-filter="aerial">
+          <i data-lucide="plane" class="chip-icon"></i>
           <span>Aerial & Landscape</span>
           <span class="chip-count">1</span>
         </button>
       </div>
 
-      <!-- Projects Grid -->
+      <!-- Projects Grid with Magic UI Spotlight Cards -->
       <div class="projects-grid" id="projectsGrid">
 
-        <!-- PROJECT 1: SHAILAPUTRI (IMF Film Festival 2026) -->
-        <article class="project-card mui-elevation-2 project-featured animate-on-scroll" 
+        <!-- PROJECT 1: SHAILAPUTRI (Featured with Border Beam) -->
+        <article class="project-card magic-card project-featured border-beam-wrapper animate-on-scroll" 
                  data-category="mountaineering"
                  data-title="“Shailaputri: The Daughter of Mountains” (2026)"
                  data-subtitle="45 min+ | Black-and-White Cinema | Filmed in Himachal Pradesh, India"
@@ -283,6 +293,7 @@
                  data-role="Cinematographer, Editor & Co-Director"
                  data-aspect="2.39:1 Cinema Scope"
                  data-year="2026">
+          <div class="border-beam" aria-hidden="true"></div>
           <div class="card-media-wrapper">
             <img src="assets/images/shailaputri-poster.jpg" 
                  alt="Shailaputri: The Daughter of Mountains film poster" 
@@ -290,8 +301,8 @@
                  loading="lazy">
             <div class="card-overlay">
               <span class="project-year-badge">IMF FILM FESTIVAL 2026</span>
-              <button class="card-play-action mui-button mui-btn-fab mui-elevation-3 mui-ripple" aria-label="View project details">
-                <span class="material-symbols-outlined">visibility</span>
+              <button class="card-play-action" aria-label="View project details">
+                <i data-lucide="eye" class="icon-sm"></i>
               </button>
             </div>
             <div class="card-tag-pill">Mount Tharang II · 1st Ascent</div>
@@ -309,16 +320,16 @@
                 <span class="meta-tag">Black & White</span>
                 <span class="meta-tag">Himachal Pradesh</span>
               </div>
-              <button class="view-details-btn mui-ripple">
+              <button class="view-details-btn">
                 <span>Case Study</span>
-                <span class="material-symbols-outlined">arrow_forward</span>
+                <i data-lucide="arrow-right" class="icon-sm"></i>
               </button>
             </div>
           </div>
         </article>
 
-        <!-- PROJECT 2: ONE LAST LOOP (Bigfoot Adventure India) -->
-        <article class="project-card mui-elevation-2 animate-on-scroll" 
+        <!-- PROJECT 2: ONE LAST LOOP -->
+        <article class="project-card magic-card animate-on-scroll" 
                  data-category="endurance"
                  data-title="“One Last Loop: The Backyard Ultra Explained”"
                  data-subtitle="8 mins | Narrative Documentary | Collab with Bigfoot Adventure India"
@@ -334,8 +345,8 @@
                  class="card-img" 
                  loading="lazy">
             <div class="card-overlay">
-              <button class="card-play-action mui-button mui-btn-fab mui-elevation-3 mui-ripple" aria-label="View project details">
-                <span class="material-symbols-outlined">visibility</span>
+              <button class="card-play-action" aria-label="View project details">
+                <i data-lucide="eye" class="icon-sm"></i>
               </button>
             </div>
             <div class="card-tag-pill">Bigfoot Adventure India · BFAI</div>
@@ -353,16 +364,16 @@
                 <span class="meta-tag">Sports Doc</span>
                 <span class="meta-tag">Running Community</span>
               </div>
-              <button class="view-details-btn mui-ripple">
+              <button class="view-details-btn">
                 <span>Case Study</span>
-                <span class="material-symbols-outlined">arrow_forward</span>
+                <i data-lucide="arrow-right" class="icon-sm"></i>
               </button>
             </div>
           </div>
         </article>
 
-        <!-- PROJECT 3: MOUNT THARANG II EXPEDITION FIELD RIG -->
-        <article class="project-card mui-elevation-2 animate-on-scroll" 
+        <!-- PROJECT 3: MOUNT THARANG II FIELD RIG -->
+        <article class="project-card magic-card animate-on-scroll" 
                  data-category="mountaineering"
                  data-title="Himalayan Peak Chronicles — Above 6,000 Meters"
                  data-subtitle="Extreme Environment Expedition Cinematography"
@@ -378,8 +389,8 @@
                  class="card-img" 
                  loading="lazy">
             <div class="card-overlay">
-              <button class="card-play-action mui-button mui-btn-fab mui-elevation-3 mui-ripple" aria-label="View project details">
-                <span class="material-symbols-outlined">visibility</span>
+              <button class="card-play-action" aria-label="View project details">
+                <i data-lucide="eye" class="icon-sm"></i>
               </button>
             </div>
             <div class="card-tag-pill">6,000m+ Himalayan Ridge</div>
@@ -396,16 +407,16 @@
                 <span class="meta-tag">6,000m Altitude</span>
                 <span class="meta-tag">Sub-Zero Field Rig</span>
               </div>
-              <button class="view-details-btn mui-ripple">
+              <button class="view-details-btn">
                 <span>Case Study</span>
-                <span class="material-symbols-outlined">arrow_forward</span>
+                <i data-lucide="arrow-right" class="icon-sm"></i>
               </button>
             </div>
           </div>
         </article>
 
-        <!-- PROJECT 4: AERIAL PERSPECTIVES & GEOGRAPHY -->
-        <article class="project-card mui-elevation-2 animate-on-scroll" 
+        <!-- PROJECT 4: TERRAIN & LIGHT -->
+        <article class="project-card magic-card animate-on-scroll" 
                  data-category="aerial"
                  data-title="Terrain & Light — Aerial Landscape Studies"
                  data-subtitle="Licensed Drone Pilot · Geological Topography & Pacing"
@@ -421,8 +432,8 @@
                  class="card-img" 
                  loading="lazy">
             <div class="card-overlay">
-              <button class="card-play-action mui-button mui-btn-fab mui-elevation-3 mui-ripple" aria-label="View project details">
-                <span class="material-symbols-outlined">visibility</span>
+              <button class="card-play-action" aria-label="View project details">
+                <i data-lucide="eye" class="icon-sm"></i>
               </button>
             </div>
             <div class="card-tag-pill">Aerial Drone Cinematography</div>
@@ -439,9 +450,9 @@
                 <span class="meta-tag">Drone Pilot</span>
                 <span class="meta-tag">Geography-Led</span>
               </div>
-              <button class="view-details-btn mui-ripple">
+              <button class="view-details-btn">
                 <span>Case Study</span>
-                <span class="material-symbols-outlined">arrow_forward</span>
+                <i data-lucide="arrow-right" class="icon-sm"></i>
               </button>
             </div>
           </div>
@@ -455,13 +466,13 @@
       <div class="about-grid">
         <!-- Visual Composition -->
         <div class="about-visual animate-on-scroll">
-          <div class="about-card-layer primary-layer mui-elevation-4">
+          <div class="about-card-layer primary-layer">
             <img src="assets/images/field-filmmaker.jpg" 
                  alt="Smriti Sardar filming on snow ridge" 
                  class="about-img" 
                  loading="lazy">
-            <div class="about-image-badge mui-elevation-3">
-              <span class="material-symbols-outlined">terrain</span>
+            <div class="about-image-badge">
+              <i data-lucide="mountain" class="icon-md"></i>
               <div>
                 <strong>Over 6,000 Meters</strong>
                 <span>Filming in Extreme Himalayan Altitudes</span>
@@ -469,13 +480,13 @@
             </div>
           </div>
 
-          <div class="about-card-layer secondary-layer mui-elevation-3">
+          <div class="about-card-layer secondary-layer">
             <img src="assets/images/expedition-portrait.jpg" 
                  alt="Smriti Sardar portrait with camera" 
                  class="about-thumb" 
                  loading="lazy">
             <div class="thumb-badge">
-              <span class="material-symbols-outlined">verified</span>
+              <i data-lucide="badge-check" class="icon-sm"></i>
               <span>The Unscripted India</span>
             </div>
           </div>
@@ -483,10 +494,10 @@
 
         <!-- Narrative Content -->
         <div class="about-content animate-on-scroll">
-          <div class="mui-chip section-chip"><span class="chip-num">02</span> BEHIND THE CAMERA</div>
+          <div class="badge badge-outline"><span class="badge-num">02</span> BEHIND THE CAMERA</div>
           <h2 class="about-heading">
             A filmmaker shaped by<br>
-            <span class="highlight-text"><em>moments and emotion.</em></span>
+            <span class="highlight-text">moments and emotion.</span>
           </h2>
 
           <p class="about-lead">
@@ -497,26 +508,26 @@
             From filming at over 6,000 meters in the Himalayas to producing podcasts, fashion campaigns, and commercial productions for brands, I enjoy creating films that are authentic, immersive, and emotionally engaging. Every project is an opportunity to transform ideas into compelling visual narratives that leave a lasting impact.
           </p>
 
-          <!-- Core Competencies directly from PDF -->
+          <!-- Core Competencies with Magic UI Spotlight Cards -->
           <div class="values-list">
-            <div class="value-item mui-elevation-1 mui-ripple">
-              <div class="value-icon"><span class="material-symbols-outlined">movie_edit</span></div>
+            <div class="value-item magic-card">
+              <div class="value-icon"><i data-lucide="clapperboard" class="icon-md"></i></div>
               <div>
                 <h4>Edited 100+ Short & Long Form Videos</h4>
                 <p>4 years as a Freelance Video Editor, followed by 1 year as Senior Editor at <em>The Unscripted India</em>.</p>
               </div>
             </div>
 
-            <div class="value-item mui-elevation-1 mui-ripple">
-              <div class="value-icon"><span class="material-symbols-outlined">flight</span></div>
+            <div class="value-item magic-card">
+              <div class="value-icon"><i data-lucide="plane" class="icon-md"></i></div>
               <div>
                 <h4>Licensed Drone Pilot & Cinematographer</h4>
                 <p>Strong eye for composition, natural lighting, and capturing cinematic aerial perspectives across remote terrain.</p>
               </div>
             </div>
 
-            <div class="value-item mui-elevation-1 mui-ripple">
-              <div class="value-icon"><span class="material-symbols-outlined">deployed_code</span></div>
+            <div class="value-item magic-card">
+              <div class="value-icon"><i data-lucide="layers" class="icon-md"></i></div>
               <div>
                 <h4>End-to-End Production & Resilience</h4>
                 <p>Comfortable leading productions in challenging environments with small, agile teams from script to delivery.</p>
@@ -525,12 +536,12 @@
           </div>
 
           <div class="about-actions">
-            <a href="#contact" class="mui-button mui-btn-primary mui-ripple">
+            <a href="#contact" class="btn btn-primary">
               <span>Roll Your Vision</span>
-              <span class="material-symbols-outlined">arrow_forward</span>
+              <i data-lucide="arrow-right" class="icon-sm"></i>
             </a>
-            <a href="mailto:smritisardar010@gmail.com" class="mui-button mui-btn-outlined mui-ripple">
-              <span class="material-symbols-outlined">mail</span>
+            <a href="mailto:smritisardar010@gmail.com" class="btn btn-outline">
+              <i data-lucide="mail" class="icon-sm"></i>
               <span>smritisardar010@gmail.com</span>
             </a>
           </div>
@@ -542,8 +553,8 @@
     <section class="section-container" id="background">
       <div class="section-header animate-on-scroll">
         <div class="header-left">
-          <div class="mui-chip section-chip"><span class="chip-num">03</span> FOUNDATION & VALUES</div>
-          <h2 class="section-title">Education, Philosophy & <span class="highlight-text"><em>Experience.</em></span></h2>
+          <div class="badge badge-outline"><span class="badge-num">03</span> FOUNDATION & VALUES</div>
+          <h2 class="section-title">Education, Philosophy & <span class="highlight-text">Experience.</span></h2>
         </div>
         <p class="section-lead">
           The grounding that shapes every creative decision behind the lens and across the timeline.
@@ -552,9 +563,9 @@
 
       <div class="pillars-grid animate-on-scroll">
         <!-- Column 1: Education & Background -->
-        <div class="pillar-card mui-elevation-2 mui-ripple">
+        <div class="pillar-card magic-card">
           <div class="pillar-icon-box">
-            <span class="material-symbols-outlined">school</span>
+            <i data-lucide="graduation-cap" class="icon-lg"></i>
           </div>
           <h3>Education & Background</h3>
           <div class="pillar-section">
@@ -572,9 +583,9 @@
         </div>
 
         <!-- Column 2: Storytelling Philosophy -->
-        <div class="pillar-card mui-elevation-2 mui-ripple">
+        <div class="pillar-card magic-card">
           <div class="pillar-icon-box">
-            <span class="material-symbols-outlined">lightbulb</span>
+            <i data-lucide="lightbulb" class="icon-lg"></i>
           </div>
           <h3>Storytelling Philosophy</h3>
           <div class="pillar-section">
@@ -588,9 +599,9 @@
         </div>
 
         <!-- Column 3: Experience & Key Roles -->
-        <div class="pillar-card mui-elevation-2 mui-ripple">
+        <div class="pillar-card magic-card">
           <div class="pillar-icon-box">
-            <span class="material-symbols-outlined">military_tech</span>
+            <i data-lucide="award" class="icon-lg"></i>
           </div>
           <h3>Experience & Key Roles</h3>
           <div class="pillar-section">
@@ -613,37 +624,37 @@
     <section class="section-container" id="process">
       <div class="section-header animate-on-scroll">
         <div class="header-left">
-          <div class="mui-chip section-chip"><span class="chip-num">04</span> CREATIVE PROCESS</div>
-          <h2 class="section-title">From Script to <span class="highlight-text"><em>Screen.</em></span></h2>
+          <div class="badge badge-outline"><span class="badge-num">04</span> CREATIVE PROCESS</div>
+          <h2 class="section-title">From Script to <span class="highlight-text">Screen.</span></h2>
         </div>
         <p class="section-lead">
           We transform ideas into compelling visual stories through strategy, creativity, and cinematic execution.
         </p>
       </div>
 
-      <div class="process-banner-box mui-elevation-2 animate-on-scroll">
+      <div class="process-banner-box animate-on-scroll">
         <p class="process-lead-text">
           "From concept development and scripting to production, post-production, and marketing, we manage every stage of the creative process. Our expertise spans documentaries, commercials, corporate films, fashion campaigns, product films, podcasts, and branded content. Whether you're building a brand or telling a powerful story, we deliver end-to-end creative solutions that inspire, engage, and leave a lasting impact."
         </p>
       </div>
 
       <div class="process-steps-grid animate-on-scroll">
-        <div class="process-step-card mui-elevation-1 mui-ripple">
+        <div class="process-step-card magic-card">
           <span class="step-num">01</span>
           <h4>Concept & Scripting</h4>
           <p>Defining the emotional core, researching the narrative arc, visual treatments, and meticulous production planning.</p>
         </div>
-        <div class="process-step-card mui-elevation-1 mui-ripple">
+        <div class="process-step-card magic-card">
           <span class="step-num">02</span>
           <h4>Cinematography & Field</h4>
           <p>Cinematic capture in any terrain, high-altitude alpine rigs, 4K 10-bit log profiles, aerial drone piloting, and on-location sound.</p>
         </div>
-        <div class="process-step-card mui-elevation-1 mui-ripple">
+        <div class="process-step-card magic-card">
           <span class="step-num">03</span>
           <h4>Post-Production & Sound</h4>
           <p>Intentional narrative assembly, rhythm cutting, sound immersion & foley, and DaVinci Resolve node-based color grading.</p>
         </div>
-        <div class="process-step-card mui-elevation-1 mui-ripple">
+        <div class="process-step-card magic-card">
           <span class="step-num">04</span>
           <h4>Delivery & Distribution</h4>
           <p>Festival master deliverables (IMF, cinema formats), high-impact short-form cutdowns for social, and commercial broadcast exports.</p>
@@ -651,14 +662,14 @@
       </div>
     </section>
 
-    <!-- CONTACT / THANK YOU SECTION -->
+    <!-- CONTACT SECTION -->
     <section class="section-container" id="contact">
-      <div class="contact-card-box mui-elevation-3 animate-on-scroll">
+      <div class="contact-card-box animate-on-scroll">
         <div class="contact-header">
-          <div class="mui-chip section-chip"><span class="chip-num">05</span> LET’S ROLL YOUR VISION INTO REALITY</div>
+          <div class="badge badge-outline"><span class="badge-num">05</span> LET’S ROLL YOUR VISION INTO REALITY</div>
           <h2 class="contact-heading">
             Let’s roll your vision<br>
-            into <span class="highlight-text"><em>reality.</em></span>
+            into <span class="highlight-text">reality.</span>
           </h2>
           <p class="contact-lead">
             Every great story begins with a conversation. Whether you're creating a documentary, launching a brand, producing a commercial, or building something from the ground up, I'd love to help bring your ideas to life through meaningful and cinematic storytelling. Let's create work that inspires, connects, and leaves a lasting impact.
@@ -666,77 +677,83 @@
         </div>
 
         <div class="contact-columns">
-          <!-- Interactive Material Outlined Form -->
-          <form class="mui-form" id="contactForm" novalidate>
-            <div class="mui-textfield">
-              <input type="text" id="senderName" class="mui-input" required autocomplete="name" placeholder=" ">
-              <label for="senderName" class="mui-floating-label">Your Full Name</label>
-              <span class="material-symbols-outlined input-icon">person</span>
+          <!-- Clean shadcn Form -->
+          <form class="shadcn-form" id="contactForm" novalidate>
+            <div class="form-item">
+              <label for="senderName" class="form-label">Your Full Name</label>
+              <div class="input-wrapper">
+                <i data-lucide="user" class="input-icon"></i>
+                <input type="text" id="senderName" class="shadcn-input" required autocomplete="name" placeholder="e.g. Elena Rostova">
+              </div>
             </div>
 
-            <div class="mui-textfield">
-              <input type="email" id="senderEmail" class="mui-input" required autocomplete="email" placeholder=" ">
-              <label for="senderEmail" class="mui-floating-label">Email Address</label>
-              <span class="material-symbols-outlined input-icon">alternate_email</span>
+            <div class="form-item">
+              <label for="senderEmail" class="form-label">Email Address</label>
+              <div class="input-wrapper">
+                <i data-lucide="at-sign" class="input-icon"></i>
+                <input type="email" id="senderEmail" class="shadcn-input" required autocomplete="email" placeholder="e.g. elena@production.com">
+              </div>
             </div>
 
             <div class="form-choice-group">
               <label class="choice-group-label">PROJECT SCOPE:</label>
               <div class="choice-chips">
-                <button type="button" class="choice-chip active mui-ripple" data-val="Documentary / Expedition">Documentary / Expedition</button>
-                <button type="button" class="choice-chip mui-ripple" data-val="Commercial / Brand Film">Commercial / Brand Film</button>
-                <button type="button" class="choice-chip mui-ripple" data-val="Drone Cinematography">Drone Cinematography</button>
-                <button type="button" class="choice-chip mui-ripple" data-val="Video Editing / Color">Video Editing / Color</button>
+                <button type="button" class="choice-chip active" data-val="Documentary / Expedition">Documentary / Expedition</button>
+                <button type="button" class="choice-chip" data-val="Commercial / Brand Film">Commercial / Brand Film</button>
+                <button type="button" class="choice-chip" data-val="Drone Cinematography">Drone Cinematography</button>
+                <button type="button" class="choice-chip" data-val="Video Editing / Color">Video Editing / Color</button>
               </div>
             </div>
 
-            <div class="mui-textfield">
-              <textarea id="senderMessage" class="mui-input mui-textarea" rows="4" required placeholder=" "></textarea>
-              <label for="senderMessage" class="mui-floating-label">Tell me about your project, timeline, and vision...</label>
-              <span class="material-symbols-outlined input-icon">edit_note</span>
+            <div class="form-item">
+              <label for="senderMessage" class="form-label">Project Details</label>
+              <div class="input-wrapper">
+                <i data-lucide="message-square" class="input-icon"></i>
+                <textarea id="senderMessage" class="shadcn-textarea" rows="4" required placeholder="Tell me about your project, timeline, and vision..."></textarea>
+              </div>
             </div>
 
-            <button type="submit" class="mui-button mui-btn-primary mui-btn-large submit-btn mui-ripple" id="submitBtn">
+            <button type="submit" class="btn btn-primary btn-lg submit-btn" id="submitBtn">
               <span class="btn-text">Roll Your Vision</span>
-              <span class="material-symbols-outlined btn-icon">send</span>
+              <i data-lucide="send" class="icon-sm btn-icon"></i>
               <span class="spinner" aria-hidden="true"></span>
             </button>
           </form>
 
-          <!-- Direct Contact Cards from PDF -->
+          <!-- Direct Contact Cards from Deck -->
           <div class="direct-contact-sidebar">
-            <a href="mailto:smritisardar010@gmail.com" class="direct-card mui-elevation-1 mui-ripple" id="copyEmailCard">
-              <div class="direct-icon"><span class="material-symbols-outlined">mail</span></div>
+            <a href="mailto:smritisardar010@gmail.com" class="direct-card magic-card" id="copyEmailCard">
+              <div class="direct-icon"><i data-lucide="mail" class="icon-md"></i></div>
               <div class="direct-info">
                 <span class="direct-lbl">EMAIL</span>
                 <span class="direct-val">smritisardar010@gmail.com</span>
               </div>
-              <span class="material-symbols-outlined direct-action-icon">content_copy</span>
+              <i data-lucide="copy" class="direct-action-icon"></i>
             </a>
 
-            <a href="tel:+919875641683" class="direct-card mui-elevation-1 mui-ripple">
-              <div class="direct-icon"><span class="material-symbols-outlined">call</span></div>
+            <a href="tel:+919875641683" class="direct-card magic-card">
+              <div class="direct-icon"><i data-lucide="phone" class="icon-md"></i></div>
               <div class="direct-info">
                 <span class="direct-lbl">PHONE NUMBER</span>
                 <span class="direct-val">+91 9875641683</span>
               </div>
-              <span class="material-symbols-outlined direct-action-icon">phone_forwarded</span>
+              <i data-lucide="phone-call" class="direct-action-icon"></i>
             </a>
 
-            <a href="https://wa.me/919875641683" target="_blank" rel="noopener" class="direct-card mui-elevation-1 mui-ripple">
-              <div class="direct-icon"><span class="material-symbols-outlined">chat</span></div>
+            <a href="https://wa.me/919875641683" target="_blank" rel="noopener" class="direct-card magic-card">
+              <div class="direct-icon"><i data-lucide="message-circle" class="icon-md"></i></div>
               <div class="direct-info">
                 <span class="direct-lbl">WHATSAPP</span>
                 <span class="direct-val">+91 9875641683</span>
               </div>
-              <span class="material-symbols-outlined direct-action-icon">north_east</span>
+              <i data-lucide="arrow-up-right" class="direct-action-icon"></i>
             </a>
 
-            <div class="direct-card mui-elevation-1 mui-ripple">
-              <div class="direct-icon"><span class="material-symbols-outlined">location_on</span></div>
+            <div class="direct-card magic-card">
+              <div class="direct-icon"><i data-lucide="map-pin" class="icon-md"></i></div>
               <div class="direct-info">
                 <span class="direct-lbl">BASE & AVAILABILITY</span>
-                <span class="direct-val">India · Available Worldwide for Remote & Field Productions</span>
+                <span class="direct-val">India · Worldwide Remote & Field Sets</span>
               </div>
             </div>
           </div>
@@ -746,7 +763,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="mui-footer">
+  <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-left">
         <a class="brand-wordmark" href="#home">
@@ -760,8 +777,8 @@
           <div class="footer-build-tag">
             <span class="build-pulse-dot"></span>
             <span class="build-lbl">LATEST COMMIT:</span>
-            <a id="gitCommitBadge" href="https://github.com/Sammy-l33t/smriti-sardar-portfolio/commits/main" target="_blank" rel="noopener" class="commit-pill mui-ripple" title="View latest commit on GitHub">
-              <span class="material-symbols-outlined commit-icon">commit</span>
+            <a id="gitCommitBadge" href="https://github.com/Sammy-l33t/smriti-sardar-portfolio/commits/main" target="_blank" rel="noopener" class="commit-pill" title="View latest commit on GitHub">
+              <i data-lucide="git-commit" class="commit-icon"></i>
               <code id="gitCommitHash">b4c81c9</code>
             </a>
           </div>
@@ -776,44 +793,44 @@
         <a href="#contact" class="footer-link">Contact</a>
       </div>
 
-      <a href="#home" class="back-to-top-btn mui-ripple" aria-label="Back to top">
+      <a href="#home" class="back-to-top-btn" aria-label="Back to top">
         <span>BACK TO TOP</span>
-        <span class="material-symbols-outlined">arrow_upward</span>
+        <i data-lucide="arrow-up" class="icon-sm"></i>
       </a>
     </div>
   </footer>
 
-  <!-- MATERIAL FLOATING ACTION BUTTON (FAB) -->
+  <!-- QUICK ACTION FAB MENU -->
   <div class="fab-wrapper">
-    <button class="mui-button mui-btn-fab fab-main mui-elevation-4 mui-ripple" id="fabBtn" aria-label="Quick Actions">
-      <span class="material-symbols-outlined fab-icon-chat">chat</span>
-      <span class="material-symbols-outlined fab-icon-close">close</span>
+    <button class="fab-main" id="fabBtn" aria-label="Quick Actions">
+      <i data-lucide="message-circle" class="fab-icon-chat icon-md"></i>
+      <i data-lucide="x" class="fab-icon-close icon-md"></i>
     </button>
     <div class="fab-menu" id="fabMenu">
-      <a href="#contact" class="fab-menu-item mui-elevation-3 mui-ripple" aria-label="Start Conversation">
+      <a href="#contact" class="fab-menu-item" aria-label="Start Conversation">
         <span class="fab-tooltip">Start Project</span>
-        <span class="material-symbols-outlined">send</span>
+        <i data-lucide="send" class="icon-sm"></i>
       </a>
-      <a href="tel:+919875641683" class="fab-menu-item mui-elevation-3 mui-ripple" aria-label="Call Direct">
+      <a href="tel:+919875641683" class="fab-menu-item" aria-label="Call Direct">
         <span class="fab-tooltip">Call Smriti</span>
-        <span class="material-symbols-outlined">call</span>
+        <i data-lucide="phone" class="icon-sm"></i>
       </a>
-      <a href="mailto:smritisardar010@gmail.com" class="fab-menu-item mui-elevation-3 mui-ripple" aria-label="Direct Email">
+      <a href="mailto:smritisardar010@gmail.com" class="fab-menu-item" aria-label="Direct Email">
         <span class="fab-tooltip">Send Email</span>
-        <span class="material-symbols-outlined">mail</span>
+        <i data-lucide="mail" class="icon-sm"></i>
       </a>
-      <button class="fab-menu-item mui-elevation-3 mui-ripple" id="fabReelTrigger" aria-label="Watch Showreel">
+      <button class="fab-menu-item" id="fabReelTrigger" aria-label="Watch Showreel">
         <span class="fab-tooltip">Watch Reel</span>
-        <span class="material-symbols-outlined">play_arrow</span>
+        <i data-lucide="play" class="icon-sm"></i>
       </button>
     </div>
   </div>
 
-  <!-- MATERIAL PROJECT MODAL / DIALOG -->
-  <div class="mui-dialog-backdrop" id="projectDialogBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="mui-dialog-card mui-elevation-5">
-      <button class="mui-icon-button dialog-close-btn mui-ripple" id="closeDialogBtn" aria-label="Close dialog">
-        <span class="material-symbols-outlined">close</span>
+  <!-- PROJECT CASE STUDY MODAL / DIALOG -->
+  <div class="dialog-backdrop" id="projectDialogBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="dialog-card">
+      <button class="dialog-close-btn" id="closeDialogBtn" aria-label="Close dialog">
+        <i data-lucide="x" class="icon-sm"></i>
       </button>
 
       <div class="dialog-media-container">
@@ -855,11 +872,11 @@
         </div>
 
         <div class="dialog-actions">
-          <a href="#contact" class="mui-button mui-btn-primary mui-ripple" id="dialogContactBtn">
+          <a href="#contact" class="btn btn-primary" id="dialogContactBtn">
             <span>Discuss Similar Project</span>
-            <span class="material-symbols-outlined">arrow_forward</span>
+            <i data-lucide="arrow-right" class="icon-sm"></i>
           </a>
-          <button class="mui-button mui-btn-outlined mui-ripple" id="dialogDismissBtn">
+          <button class="btn btn-outline" id="dialogDismissBtn">
             <span>Close Overview</span>
           </button>
         </div>
@@ -868,10 +885,10 @@
   </div>
 
   <!-- SHOWREEL MODAL / DIALOG -->
-  <div class="mui-dialog-backdrop" id="reelDialogBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="mui-dialog-card reel-dialog-card mui-elevation-5">
-      <button class="mui-icon-button dialog-close-btn mui-ripple" id="closeReelBtn" aria-label="Close showreel">
-        <span class="material-symbols-outlined">close</span>
+  <div class="dialog-backdrop" id="reelDialogBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="dialog-card reel-dialog-card">
+      <button class="dialog-close-btn" id="closeReelBtn" aria-label="Close showreel">
+        <i data-lucide="x" class="icon-sm"></i>
       </button>
 
       <div class="reel-container">
@@ -879,8 +896,8 @@
           <img src="assets/images/shailaputri-poster.jpg" alt="Smriti Sardar Reel Cover" class="reel-banner-img">
           <div class="reel-banner-scrim"></div>
           <div class="reel-center-content">
-            <div class="reel-play-circle mui-elevation-4 mui-ripple" id="mockPlayVideoBtn">
-              <span class="material-symbols-outlined">play_arrow</span>
+            <div class="reel-play-circle" id="mockPlayVideoBtn">
+              <i data-lucide="play" class="icon-lg"></i>
             </div>
             <h3>SMRITI SARDAR — SHOWREEL 2026</h3>
             <p>Moments & Emotion · 6,000m Expeditions · Endurance Sports · Drone Aerials</p>
@@ -897,9 +914,9 @@
             Featuring authentic cinematography captured across the Himalayas at over 6,000 meters, sports documentaries, and commercial campaigns.
           </p>
           <div class="reel-actions">
-            <a href="#contact" class="mui-button mui-btn-primary mui-ripple" id="reelContactTrigger">
+            <a href="#contact" class="btn btn-primary" id="reelContactTrigger">
               <span>Commission a Project</span>
-              <span class="material-symbols-outlined">north_east</span>
+              <i data-lucide="arrow-up-right" class="icon-sm"></i>
             </a>
           </div>
         </div>
@@ -907,12 +924,12 @@
     </div>
   </div>
 
-  <!-- MATERIAL SNACKBAR / TOAST -->
-  <div class="mui-snackbar mui-elevation-4" id="muiSnackbar" role="status" aria-live="polite">
-    <span class="material-symbols-outlined snackbar-icon" id="snackbarIcon">check_circle</span>
-    <span class="snackbar-msg" id="snackbarMsg">Message sent successfully!</span>
-    <button class="snackbar-close mui-ripple" id="snackbarClose" aria-label="Dismiss notification">
-      <span class="material-symbols-outlined">close</span>
+  <!-- SHADCN / SONNER TOAST NOTIFICATION -->
+  <div class="toast-sonner" id="muiSnackbar" role="status" aria-live="polite">
+    <i data-lucide="check-circle-2" class="toast-icon" id="snackbarIcon"></i>
+    <span class="toast-msg" id="snackbarMsg">Message sent successfully!</span>
+    <button class="toast-close" id="snackbarClose" aria-label="Dismiss notification">
+      <i data-lucide="x" class="icon-sm"></i>
     </button>
   </div>
 

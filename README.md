@@ -1,54 +1,67 @@
-# Smriti Sardar — Video Editor & Cinematographer Portfolio
+# Smriti Sardar — Filmmaker & Video Editor Portfolio
 
-A high-performance, cinematic personal portfolio for **Smriti Sardar** built with a custom **Material UI (MUI 3)** design system, native HTML5, CSS3, and vanilla JavaScript. No complex build step or framework overhead required.
+A zero-overhead, ultra-high-performance cinematic personal portfolio for **Smriti Sardar** built with a **shadcn/ui (Zinc Dark Mode)** and **Magic UI** aesthetic (Linear / Vercel / Raycast SaaS style), using pure native HTML5, CSS3, and vanilla JavaScript (~2KB). Deployed seamlessly on Vercel with zero runtime framework overhead.
 
 ---
 
-## 🌟 Key Features & Improvements
+## 🌟 Design System & Architecture
 
-### 1. Authentic Photography & Interactive Hero
-- Integrated authentic high-resolution photography of Smriti across Himalayan expeditions, snowy ridges with cinema camera rigs, Spiti canyon landscapes, and alpine villages.
-- **Interactive Moment Switcher**: Allows visitors to toggle between 4 distinct photo moments (*Misty Peaks*, *Snow Rig*, *Canyon Sun*, *On Trail*) with smooth crossfade animations and updated narrative captions.
-- Depth-layered floating badges showcasing high-altitude field filming credentials.
+### 1. shadcn/ui Zinc Dark Mode Tokens
+- **Zinc Palette**: Deep obsidian canvas (`--background: #09090b`), translucent surfaces (`--glass-surface: rgba(18, 18, 22, 0.65)`), crisp 1px borders (`--border: #27272a`), high-contrast foreground typography (`--foreground: #fafafa`), and warm amber film accents (`--brand-amber: #f59e0b`).
+- **Crisp Surfaces & Focus Rings**: Replaced heavy drop-shadows with crisp 1px borders, subtle ambient dark elevation, and accessible keyboard focus rings (`focus-visible:ring-2`).
+- **Typography Hierarchy**:
+  - **Inter**: Primary sans-serif font for headings, copy, navigation, and form inputs.
+  - **JetBrains Mono**: Monospace font for badges, technical metadata, aspect ratios, metrics, and commit hashes.
+- **Lucide Icons**: Featherweight, crisp SVG iconography loaded via Lucide (`data-lucide` with local offline resilience).
 
-### 2. Material UI (MUI) Design Architecture
-- **Material Symbols Outlined**: Google Material iconography integrated across buttons, chips, and cards.
-- **Material Elevation System**: 5-tier elevation tokens (`--elevation-1` to `--elevation-5`) delivering authentic Material Design shadows, inset shadows, and ambient colored glows.
-- **Material Components**:
-  - Elevated Sticky App Bar with backdrop blur on scroll.
-  - Floating Action Button (FAB) with speed dial menu.
-  - Interactive Material Chips for category filtering.
-  - Floating Label Outlined Text Fields with focus notch animations.
-  - Material Dialogs (Modals) for detailed Project Case Studies and Showreel preview.
-  - Material Snackbar (Toast) notification with auto-dismiss and close actions.
+---
 
-### 3. Animations on Every User Action
-- **Dynamic Material Ripple**: Clicking ANY button, card, chip, or link calculates touch coordinates and triggers an expanding ripple wave.
-- **Micro-interactions**: Subtle button compression on click (`scale(0.96)`), smooth card hover lift (`translateY(-6px)`), icon slides, and image zoom (`scale(1.05)`).
-- **Service Accordion**: Smoothly expands and rotates indicator arrows on selection.
-- **Form Submission**: Animated loading spinner transition into a success toast notification.
-- **One-Click Email Copy**: Click the direct email card to copy to clipboard with haptic-style visual toast feedback.
-- **Scroll Observer**: Smooth entrance reveal animations as content scrolls into the viewport.
+## ✨ Magic UI Micro-Interactions
 
-### 4. Fully Optimized for Every Screen Type
-- **Ultra-Mobile & Mobile (< 480px, 480-768px)**: Fluid typography using `clamp()`, minimum 48px touch targets, full-width touch-friendly cards, and a slide-down mobile navigation drawer.
-- **Tablet (768px - 1024px)**: 2-column balanced layouts and tablet-optimized modal views.
-- **Desktop & Ultra-wide (> 1024px, > 1440px)**: Asymmetric cinematic hero layout, 2-column and featured project grid, 3-column skills and testimonials, constrained to a 1320px viewport container.
-- **Accessibility**: Support for `prefers-reduced-motion` and keyboard accessibility (`Escape` key modal closure).
+### 1. BlurFade
+Pure CSS `@keyframes blurFadeIn` and Intersection Observer reveal effects. Content enters view with subtle motion, progressive contrast, and smooth unblurring (`filter: blur(8px) -> blur(0)`).
+
+### 2. Spotlight Cards (MagicCard)
+Interactive cursor-following radial illuminator (`.magic-card`). Dynamically calculates touch and cursor coordinates (`--mouse-x`, `--mouse-y`) to cast a subtle glow across the border and card surface on hover.
+
+### 3. Animated Border Beam (BorderBeam)
+Signature Magic UI rotating perimeter highlight using pure CSS conic gradients and CSS masks. Showcased on the hero visual card frame and the featured case study card (*Shailaputri*).
+
+### 4. Number Ticker
+Smooth `requestAnimationFrame` counter animation for hero KPI metrics (`100+`, `6,000m+`, `4+1 Yrs`) with automatic thousand separator formatting and view-triggering.
+
+### 5. Infinite Marquee Ticker
+Continuous smooth CSS marquee banner featuring Smriti's cinematic statement across the screen.
+
+---
+
+## 🎬 Core Features
+
+- **Interactive Moment Switcher**: Allows visitors to toggle between 4 distinct photography moments (*Misty Peaks*, *Snow Rig*, *Canyon Sun*, *On Trail*) with smooth crossfade transitions and dynamic captions.
+- **Work Category Filter Tabs**: Instant filtering of filmography across *All*, *Mountaineering & Expeditions*, *Endurance & Sports*, and *Aerial & Landscape*.
+- **Dynamic Case Study Modal**: Lightbox popup presenting complete production credits, tools (DaVinci Resolve Studio 19, Sony Cinema Line), aspect ratios (2.39:1 Cinema Scope), and delivery specifications.
+- **4K Showreel Lightbox**: Dedicated video player modal with high-definition backdrop, production metadata, and direct booking trigger.
+- **Sonner-Style Feedback Toast**: Sleek floating dark toast notification for user actions (form submission, email copy, showreel loading).
+- **One-Click Email Copy**: Instant clipboard copy with visual feedback toast.
+- **Live GitHub Commit Tracker**: Directly fetches and displays the live commit short SHA and commit message link from GitHub API.
+- **Mobile Navigation Drawer**: Responsive slide-down navigation drawer with auto-close on desktop resize.
 
 ---
 
 ## 🚀 Local Preview
 
-Open `index.html` in any modern web browser or serve via:
+Open `index.html` in any modern web browser or serve locally:
 ```bash
 npx serve .
 # or
 python3 -m http.server 3000
 ```
 
+---
+
 ## 🌐 Deploy to Vercel
-This project includes `vercel.json` and is ready for 1-click deployment on [Vercel](https://vercel.com):
+
+Configured with `vercel.json` for 1-click deployment with clean URLs and immutable asset caching:
 ```bash
 npm install -g vercel
 vercel
