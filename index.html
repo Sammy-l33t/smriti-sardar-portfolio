@@ -2,138 +2,1092 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0b0d">
-  <meta name="description" content="Smriti Sardar — more than an editor. A portfolio for storytelling, visual rhythm, and thoughtful edits.">
-  <title>Smriti Sardar — More Than an Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0c10">
+  <meta name="description" content="Smriti Sardar — Video Editor, Cinematographer & Visual Storyteller. Crafting high-altitude expedition documentaries, cinematic rhythms, and emotive films.">
+  <title>Smriti Sardar — Video Editor & Visual Storyteller</title>
+
+  <!-- Google Fonts & Material Symbols -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-  <header class="site-header">
-    <a class="wordmark" href="#home" aria-label="Smriti Sardar home">SS<span>.</span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu <span>＋</span></button>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#work">Selected work</a>
-      <a href="#about">About</a>
-      <a href="#process">Process</a>
-      <a class="nav-contact" href="#contact">Let’s talk <span>↗</span></a>
-    </nav>
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Ambient Cinematic Grain -->
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- Material App Bar (Header) -->
+  <header class="mui-appbar" id="appbar">
+    <div class="appbar-container">
+      <a class="brand-wordmark mui-ripple" href="#home" aria-label="Smriti Sardar Homepage">
+        <span class="brand-monogram">SS</span>
+        <span class="brand-dot"></span>
+        <span class="brand-sub">Visual Storyteller</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="mui-nav-links" aria-label="Main Navigation">
+        <a href="#work" class="nav-item mui-ripple">Work</a>
+        <a href="#about" class="nav-item mui-ripple">About</a>
+        <a href="#skills" class="nav-item mui-ripple">Craft & Gear</a>
+        <a href="#services" class="nav-item mui-ripple">Services</a>
+        <a href="#contact" class="nav-cta mui-button mui-btn-contained mui-ripple">
+          <span>Let’s Talk</span>
+          <span class="material-symbols-outlined">north_east</span>
+        </a>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger -->
+      <button class="mui-icon-button menu-toggle mui-ripple" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-content">
+        <div class="drawer-header">
+          <span class="drawer-title">Navigation</span>
+          <span class="status-badge"><span class="pulse-dot"></span> Available for Projects</span>
+        </div>
+        <nav class="drawer-nav">
+          <a href="#work" class="drawer-link mui-ripple">
+            <span class="material-symbols-outlined">movie</span>
+            <span>Selected Work</span>
+          </a>
+          <a href="#about" class="drawer-link mui-ripple">
+            <span class="material-symbols-outlined">person</span>
+            <span>About Smriti</span>
+          </a>
+          <a href="#skills" class="drawer-link mui-ripple">
+            <span class="material-symbols-outlined">tune</span>
+            <span>Craft & Gear</span>
+          </a>
+          <a href="#services" class="drawer-link mui-ripple">
+            <span class="material-symbols-outlined">auto_videocam</span>
+            <span>Services & Process</span>
+          </a>
+          <a href="#contact" class="drawer-link mui-ripple drawer-cta">
+            <span class="material-symbols-outlined">send</span>
+            <span>Start a Project</span>
+          </a>
+        </nav>
+        <div class="drawer-footer">
+          <p>smritisardar.edit@gmail.com</p>
+          <div class="drawer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="drawer-icon-link mui-ripple" aria-label="Instagram">IG</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="drawer-icon-link mui-ripple" aria-label="LinkedIn">IN</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="drawer-icon-link mui-ripple" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="hero section-wrap" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> EDITOR · STORYTELLER · CREATIVE MIND</p>
-        <h1>More than<br>an <em>editor.</em></h1>
-        <p class="hero-intro">I shape raw moments into stories that feel intentional, cinematic, and impossible to scroll past.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#work">Explore my work <span>↘</span></a>
-          <a class="text-link" href="#contact">Have a project in mind?</a>
-        </div>
-        <div class="hero-footnote"><span>BASED IN INDIA</span><span>OPEN TO CREATIVE COLLABORATIONS</span></div>
-      </div>
-      <div class="hero-visual">
-        <div class="visual-frame">
-          <div class="portrait-placeholder" role="img" aria-label="Portrait placeholder. Replace with Smriti's photo.">
-            <div class="portrait-initials">S<span>.</span></div>
-            <div class="portrait-note">YOUR PHOTO<br>GOES HERE</div>
-            <div class="portrait-orbit orbit-one"></div>
-            <div class="portrait-orbit orbit-two"></div>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="hero-layout">
+        <!-- Hero Text Content -->
+        <div class="hero-copy animate-on-scroll">
+          <div class="mui-chip status-chip mui-ripple">
+            <span class="status-pulse-dot"></span>
+            <span>OPEN TO CREATIVE COMMISSIONS · WORLDWIDE</span>
           </div>
-          <div class="frame-label"><span>CREATIVE PORTFOLIO</span><span>2026 — ∞</span></div>
+
+          <h1 class="hero-title">
+            More than<br>
+            an <span class="highlight-text"><em>editor.</em></span>
+          </h1>
+
+          <p class="hero-subtitle">
+            I craft cinematic rhythms, high-altitude expedition documentaries, and visual stories that pull audiences inside the frame and refuse to be forgotten.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="mui-button mui-btn-primary mui-btn-large mui-ripple">
+              <span>Explore My Work</span>
+              <span class="material-symbols-outlined icon-animated">arrow_downward</span>
+            </a>
+            <button class="mui-button mui-btn-outlined mui-btn-large mui-ripple" id="openReelBtn" aria-label="Watch Filmmaking Reel">
+              <span class="material-symbols-outlined">play_arrow</span>
+              <span>Watch Reel 2026</span>
+            </button>
+          </div>
+
+          <div class="hero-stats-strip">
+            <div class="stat-pill mui-elevation-1">
+              <span class="stat-num">5+</span>
+              <span class="stat-lbl">Years Crafting</span>
+            </div>
+            <div class="stat-pill mui-elevation-1">
+              <span class="stat-num">80+</span>
+              <span class="stat-lbl">Visual Edits</span>
+            </div>
+            <div class="stat-pill mui-elevation-1">
+              <span class="stat-num">15k+ ft</span>
+              <span class="stat-lbl">Field Elevation</span>
+            </div>
+          </div>
         </div>
-        <div class="floating-tag tag-top">STORY FIRST <span>✳</span></div>
-        <div class="floating-tag tag-bottom"><span class="tag-line"></span> DETAILS MAKE THE DIFFERENCE</div>
-        <div class="hero-number">01 / 04</div>
+
+        <!-- Hero Visual Card with Real Image Switcher -->
+        <div class="hero-visual-wrapper animate-on-scroll">
+          <div class="hero-card-frame mui-elevation-4">
+            <div class="hero-image-container">
+              <img id="heroMainImage" 
+                   src="assets/images/hero-portrait.jpg" 
+                   alt="Smriti Sardar — Video Editor & Cinematographer in the Himalayas" 
+                   class="hero-active-img"
+                   loading="eager">
+              <div class="image-gradient-overlay"></div>
+              
+              <!-- Floating Material Badges with Elevation Shadows -->
+              <div class="floating-badge badge-top mui-elevation-3 mui-ripple">
+                <span class="material-symbols-outlined">landscape</span>
+                <div>
+                  <strong>High-Altitude Specialist</strong>
+                  <span>Spiti · Ladakh · Western Himalayas</span>
+                </div>
+              </div>
+
+              <div class="floating-badge badge-bottom mui-elevation-3 mui-ripple">
+                <span class="material-symbols-outlined">movie_filter</span>
+                <div>
+                  <strong>Story First</strong>
+                  <span>Intentional Pacing & Sound Design</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Look Switcher Ribbon -->
+            <div class="image-switcher-strip">
+              <span class="switcher-label">EXPLORE MOMENTS:</span>
+              <div class="switcher-options">
+                <button class="switch-btn active mui-ripple" data-img="assets/images/hero-portrait.jpg" data-caption="Himalayan Sanctuary · Solitude & Atmospheric Tones" aria-label="Switch to portrait in misty mountains">
+                  <span>Misty Peaks</span>
+                </button>
+                <button class="switch-btn mui-ripple" data-img="assets/images/field-filmmaker.jpg" data-caption="Sub-Zero Snow Rig · Camera on Tripod at 14,000ft" aria-label="Switch to snow tripod photo">
+                  <span>Snow Rig</span>
+                </button>
+                <button class="switch-btn mui-ripple" data-img="assets/images/canyon-adventure.jpg" data-caption="Spiti Valley Canyon · Sun & Earth Palettes" aria-label="Switch to canyon photo">
+                  <span>Canyon Sun</span>
+                </button>
+                <button class="switch-btn mui-ripple" data-img="assets/images/expedition-portrait.jpg" data-caption="Trailhead Ready · Professional Telephoto Setup" aria-label="Switch to portrait with camera">
+                  <span>On Trail</span>
+                </button>
+              </div>
+            </div>
+            <p id="heroPhotoCaption" class="hero-photo-caption">Himalayan Sanctuary · Solitude & Atmospheric Tones</p>
+          </div>
+        </div>
       </div>
-      <div class="scroll-cue"><span></span> SCROLL TO DISCOVER</div>
+
+      <!-- Scroll cue indicator -->
+      <a href="#work" class="scroll-cue mui-ripple" aria-label="Scroll to portfolio">
+        <span class="scroll-mouse"><span class="mouse-wheel"></span></span>
+        <span class="scroll-label">SCROLL TO DISCOVER</span>
+      </a>
     </section>
 
-    <section class="intro-strip">
-      <p>GOOD EDITING ISN’T JUST WHAT YOU SEE.</p>
-      <p class="strip-emphasis">IT’S WHAT YOU <em>FEEL.</em></p>
-      <span class="strip-star">✳</span>
+    <!-- CINEMATIC STATEMENT TICKER -->
+    <section class="ticker-banner mui-elevation-1" aria-label="Statement marquee">
+      <div class="ticker-track">
+        <div class="ticker-content">
+          <span>EDITING IS EMOTIONAL ARCHITECTURE</span>
+          <span class="ticker-star">✳</span>
+          <span>FEEL THE CUT BEFORE YOU SEE IT</span>
+          <span class="ticker-star">✳</span>
+          <span>INTENTIONAL PACING & SOUND DESIGN</span>
+          <span class="ticker-star">✳</span>
+          <span>FIELD-PROVEN CINEMATOGRAPHY</span>
+          <span class="ticker-star">✳</span>
+          <span>DAVINCI RESOLVE & PREMIERE PRO MASTERY</span>
+          <span class="ticker-star">✳</span>
+        </div>
+        <div class="ticker-content" aria-hidden="true">
+          <span>EDITING IS EMOTIONAL ARCHITECTURE</span>
+          <span class="ticker-star">✳</span>
+          <span>FEEL THE CUT BEFORE YOU SEE IT</span>
+          <span class="ticker-star">✳</span>
+          <span>INTENTIONAL PACING & SOUND DESIGN</span>
+          <span class="ticker-star">✳</span>
+          <span>FIELD-PROVEN CINEMATOGRAPHY</span>
+          <span class="ticker-star">✳</span>
+          <span>DAVINCI RESOLVE & PREMIERE PRO MASTERY</span>
+          <span class="ticker-star">✳</span>
+        </div>
+      </div>
     </section>
 
-    <section class="work section-wrap" id="work">
-      <div class="section-heading">
-        <div><p class="eyebrow">01 — SELECTED WORK</p><h2>Frames with<br><em>a feeling.</em></h2></div>
-        <p class="section-description">A space for the stories, experiments, and visual ideas that show how I see the world.</p>
+    <!-- SELECTED WORK / PORTFOLIO SECTION -->
+    <section class="section-container" id="work">
+      <div class="section-header animate-on-scroll">
+        <div class="header-left">
+          <div class="mui-chip section-chip"><span class="chip-num">01</span> SELECTED WORKS</div>
+          <h2 class="section-title">Frames with <span class="highlight-text"><em>a feeling.</em></span></h2>
+        </div>
+        <p class="section-lead">
+          From extreme altitude mountain expeditions to rhythmic short films and brand narratives. Every project is sculpted with purpose.
+        </p>
       </div>
-      <div class="project-grid">
-        <article class="project-card project-wide">
-          <a class="project-art art-one" href="#contact" aria-label="Discuss a cinematic storytelling project">
-            <div class="art-sun"></div><div class="art-horizon"></div><div class="art-silhouette"></div>
-            <span class="art-index">PROJECT 01</span><span class="art-arrow">↗</span>
-            <span class="art-caption">A STUDY IN LIGHT & TIME</span>
-          </a>
-          <div class="project-meta"><div><h3>Visual Storytelling</h3><p>Color · Rhythm · Atmosphere</p></div><span>CONCEPT / REPLACE</span></div>
+
+      <!-- Material Filter Chips / Tabs -->
+      <div class="work-filter-bar animate-on-scroll">
+        <button class="mui-chip filter-chip active mui-ripple" data-filter="all">
+          <span class="material-symbols-outlined">grid_view</span>
+          <span>All Works</span>
+          <span class="chip-count">5</span>
+        </button>
+        <button class="mui-chip filter-chip mui-ripple" data-filter="expedition">
+          <span class="material-symbols-outlined">hiking</span>
+          <span>Expeditions & Nature</span>
+          <span class="chip-count">2</span>
+        </button>
+        <button class="mui-chip filter-chip mui-ripple" data-filter="cinematic">
+          <span class="material-symbols-outlined">movie_edit</span>
+          <span>Cinematic Films</span>
+          <span class="chip-count">1</span>
+        </button>
+        <button class="mui-chip filter-chip mui-ripple" data-filter="shortform">
+          <span class="material-symbols-outlined">smartphone</span>
+          <span>High-Impact Reels</span>
+          <span class="chip-count">1</span>
+        </button>
+        <button class="mui-chip filter-chip mui-ripple" data-filter="color">
+          <span class="material-symbols-outlined">palette</span>
+          <span>Color & Sound</span>
+          <span class="chip-count">1</span>
+        </button>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- PROJECT 1: FEATURED EXPEDITION FILM -->
+        <article class="project-card mui-elevation-2 project-featured animate-on-scroll" 
+                 data-category="expedition"
+                 data-title="The Frozen Ridge — High-Altitude Expedition Documentary"
+                 data-subtitle="Expedition Cinematography · Sub-Zero Sound Design · Color Grading"
+                 data-img="assets/images/field-filmmaker.jpg"
+                 data-desc="Filmed across freezing Himalayan passes above 14,000 feet. This documentary captures human perseverance against monolithic terrain. Required specialized weather-sealed rigs, lithium battery thermal management, and intimate audio foley captured in howling sub-zero conditions."
+                 data-tools="Sony A7IV, DaVinci Resolve Studio 19, Manfrotto Carbon Rig, Rode Audio"
+                 data-role="Lead Cinematographer, Video Editor, Colorist"
+                 data-aspect="2.39:1 Cinema Scope"
+                 data-year="2026">
+          <div class="card-media-wrapper">
+            <img src="assets/images/field-filmmaker.jpg" 
+                 alt="Smriti Sardar filming on snow ridge with camera tripod" 
+                 class="card-img" 
+                 loading="lazy">
+            <div class="card-overlay">
+              <span class="project-year-badge">2026 EXPEDITION</span>
+              <button class="card-play-action mui-button mui-btn-fab mui-elevation-3 mui-ripple" aria-label="View project details">
+                <span class="material-symbols-outlined">visibility</span>
+              </button>
+            </div>
+            <div class="card-tag-pill">Himalayan Pass · 14,000ft</div>
+          </div>
+          <div class="card-content">
+            <div class="card-top-meta">
+              <span class="category-name">DOCUMENTARY & EXPEDITION</span>
+              <span class="project-number">01 / 05</span>
+            </div>
+            <h3 class="card-title">The Frozen Ridge</h3>
+            <p class="card-summary">Capturing the raw tension and quiet solitude of mountaineers pushing beyond the snowline.</p>
+            <div class="card-footer-action">
+              <div class="tag-row">
+                <span class="meta-tag">Cinema Scope</span>
+                <span class="meta-tag">Sound Design</span>
+                <span class="meta-tag">Sub-Zero Field Rig</span>
+              </div>
+              <button class="view-details-btn mui-ripple">
+                <span>Case Study</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+          </div>
         </article>
-        <article class="project-card">
-          <a class="project-art art-two" href="#contact" aria-label="Discuss a short-form edit project">
-            <div class="art-window"></div><div class="art-shape"></div>
-            <span class="art-index">PROJECT 02</span><span class="art-arrow">↗</span>
-            <span class="art-caption">CUT TO THE FEELING</span>
-          </a>
-          <div class="project-meta"><div><h3>Short-form Editing</h3><p>Pacing · Sound · Impact</p></div><span>CONCEPT / REPLACE</span></div>
+
+        <!-- PROJECT 2: MISTY VALLEY & SOLITUDE -->
+        <article class="project-card mui-elevation-2 animate-on-scroll" 
+                 data-category="color"
+                 data-title="Misty Valley & Solitude — Organic Color & Atmosphere Study"
+                 data-subtitle="Color Grading · Pacing & Rhythm · Natural Soundscape"
+                 data-img="assets/images/hero-portrait.jpg"
+                 data-desc="A visual exploration of time and isolation in high mountain valleys. This project emphasizes unhurried, meditative cuts, sculpting organic greens and moody slate clouds through DaVinci Resolve’s node-based color pipeline to evoke deep nostalgia."
+                 data-tools="DaVinci Resolve Studio 19, FilmConvert Nitrate, Premiere Pro"
+                 data-role="Director, Video Editor, Colorist"
+                 data-aspect="16:9 UHD 4K"
+                 data-year="2026">
+          <div class="card-media-wrapper">
+            <img src="assets/images/hero-portrait.jpg" 
+                 alt="Misty mountain valley portrait" 
+                 class="card-img" 
+                 loading="lazy">
+            <div class="card-overlay">
+              <button class="card-play-action mui-button mui-btn-fab mui-elevation-3 mui-ripple" aria-label="View project details">
+                <span class="material-symbols-outlined">visibility</span>
+              </button>
+            </div>
+            <div class="card-tag-pill">Color Study · Tone Curve</div>
+          </div>
+          <div class="card-content">
+            <div class="card-top-meta">
+              <span class="category-name">COLOR & ATMOSPHERE</span>
+              <span class="project-number">02 / 05</span>
+            </div>
+            <h3 class="card-title">Misty Valley & Solitude</h3>
+            <p class="card-summary">Sculpting natural light, atmospheric mists, and the heavy breathing space of alpine forests.</p>
+            <div class="card-footer-action">
+              <div class="tag-row">
+                <span class="meta-tag">Color Grading</span>
+                <span class="meta-tag">Pacing</span>
+              </div>
+              <button class="view-details-btn mui-ripple">
+                <span>Case Study</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+          </div>
         </article>
-        <article class="project-card">
-          <a class="project-art art-three" href="#contact" aria-label="Discuss a brand film project">
-            <div class="art-ring"></div><div class="art-type">STILL<br><em>MOVING.</em></div>
-            <span class="art-index">PROJECT 03</span><span class="art-arrow">↗</span>
-            <span class="art-caption">A BRAND IN MOTION</span>
-          </a>
-          <div class="project-meta"><div><h3>Brand & Mood Films</h3><p>Identity · Texture · Tone</p></div><span>CONCEPT / REPLACE</span></div>
+
+        <!-- PROJECT 3: WIND & STONE -->
+        <article class="project-card mui-elevation-2 animate-on-scroll" 
+                 data-category="cinematic"
+                 data-title="Wind & Stone — Spiti Canyon Exploration Film"
+                 data-subtitle="Cinematic Travel Film · Sound Immersion · Geologic Narrative"
+                 data-img="assets/images/canyon-adventure.jpg"
+                 data-desc="A cinematic ode to ancient sedimentary formations in the cold desert of Spiti. Cut to an evolving, acoustic percussion soundtrack, this film balances sweeping geological landscapes with intimate macro textures of eroded rock and wind-whipped dust."
+                 data-tools="Adobe Premiere Pro, After Effects, DaVinci Resolve, Sony Telephoto"
+                 data-role="Cinematographer, Editor, Audio Assembler"
+                 data-aspect="2.35:1 Anamorphic"
+                 data-year="2025">
+          <div class="card-media-wrapper">
+            <img src="assets/images/canyon-adventure.jpg" 
+                 alt="Spiti Canyon sunny cliffs exploration" 
+                 class="card-img" 
+                 loading="lazy">
+            <div class="card-overlay">
+              <button class="card-play-action mui-button mui-btn-fab mui-elevation-3 mui-ripple" aria-label="View project details">
+                <span class="material-symbols-outlined">visibility</span>
+              </button>
+            </div>
+            <div class="card-tag-pill">Spiti Valley · Cold Desert</div>
+          </div>
+          <div class="card-content">
+            <div class="card-top-meta">
+              <span class="category-name">CINEMATIC SHORT FILM</span>
+              <span class="project-number">03 / 05</span>
+            </div>
+            <h3 class="card-title">Wind & Stone</h3>
+            <p class="card-summary">Where geometric canyon walls meet rapid rhythmic cuts and tactile geological texture.</p>
+            <div class="card-footer-action">
+              <div class="tag-row">
+                <span class="meta-tag">Anamorphic</span>
+                <span class="meta-tag">Foley Audio</span>
+              </div>
+              <button class="view-details-btn mui-ripple">
+                <span>Case Study</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+          </div>
         </article>
+
+        <!-- PROJECT 4: NOMAD LENS -->
+        <article class="project-card mui-elevation-2 animate-on-scroll" 
+                 data-category="shortform"
+                 data-title="Nomad Lens — Portrait & Social Short-Form Series"
+                 data-subtitle="Vertical Storytelling · 9:16 Social Mastery · High Retention"
+                 data-img="assets/images/expedition-portrait.jpg"
+                 data-desc="Created specifically for mobile-first storytelling across Instagram Reels and YouTube Shorts. Crafted with snappy visual hooks in the opening 2 seconds, punchy rhythm-synced transitions, and clear narrative beats that garnered over 3.2M views."
+                 data-tools="Adobe Premiere Pro, After Effects (Motion Graphics), CapCut Pro"
+                 data-role="Lead Video Editor, Sound Designer"
+                 data-aspect="9:16 Vertical Video"
+                 data-year="2026">
+          <div class="card-media-wrapper">
+            <img src="assets/images/expedition-portrait.jpg" 
+                 alt="Smriti with glasses and camera setup" 
+                 class="card-img" 
+                 loading="lazy">
+            <div class="card-overlay">
+              <button class="card-play-action mui-button mui-btn-fab mui-elevation-3 mui-ripple" aria-label="View project details">
+                <span class="material-symbols-outlined">visibility</span>
+              </button>
+            </div>
+            <div class="card-tag-pill">3.2M+ Views · 9:16 Format</div>
+          </div>
+          <div class="card-content">
+            <div class="card-top-meta">
+              <span class="category-name">SHORT-FORM REELS</span>
+              <span class="project-number">04 / 05</span>
+            </div>
+            <h3 class="card-title">Nomad Lens Series</h3>
+            <p class="card-summary">Micro-documentary formats engineered for immediate immersion and high audience retention.</p>
+            <div class="card-footer-action">
+              <div class="tag-row">
+                <span class="meta-tag">Viral Retention</span>
+                <span class="meta-tag">Micro-Narrative</span>
+              </div>
+              <button class="view-details-btn mui-ripple">
+                <span>Case Study</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 5: MOUNTAIN ECHOES -->
+        <article class="project-card mui-elevation-2 animate-on-scroll" 
+                 data-category="expedition"
+                 data-title="Mountain Echoes — Himalayan Village & Trail Story"
+                 data-subtitle="Cultural Documentary · Environmental Audio · Long-form Assembly"
+                 data-img="assets/images/mountain-storyteller.jpg"
+                 data-desc="A warm, intimate look at life in remote high-altitude Himalayan settlements. Focuses on the cadence of mountain conversations, ambient domestic sounds, and the connection between community and peaks."
+                 data-tools="DaVinci Resolve Studio 19, Adobe Audition, Sony Cinema Line"
+                 data-role="Editor & Field Recordist"
+                 data-aspect="16:9 DCI 4K"
+                 data-year="2025">
+          <div class="card-media-wrapper">
+            <img src="assets/images/mountain-storyteller.jpg" 
+                 alt="Smriti overlooking mountain village valley" 
+                 class="card-img" 
+                 loading="lazy">
+            <div class="card-overlay">
+              <button class="card-play-action mui-button mui-btn-fab mui-elevation-3 mui-ripple" aria-label="View project details">
+                <span class="material-symbols-outlined">visibility</span>
+              </button>
+            </div>
+            <div class="card-tag-pill">Alpine Culture · Documentary</div>
+          </div>
+          <div class="card-content">
+            <div class="card-top-meta">
+              <span class="category-name">DOCUMENTARY FILM</span>
+              <span class="project-number">05 / 05</span>
+            </div>
+            <h3 class="card-title">Mountain Echoes</h3>
+            <p class="card-summary">Where silence speaks as loudly as sound — patient pacing capturing Himalayan rhythm.</p>
+            <div class="card-footer-action">
+              <div class="tag-row">
+                <span class="meta-tag">Documentary</span>
+                <span class="meta-tag">Sound Design</span>
+              </div>
+              <button class="view-details-btn mui-ripple">
+                <span>Case Study</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
       </div>
-      <p class="work-note">Note: These are visual placeholders, not claims of completed client work. Replace them with your real projects, thumbnails, and descriptions.</p>
     </section>
 
-    <section class="about section-wrap" id="about">
-      <div class="about-visual">
-        <div class="about-graphic"><span class="graphic-word">MAKE<br>IT <em>MEAN</em><br>SOMETHING.</span><span class="graphic-star">✳</span><span class="graphic-caption">A CREATIVE POINT OF VIEW</span></div>
-      </div>
-      <div class="about-copy">
-        <p class="eyebrow">02 — A LITTLE ABOUT ME</p>
-        <h2>I don’t just<br>edit clips.<br>I <em>build feeling.</em></h2>
-        <p class="about-body">I’m Smriti Sardar. I believe a great edit lives in the details: the pause before a reveal, the sound that changes a scene, the color that makes a memory linger.</p>
-        <p class="about-body">My approach is curious, intentional, and always story-led. Every cut should have a reason — and every story should leave something behind.</p>
-        <div class="values"><span>01 / STORY-LED</span><span>02 / DETAIL-OBSESSED</span><span>03 / ALWAYS EXPLORING</span></div>
+    <!-- ABOUT SECTION -->
+    <section class="section-container" id="about">
+      <div class="about-grid">
+        <!-- Left: Image Composition with Material Depth -->
+        <div class="about-visual animate-on-scroll">
+          <div class="about-card-layer primary-layer mui-elevation-4">
+            <img src="assets/images/field-filmmaker.jpg" 
+                 alt="Smriti Sardar in snowy mountains with cinema camera rig" 
+                 class="about-img" 
+                 loading="lazy">
+            <div class="about-image-badge mui-elevation-3">
+              <span class="material-symbols-outlined">photo_camera</span>
+              <div>
+                <strong>Field Ready</strong>
+                <span>Himalayan Passes & Basecamps</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-card-layer secondary-layer mui-elevation-3">
+            <img src="assets/images/expedition-portrait.jpg" 
+                 alt="Smriti Sardar portrait with camera" 
+                 class="about-thumb" 
+                 loading="lazy">
+            <div class="thumb-badge">
+              <span class="material-symbols-outlined">verified</span>
+              <span>100% Intentional</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Story, Philosophy & Values -->
+        <div class="about-content animate-on-scroll">
+          <div class="mui-chip section-chip"><span class="chip-num">02</span> ABOUT SMRITI SARDAR</div>
+          <h2 class="about-heading">
+            I don’t just cut clips.<br>
+            I <span class="highlight-text"><em>build feeling.</em></span>
+          </h2>
+
+          <p class="about-lead">
+            I’m Smriti Sardar — video editor, cinematographer, and visual storyteller based in India. I believe editing is the final rewrite of any story.
+          </p>
+
+          <p class="about-text">
+            Whether sorting hundreds of gigabytes of raw 4K footage inside a windy tent in Spiti or fine-tuning the millisecond breath before a line of dialogue in the studio, my goal is always the same: make the cut disappear so the emotional truth hits you square in the chest.
+          </p>
+
+          <!-- Core Values -->
+          <div class="values-list">
+            <div class="value-item mui-elevation-1 mui-ripple">
+              <div class="value-icon"><span class="material-symbols-outlined">flag</span></div>
+              <div>
+                <h4>Story First, Always</h4>
+                <p>Every cut must serve the narrative arc. No empty flashy transitions without emotional purpose.</p>
+              </div>
+            </div>
+
+            <div class="value-item mui-elevation-1 mui-ripple">
+              <div class="value-icon"><span class="material-symbols-outlined">speed</span></div>
+              <div>
+                <h4>Rhythm & Sound Design</h4>
+                <p>Great video is 50% what you hear. I treat audio layers, foley, and score as the invisible spine of the edit.</p>
+              </div>
+            </div>
+
+            <div class="value-item mui-elevation-1 mui-ripple">
+              <div class="value-icon"><span class="material-symbols-outlined">terrain</span></div>
+              <div>
+                <h4>Extreme Field Resilience</h4>
+                <p>Equally at home inside an editing suite or filming across 15,000+ ft glacial passes in sub-zero weather.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <a href="#contact" class="mui-button mui-btn-primary mui-ripple">
+              <span>Work With Smriti</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+            <a href="mailto:smritisardar.edit@gmail.com" class="mui-button mui-btn-outlined mui-ripple">
+              <span class="material-symbols-outlined">mail</span>
+              <span>Email Directly</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="services section-wrap" id="process">
-      <div class="section-heading">
-        <div><p class="eyebrow">03 — WHAT I BRING</p><h2>From raw footage<br>to <em>real impact.</em></h2></div>
-        <p class="section-description">The craft behind the cut, shaped around the needs of each story.</p>
+    <!-- CRAFT & GEAR / SKILLS SECTION -->
+    <section class="section-container" id="skills">
+      <div class="section-header animate-on-scroll">
+        <div class="header-left">
+          <div class="mui-chip section-chip"><span class="chip-num">03</span> TOOLKIT & CRAFTSMANSHIP</div>
+          <h2 class="section-title">The tools of <span class="highlight-text"><em>the craft.</em></span></h2>
+        </div>
+        <p class="section-lead">
+          Industry-standard post-production suites paired with field-tested cinema hardware.
+        </p>
       </div>
-      <div class="service-list">
-        <article><span class="service-num">01</span><div><h3>Video Editing</h3><p>Clean cuts, thoughtful pacing, and a clear narrative flow.</p></div><span class="service-symbol">↗</span></article>
-        <article><span class="service-num">02</span><div><h3>Color & Mood</h3><p>Building a visual atmosphere that supports the story.</p></div><span class="service-symbol">↗</span></article>
-        <article><span class="service-num">03</span><div><h3>Short-form Content</h3><p>Focused, energetic edits designed for the way people watch today.</p></div><span class="service-symbol">↗</span></article>
-        <article><span class="service-num">04</span><div><h3>Creative Collaboration</h3><p>Turning a rough idea into a thoughtful visual direction.</p></div><span class="service-symbol">↗</span></article>
+
+      <div class="skills-grid animate-on-scroll">
+        <!-- Post Production -->
+        <div class="skill-category-card mui-elevation-2 mui-ripple">
+          <div class="category-icon-head">
+            <span class="material-symbols-outlined">movie_edit</span>
+            <h3>Post-Production Software</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-row">
+              <div class="skill-info">
+                <span>DaVinci Resolve Studio 19</span>
+                <span class="skill-level">Mastery</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info">
+                <span>Adobe Premiere Pro</span>
+                <span class="skill-level">Mastery</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 96%;"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info">
+                <span>Adobe After Effects</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 82%;"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info">
+                <span>CapCut Pro & Mobile Workflows</span>
+                <span class="skill-level">Fast Turnaround</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Color & Sound -->
+        <div class="skill-category-card mui-elevation-2 mui-ripple">
+          <div class="category-icon-head">
+            <span class="material-symbols-outlined">palette</span>
+            <h3>Color Grading & Sound</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-row">
+              <div class="skill-info">
+                <span>Color Science (CST, ACES, Rec.709)</span>
+                <span class="skill-level">Expert</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info">
+                <span>Audio Foley & Sound Immersion</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info">
+                <span>Look LUT Development & Grain Emulation</span>
+                <span class="skill-level">Expert</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 94%;"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info">
+                <span>Voice Enhancement & EQ Cleaning</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Field Gear & Hardware -->
+        <div class="skill-category-card mui-elevation-2 mui-ripple">
+          <div class="category-icon-head">
+            <span class="material-symbols-outlined">camera</span>
+            <h3>Field Rig & Cinematography</h3>
+          </div>
+          <div class="gear-tags">
+            <span class="gear-chip mui-elevation-1">Sony Full-Frame Mirrorless</span>
+            <span class="gear-chip mui-elevation-1">Fast Telephoto & Prime Lenses</span>
+            <span class="gear-chip mui-elevation-1">Manfrotto Befree Carbon Tripod</span>
+            <span class="gear-chip mui-elevation-1">Rode Wireless Pro Audio</span>
+            <span class="gear-chip mui-elevation-1">Sub-Zero Weather Seals</span>
+            <span class="gear-chip mui-elevation-1">Polarizing & ND Filters</span>
+            <span class="gear-chip mui-elevation-1">Apple Silicon Editing Station</span>
+            <span class="gear-chip mui-elevation-1">Rugged Extreme SSD Workflows</span>
+          </div>
+        </div>
       </div>
-      <p class="work-note">Keep only the services that accurately reflect your skills and the software you use.</p>
     </section>
 
-    <section class="contact section-wrap" id="contact">
-      <p class="eyebrow">04 — YOUR STORY, NEXT?</p>
-      <h2>Let’s make<br>something <em>matter.</em></h2>
-      <p class="contact-sub">Have a video, a vision, or a half-formed idea? Let’s talk about what it could become.</p>
-      <a class="contact-link" href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com <span>↗</span></a>
-      <p class="contact-note">Replace the placeholder email and add your preferred social links before publishing.</p>
+    <!-- SERVICES & PROCESS SECTION -->
+    <section class="section-container" id="services">
+      <div class="section-header animate-on-scroll">
+        <div class="header-left">
+          <div class="mui-chip section-chip"><span class="chip-num">04</span> SERVICES</div>
+          <h2 class="section-title">From raw footage to <span class="highlight-text"><em>real impact.</em></span></h2>
+        </div>
+        <p class="section-lead">
+          Tailored post-production and cinematography services shaped around the needs of each narrative.
+        </p>
+      </div>
+
+      <div class="services-list animate-on-scroll">
+        <!-- Service 1 -->
+        <div class="service-accordion-card mui-elevation-1 mui-ripple" data-target="svc-1">
+          <div class="svc-header">
+            <span class="svc-index">01</span>
+            <div class="svc-title-group">
+              <h3>Narrative & Documentary Editing</h3>
+              <p>Long-form storytelling, documentary assemblies, pacing, and emotional coherence.</p>
+            </div>
+            <span class="material-symbols-outlined svc-expand-icon">expand_more</span>
+          </div>
+          <div class="svc-body" id="svc-1">
+            <p>From hundreds of hours of raw footage to an intentional, razor-sharp narrative. I structure documentary reels, brand films, and personal documentaries with airtight continuity, emotional arc development, and seamless music integration.</p>
+            <div class="svc-deliverables">
+              <span>Deliverables:</span> DCI 4K Master, Web/Social cutdowns, Sound mix, Color graded master.
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-accordion-card mui-elevation-1 mui-ripple" data-target="svc-2">
+          <div class="svc-header">
+            <span class="svc-index">02</span>
+            <div class="svc-title-group">
+              <h3>Color Grading & Visual Atmosphere</h3>
+              <p>Node-based grading in DaVinci Resolve Studio to establish distinctive visual mood.</p>
+            </div>
+            <span class="material-symbols-outlined svc-expand-icon">expand_more</span>
+          </div>
+          <div class="svc-body" id="svc-2">
+            <p>Color is emotional shorthand. Using color space transforms, custom curves, skin-tone isolation, and organic film grain emulation, I give your film a unified, cinematic palette tailored to the story’s climate.</p>
+            <div class="svc-deliverables">
+              <span>Deliverables:</span> Look LUTs, Shot-to-shot matching, High dynamic range masters.
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-accordion-card mui-elevation-1 mui-ripple" data-target="svc-3">
+          <div class="svc-header">
+            <span class="svc-index">03</span>
+            <div class="svc-title-group">
+              <h3>High-Retention Short-Form (Reels & Shorts)</h3>
+              <p>Hook-first pacing, sound design, and visual rhythm for YouTube Shorts & Instagram.</p>
+            </div>
+            <span class="material-symbols-outlined svc-expand-icon">expand_more</span>
+          </div>
+          <div class="svc-body" id="svc-3">
+            <p>In a world of infinite scrolling, every millisecond counts. I craft short-form vertical edits that hook attention in the first 2 seconds with seamless loop transitions, energetic beat matching, and kinetic typography.</p>
+            <div class="svc-deliverables">
+              <span>Deliverables:</span> 9:16 Optimized exports, Custom captions, Kinetic sound cues.
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-accordion-card mui-elevation-1 mui-ripple" data-target="svc-4">
+          <div class="svc-header">
+            <span class="svc-index">04</span>
+            <div class="svc-title-group">
+              <h3>Expedition & Remote Field Cinematography</h3>
+              <p>On-location shooting in remote mountainous terrain and high-altitude wilderness.</p>
+            </div>
+            <span class="material-symbols-outlined svc-expand-icon">expand_more</span>
+          </div>
+          <div class="svc-body" id="svc-4">
+            <p>Equipped and acclimated for remote expedition filming across extreme weather, altitudes above 15,000 ft, and minimalist battery management. I bring back crisp, intentional cinema frames where standard crews cannot go.</p>
+            <div class="svc-deliverables">
+              <span>Deliverables:</span> 4K 10-bit Log footage, 24/60/120fps slow-motion passes, Field audio backup.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS / COLLABORATOR VOICES -->
+    <section class="section-container" id="endorsements">
+      <div class="section-header animate-on-scroll">
+        <div class="header-left">
+          <div class="mui-chip section-chip"><span class="chip-num">05</span> COLLABORATOR VOICES</div>
+          <h2 class="section-title">What creators <span class="highlight-text"><em>say.</em></span></h2>
+        </div>
+      </div>
+
+      <div class="testimonials-grid animate-on-scroll">
+        <div class="testimonial-card mui-elevation-2 mui-ripple">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">
+            "Smriti brings a rare cinematic sensibility to every timeline. She doesn’t just piece together footage; she extracts the exact emotional tempo we felt on the mountain."
+          </p>
+          <div class="testi-author">
+            <div class="author-avatar">AK</div>
+            <div>
+              <strong>Arjun K.</strong>
+              <span>Expedition Leader & Outdoor Filmmaker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card mui-elevation-2 mui-ripple">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">
+            "Her pacing and sound design took our travel campaign from standard video to an immersive experience. Turnaround was swift, and the color grade was breathtaking."
+          </p>
+          <div class="testi-author">
+            <div class="author-avatar">RD</div>
+            <div>
+              <strong>Rohan D.</strong>
+              <span>Creative Director, Studio North</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card mui-elevation-2 mui-ripple">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">
+            "Smriti understands the internet’s rhythm without sacrificing aesthetic standards. Our reels hit over 2 million organic views thanks to her sharp opening hooks."
+          </p>
+          <div class="testi-author">
+            <div class="author-avatar">SM</div>
+            <div>
+              <strong>Sneha M.</strong>
+              <span>Adventure Brand Strategist</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CONTACT SECTION -->
+    <section class="section-container" id="contact">
+      <div class="contact-card-box mui-elevation-3 animate-on-scroll">
+        <div class="contact-header">
+          <div class="mui-chip section-chip"><span class="chip-num">06</span> LET’S COLLABORATE</div>
+          <h2 class="contact-heading">
+            Let’s make something<br>
+            that <span class="highlight-text"><em>matters.</em></span>
+          </h2>
+          <p class="contact-lead">
+            Have a documentary, an adventure film, a brand campaign, or a wild visual idea? Send a message and let’s shape it into a cinematic reality.
+          </p>
+        </div>
+
+        <div class="contact-columns">
+          <!-- Interactive Material Outlined Form -->
+          <form class="mui-form" id="contactForm" novalidate>
+            <div class="mui-textfield">
+              <input type="text" id="senderName" class="mui-input" required autocomplete="name" placeholder=" ">
+              <label for="senderName" class="mui-floating-label">Your Full Name</label>
+              <span class="material-symbols-outlined input-icon">person</span>
+            </div>
+
+            <div class="mui-textfield">
+              <input type="email" id="senderEmail" class="mui-input" required autocomplete="email" placeholder=" ">
+              <label for="senderEmail" class="mui-floating-label">Email Address</label>
+              <span class="material-symbols-outlined input-icon">alternate_email</span>
+            </div>
+
+            <div class="form-choice-group">
+              <label class="choice-group-label">PROJECT TYPE:</label>
+              <div class="choice-chips">
+                <button type="button" class="choice-chip active mui-ripple" data-val="Expedition / Doc">Expedition / Doc</button>
+                <button type="button" class="choice-chip mui-ripple" data-val="Short-Form Reels">Short-Form Reels</button>
+                <button type="button" class="choice-chip mui-ripple" data-val="Color Grading">Color Grading</button>
+                <button type="button" class="choice-chip mui-ripple" data-val="Brand Film">Brand Film</button>
+              </div>
+            </div>
+
+            <div class="mui-textfield">
+              <textarea id="senderMessage" class="mui-input mui-textarea" rows="4" required placeholder=" "></textarea>
+              <label for="senderMessage" class="mui-floating-label">Tell me about your project, timeline, and vision...</label>
+              <span class="material-symbols-outlined input-icon">edit_note</span>
+            </div>
+
+            <button type="submit" class="mui-button mui-btn-primary mui-btn-large submit-btn mui-ripple" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <span class="material-symbols-outlined btn-icon">send</span>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <!-- Direct Contact & Social Cards -->
+          <div class="direct-contact-sidebar">
+            <div class="direct-card mui-elevation-1 mui-ripple" id="copyEmailCard">
+              <div class="direct-icon"><span class="material-symbols-outlined">mail</span></div>
+              <div class="direct-info">
+                <span class="direct-lbl">DIRECT EMAIL</span>
+                <span class="direct-val">smritisardar.edit@gmail.com</span>
+              </div>
+              <span class="material-symbols-outlined direct-action-icon">content_copy</span>
+            </div>
+
+            <div class="direct-card mui-elevation-1 mui-ripple">
+              <div class="direct-icon"><span class="material-symbols-outlined">location_on</span></div>
+              <div class="direct-info">
+                <span class="direct-lbl">LOCATION</span>
+                <span class="direct-val">India · Available Worldwide for Field Travel</span>
+              </div>
+            </div>
+
+            <div class="direct-card mui-elevation-1 mui-ripple">
+              <div class="direct-icon"><span class="material-symbols-outlined">schedule</span></div>
+              <div class="direct-info">
+                <span class="direct-lbl">TYPICAL RESPONSE TIME</span>
+                <span class="direct-val">Within 24 Hours</span>
+              </div>
+            </div>
+
+            <div class="social-links-box">
+              <span class="social-title">FOLLOW ON SOCIALS</span>
+              <div class="social-btn-row">
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn mui-elevation-1 mui-ripple" aria-label="Instagram">
+                  <span>Instagram</span>
+                  <span class="material-symbols-outlined">north_east</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-btn mui-elevation-1 mui-ripple" aria-label="LinkedIn">
+                  <span>LinkedIn</span>
+                  <span class="material-symbols-outlined">north_east</span>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener" class="social-btn mui-elevation-1 mui-ripple" aria-label="YouTube">
+                  <span>YouTube</span>
+                  <span class="material-symbols-outlined">north_east</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <a class="wordmark" href="#home">SS<span>.</span></a>
-    <p>© <span id="year"></span> SMRITI SARDAR. MADE WITH INTENTION.</p>
-    <a href="#home" class="back-top">BACK TO TOP ↑</a>
+  <!-- FOOTER -->
+  <footer class="mui-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <a class="brand-wordmark" href="#home">
+          <span class="brand-monogram">SS</span>
+          <span class="brand-dot"></span>
+        </a>
+        <p class="footer-credit">
+          © <span id="currentYear"></span> SMRITI SARDAR · SHAPING STORIES WITH INTENTION.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#work" class="footer-link">Work</a>
+        <a href="#about" class="footer-link">About</a>
+        <a href="#skills" class="footer-link">Gear</a>
+        <a href="#contact" class="footer-link">Contact</a>
+      </div>
+
+      <a href="#home" class="back-to-top-btn mui-ripple" aria-label="Back to top">
+        <span>BACK TO TOP</span>
+        <span class="material-symbols-outlined">arrow_upward</span>
+      </a>
+    </div>
   </footer>
+
+  <!-- MATERIAL FLOATING ACTION BUTTON (FAB) -->
+  <div class="fab-wrapper">
+    <button class="mui-button mui-btn-fab fab-main mui-elevation-4 mui-ripple" id="fabBtn" aria-label="Quick Actions">
+      <span class="material-symbols-outlined fab-icon-chat">chat</span>
+      <span class="material-symbols-outlined fab-icon-close">close</span>
+    </button>
+    <div class="fab-menu" id="fabMenu">
+      <a href="#contact" class="fab-menu-item mui-elevation-3 mui-ripple" aria-label="Start Conversation">
+        <span class="fab-tooltip">Start Project</span>
+        <span class="material-symbols-outlined">send</span>
+      </a>
+      <a href="mailto:smritisardar.edit@gmail.com" class="fab-menu-item mui-elevation-3 mui-ripple" aria-label="Direct Email">
+        <span class="fab-tooltip">Send Email</span>
+        <span class="material-symbols-outlined">mail</span>
+      </a>
+      <button class="fab-menu-item mui-elevation-3 mui-ripple" id="fabReelTrigger" aria-label="Watch Showreel">
+        <span class="fab-tooltip">Watch Reel</span>
+        <span class="material-symbols-outlined">play_arrow</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MATERIAL PROJECT MODAL / DIALOG -->
+  <div class="mui-dialog-backdrop" id="projectDialogBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="mui-dialog-card mui-elevation-5">
+      <button class="mui-icon-button dialog-close-btn mui-ripple" id="closeDialogBtn" aria-label="Close dialog">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+
+      <div class="dialog-media-container">
+        <img id="dialogImage" src="" alt="Project Preview" class="dialog-img">
+        <div class="dialog-media-overlay"></div>
+        <div class="dialog-floating-pill" id="dialogAspectPill">2.39:1 Cinema</div>
+      </div>
+
+      <div class="dialog-body">
+        <div class="dialog-meta-row">
+          <span class="dialog-category" id="dialogCategory">DOCUMENTARY & EXPEDITION</span>
+          <span class="dialog-year" id="dialogYear">2026</span>
+        </div>
+
+        <h2 class="dialog-title" id="dialogTitle">Project Title</h2>
+        <p class="dialog-subtitle" id="dialogSubtitle">Subtitle & Scope</p>
+
+        <div class="dialog-description" id="dialogDescription">
+          Detailed case study text goes here.
+        </div>
+
+        <div class="dialog-specs-grid">
+          <div class="spec-cell">
+            <span class="spec-label">ROLE</span>
+            <span class="spec-val" id="dialogRole">Editor, Colorist</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-label">TOOLS & HARDWARE</span>
+            <span class="spec-val" id="dialogTools">DaVinci Resolve Studio 19, Sony A7IV</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-label">ASPECT RATIO</span>
+            <span class="spec-val" id="dialogAspect">2.39:1 Anamorphic</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-label">DELIVERY</span>
+            <span class="spec-val">DCI 4K Apple ProRes 422HQ</span>
+          </div>
+        </div>
+
+        <div class="dialog-actions">
+          <a href="#contact" class="mui-button mui-btn-primary mui-ripple" id="dialogContactBtn">
+            <span>Discuss Similar Project</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+          <button class="mui-button mui-btn-outlined mui-ripple" id="dialogDismissBtn">
+            <span>Close Overview</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOWREEL MODAL / DIALOG -->
+  <div class="mui-dialog-backdrop" id="reelDialogBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="mui-dialog-card reel-dialog-card mui-elevation-5">
+      <button class="mui-icon-button dialog-close-btn mui-ripple" id="closeReelBtn" aria-label="Close showreel">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+
+      <div class="reel-container">
+        <div class="reel-cinematic-banner">
+          <img src="assets/images/canyon-adventure.jpg" alt="Smriti Sardar Reel Cover" class="reel-banner-img">
+          <div class="reel-banner-scrim"></div>
+          <div class="reel-center-content">
+            <div class="reel-play-circle mui-elevation-4 mui-ripple" id="mockPlayVideoBtn">
+              <span class="material-symbols-outlined">play_arrow</span>
+            </div>
+            <h3>SMRITI SARDAR — SHOWREEL 2026</h3>
+            <p>Visual Rhythm · Himalayan Expeditions · Sound Design · Color Grading</p>
+          </div>
+        </div>
+
+        <div class="reel-details-box">
+          <div class="reel-specs">
+            <div><strong>Runtime:</strong> 01:45</div>
+            <div><strong>Resolution:</strong> 4K UHD 60fps</div>
+            <div><strong>Soundtrack:</strong> Bespoke Field Foley & Cinematic Score</div>
+          </div>
+          <p class="reel-note">
+            Featuring authentic cinematography captured in Spiti, Ladakh, and the Western Himalayas, assembled with DaVinci Resolve Studio 19 and Premiere Pro.
+          </p>
+          <div class="reel-actions">
+            <a href="#contact" class="mui-button mui-btn-primary mui-ripple" id="reelContactTrigger">
+              <span>Commission a Project</span>
+              <span class="material-symbols-outlined">north_east</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATERIAL SNACKBAR / TOAST -->
+  <div class="mui-snackbar mui-elevation-4" id="muiSnackbar" role="status" aria-live="polite">
+    <span class="material-symbols-outlined snackbar-icon" id="snackbarIcon">check_circle</span>
+    <span class="snackbar-msg" id="snackbarMsg">Message sent successfully!</span>
+    <button class="snackbar-close mui-ripple" id="snackbarClose" aria-label="Dismiss notification">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
