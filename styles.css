@@ -1,60 +1,72 @@
 /* ==========================================================================
-   SMRITI SARDAR PORTFOLIO — ZERO-OVERHEAD SHADCN/UI + MAGIC UI DESIGN SYSTEM
-   Linear / Vercel / Raycast Dark-Mode Aesthetic
-   Palette: Official shadcn/ui Zinc Dark Mode
-   Typography: Inter & JetBrains Mono
-   Icons: Lucide Icons
-   Animations: Pure CSS BlurFade, Spotlight MagicCard, Animated Border Beam,
-               Number Ticker & Infinite Statement Marquee
+   SMRITI SARDAR PORTFOLIO — 5-TONE COLOR SYSTEM & 3-TIER TYPOGRAPHY
+   Aesthetic: shadcn/ui (Zinc Dark) + Magic UI Micro-Interactions
+   Architecture:
+     Tone 1 (Canvas & Elevated Surfaces): #09090b / #121216 / #27272a
+     Tone 2 (Reserved Strictly for Titles & Headings): #f8fafc (Plus Jakarta Sans)
+     Tone 3 (Reserved Strictly for Descriptions & Body Copy): #94a3b8 (Inter)
+     Tone 4 (Primary Brand & Interactive Accent): #6366f1 to #8b5cf6 (Electric Indigo/Violet)
+     Tone 5 (Secondary Highlight & Data Accent): #06b6d4 / #10b981 (Vibrant Cyan / Emerald)
    ========================================================================== */
 
-/* --- 1. SHADCN ZINC DESIGN TOKENS --- */
+/* --- 1. 5-TONE DESIGN TOKENS & 3-TIER TYPOGRAPHY --- */
 :root {
-  /* Official shadcn/ui Zinc Dark Mode Tokens */
-  --background: #09090b;             /* zinc-950 */
-  --foreground: #fafafa;             /* zinc-50 */
-  --card: #0c0c0e;                   /* surface */
-  --card-foreground: #fafafa;
-  --popover: #09090b;
-  --popover-foreground: #fafafa;
-  --primary: #fafafa;                /* high-contrast white */
-  --primary-foreground: #18181b;     /* zinc-900 */
-  --secondary: #18181b;              /* zinc-900 */
-  --secondary-foreground: #fafafa;
-  --muted: #18181b;
-  --muted-foreground: #a1a1aa;       /* zinc-400 */
-  --accent: #27272a;                 /* zinc-800 */
-  --accent-foreground: #fafafa;
-  --destructive: #ef4444;
-  --destructive-foreground: #fafafa;
-  --border: #27272a;                 /* zinc-800 crisp 1px border */
-  --input: #27272a;
-  --ring: #d4d4d8;                   /* zinc-300 focus ring */
-  --radius: 0.5rem;                  /* 8px standard radius */
-  --radius-lg: 0.75rem;              /* 12px card radius */
-  --radius-xl: 1rem;                 /* 16px frame radius */
-  --radius-full: 9999px;
+  /* ========================================================================
+     5-TONE COLOR ARCHITECTURE
+     ======================================================================== */
+  /* Tone 1: Canvas & Elevated Glassmorphic Surfaces */
+  --tone-1-canvas: #09090b;                  /* Deep Obsidian Canvas (zinc-950) */
+  --tone-1-surface: #121216;                 /* Elevated Card Surface */
+  --tone-1-surface-glass: rgba(18, 18, 22, 0.65); /* Translucent Glass Surface */
+  --tone-1-surface-elevated: rgba(22, 22, 28, 0.88); /* Elevated Modals & Floating Menus */
+  --tone-1-border: #27272a;                  /* Crisp 1px Border (zinc-800) */
+  --tone-1-border-subtle: rgba(255, 255, 255, 0.08); /* Card Edge Lighting */
 
-  /* Cinematic Brand Touch (Subtle Warm Film Glow) */
-  --brand-amber: #f59e0b;
-  --brand-amber-muted: rgba(245, 158, 11, 0.12);
-  --brand-amber-glow: rgba(245, 158, 11, 0.28);
+  /* Tone 2: Reserved Strictly for Titles & Headings (H1/H2/H3/H4) */
+  --tone-2-title: #f8fafc;                   /* Crisp Alabaster White */
+  --tone-2-title-muted: #e2e8f0;             /* Sub-heading Light */
+  --tone-2-gradient: linear-gradient(135deg, #ffffff 25%, #c7d2fe 75%, #818cf8 100%);
 
-  /* Translucent Glass Surfaces */
-  --glass-surface: rgba(18, 18, 22, 0.65);
-  --glass-surface-elevated: rgba(24, 24, 28, 0.82);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  /* Tone 3: Reserved Strictly for Descriptions, Subtitles & Paragraph Copy */
+  --tone-3-copy: #94a3b8;                    /* Cool Slate Muted (text-slate-400) */
+  --tone-3-copy-dim: #64748b;                /* Dim Slate for minor timestamps & captions */
+  --tone-3-copy-bright: #cbd5e1;             /* Bright Slate for high-legibility paragraphs */
 
-  /* Typography */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Tone 4: Primary Brand & Interactive Accent (CTA Buttons, Active States, Rings, Spotlight) */
+  --tone-4-primary: #6366f1;                 /* Electric Indigo */
+  --tone-4-violet: #8b5cf6;                  /* Vibrant Violet */
+  --tone-4-primary-hover: #4f46e5;           /* Deep Indigo Hover */
+  --tone-4-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --tone-4-glow: rgba(99, 102, 241, 0.35);   /* CTA Button Soft Glow */
+  --tone-4-spotlight: rgba(99, 102, 241, 0.22); /* MagicCard Spotlight */
+  --tone-4-ring: rgba(99, 102, 241, 0.5);    /* Focus Ring */
+
+  /* Tone 5: Secondary Highlight & Data Accent (Badges, Status Indicators, KPI Trends, Border Beam) */
+  --tone-5-cyan: #06b6d4;                    /* Vibrant Cyan */
+  --tone-5-emerald: #10b981;                 /* Vibrant Emerald */
+  --tone-5-glow: rgba(6, 182, 212, 0.35);    /* Cyan Glow */
+  --tone-5-badge-bg: rgba(6, 182, 212, 0.1); /* Subtle Cyan Badge Tint */
+
+  /* ========================================================================
+     3-TIER COMPLEMENTARY TYPOGRAPHY SYSTEM
+     ======================================================================== */
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Sizing & Radius (shadcn/ui style) */
+  --radius-sm: 0.375rem;                     /* 6px */
+  --radius: 0.5rem;                          /* 8px */
+  --radius-lg: 0.75rem;                      /* 12px */
+  --radius-xl: 1rem;                         /* 16px */
+  --radius-full: 9999px;
 
   /* Animation Easings */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.2, 0.9, 0.3, 1);
 }
 
-/* --- 2. GLOBAL RESET & BASE --- */
+/* --- 2. GLOBAL RESET & FOUNDATIONS --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -66,15 +78,15 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   font-size: 16px;
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--tone-1-canvas);
+  color: var(--tone-2-title);
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: var(--background);
-  color: var(--foreground);
-  line-height: 1.6;
+  font-family: var(--font-body);
+  background-color: var(--tone-1-canvas);
+  color: var(--tone-3-copy);
+  line-height: 1.65;
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
@@ -82,16 +94,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Linear-style ambient background grid & radial mesh */
+/* Linear-style subtle ambient grid & radial mesh */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.12), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 70%, rgba(6, 182, 212, 0.06), transparent),
     linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 100% 100%, 48px 48px, 48px 48px;
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
   pointer-events: none;
   z-index: 0;
 }
@@ -113,19 +126,39 @@ input, textarea, button {
   font-family: inherit;
 }
 
-/* --- 3. SCROLL PROGRESS BAR --- */
+/* --- 3. TYPOGRAPHY ENFORCEMENT RULES --- */
+/* Strictly enforce Tone 2 + Plus Jakarta Sans on all Headings */
+h1, h2, h3, h4, .hero-title, .section-title, .about-heading, .contact-heading, .card-title, .dialog-title {
+  font-family: var(--font-display);
+  color: var(--tone-2-title);
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+
+/* Strictly enforce Tone 3 + Inter on all Subtitles, Descriptions, & Paragraphs */
+p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dialog-description, .contact-lead, .pillar-section p, .process-step-card p {
+  font-family: var(--font-body);
+  color: var(--tone-3-copy);
+  line-height: 1.65;
+}
+
+/* Technical / Mono Font enforcement */
+.stat-num, .chip-count, .meta-tag, .badge, .project-number, .step-num, .spec-val, .spec-label, .subhead-lbl, #gitCommitHash, .ticker-content {
+  font-family: var(--font-mono);
+}
+
+/* --- 4. SCROLL PROGRESS BAR & FILM GRAIN --- */
 .scroll-progress-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, var(--brand-amber), #fafafa);
+  background: linear-gradient(90deg, var(--tone-4-primary), var(--tone-5-cyan), #ffffff);
   z-index: 1000;
   transition: width 0.08s ease-out;
 }
 
-/* Ambient Film Grain */
 .film-grain {
   position: fixed;
   inset: 0;
@@ -135,11 +168,24 @@ input, textarea, button {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* --- 4. MAGIC UI: BLURFADE ANIMATION --- */
+/* --- 5. MAGIC UI: BLURFADE ANIMATION --- */
+@keyframes blur-fade-in {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+
 .animate-on-scroll {
   opacity: 0;
   filter: blur(8px);
-  transform: translateY(18px);
+  transform: translateY(12px);
   transition: opacity 0.65s var(--ease-out-expo),
               filter 0.65s var(--ease-out-expo),
               transform 0.65s var(--ease-out-expo);
@@ -147,23 +193,22 @@ input, textarea, button {
 }
 
 .animate-on-scroll.in-view {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
+  animation: blur-fade-in 0.65s var(--ease-out-expo) forwards;
 }
 
-/* --- 5. MAGIC UI: SPOTLIGHT CARDS (MAGIC-CARD) --- */
+/* --- 6. MAGIC UI: SPOTLIGHT CARDS (MAGIC-CARD) --- */
 .magic-card {
   position: relative;
-  background: var(--glass-surface);
+  background: var(--tone-1-surface-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s var(--ease-out-expo);
 }
 
+/* Tone 4 Electric Indigo spotlight border illumination */
 .magic-card::before {
   content: "";
   position: absolute;
@@ -172,8 +217,9 @@ input, textarea, button {
   padding: 1px;
   background: radial-gradient(
     450px circle at var(--mouse-x, -600px) var(--mouse-y, -600px),
-    rgba(255, 255, 255, 0.22),
-    transparent 40%
+    rgba(99, 102, 241, 0.4),
+    rgba(6, 182, 212, 0.18) 32%,
+    transparent 55%
   );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -184,6 +230,7 @@ input, textarea, button {
   z-index: 2;
 }
 
+/* Tone 4 subtle surface ambient glow */
 .magic-card::after {
   content: "";
   position: absolute;
@@ -191,7 +238,7 @@ input, textarea, button {
   border-radius: inherit;
   background: radial-gradient(
     400px circle at var(--mouse-x, -600px) var(--mouse-y, -600px),
-    rgba(255, 255, 255, 0.04),
+    rgba(99, 102, 241, 0.08),
     transparent 50%
   );
   pointer-events: none;
@@ -206,10 +253,10 @@ input, textarea, button {
 }
 
 .magic-card:hover {
-  border-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
-/* --- 6. MAGIC UI: BORDER BEAM --- */
+/* --- 7. MAGIC UI: ANIMATED BORDER BEAM --- */
 .border-beam-wrapper {
   position: relative;
 }
@@ -223,6 +270,7 @@ input, textarea, button {
   z-index: 3;
 }
 
+/* Conic gradient rotating border beam blending Tone 4 (Electric Indigo) & Tone 5 (Cyan) */
 .border-beam::after {
   content: "";
   position: absolute;
@@ -234,10 +282,11 @@ input, textarea, button {
     from 0deg at 50% 50%,
     transparent 0deg,
     transparent 280deg,
-    var(--brand-amber) 345deg,
-    #fafafa 360deg
+    var(--tone-4-primary) 320deg,
+    var(--tone-5-cyan) 345deg,
+    #ffffff 360deg
   );
-  animation: border-beam-spin 8s linear infinite;
+  animation: border-beam-spin 7.5s linear infinite;
   transform: translate(-50%, -50%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -250,17 +299,17 @@ input, textarea, button {
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* --- 7. SHADCN BUTTONS & BADGES --- */
+/* --- 8. SHADCN BUTTONS & BADGES --- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1;
-  padding: 0.625rem 1.125rem;
+  padding: 0.625rem 1.15rem;
   border-radius: var(--radius);
   border: 1px solid transparent;
   transition: all 0.2s var(--ease-smooth);
@@ -270,54 +319,71 @@ input, textarea, button {
   position: relative;
 }
 
-.btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring);
+.btn:active {
+  transform: scale(0.98);
 }
 
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--tone-1-canvas), 0 0 0 4px var(--tone-4-ring);
+}
+
+/* Tone 4 Primary CTA Button */
 .btn-primary {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  background: var(--tone-4-gradient);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 14px -2px var(--tone-4-glow);
 }
 
 .btn-primary:hover {
-  background-color: #e4e4e7;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  box-shadow: 0 6px 20px -2px rgba(99, 102, 241, 0.5);
   transform: translateY(-1px);
 }
 
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Tone 1 Translucent Outline Button */
 .btn-outline {
-  background-color: rgba(24, 24, 27, 0.5);
-  border-color: var(--border);
-  color: var(--foreground);
+  background-color: rgba(24, 24, 28, 0.5);
+  border-color: var(--tone-1-border);
+  color: var(--tone-2-title);
   backdrop-filter: blur(8px);
 }
 
 .btn-outline:hover {
-  background-color: var(--accent);
-  border-color: #3f3f46;
-  color: #fff;
+  background-color: rgba(99, 102, 241, 0.1);
+  border-color: var(--tone-4-primary);
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
+.btn-outline:active {
+  transform: scale(0.98);
+}
+
 .btn-secondary {
-  background-color: var(--secondary);
-  border-color: var(--border);
-  color: var(--secondary-foreground);
+  background-color: var(--tone-1-surface);
+  border-color: var(--tone-1-border);
+  color: var(--tone-2-title);
 }
 
 .btn-secondary:hover {
-  background-color: var(--accent);
+  background-color: #1e1e24;
+  border-color: #3f3f46;
 }
 
 .btn-ghost {
   background-color: transparent;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
 }
 
 .btn-ghost:hover {
-  background-color: var(--accent);
-  color: var(--foreground);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--tone-2-title);
 }
 
 .btn-sm {
@@ -327,7 +393,7 @@ input, textarea, button {
 }
 
 .btn-lg {
-  padding: 0.75rem 1.35rem;
+  padding: 0.75rem 1.4rem;
   font-size: 0.9375rem;
   border-radius: var(--radius);
 }
@@ -358,7 +424,7 @@ input, textarea, button {
   stroke-width: 1.75;
 }
 
-/* shadcn Badges */
+/* Tone 5 Badges */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -370,18 +436,18 @@ input, textarea, button {
   letter-spacing: 0.06em;
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border);
-  background: rgba(24, 24, 27, 0.65);
-  color: #d4d4d8;
+  border: 1px solid var(--tone-1-border);
+  background: var(--tone-5-badge-bg);
+  color: var(--tone-5-cyan);
   backdrop-filter: blur(8px);
 }
 
 .badge-outline {
-  border-color: var(--border);
+  border-color: rgba(6, 182, 212, 0.25);
 }
 
 .badge-num {
-  color: var(--brand-amber);
+  color: var(--tone-5-cyan);
   font-weight: 600;
 }
 
@@ -389,8 +455,8 @@ input, textarea, button {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--brand-amber);
-  box-shadow: 0 0 8px var(--brand-amber-glow);
+  background: var(--tone-5-emerald);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
   animation: pulse-dot-anim 2s infinite ease-in-out;
 }
 
@@ -399,7 +465,7 @@ input, textarea, button {
   50% { opacity: 0.4; transform: scale(0.85); }
 }
 
-/* --- 8. SITE HEADER / APPBAR --- */
+/* --- 9. SITE HEADER / NAVBAR --- */
 .site-header {
   position: fixed;
   top: 0;
@@ -414,7 +480,7 @@ input, textarea, button {
   background-color: rgba(9, 9, 11, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom-color: var(--border);
+  border-bottom-color: var(--tone-1-border);
 }
 
 .header-container {
@@ -432,7 +498,7 @@ input, textarea, button {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .brand-monogram {
@@ -441,8 +507,8 @@ input, textarea, button {
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  background: var(--secondary);
-  border: 1px solid var(--border);
+  background: var(--tone-1-surface);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius);
   font-family: var(--font-mono);
   font-weight: 700;
@@ -453,21 +519,21 @@ input, textarea, button {
 }
 
 .brand-wordmark:hover .brand-monogram {
-  border-color: #52525b;
-  background: #27272a;
+  border-color: var(--tone-4-primary);
+  background: rgba(99, 102, 241, 0.15);
 }
 
 .brand-dot {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--brand-amber);
+  background: var(--tone-5-cyan);
 }
 
 .brand-sub {
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   letter-spacing: -0.01em;
 }
 
@@ -482,13 +548,13 @@ input, textarea, button {
   padding: 0.45rem 0.85rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   border-radius: var(--radius);
   transition: color 0.15s, background 0.15s;
 }
 
 .nav-item:hover {
-  color: var(--foreground);
+  color: var(--tone-2-title);
   background: rgba(255, 255, 255, 0.04);
 }
 
@@ -506,14 +572,14 @@ input, textarea, button {
   height: 2.25rem;
   gap: 5px;
   border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid var(--tone-1-border);
+  background: rgba(24, 24, 28, 0.6);
 }
 
 .menu-toggle .bar {
   width: 18px;
   height: 1.5px;
-  background-color: var(--foreground);
+  background-color: var(--tone-2-title);
   transition: transform 0.25s, opacity 0.25s;
 }
 
@@ -537,7 +603,7 @@ input, textarea, button {
   background: rgba(9, 9, 11, 0.96);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--tone-1-border);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s var(--ease-out-expo);
@@ -563,14 +629,14 @@ input, textarea, button {
   align-items: center;
   justify-content: space-between;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--tone-1-border);
 }
 
 .drawer-title {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   text-transform: uppercase;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   letter-spacing: 0.05em;
 }
 
@@ -588,34 +654,34 @@ input, textarea, button {
   border-radius: var(--radius);
   font-size: 0.9375rem;
   font-weight: 500;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   border: 1px solid transparent;
   transition: all 0.2s;
 }
 
 .drawer-link:hover, .drawer-link:focus-visible {
   color: #fff;
-  background: var(--secondary);
-  border-color: var(--border);
+  background: var(--tone-1-surface);
+  border-color: var(--tone-1-border);
 }
 
 .drawer-cta {
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: var(--tone-4-gradient);
+  color: #ffffff;
 }
 
 .drawer-cta:hover {
-  background: #e4e4e7;
-  color: var(--primary-foreground);
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #ffffff;
 }
 
 .drawer-footer {
   margin-top: auto;
   padding-top: 1.25rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--tone-1-border);
   font-family: var(--font-mono);
   font-size: 0.8125rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
 }
 
 .drawer-contact-val {
@@ -629,12 +695,12 @@ input, textarea, button {
 }
 
 .drawer-icon-link {
-  color: var(--foreground);
+  color: var(--tone-2-title);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-/* --- 9. HERO SECTION --- */
+/* --- 10. HERO SECTION --- */
 .hero-section {
   position: relative;
   z-index: 2;
@@ -664,27 +730,28 @@ input, textarea, button {
 }
 
 .hero-title {
-  font-family: var(--font-sans);
-  font-size: clamp(3rem, 6vw, 4.75rem);
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6.2vw, 4.85rem);
+  font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.04em;
-  color: var(--foreground);
+  color: var(--tone-2-title);
   margin-bottom: 1.5rem;
 }
 
+/* Subtle linear gradient fill for hero emphasis */
 .hero-title .highlight-text {
-  background: linear-gradient(135deg, #fafafa 30%, var(--brand-amber) 100%);
+  background: var(--tone-2-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .hero-subtitle {
   font-size: 1.0625rem;
-  color: var(--muted-foreground);
-  line-height: 1.65;
+  color: var(--tone-3-copy);
+  line-height: 1.7;
   margin-bottom: 2rem;
   max-width: 540px;
 }
@@ -728,13 +795,13 @@ input, textarea, button {
   font-family: var(--font-mono);
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--foreground);
+  color: var(--tone-5-cyan);
   letter-spacing: -0.03em;
 }
 
 .stat-lbl {
   font-size: 0.75rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   line-height: 1.3;
 }
 
@@ -746,12 +813,12 @@ input, textarea, button {
 
 .hero-card-frame {
   position: relative;
-  background: var(--glass-surface);
-  border: 1px solid var(--border);
+  background: var(--tone-1-surface-glass);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-xl);
   padding: 0.75rem;
   overflow: hidden;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.7);
 }
 
 .hero-image-container {
@@ -779,19 +846,19 @@ input, textarea, button {
 .image-gradient-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.1) 0%, rgba(9, 9, 11, 0.7) 100%);
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.1) 0%, rgba(9, 9, 11, 0.75) 100%);
   pointer-events: none;
 }
 
-/* Floating Badges inside Hero Frame */
+/* Floating Context Badges inside Hero Frame */
 .floating-badge {
   position: absolute;
   display: flex;
   align-items: center;
   gap: 0.65rem;
   padding: 0.55rem 0.85rem;
-  background: rgba(9, 9, 11, 0.82);
-  border: 1px solid var(--border);
+  background: rgba(9, 9, 11, 0.85);
+  border: 1px solid var(--tone-1-border);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius);
@@ -804,11 +871,11 @@ input, textarea, button {
   display: block;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .floating-badge span {
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   font-size: 0.7rem;
 }
 
@@ -827,7 +894,7 @@ input, textarea, button {
   margin-top: 0.75rem;
   padding: 0.5rem;
   background: rgba(18, 18, 22, 0.75);
-  border: 1px solid var(--border);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -840,7 +907,7 @@ input, textarea, button {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 600;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   letter-spacing: 0.05em;
   padding-left: 0.5rem;
 }
@@ -857,25 +924,25 @@ input, textarea, button {
   font-weight: 500;
   border-radius: calc(var(--radius) - 2px);
   border: 1px solid transparent;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   transition: all 0.18s ease;
 }
 
 .switch-btn:hover {
-  color: var(--foreground);
+  color: var(--tone-2-title);
   background: rgba(255, 255, 255, 0.05);
 }
 
 .switch-btn.active {
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: var(--tone-4-gradient);
+  color: #ffffff;
   font-weight: 600;
 }
 
 .hero-photo-caption {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   text-align: center;
   margin-top: 0.5rem;
   letter-spacing: 0.02em;
@@ -890,18 +957,18 @@ input, textarea, button {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.06em;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   transition: color 0.2s;
 }
 
 .scroll-cue:hover {
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .scroll-mouse {
   width: 18px;
   height: 28px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(--tone-1-border);
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -911,7 +978,7 @@ input, textarea, button {
 .mouse-wheel {
   width: 3px;
   height: 6px;
-  background: var(--brand-amber);
+  background: var(--tone-5-cyan);
   border-radius: 2px;
   animation: mouse-scroll 1.8s infinite ease-in-out;
 }
@@ -921,12 +988,12 @@ input, textarea, button {
   100% { transform: translateY(8px); opacity: 0; }
 }
 
-/* --- 10. MARQUEE STATEMENT TICKER --- */
+/* --- 11. MARQUEE STATEMENT TICKER --- */
 .ticker-banner {
   width: 100%;
   background: rgba(18, 18, 22, 0.85);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--tone-1-border);
+  border-bottom: 1px solid var(--tone-1-border);
   overflow: hidden;
   padding: 0.9rem 0;
   position: relative;
@@ -953,11 +1020,11 @@ input, textarea, button {
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: #a1a1aa;
+  color: var(--tone-3-copy);
 }
 
 .ticker-star {
-  color: var(--brand-amber);
+  color: var(--tone-5-cyan);
   font-size: 0.85rem;
 }
 
@@ -966,7 +1033,7 @@ input, textarea, button {
   100% { transform: translateX(-50%); }
 }
 
-/* --- 11. SECTION SHARED LAYOUT --- */
+/* --- 12. SECTION SHARED LAYOUT --- */
 .section-container {
   max-width: 1240px;
   margin: 0 auto;
@@ -990,17 +1057,18 @@ input, textarea, button {
 }
 
 .section-title {
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.035em;
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .section-title .highlight-text {
   font-style: italic;
   font-weight: 600;
-  background: linear-gradient(135deg, #fafafa 40%, var(--brand-amber) 100%);
+  background: var(--tone-2-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1008,11 +1076,11 @@ input, textarea, button {
 .section-lead {
   max-width: 480px;
   font-size: 0.9375rem;
-  color: var(--muted-foreground);
-  line-height: 1.6;
+  color: var(--tone-3-copy);
+  line-height: 1.65;
 }
 
-/* --- 12. WORK CATEGORY FILTER BAR --- */
+/* --- 13. WORK CATEGORY FILTER BAR --- */
 .work-filter-bar {
   display: flex;
   align-items: center;
@@ -1029,25 +1097,25 @@ input, textarea, button {
   font-size: 0.8125rem;
   font-weight: 500;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border);
-  background: rgba(24, 24, 27, 0.6);
-  color: var(--muted-foreground);
+  border: 1px solid var(--tone-1-border);
+  background: rgba(24, 24, 28, 0.6);
+  color: var(--tone-3-copy);
   backdrop-filter: blur(8px);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .filter-chip:hover {
-  background: var(--accent);
-  color: var(--foreground);
-  border-color: #3f3f46;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--tone-2-title);
+  border-color: rgba(99, 102, 241, 0.4);
 }
 
 .filter-chip.active {
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: var(--tone-4-gradient);
+  color: #ffffff;
   border-color: transparent;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px -2px var(--tone-4-glow);
 }
 
 .chip-icon {
@@ -1060,15 +1128,15 @@ input, textarea, button {
   font-size: 0.7rem;
   padding: 0.1rem 0.4rem;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
   color: inherit;
 }
 
 .filter-chip.active .chip-count {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.2);
 }
 
-/* --- 13. PROJECTS GRID --- */
+/* --- 14. PROJECTS GRID --- */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1085,7 +1153,7 @@ input, textarea, button {
   transform: translateY(-2px);
 }
 
-/* Featured Project Card spanning full width */
+/* Featured Project Card */
 .project-featured {
   grid-column: 1 / -1;
   display: grid;
@@ -1120,7 +1188,7 @@ input, textarea, button {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.1) 0%, rgba(9, 9, 11, 0.75) 100%);
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.1) 0%, rgba(9, 9, 11, 0.8) 100%);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -1135,8 +1203,8 @@ input, textarea, button {
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-full);
   background: rgba(9, 9, 11, 0.85);
-  border: 1px solid var(--border);
-  color: var(--brand-amber);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  color: var(--tone-5-cyan);
   backdrop-filter: blur(8px);
 }
 
@@ -1165,9 +1233,9 @@ input, textarea, button {
   font-size: 0.7rem;
   padding: 0.25rem 0.6rem;
   background: rgba(9, 9, 11, 0.8);
-  border: 1px solid var(--border);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-full);
-  color: #d4d4d8;
+  color: var(--tone-3-copy-bright);
   backdrop-filter: blur(8px);
 }
 
@@ -1191,28 +1259,29 @@ input, textarea, button {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--brand-amber);
+  color: var(--tone-5-cyan);
 }
 
 .project-number {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
 }
 
 .card-title {
+  font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.025em;
   margin-bottom: 0.65rem;
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .card-summary {
   font-size: 0.875rem;
-  color: var(--muted-foreground);
-  line-height: 1.55;
+  color: var(--tone-3-copy);
+  line-height: 1.6;
   margin-bottom: 1.25rem;
 }
 
@@ -1223,7 +1292,7 @@ input, textarea, button {
   justify-content: space-between;
   gap: 0.75rem;
   padding-top: 1rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--tone-1-border);
 }
 
 .tag-row {
@@ -1237,10 +1306,10 @@ input, textarea, button {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   padding: 0.2rem 0.5rem;
-  background: rgba(24, 24, 27, 0.7);
-  border: 1px solid var(--border);
+  background: rgba(24, 24, 28, 0.7);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-full);
-  color: #a1a1aa;
+  color: var(--tone-3-copy);
 }
 
 .view-details-btn {
@@ -1249,20 +1318,21 @@ input, textarea, button {
   gap: 0.35rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--foreground);
+  color: var(--tone-2-title);
   padding: 0.35rem 0.65rem;
   border-radius: var(--radius);
-  background: var(--secondary);
-  border: 1px solid var(--border);
+  background: var(--tone-1-surface);
+  border: 1px solid var(--tone-1-border);
   transition: all 0.2s ease;
 }
 
 .project-card:hover .view-details-btn {
-  background: var(--accent);
-  border-color: #3f3f46;
+  background: rgba(99, 102, 241, 0.15);
+  border-color: var(--tone-4-primary);
+  color: #fff;
 }
 
-/* --- 14. ABOUT SECTION --- */
+/* --- 15. ABOUT SECTION --- */
 .about-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -1279,7 +1349,7 @@ input, textarea, button {
   position: absolute;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: 1px solid var(--tone-1-border);
   background: #09090b;
 }
 
@@ -1297,7 +1367,7 @@ input, textarea, button {
   bottom: 0;
   right: 0;
   z-index: 2;
-  border: 2px solid var(--background);
+  border: 2px solid var(--tone-1-canvas);
 }
 
 .about-img, .about-thumb {
@@ -1313,7 +1383,7 @@ input, textarea, button {
   gap: 0.65rem;
   padding: 0.55rem 0.85rem;
   background: rgba(9, 9, 11, 0.88);
-  border: 1px solid var(--border);
+  border: 1px solid var(--tone-1-border);
   backdrop-filter: blur(12px);
   border-radius: var(--radius);
   color: #fff;
@@ -1329,11 +1399,12 @@ input, textarea, button {
   display: block;
   font-size: 0.8125rem;
   font-weight: 600;
+  color: var(--tone-2-title);
 }
 
 .about-image-badge span {
   font-size: 0.7rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
 }
 
 .thumb-badge {
@@ -1341,6 +1412,7 @@ input, textarea, button {
   right: 0.75rem;
   font-size: 0.72rem;
   font-family: var(--font-mono);
+  color: var(--tone-5-emerald);
 }
 
 .about-content {
@@ -1358,15 +1430,15 @@ input, textarea, button {
 
 .about-lead {
   font-size: 1rem;
-  color: var(--foreground);
-  line-height: 1.65;
+  color: var(--tone-3-copy-bright);
+  line-height: 1.7;
   margin-bottom: 1rem;
 }
 
 .about-text {
   font-size: 0.9375rem;
-  color: var(--muted-foreground);
-  line-height: 1.65;
+  color: var(--tone-3-copy);
+  line-height: 1.7;
   margin-bottom: 2rem;
 }
 
@@ -1389,26 +1461,27 @@ input, textarea, button {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: var(--radius);
-  background: var(--secondary);
-  border: 1px solid var(--border);
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand-amber);
+  color: var(--tone-4-primary);
   flex-shrink: 0;
 }
 
 .value-item h4 {
+  font-family: var(--font-display);
   font-size: 0.9375rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .value-item p {
   font-size: 0.8125rem;
-  color: var(--muted-foreground);
-  line-height: 1.5;
+  color: var(--tone-3-copy);
+  line-height: 1.55;
 }
 
 .about-actions {
@@ -1418,7 +1491,7 @@ input, textarea, button {
   flex-wrap: wrap;
 }
 
-/* --- 15. PILLARS GRID (PHILOSOPHY, EDUCATION, EXPERIENCE) --- */
+/* --- 16. PILLARS GRID (PHILOSOPHY, EDUCATION, EXPERIENCE) --- */
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1435,25 +1508,27 @@ input, textarea, button {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: var(--radius);
-  background: var(--secondary);
-  border: 1px solid var(--border);
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand-amber);
+  color: var(--tone-4-primary);
   margin-bottom: 1.25rem;
 }
 
 .pillar-card h3 {
+  font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
+  color: var(--tone-2-title);
 }
 
 .pillar-section {
   padding: 0.85rem 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--tone-1-border);
 }
 
 .pillar-section:last-child {
@@ -1464,34 +1539,34 @@ input, textarea, button {
   display: block;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  color: var(--brand-amber);
+  color: var(--tone-5-cyan);
   margin-bottom: 0.35rem;
   letter-spacing: 0.05em;
 }
 
 .pillar-section p {
   font-size: 0.85rem;
-  color: var(--muted-foreground);
-  line-height: 1.55;
+  color: var(--tone-3-copy);
+  line-height: 1.6;
 }
 
 .pillar-section p strong {
-  color: var(--foreground);
+  color: var(--tone-2-title-muted);
 }
 
-/* --- 16. CREATIVE PROCESS --- */
+/* --- 17. CREATIVE PROCESS --- */
 .process-banner-box {
   padding: 1.75rem 2rem;
-  background: var(--glass-surface);
-  border: 1px solid var(--border);
+  background: var(--tone-1-surface-glass);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-lg);
   margin-bottom: 2rem;
 }
 
 .process-lead-text {
   font-size: 0.95rem;
-  color: #d4d4d8;
-  line-height: 1.7;
+  color: var(--tone-3-copy-bright);
+  line-height: 1.75;
   font-style: italic;
 }
 
@@ -1511,28 +1586,29 @@ input, textarea, button {
   font-family: var(--font-mono);
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--brand-amber);
+  color: var(--tone-4-primary);
   margin-bottom: 0.75rem;
   letter-spacing: -0.04em;
 }
 
 .process-step-card h4 {
+  font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .process-step-card p {
   font-size: 0.8125rem;
-  color: var(--muted-foreground);
-  line-height: 1.55;
+  color: var(--tone-3-copy);
+  line-height: 1.6;
 }
 
-/* --- 17. CONTACT SECTION & SHADCN FORM --- */
+/* --- 18. CONTACT SECTION & SHADCN FORM --- */
 .contact-card-box {
-  background: var(--glass-surface);
-  border: 1px solid var(--border);
+  background: var(--tone-1-surface-glass);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-xl);
   padding: 3.5rem;
   position: relative;
@@ -1545,7 +1621,7 @@ input, textarea, button {
 
 .contact-heading {
   font-size: clamp(2.25rem, 4.5vw, 3.25rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.04em;
   margin: 1rem 0 1.25rem;
@@ -1554,8 +1630,8 @@ input, textarea, button {
 .contact-lead {
   max-width: 720px;
   font-size: 0.95rem;
-  color: var(--muted-foreground);
-  line-height: 1.65;
+  color: var(--tone-3-copy);
+  line-height: 1.7;
 }
 
 .contact-columns {
@@ -1584,7 +1660,7 @@ input, textarea, button {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
 }
 
 .input-wrapper {
@@ -1598,29 +1674,29 @@ input, textarea, button {
   left: 0.85rem;
   width: 1rem;
   height: 1rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   pointer-events: none;
 }
 
 .shadcn-input, .shadcn-textarea {
   width: 100%;
   background: rgba(18, 18, 22, 0.7);
-  border: 1px solid var(--border);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius);
   padding: 0.65rem 0.85rem 0.65rem 2.4rem;
   font-size: 0.875rem;
-  color: var(--foreground);
+  color: var(--tone-2-title);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .shadcn-input:focus, .shadcn-textarea:focus {
   outline: none;
-  border-color: #71717a;
-  box-shadow: 0 0 0 1px #71717a, 0 0 0 3px rgba(255, 255, 255, 0.05);
+  border-color: var(--tone-4-primary);
+  box-shadow: 0 0 0 1px var(--tone-4-primary), 0 0 0 3px var(--tone-4-ring);
 }
 
 .shadcn-input::placeholder, .shadcn-textarea::placeholder {
-  color: #52525b;
+  color: var(--tone-3-copy-dim);
 }
 
 .shadcn-textarea {
@@ -1641,7 +1717,7 @@ input, textarea, button {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
 }
 
 .choice-chips {
@@ -1655,23 +1731,24 @@ input, textarea, button {
   font-size: 0.78125rem;
   font-weight: 500;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border);
-  background: rgba(24, 24, 27, 0.6);
-  color: var(--muted-foreground);
+  border: 1px solid var(--tone-1-border);
+  background: rgba(24, 24, 28, 0.6);
+  color: var(--tone-3-copy);
   transition: all 0.18s;
   cursor: pointer;
 }
 
 .choice-chip:hover {
-  background: var(--accent);
-  color: var(--foreground);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--tone-2-title);
 }
 
 .choice-chip.active {
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: var(--tone-4-gradient);
+  color: #ffffff;
   border-color: transparent;
   font-weight: 600;
+  box-shadow: 0 2px 8px -1px var(--tone-4-glow);
 }
 
 .submit-btn {
@@ -1688,8 +1765,8 @@ input, textarea, button {
   display: none;
   width: 1rem;
   height: 1rem;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-top-color: currentColor;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
   border-radius: 50%;
   animation: spin 0.65s linear infinite;
 }
@@ -1724,12 +1801,12 @@ input, textarea, button {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: var(--radius);
-  background: var(--secondary);
-  border: 1px solid var(--border);
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand-amber);
+  color: var(--tone-4-primary);
   flex-shrink: 0;
 }
 
@@ -1742,31 +1819,31 @@ input, textarea, button {
 .direct-lbl {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   letter-spacing: 0.05em;
 }
 
 .direct-val {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .direct-action-icon {
   width: 1rem;
   height: 1rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   transition: transform 0.2s, color 0.2s;
 }
 
 .direct-card:hover .direct-action-icon {
-  color: var(--foreground);
+  color: var(--tone-5-cyan);
   transform: translateX(2px);
 }
 
-/* --- 18. FOOTER --- */
+/* --- 19. FOOTER --- */
 .site-footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--tone-1-border);
   background: rgba(9, 9, 11, 0.95);
   position: relative;
   z-index: 2;
@@ -1799,7 +1876,7 @@ input, textarea, button {
 .footer-credit {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   letter-spacing: 0.04em;
 }
 
@@ -1813,14 +1890,14 @@ input, textarea, button {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+  background: var(--tone-5-emerald);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.7);
 }
 
 .build-lbl {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
 }
 
 .commit-pill {
@@ -1828,25 +1905,25 @@ input, textarea, button {
   align-items: center;
   gap: 0.35rem;
   padding: 0.15rem 0.5rem;
-  background: var(--secondary);
-  border: 1px solid var(--border);
+  background: var(--tone-1-surface);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-full);
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: #d4d4d8;
+  color: var(--tone-3-copy-bright);
   transition: all 0.2s;
 }
 
 .commit-pill:hover {
-  background: var(--accent);
-  border-color: #52525b;
+  background: rgba(99, 102, 241, 0.15);
+  border-color: var(--tone-4-primary);
   color: #fff;
 }
 
 .commit-icon {
   width: 0.85rem;
   height: 0.85rem;
-  color: var(--brand-amber);
+  color: var(--tone-5-cyan);
 }
 
 .footer-links {
@@ -1857,12 +1934,12 @@ input, textarea, button {
 
 .footer-link {
   font-size: 0.8125rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   transition: color 0.15s;
 }
 
 .footer-link:hover {
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .back-to-top-btn {
@@ -1872,19 +1949,20 @@ input, textarea, button {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   padding: 0.45rem 0.85rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius);
-  background: rgba(24, 24, 27, 0.5);
-  color: var(--muted-foreground);
+  background: rgba(24, 24, 28, 0.5);
+  color: var(--tone-3-copy);
   transition: all 0.2s;
 }
 
 .back-to-top-btn:hover {
-  background: var(--accent);
-  color: var(--foreground);
+  background: rgba(99, 102, 241, 0.1);
+  border-color: var(--tone-4-primary);
+  color: var(--tone-2-title);
 }
 
-/* --- 19. QUICK ACTION FAB MENU --- */
+/* --- 20. QUICK ACTION FAB MENU --- */
 .fab-wrapper {
   position: fixed;
   bottom: 2rem;
@@ -1896,17 +1974,18 @@ input, textarea, button {
   width: 3.25rem;
   height: 3.25rem;
   border-radius: 50%;
-  background: var(--primary);
-  color: var(--primary-foreground);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8);
+  background: var(--tone-4-gradient);
+  color: #ffffff;
+  box-shadow: 0 10px 25px -5px var(--tone-4-glow);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.25s var(--ease-out-expo), background 0.2s;
+  transition: transform 0.25s var(--ease-out-expo), box-shadow 0.2s;
 }
 
 .fab-main:hover {
   transform: scale(1.06);
+  box-shadow: 0 12px 30px -4px rgba(99, 102, 241, 0.5);
 }
 
 .fab-icon-close {
@@ -1945,9 +2024,9 @@ input, textarea, button {
   height: 2.75rem;
   border-radius: 50%;
   background: rgba(18, 18, 22, 0.95);
-  border: 1px solid var(--border);
+  border: 1px solid var(--tone-1-border);
   backdrop-filter: blur(12px);
-  color: var(--foreground);
+  color: var(--tone-2-title);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1957,8 +2036,8 @@ input, textarea, button {
 }
 
 .fab-menu-item:hover {
-  background: var(--accent);
-  border-color: #52525b;
+  background: rgba(99, 102, 241, 0.2);
+  border-color: var(--tone-4-primary);
   transform: scale(1.08);
 }
 
@@ -1968,7 +2047,7 @@ input, textarea, button {
   top: 50%;
   transform: translateY(-50%);
   background: rgba(9, 9, 11, 0.95);
-  border: 1px solid var(--border);
+  border: 1px solid var(--tone-1-border);
   padding: 0.3rem 0.65rem;
   border-radius: var(--radius);
   font-family: var(--font-mono);
@@ -1984,13 +2063,13 @@ input, textarea, button {
   opacity: 1;
 }
 
-/* --- 20. MODAL DIALOGS (PROJECT & SHOWREEL) --- */
+/* --- 21. MODAL DIALOGS (PROJECT & SHOWREEL) --- */
 .dialog-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.78);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 90;
   display: flex;
   align-items: center;
@@ -2007,8 +2086,8 @@ input, textarea, button {
 }
 
 .dialog-card {
-  background: #09090b;
-  border: 1px solid var(--border);
+  background: #0d0d11;
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-xl);
   width: 100%;
   max-width: 760px;
@@ -2032,8 +2111,8 @@ input, textarea, button {
   height: 2.25rem;
   border-radius: 50%;
   background: rgba(9, 9, 11, 0.85);
-  border: 1px solid var(--border);
-  color: var(--foreground);
+  border: 1px solid var(--tone-1-border);
+  color: var(--tone-2-title);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2042,8 +2121,8 @@ input, textarea, button {
 }
 
 .dialog-close-btn:hover {
-  background: var(--accent);
-  border-color: #52525b;
+  background: rgba(99, 102, 241, 0.2);
+  border-color: var(--tone-4-primary);
 }
 
 .dialog-media-container {
@@ -2064,7 +2143,7 @@ input, textarea, button {
 .dialog-media-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(9, 9, 11, 0.2) 0%, #09090b 100%);
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.2) 0%, #0d0d11 100%);
 }
 
 .dialog-floating-pill {
@@ -2075,9 +2154,9 @@ input, textarea, button {
   font-size: 0.72rem;
   padding: 0.3rem 0.75rem;
   background: rgba(9, 9, 11, 0.85);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(6, 182, 212, 0.4);
   border-radius: var(--radius-full);
-  color: var(--brand-amber);
+  color: var(--tone-5-cyan);
 }
 
 .dialog-body {
@@ -2095,33 +2174,34 @@ input, textarea, button {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--brand-amber);
+  color: var(--tone-5-cyan);
 }
 
 .dialog-year {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
 }
 
 .dialog-title {
+  font-family: var(--font-display);
   font-size: 1.65rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.03em;
   margin-bottom: 0.35rem;
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .dialog-subtitle {
   font-size: 0.875rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   margin-bottom: 1.25rem;
 }
 
 .dialog-description {
   font-size: 0.9375rem;
-  color: #d4d4d8;
+  color: var(--tone-3-copy-bright);
   line-height: 1.65;
   margin-bottom: 1.75rem;
 }
@@ -2131,8 +2211,8 @@ input, textarea, button {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   padding: 1.25rem;
-  background: var(--glass-surface);
-  border: 1px solid var(--border);
+  background: var(--tone-1-surface);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius);
   margin-bottom: 1.75rem;
 }
@@ -2146,14 +2226,15 @@ input, textarea, button {
 .spec-label {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   letter-spacing: 0.05em;
 }
 
 .spec-val {
+  font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .dialog-actions {
@@ -2181,7 +2262,7 @@ input, textarea, button {
 .reel-banner-scrim {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, transparent 20%, #09090b 90%);
+  background: radial-gradient(circle at center, transparent 20%, #0d0d11 90%);
 }
 
 .reel-center-content {
@@ -2199,15 +2280,15 @@ input, textarea, button {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: var(--tone-4-gradient);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
   cursor: pointer;
   transition: transform 0.25s var(--ease-out-expo);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 25px var(--tone-4-glow);
 }
 
 .reel-play-circle:hover {
@@ -2215,16 +2296,17 @@ input, textarea, button {
 }
 
 .reel-center-content h3 {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   margin-bottom: 0.35rem;
+  color: var(--tone-2-title);
 }
 
 .reel-center-content p {
   font-size: 0.8125rem;
-  color: #a1a1aa;
+  color: var(--tone-3-copy);
 }
 
 .reel-details-box {
@@ -2236,20 +2318,20 @@ input, textarea, button {
   flex-direction: column;
   gap: 0.35rem;
   font-size: 0.85rem;
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--tone-1-border);
   margin-bottom: 1rem;
 }
 
 .reel-specs strong {
-  color: var(--foreground);
+  color: var(--tone-2-title);
 }
 
 .reel-note {
   font-size: 0.875rem;
-  color: #d4d4d8;
-  line-height: 1.6;
+  color: var(--tone-3-copy-bright);
+  line-height: 1.65;
   margin-bottom: 1.5rem;
 }
 
@@ -2258,14 +2340,14 @@ input, textarea, button {
   justify-content: flex-end;
 }
 
-/* --- 21. SHADCN / SONNER TOAST NOTIFICATION --- */
+/* --- 22. SHADCN / SONNER TOAST NOTIFICATION --- */
 .toast-sonner {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 100;
-  background: rgba(12, 12, 14, 0.95);
-  border: 1px solid var(--border);
+  background: rgba(18, 18, 24, 0.95);
+  border: 1px solid var(--tone-1-border);
   border-radius: var(--radius-lg);
   padding: 0.85rem 1.15rem;
   box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.8);
@@ -2290,13 +2372,13 @@ input, textarea, button {
 .toast-icon {
   width: 1.25rem;
   height: 1.25rem;
-  color: var(--brand-amber);
+  color: var(--tone-5-cyan);
   flex-shrink: 0;
 }
 
 .toast-msg {
   font-size: 0.875rem;
-  color: var(--foreground);
+  color: var(--tone-2-title);
   line-height: 1.4;
 }
 
@@ -2304,7 +2386,7 @@ input, textarea, button {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: var(--radius);
-  color: var(--muted-foreground);
+  color: var(--tone-3-copy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2313,11 +2395,11 @@ input, textarea, button {
 }
 
 .toast-close:hover {
-  color: var(--foreground);
-  background: var(--secondary);
+  color: var(--tone-2-title);
+  background: var(--tone-1-surface);
 }
 
-/* --- 22. RESPONSIVE MEDIA QUERIES --- */
+/* --- 23. RESPONSIVE MEDIA QUERIES --- */
 @media (max-width: 1024px) {
   .hero-layout {
     grid-template-columns: 1fr;
@@ -2474,7 +2556,7 @@ input, textarea, button {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     letter-spacing: -0.04em;
   }
 

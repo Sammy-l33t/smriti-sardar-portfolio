@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -7,10 +7,53 @@
   <meta name="description" content="Smriti Sardar — Filmmaker, Cinematographer & Senior Video Editor. Shaping stories of people, places, and purpose across Himalayan expeditions, documentaries, and branded films.">
   <title>Smriti Sardar — Filmmaker, Cinematographer & Senior Video Editor</title>
 
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- 3-Tier Google Fonts: Plus Jakarta Sans (Display), Inter (Body), JetBrains Mono (Technical) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN with Local Fallback & 5-Tone Architecture Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    if (!window.tailwind) {
+      document.write('<script src="assets/js/tailwindcss.min.js"><\/script>');
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            tone1: {
+              canvas: '#09090b',
+              surface: '#121216',
+              border: '#27272a'
+            },
+            tone2: {
+              title: '#f8fafc'
+            },
+            tone3: {
+              copy: '#94a3b8'
+            },
+            tone4: {
+              indigo: '#6366f1',
+              violet: '#8b5cf6'
+            },
+            tone5: {
+              cyan: '#06b6d4',
+              emerald: '#10b981'
+            }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
 
   <!-- Lucide Icons CDN with Local Fallback -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -22,7 +65,7 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="bg-[#09090b] text-[#94a3b8] font-sans antialiased selection:bg-indigo-500/30 selection:text-white">
   <!-- Scroll Progress Indicator -->
   <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
 
@@ -148,7 +191,7 @@
           </div>
         </div>
 
-        <!-- Hero Visual Frame with Magic UI Border Beam & Moment Switcher -->
+        <!-- Hero Visual Frame with Magic UI Border Beam & Moments Switcher -->
         <div class="hero-visual-wrapper animate-on-scroll">
           <div class="hero-card-frame border-beam-wrapper">
             <div class="border-beam" aria-hidden="true"></div>
@@ -163,7 +206,7 @@
               
               <!-- Floating Context Badges -->
               <div class="floating-badge badge-top">
-                <i data-lucide="plane" class="icon-md"></i>
+                <i data-lucide="plane" class="icon-md text-cyan-400"></i>
                 <div>
                   <strong>Licensed Drone Pilot</strong>
                   <span>Cinematic Aerial Perspectives</span>
@@ -171,7 +214,7 @@
               </div>
 
               <div class="floating-badge badge-bottom">
-                <i data-lucide="mountain" class="icon-md"></i>
+                <i data-lucide="mountain" class="icon-md text-indigo-400"></i>
                 <div>
                   <strong>6,000m+ Expeditions</strong>
                   <span>Himalayan Mountain Documentaries</span>
@@ -209,7 +252,7 @@
       </a>
     </section>
 
-    <!-- CINEMATIC MARQUEE TICKER BANNER -->
+    <!-- CINEMATIC MARQUEE STATEMENT TICKER -->
     <section class="ticker-banner" aria-label="Statement ticker">
       <div class="ticker-track">
         <div class="ticker-content">
@@ -472,7 +515,7 @@
                  class="about-img" 
                  loading="lazy">
             <div class="about-image-badge">
-              <i data-lucide="mountain" class="icon-md"></i>
+              <i data-lucide="mountain" class="icon-md text-indigo-400"></i>
               <div>
                 <strong>Over 6,000 Meters</strong>
                 <span>Filming in Extreme Himalayan Altitudes</span>
@@ -486,7 +529,7 @@
                  class="about-thumb" 
                  loading="lazy">
             <div class="thumb-badge">
-              <i data-lucide="badge-check" class="icon-sm"></i>
+              <i data-lucide="badge-check" class="icon-sm text-emerald-400"></i>
               <span>The Unscripted India</span>
             </div>
           </div>
