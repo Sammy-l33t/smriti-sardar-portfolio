@@ -356,4 +356,31 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     animateItems.forEach((el) => el.classList.add("in-view"));
   }
+
+  // 15. DYNAMIC GITHUB COMMIT TRACKER
+  const gitCommitHash = document.querySelector("#gitCommitHash");
+  const gitCommitBadge = document.querySelector("#gitCommitBadge");
+
+  // Fetch live latest commit from GitHub repository
+  fetch("https://api.github.com/repos/Sammy-l33t/smriti-sardar-portfolio/commits/main")
+    .then((res) => {
+      if (!res.ok) throw new Error("GitHub API request failed");
+      return res.json();
+    })
+    .then((data) => {
+      if (data && data.sha) {
+        const shortSha = data.sha.substring(0, 7);
+        if (gitCommitHash) {
+          gitCommitHash.textContent = shortSha;
+        }
+        if (gitCommitBadge) {
+          gitCommitBadge.href = `https://github.com/Sammy-l33t/smriti-sardar-portfolio/commit/${data.sha}`;
+          const msg = data.commit?.message?.split("\n")[0] || "Latest commit";
+          gitCommitBadge.setAttribute("title", `Commit ${shortSha}: ${msg}`);
+        }
+      }
+    })
+    .catch((err) => {
+      console.log("GitHub API live status:", err.message);
+    });
 });

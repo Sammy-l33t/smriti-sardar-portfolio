@@ -1785,10 +1785,70 @@ img {
   gap: 20px;
 }
 
+.footer-copy-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .footer-credit {
   font-size: 0.78rem;
   letter-spacing: 1px;
   color: var(--tone-ivory-tertiary);
+}
+
+.footer-build-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  color: var(--tone-ivory-tertiary);
+}
+
+.build-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tone-accent);
+  box-shadow: 0 0 8px var(--tone-accent-glow);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.build-lbl {
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 0.65rem;
+  color: var(--tone-ivory-tertiary);
+}
+
+.commit-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  background: rgba(245, 244, 238, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--tone-accent);
+  transition: all var(--transition-fast);
+}
+
+.commit-pill:hover {
+  background: var(--tone-accent-soft);
+  border-color: var(--border-active);
+  transform: translateY(-1px);
+}
+
+.commit-icon {
+  font-size: 14px;
+  color: var(--tone-accent);
+}
+
+.commit-pill code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .footer-links {
