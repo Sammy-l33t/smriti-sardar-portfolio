@@ -1,33 +1,24 @@
 # Smriti Sardar — Filmmaker & Video Editor Portfolio
 
-A zero-overhead, ultra-high-performance cinematic personal portfolio for **Smriti Sardar** built with a **Cinematic Director's Suite & Asymmetrical Bento Grid** architecture, featuring a rich **5-Tone Color Architecture**, a **Floating Studio Dock Navbar**, authentic **Director's Timecode Overlays**, and **Magic UI Micro-Interactions** using native HTML5, CSS3, Tailwind CSS, and vanilla JavaScript (~2KB). Deployed statically on Vercel with zero runtime framework overhead.
+A zero-overhead, ultra-high-performance cinematic personal portfolio for **Smriti Sardar** styled with the **Kaelorian Editorial Design System** (inspired by [Kaelorian](https://kaelorian.framer.website/)), featuring a **Matte Obsidian & Vermilion Red Palette**, **Heroic Condensed Bebas Neue Typography**, **Crisp 1px Hairline Borders**, and **Signature Technical Index Notation** (`•01`, `•02`, `•03`, `¬`), while strictly preserving all portfolio information and zero-overhead native static deployment on Vercel.
 
 ---
 
-## 🎨 5-Tone Color Architecture
+## 🎨 Kaelorian Color & Aesthetic System
 
-The entire portfolio adheres strictly to an intentional 5-tone color hierarchy defined in `:root` and Tailwind config:
-
-1. **Tone 1 (Canvas & Elevated Glassmorphic Surfaces)**:
-   - Deep Obsidian background (`#09090b` / `zinc-950`)
-   - Translucent glassmorphic card surfaces (`#121216` / `bg-zinc-900/60` / `rgba(18, 18, 22, 0.65)`)
-   - Crisp 1px borders (`#27272a` / `border-zinc-800/80`)
-2. **Tone 2 (Reserved Strictly for Titles & Headings)**:
-   - Crisp Alabaster White (`#f8fafc`) with subtle linear gradient highlights strictly reserved for H1, H2, H3, and H4 headings.
-3. **Tone 3 (Reserved Strictly for Descriptions & Body Copy)**:
-   - Cool Slate Muted (`#94a3b8` / `text-slate-400`), Slate bright (`#cbd5e1`), and Slate dim (`#64748b`) strictly reserved for subtitles, descriptions, and paragraph text to enforce immediate visual contrast against titles.
-4. **Tone 4 (Primary Brand & Interactive Accent)**:
-   - Electric Indigo / Violet (`#6366f1` to `#8b5cf6`) reserved for primary CTA buttons, active states, focus rings (`focus-visible:ring-2 focus-visible:ring-indigo-500/50`), active scale (`active:scale-[0.98]`), and spotlight glows.
-5. **Tone 5 (Secondary Highlight & Data Accent)**:
-   - Vibrant Cyan (`#06b6d4`) and Emerald (`#10b981`) reserved for badges, status indicators, KPI trends, and secondary highlights.
-
----
-
-## 🔤 3-Tier Complementary Typography System
-
-- **Tier 1 — Display / Titles Font**: **Plus Jakarta Sans** (semi-bold/bold, tight tracking `tracking-tight` / `-0.035em`) for all headings and titles.
-- **Tier 2 — Body / Descriptions Font**: **Inter** (regular/medium, relaxed line-height `leading-relaxed` / `1.65`) for optimal readability on descriptions and UI labels.
-- **Tier 3 — Technical / Numbers Font**: **JetBrains Mono** for numerical stats, code snippets, tags, aspect ratios, and tabular data.
+1. **Canvas & Surfaces**:
+   - Matte Obsidian background (`#0c0c0c`)
+   - Dark Basalt card surfaces (`#141414`)
+   - Crisp 1px hairline borders (`rgba(255, 255, 255, 0.1)`)
+2. **Typography**:
+   - Heroic Condensed Display: **Bebas Neue** (tall, bold, cinematic uppercase display scale)
+   - Refined Editorial Body: **DM Sans** & **Inter** (clean, geometric, ultra-legible)
+   - Technical Notation & Counters: **JetBrains Mono**
+3. **Primary Accent (Kaelorian Vermilion Red)**:
+   - High-contrast Vermilion Red (`#d92615` / hover `#fa4e3e`) for buttons, active state chips, pulse dots, and spotlight warmth.
+4. **Editorial Index Notation**:
+   - Numbered section badges: `•01 / FILMMAKER`, `•02 / ABOUT`, `•03 / SELECTED WORK`, `•04 / PHILOSOPHY`, `•05 / PROCESS`, `•06 / LET'S CONNECT`.
+   - Technical list bullets using `¬` and `º`.
 
 ---
 

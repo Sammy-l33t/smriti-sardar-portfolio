@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#09090b">
+  <meta name="theme-color" content="#0c0c0c">
   <meta name="description" content="Smriti Sardar — Filmmaker, Cinematographer & Senior Video Editor. Shaping stories of people, places, and purpose across Himalayan expeditions, documentaries, and branded films.">
   <title>Smriti Sardar — Filmmaker, Cinematographer & Senior Video Editor</title>
 
-  <!-- 3-Tier Google Fonts: Plus Jakarta Sans (Display), Inter (Body), JetBrains Mono (Technical) -->
+  <!-- Kaelorian Google Fonts: Bebas Neue (Condensed Display), DM Sans (Editorial Body), Inter, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN with Local Fallback & 5-Tone Architecture Config -->
+  <!-- Tailwind CSS CDN with Local Fallback & Kaelorian Theme Config -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     if (!window.tailwind) {
@@ -25,29 +25,20 @@
       theme: {
         extend: {
           colors: {
-            tone1: {
-              canvas: '#09090b',
-              surface: '#121216',
-              border: '#27272a'
-            },
-            tone2: {
-              title: '#f8fafc'
-            },
-            tone3: {
-              copy: '#94a3b8'
-            },
-            tone4: {
-              indigo: '#6366f1',
-              violet: '#8b5cf6'
-            },
-            tone5: {
-              cyan: '#06b6d4',
-              emerald: '#10b981'
+            kaelorian: {
+              bg: '#0c0c0c',
+              surface: '#141414',
+              card: '#181818',
+              border: 'rgba(255, 255, 255, 0.1)',
+              red: '#d92615',
+              redHover: '#fa4e3e',
+              muted: '#8f8f8f',
+              white: '#ffffff'
             }
           },
           fontFamily: {
-            display: ['"Plus Jakarta Sans"', 'sans-serif'],
-            sans: ['"Inter"', 'sans-serif'],
+            display: ['"Bebas Neue"', 'sans-serif'],
+            sans: ['"DM Sans"', '"Inter"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace']
           }
         }
@@ -65,7 +56,7 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-[#09090b] text-[#94a3b8] font-sans antialiased selection:bg-indigo-500/30 selection:text-white">
+<body class="bg-[#0c0c0c] text-[#8f8f8f] font-sans antialiased selection:bg-[#d92615]/30 selection:text-white">
   <!-- Scroll Progress Indicator -->
   <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
 
@@ -151,7 +142,7 @@
         <div class="hero-copy animate-on-scroll">
           <div class="badge badge-outline status-chip">
             <span class="badge-pulse-dot"></span>
-            <span>FILMMAKER · CINEMATOGRAPHER · SENIOR VIDEO EDITOR</span>
+            <span>•01 / FILMMAKER · CINEMATOGRAPHER · SENIOR EDITOR</span>
           </div>
 
           <h1 class="hero-title">
@@ -296,7 +287,7 @@
     <section class="section-container" id="work">
       <div class="section-header animate-on-scroll">
         <div class="header-left">
-          <div class="badge badge-outline"><span class="badge-num">01</span> SELECTED FILMOGRAPHY</div>
+          <div class="badge badge-outline"><span class="badge-num">•03</span> SELECTED WORK</div>
           <h2 class="section-title">Films with <span class="highlight-text">moments and emotion.</span></h2>
         </div>
         <p class="section-lead">
@@ -543,7 +534,7 @@
 
         <!-- Narrative Content -->
         <div class="about-content animate-on-scroll">
-          <div class="badge badge-outline"><span class="badge-num">02</span> BEHIND THE CAMERA</div>
+          <div class="badge badge-outline"><span class="badge-num">•02</span> ABOUT / BEHIND THE CAMERA</div>
           <h2 class="about-heading">
             A filmmaker shaped by<br>
             <span class="highlight-text">moments and emotion.</span>
@@ -562,7 +553,7 @@
             <div class="value-item magic-card">
               <div class="value-icon"><i data-lucide="clapperboard" class="icon-md"></i></div>
               <div>
-                <h4>Edited 100+ Short & Long Form Videos</h4>
+                <h4>¬ Edited 100+ Short & Long Form Videos</h4>
                 <p>4 years as a Freelance Video Editor, followed by 1 year as Senior Editor at <em>The Unscripted India</em>.</p>
               </div>
             </div>
@@ -570,7 +561,7 @@
             <div class="value-item magic-card">
               <div class="value-icon"><i data-lucide="plane" class="icon-md"></i></div>
               <div>
-                <h4>Licensed Drone Pilot & Cinematographer</h4>
+                <h4>¬ Licensed Drone Pilot & Cinematographer</h4>
                 <p>Strong eye for composition, natural lighting, and capturing cinematic aerial perspectives across remote terrain.</p>
               </div>
             </div>
@@ -578,7 +569,7 @@
             <div class="value-item magic-card">
               <div class="value-icon"><i data-lucide="layers" class="icon-md"></i></div>
               <div>
-                <h4>End-to-End Production & Resilience</h4>
+                <h4>¬ End-to-End Production & Resilience</h4>
                 <p>Comfortable leading productions in challenging environments with small, agile teams from script to delivery.</p>
               </div>
             </div>
@@ -602,7 +593,7 @@
     <section class="section-container" id="background">
       <div class="section-header animate-on-scroll">
         <div class="header-left">
-          <div class="badge badge-outline"><span class="badge-num">03</span> FOUNDATION & VALUES</div>
+          <div class="badge badge-outline"><span class="badge-num">•04</span> PHILOSOPHY & BACKGROUND</div>
           <h2 class="section-title">Education, Philosophy & <span class="highlight-text">Experience.</span></h2>
         </div>
         <p class="section-lead">
@@ -616,7 +607,7 @@
           <div class="pillar-icon-box">
             <i data-lucide="graduation-cap" class="icon-lg"></i>
           </div>
-          <h3>Education & Background</h3>
+          <h3>01 / Education & Background</h3>
           <div class="pillar-section">
             <strong class="subhead-lbl">FORMAL EDUCATION</strong>
             <p><strong>Bachelor of Science (B.Sc.) in Geography</strong><br>Barasat Govt College.</p>
@@ -636,7 +627,7 @@
           <div class="pillar-icon-box">
             <i data-lucide="lightbulb" class="icon-lg"></i>
           </div>
-          <h3>Storytelling Philosophy</h3>
+          <h3>02 / Storytelling Philosophy</h3>
           <div class="pillar-section">
             <strong class="subhead-lbl">PERSONAL PHILOSOPHY</strong>
             <p>"I believe every person, place, and brand has a story worth telling. My goal is to create films that are honest, cinematic, and emotionally engaging stories that people remember long after the screen goes dark."</p>
@@ -652,7 +643,7 @@
           <div class="pillar-icon-box">
             <i data-lucide="award" class="icon-lg"></i>
           </div>
-          <h3>Experience & Key Roles</h3>
+          <h3>03 / Experience & Key Roles</h3>
           <div class="pillar-section">
             <strong class="subhead-lbl">YEARS OF EXPERIENCE</strong>
             <p>Over 4 years of experience directing and editing short films, documentaries, and brand stories + 1 year as Senior Editor at <em>The Unscripted India</em>.</p>
@@ -673,7 +664,7 @@
     <section class="section-container" id="process">
       <div class="section-header animate-on-scroll">
         <div class="header-left">
-          <div class="badge badge-outline"><span class="badge-num">04</span> CREATIVE PROCESS</div>
+          <div class="badge badge-outline"><span class="badge-num">•05</span> CREATIVE PROCESS</div>
           <h2 class="section-title">From Script to <span class="highlight-text">Screen.</span></h2>
         </div>
         <p class="section-lead">
@@ -715,9 +706,9 @@
     <section class="section-container" id="contact">
       <div class="contact-card-box animate-on-scroll">
         <div class="contact-header">
-          <div class="badge badge-outline"><span class="badge-num">05</span> LET’S ROLL YOUR VISION INTO REALITY</div>
+          <div class="badge badge-outline"><span class="badge-num">•06</span> / LET'S CONNECT</div>
           <h2 class="contact-heading">
-            Let’s roll your vision<br>
+            / Let’s roll your vision<br>
             into <span class="highlight-text">reality.</span>
           </h2>
           <p class="contact-lead">
