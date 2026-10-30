@@ -564,29 +564,13 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   transition: all 0.35s ease;
 }
 
-/* Lens Aperture Iris Rotation & Anamorphic Flare Breath */
-.iris-blades-group {
-  transform-origin: 18px 18px;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
 .brand-wordmark:hover .brand-monogram {
   transform: scale(1.08);
-  filter: drop-shadow(0 0 16px rgba(0, 240, 181, 0.5));
+  filter: drop-shadow(0 0 16px rgba(0, 240, 181, 0.55));
 }
 
-.brand-wordmark:hover .iris-blades-group {
-  transform: rotate(25deg);
-}
-
-.flare-pulse-ring {
-  animation: flareBreathe 3s ease-in-out infinite alternate;
-  transform-origin: 18px 18px;
-}
-
-@keyframes flareBreathe {
-  0% { transform: scale(0.9); opacity: 0.6; }
-  100% { transform: scale(1.18); opacity: 0.95; }
+.brand-wordmark:hover .brand-monogram-svg {
+  filter: brightness(1.12);
 }
 
 .brand-text-block {
@@ -637,28 +621,6 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .nav-cta {
   border-radius: var(--radius-full);
   padding: 0.5rem 1rem;
-}
-
-.nav-admin-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--tone-3-copy);
-  margin-left: 0.35rem;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
-}
-
-.nav-admin-btn:hover {
-  color: #fff;
-  border-color: rgba(0, 240, 181, 0.5);
-  background: rgba(0, 240, 181, 0.12);
-  transform: translateY(-1px);
 }
 
 /* Mobile Hamburger Toggle */
@@ -2235,6 +2197,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .footer-link {
@@ -2245,38 +2208,6 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
 .footer-link:hover {
   color: var(--tone-2-title);
-}
-
-.footer-link.admin-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.2rem 0.65rem;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  transition: all 0.2s ease;
-}
-
-.footer-link.admin-link:hover {
-  color: #fff;
-  border-color: rgba(0, 240, 181, 0.5);
-  background: rgba(0, 240, 181, 0.12);
-}
-
-.drawer-link.drawer-admin {
-  margin-top: 0.5rem;
-  color: var(--tone-3-copy);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  border-top: 1px dashed rgba(255, 255, 255, 0.08);
-  padding-top: 0.75rem;
-}
-
-.drawer-link.drawer-admin:hover {
-  color: var(--tone-4-primary);
 }
 
 .back-to-top-btn {
@@ -2637,7 +2568,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 .reel-play-circle:hover {
   transform: scale(1.12);
   background: var(--tone-4-primary-hover);
-  box-shadow: 0 0 35px rgba(250, 78, 62, 0.7);
+  box-shadow: 0 0 35px var(--tone-4-glow);
 }
 
 .reel-center-content h3 {
@@ -2818,21 +2749,55 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
   .menu-toggle {
     display: flex;
+    min-width: 44px;
+    min-height: 44px;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-drawer {
+    top: 4.5rem;
+    height: calc(100vh - 4.5rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .drawer-link {
+    min-height: 48px;
+    padding: 0.85rem 1rem;
   }
 
   .hero-section {
-    padding-top: 6.5rem;
-    padding-bottom: 3rem;
+    padding-top: 6rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 8.5vw, 4.2rem);
+  }
+
+  .section-title {
+    font-size: clamp(2.2rem, 6.5vw, 3rem);
   }
 
   .hero-image-container {
-    height: 360px;
+    height: 340px;
   }
 
   .director-slate-hud {
+    width: 100%;
+    max-width: 100%;
     justify-content: center;
-    padding: 0.5rem;
+    border-radius: var(--radius-lg);
+    padding: 0.65rem;
     gap: 0.5rem;
+  }
+
+  .slate-roles-group {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .slate-telemetry-badge {
@@ -2840,7 +2805,7 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
   }
 
   .section-container {
-    padding: 4.5rem 1.25rem;
+    padding: 4rem 1.25rem;
   }
 
   .section-header {
@@ -2848,6 +2813,16 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
     align-items: flex-start;
     gap: 1rem;
     margin-bottom: 2rem;
+  }
+
+  .filter-chip {
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+  }
+
+  .choice-chip {
+    min-height: 44px;
+    padding: 0.5rem 0.95rem;
   }
 
   .projects-grid {
@@ -2863,8 +2838,8 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 
   .project-featured .card-media-wrapper,
   .project-panoramic .card-media-wrapper {
-    min-height: 260px;
-    height: 260px;
+    min-height: 250px;
+    height: 250px;
   }
 
   .card-media-wrapper {
@@ -2889,16 +2864,33 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
     grid-template-columns: 1fr;
   }
 
+  .dialog-card,
+  .reel-card {
+    max-height: 92vh;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dialog-close-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
   .dialog-specs-grid {
     grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 
   .dialog-actions {
     flex-direction: column;
+    width: 100%;
   }
 
   .dialog-actions .btn {
     width: 100%;
+    min-height: 48px;
   }
 
   .footer-container {
@@ -2921,13 +2913,27 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
 }
 
 @media (max-width: 480px) {
+  .section-container {
+    padding: 3.5rem 1rem;
+  }
+
   .hero-title {
-    font-size: 2.6rem;
-    letter-spacing: -0.04em;
+    font-size: clamp(2.2rem, 10.5vw, 2.75rem);
+    line-height: 1.02;
+    letter-spacing: 0.01em;
+  }
+
+  .section-title {
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
+    line-height: 1.05;
+  }
+
+  .card-title {
+    font-size: 1.35rem;
   }
 
   .hero-image-container {
-    height: 300px;
+    height: 280px;
   }
 
   .badge-top, .badge-bottom {
@@ -2935,17 +2941,40 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
     font-size: 0.7rem;
   }
 
+  .stat-pill {
+    min-width: calc(50% - 0.5rem);
+    padding: 0.75rem 0.85rem;
+  }
+
+  .stat-num {
+    font-size: 1.45rem;
+  }
+
+  .stat-lbl {
+    font-size: 0.7rem;
+  }
+
   .switcher-options {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
+    gap: 0.35rem;
   }
 
   .switch-btn {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .card-media-wrapper {
+    height: 200px;
   }
 
   .card-content {
-    padding: 1.25rem;
+    padding: 1.15rem;
   }
 
   .card-footer-action {
@@ -2954,17 +2983,70 @@ p, .hero-subtitle, .section-lead, .card-summary, .about-lead, .about-text, .dial
     gap: 0.75rem;
   }
 
+  .card-footer-action .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .about-visual {
+    min-height: 270px;
+  }
+
+  .primary-layer {
+    width: 92%;
+    height: 250px;
+  }
+
+  .secondary-layer {
+    width: 58%;
+    height: 150px;
+  }
+
   .contact-card-box {
-    padding: 2rem 1.25rem;
+    padding: 1.75rem 1rem;
     border-radius: var(--radius-lg);
   }
 
   .dialog-body {
-    padding: 1.25rem;
+    padding: 1.25rem 1rem;
   }
 
   .dialog-media-container {
-    height: 200px;
+    height: 190px;
+  }
+
+  .reel-cinematic-banner {
+    height: 190px;
+  }
+
+  .reel-details-box {
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.95rem;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+  }
+
+  .stat-pill {
+    min-width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
   }
 }
 

@@ -1,6 +1,6 @@
 # Smriti Sardar — Filmmaker & Video Editor Portfolio
 
-A zero-overhead, ultra-high-performance cinematic personal portfolio for **Smriti Sardar** styled with the **Celestial Aurora Design System**, featuring a **Midnight Obsidian & Bioluminescent Aurora Mint Palette** (`#00f0b5`), **Arctic Sky Cyan** (`#00d2ff`), **Sunlit Amber Accents** (`#f59e0b`), **Bespoke Anamorphic Lens & Infinity Dual 'S' Optical Emblem**, **Heroic Condensed Bebas Neue Display Typography**, and **Signature Technical Telemetry**, with zero-overhead native static deployment on Vercel.
+A zero-overhead, ultra-high-performance cinematic personal portfolio for **Smriti Sardar** styled with the **Celestial Aurora Design System**, featuring a **Midnight Obsidian & Bioluminescent Aurora Mint Palette** (`#00f0b5`), **Arctic Sky Cyan** (`#00d2ff`), **Sunlit Amber Accents** (`#f59e0b`), **Bespoke Intertwined Cinematic Dual 'SS' Ribbon Emblem**, **Heroic Condensed Bebas Neue Display Typography**, and **Signature Technical Telemetry**, with zero-overhead native static deployment on Vercel.
 
 ---
 
@@ -19,10 +19,11 @@ A zero-overhead, ultra-high-performance cinematic personal portfolio for **Smrit
    - Primary: **Bioluminescent Aurora Mint** (`#00f0b5`) for CTA buttons, active state chips, and focal illuminators.
    - Secondary: **Arctic Sky Cyan** (`#00d2ff`) for anamorphic flares and telemetry.
    - Tertiary: **Warm Golden Hour Amber** (`#f59e0b`) for timestamps and film reel warmth.
-4. **Cinematic Anamorphic Optical Emblem**:
-   - Interactive camera lens barrel with 6 aperture iris diaphragm blades that smoothly rotate on hover.
-   - Intertwining continuous ribbon forming dual **S · S** letterforms.
-   - Central anamorphic lens flare with breathing optical pulse.
+4. **Cinematic Intertwined SS Ribbon Emblem**:
+   - Luxury interlocking dual-S monogram forming fluid 35mm celluloid film ribbons.
+   - Platinum white foreground ribbon interlaced with vivid Celestial Aurora Mint & Cyan gradient ribbon.
+   - Concentric optical lens bezel with smooth anamorphic reflection arcs.
+   - 100% free of crosshair or weapon reticle markings.
 
 ---
 
@@ -45,22 +46,20 @@ CTA buttons feature a light sweep shimmer animation across the gradient surface 
 
 ---
 
-## 🛡️ Executive Leads Terminal (`/admin`)
+## 📱 Mobile-First Responsive Engineering
 
-A private, executive console for Smriti Sardar to review, organize, and dispatch responses to incoming client inquiries.
+- **Fluid Viewport Scaling**: Supports screens from 320px ultra-compact phones (iPhone SE, small Androids) through 480px, 768px tablets, and ultra-wide 4K monitors with zero horizontal overflow (`overflow-x: hidden`).
+- **Touch Target Ergonomics**: All interactive elements (hamburger menu toggle, filter chips, project scope chips, moments switcher tabs, close triggers, and FAB action items) satisfy Apple HIG and Google Material guidelines with >= 44x44px touch targets.
+- **Adaptive Bebas Neue Typographic Scale**: Dynamic `clamp()` fluid sizing scales headlines without line collisions or awkward overflows on compact displays.
+- **Bento Filmography Grid Stacking**: Single-column vertical flow with optimized 16:9 card aspect ratios and full-width case study action triggers.
 
-### Access
-- **Terminal URL**: `admin.html` (or `/admin` on Vercel deployment)
-- **Account**: `admin@smritisardar.com`
-- **Security Key**: `smriti2026`
+---
 
-### Production Capabilities
-1. **Zero Dump Data**: Fully sanitized database with no artificial mock data. Leads are strictly recorded from real contact submissions.
-2. **Instant Cross-Tab Synchronization**: Client submissions on `index.html` broadcast via `localStorage` and `storage` events to the admin terminal in real time without refreshing.
-3. **KPI Telemetry**: Real-time counter of total verified leads, unread requests, contacted clients, and primary demanded production scope.
-4. **Multi-Criterion Filtering**: Filter by disposition (*All*, *Unread*, *Contacted*, *Archived*), project scope (*Documentary*, *Commercial*, *Drone*, *Color/Editing*), sort order (*Newest*, *Oldest*), and full-text keyword search.
-5. **Client Project Dossier Drawer**: Comprehensive dossier view with direct `mailto:` reply (pre-filled subject & greeting), clipboard copy, and private internal admin notes.
-6. **Structured CSV Export**: One-click download of all lifetime leads into a clean, UTF-8 formatted CSV spreadsheet.
+## 🔍 SEO & Metadata Architecture
+
+- **Open Graph & Twitter Cards**: Native social sharing cards configured with rich metadata, author identity, and preview assets.
+- **Structured Data (Schema.org)**: Complete Person / Filmmaker JSON-LD graph embedded for search engine indexing.
+- **Search Crawlers**: Includes valid `robots.txt` and `sitemap.xml` for discovery and indexation.
 
 ---
 
@@ -68,9 +67,9 @@ A private, executive console for Smriti Sardar to review, organize, and dispatch
 
 Open `index.html` in any modern web browser or serve locally:
 ```bash
-npx serve .
+python3 -m http.server 8090
 # or
-python3 -m http.server 3000
+npx serve .
 ```
 
 ---

@@ -1,0 +1,5 @@
+# robots.txt for https://smritisardar.com
+User-agent: *
+Allow: /
+
+Sitemap: https://smritisardar.com/sitemap.xml

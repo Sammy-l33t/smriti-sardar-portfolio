@@ -333,8 +333,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const inquiries = stored ? JSON.parse(stored) : [];
         inquiries.unshift(newInquiry);
         localStorage.setItem("smriti_contact_inquiries", JSON.stringify(inquiries));
-        // Dispatch event for any open admin tabs to update immediately
-        window.dispatchEvent(new Event("storage"));
       } catch (err) {
         console.warn("Local storage write error:", err);
       }
