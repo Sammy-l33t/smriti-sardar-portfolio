@@ -1,4 +1,4 @@
-# Smriti Sardar — Filmmaker & Video Editor Portfolio
+# Smriti Sardar — Visual Storyteller & Senior Video Editor Portfolio
 
 A zero-overhead, ultra-high-performance cinematic personal portfolio for **Smriti Sardar** styled with the **Celestial Aurora Design System**, featuring a **Midnight Obsidian & Bioluminescent Aurora Mint Palette** (`#00f0b5`), **Arctic Sky Cyan** (`#00d2ff`), **Sunlit Amber Accents** (`#f59e0b`), **Bespoke Intertwined Cinematic Dual 'SS' Ribbon Emblem**, **Heroic Condensed Bebas Neue Display Typography**, and **Signature Technical Telemetry**, with zero-overhead native static deployment on Vercel.
 
@@ -58,7 +58,7 @@ CTA buttons feature a light sweep shimmer animation across the gradient surface 
 ## 🔍 SEO & Metadata Architecture
 
 - **Open Graph & Twitter Cards**: Native social sharing cards configured with rich metadata, author identity, and preview assets.
-- **Structured Data (Schema.org)**: Complete Person / Filmmaker JSON-LD graph embedded for search engine indexing.
+- **Structured Data (Schema.org)**: Complete Person / Visual Storyteller JSON-LD graph embedded for search engine indexing.
 - **Search Crawlers**: Includes valid `robots.txt` and `sitemap.xml` for discovery and indexation.
 
 ---
