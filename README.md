@@ -1,65 +1,32 @@
-# Smriti Sardar — Visual Storyteller & Senior Video Editor Portfolio
+# Smriti Sardar — Visual Storyteller, Cinematographer & Senior Video Editor Portfolio
 
-A zero-overhead, ultra-high-performance cinematic personal portfolio for **Smriti Sardar** styled with the **Celestial Aurora Design System**, featuring a **Midnight Obsidian & Bioluminescent Aurora Mint Palette** (`#00f0b5`), **Arctic Sky Cyan** (`#00d2ff`), **Sunlit Amber Accents** (`#f59e0b`), **Bespoke Intertwined Cinematic Dual 'SS' Ribbon Emblem**, **Heroic Condensed Bebas Neue Display Typography**, and **Signature Technical Telemetry**, with zero-overhead native static deployment on Vercel.
+A crafted, high-performance personal portfolio for **Smriti Sardar**, featuring a restrained **Ink Neutral Palette** (`#0b0d14`), **Warm Tungsten Film Amber Accents** (`#e5a43b`), **Editorial Typography** (`DM Sans` + `JetBrains Mono`), and authentic documentary photography from Himalayan expeditions above 6,000 meters.
 
 ---
 
-## 🎨 Celestial Aurora Color & Aesthetic Architecture
+## 🎞️ Design Philosophy: Unslopped & Grounded
 
-1. **Canvas & Surfaces**:
-   - Deep Celestial Obsidian Canvas (`#070a12`)
-   - Velvet Oceanic Slate Surfaces (`#0c1220` / `#0d1322`)
-   - Frosted Glassmorphism with Backdrop Blur (`rgba(12, 18, 32, 0.82)`)
-   - 1px Crisp Hairline Luminous Borders (`rgba(255, 255, 255, 0.08)`)
+1. **Quiet Chrome & Deep Ink Surfaces**:
+   - Deep Ink Canvas (`#0b0d14`)
+   - Dark Slate Surfaces (`#11141c` / `#181c28`)
+   - Hairline Borders (`rgba(255, 255, 255, 0.08)`)
+   - Zero glowing radial blobs, zero conic border beams, zero button shimmer sweeps.
 2. **Typography**:
-   - Heroic Condensed Display: **Bebas Neue** (cinematic uppercase scale)
-   - Refined Editorial Body: **DM Sans** & **Inter** (ultra-legible, geometric)
-   - Precision Counters & Technical Telemetry: **JetBrains Mono**
-3. **Luminous Brand Accents**:
-   - Primary: **Bioluminescent Aurora Mint** (`#00f0b5`) for CTA buttons, active state chips, and focal illuminators.
-   - Secondary: **Arctic Sky Cyan** (`#00d2ff`) for anamorphic flares and telemetry.
-   - Tertiary: **Warm Golden Hour Amber** (`#f59e0b`) for timestamps and film reel warmth.
-4. **Cinematic Intertwined SS Ribbon Emblem**:
-   - Luxury interlocking dual-S monogram forming fluid 35mm celluloid film ribbons.
-   - Platinum white foreground ribbon interlaced with vivid Celestial Aurora Mint & Cyan gradient ribbon.
-   - Concentric optical lens bezel with smooth anamorphic reflection arcs.
-   - 100% free of crosshair or weapon reticle markings.
+   - Editorial Headings & Body: **DM Sans** (human warmth, sentence case, refined display tracking)
+   - Technical Metadata & Timecodes: **JetBrains Mono** (frame telemetry, technical specs, tabular numbers)
+3. **Single Accent**:
+   - Warm Tungsten Amber (`#e5a43b`) reminiscent of 35mm film edge numbers and warm cinema lighting, paired with crisp off-white primary CTAs (`#f4f4f5`).
+4. **Authentic Imagery & Master Moments**:
+   - The rich content carries the screen: authentic 35mm-style high-altitude documentary still frames, IMF Film Festival 2026 laurels, and field credentials from Mount Tharang II and Backyard Ultra BFAI.
 
 ---
 
-## ✨ Magic UI Micro-Interactions
+## 📱 Responsive & Accessible Architecture
 
-### 1. Living Celestial Aurora Mesh
-Organic multi-stop radial gradient mesh (`.ambient-aurora-mesh`) breathing slowly in the background with silky opacity and scale oscillations.
-
-### 2. Interactive Spotlight Cards (MagicCard)
-Cursor-following radial illuminator (`.magic-card`) casting a soft Aurora Mint & Cyan glow across borders and surfaces on hover.
-
-### 3. Animated Border Beam (BorderBeam)
-Rotating perimeter highlight using pure CSS conic gradients and CSS masks blending Aurora Mint (`#00f0b5`) and Arctic Cyan (`#00d2ff`).
-
-### 4. Interactive Magnetic Elevation
-Silky 3D lift and shadow depth on project cards, director telemetry slate, and direct contact cards.
-
-### 5. Primary Button Shimmer Sweep
-CTA buttons feature a light sweep shimmer animation across the gradient surface with interactive active compression.
-
----
-
-## 📱 Mobile-First Responsive Engineering
-
-- **Fluid Viewport Scaling**: Supports screens from 320px ultra-compact phones (iPhone SE, small Androids) through 480px, 768px tablets, and ultra-wide 4K monitors with zero horizontal overflow (`overflow-x: hidden`).
-- **Touch Target Ergonomics**: All interactive elements (hamburger menu toggle, filter chips, project scope chips, moments switcher tabs, close triggers, and FAB action items) satisfy Apple HIG and Google Material guidelines with >= 44x44px touch targets.
-- **Adaptive Bebas Neue Typographic Scale**: Dynamic `clamp()` fluid sizing scales headlines without line collisions or awkward overflows on compact displays.
-- **Bento Filmography Grid Stacking**: Single-column vertical flow with optimized 16:9 card aspect ratios and full-width case study action triggers.
-
----
-
-## 🔍 SEO & Metadata Architecture
-
-- **Open Graph & Twitter Cards**: Native social sharing cards configured with rich metadata, author identity, and preview assets.
-- **Structured Data (Schema.org)**: Complete Person / Visual Storyteller JSON-LD graph embedded for search engine indexing.
-- **Search Crawlers**: Includes valid `robots.txt` and `sitemap.xml` for discovery and indexation.
+- **4px Spacing Grid**: All margins, paddings, and heights align with the 4px scale.
+- **Fluid Viewport Scaling**: Supports screens from 320px compact phones to ultra-wide 4K displays with zero horizontal overflow.
+- **Ergonomic Touch Targets**: Minimum 44x44px interactive touch targets for mobile navigation, filter tabs, and form controls.
+- **Semantic HTML & SEO**: Full Open Graph, Twitter Cards, and Schema.org Person JSON-LD graph.
 
 ---
 

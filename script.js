@@ -1,18 +1,21 @@
 /**
  * SMRITI SARDAR PORTFOLIO — INTERACTIVE ENGINE
- * Design System: shadcn/ui (Zinc Dark) + Magic UI Micro-Interactions
+ * Warm Stone Editorial System
  * Features:
- *  - Lucide Icons Engine (lucide.createIcons)
- *  - Magic UI Spotlight Cards (Cursor Radial Illuminator)
- *  - Magic UI Number Ticker (Smooth rAF KPI Counter)
- *  - Smooth Scroll Progress & Glass Header Elevation
- *  - Responsive Mobile Navigation Drawer
- *  - Interactive Moments Switcher
- *  - Work Category Filter Tabs
- *  - Dynamic Case Study Modal & 4K Showreel Lightbox
- *  - Clean Contact Form with Status Toast (Sonner-style)
+ *  - Lucide Icons Initializer
+ *  - Dynamic Year
+ *  - Scroll Progress Bar & Header Elevation State
+ *  - Mobile Drawer Navigation
+ *  - Hero Interactive Photo & Location Switcher
+ *  - Work Category Filter System
+ *  - Project Case Study Modal (Lightbox)
+ *  - Showreel Modal (Lightbox)
+ *  - Choice Chips & Contact Form Recording
  *  - One-Click Clipboard Copy
- *  - Live GitHub Commit Hash Tracker via REST API
+ *  - Tabular Number Counter on Scroll
+ *  - Intersection Observer for Content Reveal (with stagger)
+ *  - Subtle Hero Parallax
+ *  - Live GitHub Commit Hash Tracker
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -33,22 +36,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 3. SCROLL PROGRESS BAR & HEADER GLASS STATE ---
   const appbar = document.querySelector("#appbar");
   const scrollProgressBar = document.querySelector("#scroll-progress");
+  const heroImage = document.querySelector("#heroMainImage");
 
+  let ticking = false;
   window.addEventListener("scroll", () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
 
-    if (scrollProgressBar) {
-      scrollProgressBar.style.width = scrollPercent + "%";
-    }
+        if (scrollProgressBar) {
+          scrollProgressBar.style.width = scrollPercent + "%";
+        }
 
-    if (appbar) {
-      if (scrollTop > 20) {
-        appbar.classList.add("elevated");
-      } else {
-        appbar.classList.remove("elevated");
-      }
+        if (appbar) {
+          if (scrollTop > 20) {
+            appbar.classList.add("elevated");
+          } else {
+            appbar.classList.remove("elevated");
+          }
+        }
+
+        // Subtle hero parallax — the image moves slower than scroll
+        if (heroImage && scrollTop < 1200) {
+          const shift = scrollTop * 0.08;
+          heroImage.style.transform = "translateY(" + shift + "px) scale(1.02)";
+        }
+
+        ticking = false;
+      });
+      ticking = true;
     }
   }, { passive: true });
 
@@ -74,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 768 && mobileDrawer.classList.contains("open")) {
+      if (window.innerWidth > 860 && mobileDrawer.classList.contains("open")) {
         mobileDrawer.classList.remove("open");
         menuToggle.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
@@ -83,13 +101,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
   }
 
-  // --- 5. HERO INTERACTIVE PHOTO SWITCHER ---
+  // --- 5. HERO INTERACTIVE PHOTO & LOCATION SWITCHER ---
   const heroMainImg = document.querySelector("#heroMainImage");
   const heroPhotoCaption = document.querySelector("#heroPhotoCaption");
   const switchBtns = document.querySelectorAll(".switch-btn");
 
   switchBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
+      if (btn.classList.contains("active")) return;
       switchBtns.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
@@ -121,12 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const selectedCategory = chip.getAttribute("data-filter");
 
-      projectCards.forEach((card) => {
+      projectCards.forEach((card, index) => {
         const cardCat = card.getAttribute("data-category");
         if (selectedCategory === "all" || cardCat === selectedCategory) {
           card.style.display = "";
           card.classList.remove("in-view");
-          setTimeout(() => card.classList.add("in-view"), 30);
+          setTimeout(() => card.classList.add("in-view"), 40 * index);
         } else {
           card.style.display = "none";
         }
@@ -160,9 +179,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const desc = card.getAttribute("data-desc") || "";
     const role = card.getAttribute("data-role") || "Cinematographer, Editor";
     const tools = card.getAttribute("data-tools") || "DaVinci Resolve Studio 19, Sony Cinema Line";
-    const aspect = card.getAttribute("data-aspect") || "2.39:1 Cinema Scope";
+    const aspect = card.getAttribute("data-aspect") || "2.39:1 CinemaScope";
     const year = card.getAttribute("data-year") || "2026";
-    const cat = card.querySelector(".category-name")?.textContent || "SELECTED FILMOGRAPHY";
+    const cat = card.querySelector(".category-name")?.textContent || "Selected Film";
 
     if (dialogImg) dialogImg.src = img;
     if (dialogTitle) dialogTitle.textContent = title;
@@ -208,7 +227,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 8. SHOWREEL MODAL / DIALOG ---
   const reelDialog = document.querySelector("#reelDialogBackdrop");
   const openReelBtn = document.querySelector("#openReelBtn");
-  const fabReelTrigger = document.querySelector("#fabReelTrigger");
   const closeReelBtn = document.querySelector("#closeReelBtn");
   const reelContactTrigger = document.querySelector("#reelContactTrigger");
   const mockPlayVideoBtn = document.querySelector("#mockPlayVideoBtn");
@@ -229,7 +247,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   openReelBtn?.addEventListener("click", openReelModal);
-  fabReelTrigger?.addEventListener("click", openReelModal);
   closeReelBtn?.addEventListener("click", closeReelModal);
   reelContactTrigger?.addEventListener("click", closeReelModal);
 
@@ -240,10 +257,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   mockPlayVideoBtn?.addEventListener("click", () => {
-    showSnackbar("Showreel preview loaded in 4K UHD. Full master available on request!", "film");
+    showSnackbar("Showreel preview active in 4K UHD. Full cinema master available on request.", "film");
   });
 
-  // Escape key closes open modals
+  // Escape key closes modals
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeProjectDialog();
@@ -260,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- 10. SHADCN / SONNER STYLE TOAST ---
+  // --- 10. CLEAN TOAST NOTIFICATION ---
   const snackbar = document.querySelector("#muiSnackbar");
   const snackbarMsg = document.querySelector("#snackbarMsg");
   const snackbarIcon = document.querySelector("#snackbarIcon");
@@ -280,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (snackbarTimeout) clearTimeout(snackbarTimeout);
     snackbarTimeout = setTimeout(() => {
       snackbar.classList.remove("active");
-    }, 4200);
+    }, 4000);
   }
 
   snackbarClose?.addEventListener("click", () => {
@@ -316,16 +333,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setTimeout(() => {
-      // Create new inquiry record
       const newInquiry = {
         id: "inq_" + Date.now() + "_" + Math.random().toString(36).substring(2, 7),
         name: senderName,
         email: senderEmail,
         scope: scopeVal,
         message: senderMessage,
-        timestamp: new Date().toISOString(),
-        status: "unread",
-        notes: ""
+        timestamp: new Date().toISOString()
       };
 
       try {
@@ -342,8 +356,8 @@ document.addEventListener("DOMContentLoaded", () => {
         submitBtn.disabled = false;
       }
       contactForm.reset();
-      showSnackbar("Inquiry received & recorded! Smriti will respond within 24 hours.", "send");
-    }, 950);
+      showSnackbar("Inquiry received. Smriti will respond within 24 hours.", "send");
+    }, 600);
   });
 
   // --- 12. COPY EMAIL TO CLIPBOARD ---
@@ -359,33 +373,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // --- 13. QUICK ACTION FAB MENU ---
-  const fabWrapper = document.querySelector(".fab-wrapper");
-  const fabBtn = document.querySelector("#fabBtn");
-
-  fabBtn?.addEventListener("click", () => {
-    fabWrapper?.classList.toggle("open");
-  });
-
-  document.addEventListener("click", (e) => {
-    if (fabWrapper && !fabWrapper.contains(e.target)) {
-      fabWrapper.classList.remove("open");
-    }
-  });
-
-  // --- 14. MAGIC UI: SPOTLIGHT CARDS (MAGIC-CARD) ---
-  const magicCards = document.querySelectorAll(".magic-card");
-  magicCards.forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty("--mouse-x", `${x}px`);
-      card.style.setProperty("--mouse-y", `${y}px`);
-    });
-  });
-
-  // --- 15. MAGIC UI: NUMBER TICKER ---
+  // --- 13. STAT NUMBERS ANIMATOR ---
   let tickerAnimated = false;
   function runNumberTicker() {
     if (tickerAnimated) return;
@@ -397,13 +385,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const suffix = item.getAttribute("data-suffix") || "";
       const displayOverride = item.getAttribute("data-display");
       const useComma = item.getAttribute("data-comma") === "true";
-      const duration = 1600; // ms
+      const duration = 1200;
       const startTime = performance.now();
 
       function updateNumber(now) {
         const elapsed = now - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        // Ease out quad
         const easeVal = 1 - Math.pow(1 - progress, 3);
         const currentVal = Math.floor(easeVal * target);
 
@@ -428,22 +415,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 16. INTERSECTION OBSERVER FOR BLURFADE & NUMBER TICKER ---
+  // --- 14. INTERSECTION OBSERVER FOR CONTENT REVEAL ---
   const animateItems = document.querySelectorAll(".animate-on-scroll");
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("in-view");
-          // Trigger number ticker when hero stats or hero copy enters view
           if (entry.target.closest(".hero-section") || entry.target.querySelector(".ticker-target")) {
             runNumberTicker();
           }
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: "0px 0px -30px 0px",
+      threshold: 0.08,
+      rootMargin: "0px 0px -40px 0px",
     });
 
     animateItems.forEach((el) => observer.observe(el));
@@ -452,12 +438,12 @@ document.addEventListener("DOMContentLoaded", () => {
     runNumberTicker();
   }
 
-  // Fallback trigger for number ticker after 500ms
+  // Fallback trigger for stats
   setTimeout(() => {
     runNumberTicker();
-  }, 600);
+  }, 500);
 
-  // --- 17. LIVE GITHUB COMMIT TRACKER ---
+  // --- 15. LIVE GITHUB COMMIT TRACKER ---
   const gitCommitHash = document.querySelector("#gitCommitHash");
   const gitCommitBadge = document.querySelector("#gitCommitBadge");
 
@@ -480,6 +466,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
     .catch((err) => {
-      console.log("GitHub API live status:", err.message);
+      // Quiet fail if offline or blocked by CSP
     });
 });
