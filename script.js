@@ -1,21 +1,19 @@
 /**
  * SMRITI SARDAR PORTFOLIO — INTERACTIVE ENGINE
- * Warm Stone Editorial System
+ * Theme: Cinematic Dark · Beyond Limits. Beyond Ordinary.
  * Features:
  *  - Lucide Icons Initializer
- *  - Dynamic Year
- *  - Scroll Progress Bar & Header Elevation State
+ *  - Scroll Progress Bar & Header Elevation
  *  - Mobile Drawer Navigation
- *  - Hero Interactive Photo & Location Switcher
- *  - Work Category Filter System
+ *  - Interactive Before & After Color Grading Split Slider (Mouse & Touch)
+ *  - Adventure Gallery Category Tabs Filtering
  *  - Project Case Study Modal (Lightbox)
- *  - Showreel Modal (Lightbox)
- *  - Choice Chips & Contact Form Recording
- *  - One-Click Clipboard Copy
- *  - Tabular Number Counter on Scroll
- *  - Intersection Observer for Content Reveal (with stagger)
- *  - Subtle Hero Parallax
- *  - Live GitHub Commit Hash Tracker
+ *  - Adventure Photo Lightbox System
+ *  - Dynamic Tabular Number Counter on Scroll
+ *  - Contact Form with Validation & LocalStorage Persistence
+ *  - One-Click Clipboard Copy with Sonner Toast
+ *  - Smooth Section Observer & Scroll Animations
+ *  - Dynamic Commit Hash Tracker
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -36,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 3. SCROLL PROGRESS BAR & HEADER GLASS STATE ---
   const appbar = document.querySelector("#appbar");
   const scrollProgressBar = document.querySelector("#scroll-progress");
-  const heroImage = document.querySelector("#heroMainImage");
 
   let ticking = false;
   window.addEventListener("scroll", () => {
@@ -56,12 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             appbar.classList.remove("elevated");
           }
-        }
-
-        // Subtle hero parallax — the image moves slower than scroll
-        if (heroImage && scrollTop < 1200) {
-          const shift = scrollTop * 0.08;
-          heroImage.style.transform = "translateY(" + shift + "px) scale(1.02)";
         }
 
         ticking = false;
@@ -92,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 860 && mobileDrawer.classList.contains("open")) {
+      if (window.innerWidth > 900 && mobileDrawer.classList.contains("open")) {
         mobileDrawer.classList.remove("open");
         menuToggle.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
@@ -101,51 +92,83 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
   }
 
-  // --- 5. HERO INTERACTIVE PHOTO & LOCATION SWITCHER ---
-  const heroMainImg = document.querySelector("#heroMainImage");
-  const heroPhotoCaption = document.querySelector("#heroPhotoCaption");
-  const switchBtns = document.querySelectorAll(".switch-btn");
+  // --- 5. INTERACTIVE BEFORE & AFTER COLOR GRADING COMPARISON SLIDER ---
+  const baSlider = document.querySelector("#baSliderContainer");
+  const baClipLayer = document.querySelector("#baClipLayer");
+  const baHandle = document.querySelector("#baHandle");
 
-  switchBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (btn.classList.contains("active")) return;
-      switchBtns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+  if (baSlider && baClipLayer && baHandle) {
+    let isDragging = false;
 
-      const newSrc = btn.getAttribute("data-img");
-      const newCaption = btn.getAttribute("data-caption");
+    function updateSliderWidth() {
+      const rect = baSlider.getBoundingClientRect();
+      baSlider.style.setProperty("--slider-width", `${rect.width}px`);
+    }
 
-      if (heroMainImg && newSrc) {
-        heroMainImg.classList.add("image-fading");
-        setTimeout(() => {
-          heroMainImg.src = newSrc;
-          heroMainImg.classList.remove("image-fading");
-        }, 200);
-      }
+    updateSliderWidth();
+    window.addEventListener("resize", updateSliderWidth, { passive: true });
 
-      if (heroPhotoCaption && newCaption) {
-        heroPhotoCaption.textContent = newCaption;
-      }
+    function setSliderPosition(xCoord) {
+      const rect = baSlider.getBoundingClientRect();
+      let pos = (xCoord - rect.left) / rect.width;
+      if (pos < 0.02) pos = 0.02;
+      if (pos > 0.98) pos = 0.98;
+
+      const percent = pos * 100;
+      baClipLayer.style.width = `${percent}%`;
+      baHandle.style.left = `${percent}%`;
+    }
+
+    // Mouse Events
+    baSlider.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      setSliderPosition(e.clientX);
     });
-  });
 
-  // --- 6. WORK CATEGORY FILTER SYSTEM ---
-  const filterChips = document.querySelectorAll(".filter-chip");
-  const projectCards = document.querySelectorAll(".project-card");
+    window.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      setSliderPosition(e.clientX);
+    });
 
-  filterChips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      filterChips.forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
+    window.addEventListener("mouseup", () => {
+      isDragging = false;
+    });
 
-      const selectedCategory = chip.getAttribute("data-filter");
+    // Touch Events (Mobile & Tablet)
+    baSlider.addEventListener("touchstart", (e) => {
+      isDragging = true;
+      if (e.touches[0]) {
+        setSliderPosition(e.touches[0].clientX);
+      }
+    }, { passive: true });
 
-      projectCards.forEach((card, index) => {
+    window.addEventListener("touchmove", (e) => {
+      if (!isDragging || !e.touches[0]) return;
+      setSliderPosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener("touchend", () => {
+      isDragging = false;
+    });
+  }
+
+  // --- 6. ADVENTURE GALLERY CATEGORY FILTER TABS ---
+  const galleryTabs = document.querySelectorAll(".gallery-tab");
+  const adventureCards = document.querySelectorAll(".adventure-card");
+
+  galleryTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      galleryTabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      const category = tab.getAttribute("data-tab");
+
+      adventureCards.forEach((card, idx) => {
         const cardCat = card.getAttribute("data-category");
-        if (selectedCategory === "all" || cardCat === selectedCategory) {
+        if (category === "all" || cardCat === category) {
           card.style.display = "";
           card.classList.remove("in-view");
-          setTimeout(() => card.classList.add("in-view"), 40 * index);
+          setTimeout(() => card.classList.add("in-view"), 30 * idx);
         } else {
           card.style.display = "none";
         }
@@ -153,7 +176,55 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- 7. PROJECT DETAILS MODAL / DIALOG ---
+  // --- 7. ADVENTURE PHOTO LIGHTBOX MODAL ---
+  const photoLightbox = document.querySelector("#photoLightboxBackdrop");
+  const closeLightboxBtn = document.querySelector("#closeLightboxBtn");
+  const lightboxImg = document.querySelector("#lightboxImage");
+  const lightboxTitle = document.querySelector("#lightboxTitle");
+  const lightboxLocation = document.querySelector("#lightboxLocation");
+  const lightboxAltitude = document.querySelector("#lightboxAltitude");
+  const lightboxStory = document.querySelector("#lightboxStory");
+
+  function openPhotoLightbox(card) {
+    if (!photoLightbox) return;
+
+    const img = card.getAttribute("data-img") || card.querySelector("img")?.src || "";
+    const title = card.getAttribute("data-title") || "Mountain Expedition";
+    const loc = card.getAttribute("data-location") || "Himalayan Ridge";
+    const alt = card.getAttribute("data-altitude") || "High Altitude";
+    const story = card.getAttribute("data-story") || "";
+
+    if (lightboxImg) lightboxImg.src = img;
+    if (lightboxTitle) lightboxTitle.textContent = title;
+    if (lightboxLocation) {
+      lightboxLocation.innerHTML = `<i data-lucide="map-pin" class="icon-xs"></i> ${loc}`;
+    }
+    if (lightboxAltitude) lightboxAltitude.textContent = alt;
+    if (lightboxStory) lightboxStory.textContent = story;
+
+    photoLightbox.classList.add("active");
+    photoLightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    initIcons();
+  }
+
+  function closePhotoLightbox() {
+    if (!photoLightbox) return;
+    photoLightbox.classList.remove("active");
+    photoLightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  adventureCards.forEach((card) => {
+    card.addEventListener("click", () => openPhotoLightbox(card));
+  });
+
+  closeLightboxBtn?.addEventListener("click", closePhotoLightbox);
+  photoLightbox?.addEventListener("click", (e) => {
+    if (e.target === photoLightbox) closePhotoLightbox();
+  });
+
+  // --- 8. PROJECT CASE STUDY MODAL ---
   const projectDialog = document.querySelector("#projectDialogBackdrop");
   const closeDialogBtn = document.querySelector("#closeDialogBtn");
   const dialogDismissBtn = document.querySelector("#dialogDismissBtn");
@@ -170,18 +241,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const dialogAspect = document.querySelector("#dialogAspect");
   const dialogAspectPill = document.querySelector("#dialogAspectPill");
 
+  const projectCards = document.querySelectorAll(".project-showcase-card");
+
   function openProjectDialog(card) {
     if (!projectDialog) return;
 
     const title = card.getAttribute("data-title") || "Project Case Study";
     const subtitle = card.getAttribute("data-subtitle") || "";
-    const img = card.getAttribute("data-img") || "";
+    const img = card.getAttribute("data-img") || card.querySelector("img")?.src || "";
     const desc = card.getAttribute("data-desc") || "";
     const role = card.getAttribute("data-role") || "Cinematographer, Editor";
     const tools = card.getAttribute("data-tools") || "DaVinci Resolve Studio 19, Sony Cinema Line";
     const aspect = card.getAttribute("data-aspect") || "2.39:1 CinemaScope";
     const year = card.getAttribute("data-year") || "2026";
-    const cat = card.querySelector(".category-name")?.textContent || "Selected Film";
+    const cat = card.getAttribute("data-category") || "Selected Film";
 
     if (dialogImg) dialogImg.src = img;
     if (dialogTitle) dialogTitle.textContent = title;
@@ -208,172 +281,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   projectCards.forEach((card) => {
-    card.addEventListener("click", (e) => {
-      if (e.target.closest("a") && !e.target.closest(".view-details-btn")) return;
-      openProjectDialog(card);
-    });
+    card.addEventListener("click", () => openProjectDialog(card));
   });
 
   closeDialogBtn?.addEventListener("click", closeProjectDialog);
   dialogDismissBtn?.addEventListener("click", closeProjectDialog);
   dialogContactBtn?.addEventListener("click", closeProjectDialog);
-
   projectDialog?.addEventListener("click", (e) => {
-    if (e.target === projectDialog) {
-      closeProjectDialog();
-    }
+    if (e.target === projectDialog) closeProjectDialog();
   });
 
-  // --- 8. SHOWREEL MODAL / DIALOG ---
-  const reelDialog = document.querySelector("#reelDialogBackdrop");
-  const openReelBtn = document.querySelector("#openReelBtn");
-  const closeReelBtn = document.querySelector("#closeReelBtn");
-  const reelContactTrigger = document.querySelector("#reelContactTrigger");
-  const mockPlayVideoBtn = document.querySelector("#mockPlayVideoBtn");
-
-  function openReelModal() {
-    if (!reelDialog) return;
-    reelDialog.classList.add("active");
-    reelDialog.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-    initIcons();
-  }
-
-  function closeReelModal() {
-    if (!reelDialog) return;
-    reelDialog.classList.remove("active");
-    reelDialog.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  }
-
-  openReelBtn?.addEventListener("click", openReelModal);
-  closeReelBtn?.addEventListener("click", closeReelModal);
-  reelContactTrigger?.addEventListener("click", closeReelModal);
-
-  reelDialog?.addEventListener("click", (e) => {
-    if (e.target === reelDialog) {
-      closeReelModal();
-    }
-  });
-
-  mockPlayVideoBtn?.addEventListener("click", () => {
-    showSnackbar("Showreel preview active in 4K UHD. Full cinema master available on request.", "film");
-  });
-
-  // Escape key closes modals
+  // Escape key closes open modals
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeProjectDialog();
-      closeReelModal();
+      closePhotoLightbox();
     }
   });
 
-  // --- 9. PROJECT TYPE CHOICE CHIPS ---
-  const choiceChips = document.querySelectorAll(".choice-chip");
-  choiceChips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      choiceChips.forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
-    });
-  });
-
-  // --- 10. CLEAN TOAST NOTIFICATION ---
-  const snackbar = document.querySelector("#muiSnackbar");
-  const snackbarMsg = document.querySelector("#snackbarMsg");
-  const snackbarIcon = document.querySelector("#snackbarIcon");
-  const snackbarClose = document.querySelector("#snackbarClose");
-  let snackbarTimeout = null;
-
-  function showSnackbar(message, icon = "check-circle-2") {
-    if (!snackbar) return;
-    if (snackbarMsg) snackbarMsg.textContent = message;
-    if (snackbarIcon) {
-      snackbarIcon.setAttribute("data-lucide", icon);
-      initIcons();
-    }
-
-    snackbar.classList.add("active");
-
-    if (snackbarTimeout) clearTimeout(snackbarTimeout);
-    snackbarTimeout = setTimeout(() => {
-      snackbar.classList.remove("active");
-    }, 4000);
-  }
-
-  snackbarClose?.addEventListener("click", () => {
-    snackbar?.classList.remove("active");
-    if (snackbarTimeout) clearTimeout(snackbarTimeout);
-  });
-
-  // --- 11. CONTACT FORM SUBMISSION ---
-  const contactForm = document.querySelector("#contactForm");
-  const submitBtn = document.querySelector("#submitBtn");
-
-  contactForm?.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const nameInput = document.querySelector("#senderName");
-    const emailInput = document.querySelector("#senderEmail");
-    const messageInput = document.querySelector("#senderMessage");
-    const activeChip = document.querySelector(".choice-chip.active");
-    const scopeVal = activeChip?.getAttribute("data-val") || activeChip?.textContent?.trim() || "Documentary / Expedition";
-
-    if (!nameInput?.value.trim() || !emailInput?.value.trim() || !messageInput?.value.trim()) {
-      showSnackbar("Please fill in all required fields.", "alert-triangle");
-      return;
-    }
-
-    const senderName = nameInput.value.trim();
-    const senderEmail = emailInput.value.trim();
-    const senderMessage = messageInput.value.trim();
-
-    if (submitBtn) {
-      submitBtn.classList.add("loading");
-      submitBtn.disabled = true;
-    }
-
-    setTimeout(() => {
-      const newInquiry = {
-        id: "inq_" + Date.now() + "_" + Math.random().toString(36).substring(2, 7),
-        name: senderName,
-        email: senderEmail,
-        scope: scopeVal,
-        message: senderMessage,
-        timestamp: new Date().toISOString()
-      };
-
-      try {
-        const stored = localStorage.getItem("smriti_contact_inquiries");
-        const inquiries = stored ? JSON.parse(stored) : [];
-        inquiries.unshift(newInquiry);
-        localStorage.setItem("smriti_contact_inquiries", JSON.stringify(inquiries));
-      } catch (err) {
-        console.warn("Local storage write error:", err);
-      }
-
-      if (submitBtn) {
-        submitBtn.classList.remove("loading");
-        submitBtn.disabled = false;
-      }
-      contactForm.reset();
-      showSnackbar("Inquiry received. Smriti will respond within 24 hours.", "send");
-    }, 600);
-  });
-
-  // --- 12. COPY EMAIL TO CLIPBOARD ---
-  const copyEmailCard = document.querySelector("#copyEmailCard");
-  copyEmailCard?.addEventListener("click", async (e) => {
-    e.preventDefault();
-    const email = "smritisardar010@gmail.com";
-    try {
-      await navigator.clipboard.writeText(email);
-      showSnackbar("Email copied to clipboard: " + email, "copy");
-    } catch {
-      showSnackbar("Email: " + email, "mail");
-    }
-  });
-
-  // --- 13. STAT NUMBERS ANIMATOR ---
+  // --- 9. RUNNING & KEY STATS NUMBER TICKER ---
   let tickerAnimated = false;
   function runNumberTicker() {
     if (tickerAnimated) return;
@@ -385,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const suffix = item.getAttribute("data-suffix") || "";
       const displayOverride = item.getAttribute("data-display");
       const useComma = item.getAttribute("data-comma") === "true";
-      const duration = 1200;
+      const duration = 1400; // ms
       const startTime = performance.now();
 
       function updateNumber(now) {
@@ -415,20 +341,125 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 14. INTERSECTION OBSERVER FOR CONTENT REVEAL ---
+  // --- 10. PROJECT SCOPE CHOICE CHIPS ---
+  const choiceChips = document.querySelectorAll(".choice-chip");
+  choiceChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      choiceChips.forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+    });
+  });
+
+  // --- 11. SONNER STYLE TOAST NOTIFICATION ---
+  const siteToast = document.querySelector("#siteToast");
+  const toastMsg = document.querySelector("#toastMsg");
+  const toastIcon = document.querySelector("#toastIcon");
+  const toastCloseBtn = document.querySelector("#toastCloseBtn");
+  let toastTimeout = null;
+
+  function showToast(message, icon = "check-circle") {
+    if (!siteToast) return;
+    if (toastMsg) toastMsg.textContent = message;
+    if (toastIcon) {
+      toastIcon.setAttribute("data-lucide", icon);
+      initIcons();
+    }
+
+    siteToast.classList.add("active");
+
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      siteToast.classList.remove("active");
+    }, 4200);
+  }
+
+  toastCloseBtn?.addEventListener("click", () => {
+    siteToast?.classList.remove("active");
+    if (toastTimeout) clearTimeout(toastTimeout);
+  });
+
+  // --- 12. CONTACT FORM SUBMISSION ---
+  const contactForm = document.querySelector("#contactForm");
+  const submitBtn = document.querySelector("#submitBtn");
+
+  contactForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nameInput = document.querySelector("#senderName");
+    const emailInput = document.querySelector("#senderEmail");
+    const messageInput = document.querySelector("#senderMessage");
+    const activeChip = document.querySelector(".choice-chip.active");
+    const scopeVal = activeChip?.getAttribute("data-val") || activeChip?.textContent?.trim() || "Documentary / Expedition";
+
+    if (!nameInput?.value.trim() || !emailInput?.value.trim() || !messageInput?.value.trim()) {
+      showToast("Please fill in all required fields.", "alert-triangle");
+      return;
+    }
+
+    const senderName = nameInput.value.trim();
+    const senderEmail = emailInput.value.trim();
+    const senderMessage = messageInput.value.trim();
+
+    if (submitBtn) {
+      submitBtn.classList.add("loading");
+      submitBtn.disabled = true;
+    }
+
+    setTimeout(() => {
+      const inquiry = {
+        id: "inq_" + Date.now() + "_" + Math.random().toString(36).substring(2, 7),
+        name: senderName,
+        email: senderEmail,
+        scope: scopeVal,
+        message: senderMessage,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        const stored = localStorage.getItem("smriti_inquiries");
+        const list = stored ? JSON.parse(stored) : [];
+        list.unshift(inquiry);
+        localStorage.setItem("smriti_inquiries", JSON.stringify(list));
+      } catch (err) {
+        console.warn("LocalStorage warning:", err);
+      }
+
+      if (submitBtn) {
+        submitBtn.classList.remove("loading");
+        submitBtn.disabled = false;
+      }
+      contactForm.reset();
+      showToast("Inquiry sent! Smriti will connect within 24 hours.", "send");
+    }, 650);
+  });
+
+  // --- 13. ONE-CLICK EMAIL CLIPBOARD COPY ---
+  const copyEmailCard = document.querySelector("#copyEmailCard");
+  copyEmailCard?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const email = "smritisardar010@gmail.com";
+    try {
+      await navigator.clipboard.writeText(email);
+      showToast("Email copied: " + email, "copy");
+    } catch {
+      showToast("Email: " + email, "mail");
+    }
+  });
+
+  // --- 14. INTERSECTION OBSERVER FOR SCROLL REVEALS ---
   const animateItems = document.querySelectorAll(".animate-on-scroll");
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("in-view");
-          if (entry.target.closest(".hero-section") || entry.target.querySelector(".ticker-target")) {
+          if (entry.target.querySelector(".ticker-target") || entry.target.closest(".hero-section") || entry.target.closest("#running")) {
             runNumberTicker();
           }
         }
       });
     }, {
-      threshold: 0.08,
+      threshold: 0.1,
       rootMargin: "0px 0px -40px 0px",
     });
 
@@ -438,10 +469,8 @@ document.addEventListener("DOMContentLoaded", () => {
     runNumberTicker();
   }
 
-  // Fallback trigger for stats
-  setTimeout(() => {
-    runNumberTicker();
-  }, 500);
+  // Fallback trigger for metrics
+  setTimeout(runNumberTicker, 450);
 
   // --- 15. LIVE GITHUB COMMIT TRACKER ---
   const gitCommitHash = document.querySelector("#gitCommitHash");
@@ -455,9 +484,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       if (data && data.sha) {
         const shortSha = data.sha.substring(0, 7);
-        if (gitCommitHash) {
-          gitCommitHash.textContent = shortSha;
-        }
+        if (gitCommitHash) gitCommitHash.textContent = shortSha;
         if (gitCommitBadge) {
           gitCommitBadge.href = `https://github.com/Sammy-l33t/smriti-sardar-portfolio/commit/${data.sha}`;
           const msg = data.commit?.message?.split("\n")[0] || "Latest commit";
@@ -465,7 +492,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     })
-    .catch((err) => {
-      // Quiet fail if offline or blocked by CSP
-    });
+    .catch(() => {});
 });

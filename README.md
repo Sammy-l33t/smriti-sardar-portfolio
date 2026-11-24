@@ -1,50 +1,58 @@
-# Smriti Sardar — Visual Storyteller, Cinematographer & Senior Video Editor Portfolio
+# Smriti Sardar — Beyond Limits. Beyond Ordinary.
 
-A crafted, high-performance personal portfolio for **Smriti Sardar**, featuring a restrained **Ink Neutral Palette** (`#0b0d14`), **Warm Tungsten Film Amber Accents** (`#e5a43b`), **Editorial Typography** (`DM Sans` + `JetBrains Mono`), and authentic documentary photography from Himalayan expeditions above 6,000 meters.
-
----
-
-## 🎞️ Design Philosophy: Unslopped & Grounded
-
-1. **Quiet Chrome & Deep Ink Surfaces**:
-   - Deep Ink Canvas (`#0b0d14`)
-   - Dark Slate Surfaces (`#11141c` / `#181c28`)
-   - Hairline Borders (`rgba(255, 255, 255, 0.08)`)
-   - Zero glowing radial blobs, zero conic border beams, zero button shimmer sweeps.
-2. **Typography**:
-   - Editorial Headings & Body: **DM Sans** (human warmth, sentence case, refined display tracking)
-   - Technical Metadata & Timecodes: **JetBrains Mono** (frame telemetry, technical specs, tabular numbers)
-3. **Single Accent**:
-   - Warm Tungsten Amber (`#e5a43b`) reminiscent of 35mm film edge numbers and warm cinema lighting, paired with crisp off-white primary CTAs (`#f4f4f5`).
-4. **Authentic Imagery & Master Moments**:
-   - The rich content carries the screen: authentic 35mm-style high-altitude documentary still frames, IMF Film Festival 2026 laurels, and field credentials from Mount Tharang II and Backyard Ultra BFAI.
+A premium, modern, cinematic personal portfolio website representing **Smriti Sardar** across four core identities: **Professional Career**, **Adventure Enthusiast**, **Marathon Runner**, and **Video Editor**.
 
 ---
 
-## 📱 Responsive & Accessible Architecture
+## 🌟 The Four Dimensions
 
-- **4px Spacing Grid**: All margins, paddings, and heights align with the 4px scale.
-- **Fluid Viewport Scaling**: Supports screens from 320px compact phones to ultra-wide 4K displays with zero horizontal overflow.
-- **Ergonomic Touch Targets**: Minimum 44x44px interactive touch targets for mobile navigation, filter tabs, and form controls.
-- **Semantic HTML & SEO**: Full Open Graph, Twitter Cards, and Schema.org Person JSON-LD graph.
+1. **Professional Career**:
+   - Senior Video Editor at *The Unscripted India*
+   - 5+ years of post-production leadership and 100+ videos edited across India
+   - Grounded in physical geography (B.Sc. Geography, Barasat Govt College)
+
+2. **Adventure Enthusiast**:
+   - Documenting the Indian 1st ascent on Mount Tharang II (*Shailaputri*, IMF Film Festival 2026 selection)
+   - High-altitude sub-zero alpine cinema rigs above 6,000 meters in the Himalayas
+   - Remote canyon expeditions in Spiti Valley and licensed aerial drone mapping
+
+3. **Marathon Runner ("Every Mile Tells a Story")**:
+   - Backyard Ultra collaboration with *Bigfoot Adventure India (BFAI)*
+   - Relentless endurance mindset: pacing, mental resilience, and physical fortitude
+   - Athletic statistics, personal records, and training metrics
+
+4. **Video Editor & Colorist**:
+   - Interactive Before-and-After color grading comparison slider (Raw D-Log vs. 35mm Graded Master)
+   - DaVinci Resolve Studio 19 node-based color workflow and ACEScc color management
+   - Curated film showcase with interactive case studies and lightboxes
 
 ---
 
-## 🚀 Local Preview
+## 🎨 Design & Aesthetic
 
-Open `index.html` in any modern web browser or serve locally:
+- **Theme**: Cinematic Dark with Deep Black (`#08090c`), Rich Charcoal (`#101217`), Off-White (`#f5f6f8`), and Subtle Cinema Orange (`#f97316`).
+- **Typography**:
+  - Headings & Branding: **Syne** (Cinematic, bold visual hierarchy)
+  - Body & UI: **Plus Jakarta Sans** (Refined, legible, modern)
+  - Metrics & Telemetry: **JetBrains Mono** (Tabular pacing, altitude data, coordinates)
+- **Authentic Imagery**: Sourced directly from authentic expedition and documentary photography.
+- **Micro-Interactions**:
+  - Live REC status indicator
+  - Interactive draggable Before/After color grade slider with touch & mouse support
+  - Dynamic number ticker on scroll
+  - Lightbox modals for projects and expedition photography
+  - Functional contact form with choice chips and toast notification feedback
+
+---
+
+## 🚀 Running Locally
+
 ```bash
-python3 -m http.server 8090
-# or
+# Serve with Python
+python3 -m http.server 8080
+
+# Or using Node
 npx serve .
 ```
 
----
-
-## 🌐 Deploy to Vercel
-
-Configured with `vercel.json` for 1-click deployment with clean URLs and immutable asset caching:
-```bash
-npm install -g vercel
-vercel
-```
+Open `http://localhost:8080` in your browser.
