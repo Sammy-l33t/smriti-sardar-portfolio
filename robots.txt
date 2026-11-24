@@ -1,5 +1,5 @@
-# robots.txt for https://smritisardar.com
+# robots.txt for https://smriti-sardar-portfolio.vercel.app
 User-agent: *
 Allow: /
 
-Sitemap: https://smritisardar.com/sitemap.xml
+Sitemap: https://smriti-sardar-portfolio.vercel.app/sitemap.xml

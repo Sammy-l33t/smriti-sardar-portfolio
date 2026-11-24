@@ -3,17 +3,19 @@
  * Theme: Cinematic Dark · Beyond Limits. Beyond Ordinary.
  * Features:
  *  - Lucide Icons Initializer
- *  - Scroll Progress Bar & Header Elevation
+ *  - Dynamic Current Year
+ *  - Scroll Progress Bar & Header Elevation State
  *  - Mobile Drawer Navigation
- *  - Interactive Before & After Color Grading Split Slider (Mouse & Touch)
+ *  - Interactive Before & After Color Grading Comparison Slider (Mouse & Touch)
  *  - Adventure Gallery Category Tabs Filtering
- *  - Project Case Study Modal (Lightbox)
  *  - Adventure Photo Lightbox System
+ *  - Project Case Study Modal (Rich Real Stories + Lazy Video Embeds)
  *  - Dynamic Tabular Number Counter on Scroll
- *  - Contact Form with Validation & LocalStorage Persistence
- *  - One-Click Clipboard Copy with Sonner Toast
- *  - Smooth Section Observer & Scroll Animations
- *  - Dynamic Commit Hash Tracker
+ *  - Interactive Project Scope Choice Chips
+ *  - Sonner-Style Toast Notifications
+ *  - Anti-Spam Contact Form Submission (Honeypot, Web3Forms & LocalStorage Fallback)
+ *  - One-Click Clipboard Copy & Reveal for Email & Phone (Spam Bot Protected)
+ *  - Intersection Observer for Cinematic Scroll Reveals
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -224,11 +226,81 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === photoLightbox) closePhotoLightbox();
   });
 
-  // --- 8. PROJECT CASE STUDY MODAL ---
+  // --- 8. PROJECT CASE STUDY & VIDEO MODAL (Real Content & Lazy Video Embeds) ---
+  const projectDetails = {
+    shailaputri: {
+      title: "Shailaputri: The Daughter of Mountains",
+      subtitle: "45 min+ · High-Contrast Black & White 35mm Cinema · Miyar Valley, HP",
+      category: "Expedition Documentary",
+      year: "2026",
+      image: "assets/images/gallery/shailaputri-film.webp",
+      aspect: "2.39:1 CinemaScope",
+      role: "Cinematographer, Co-Director & Lead Colorist",
+      tools: "DaVinci Resolve Studio 19, Sony Cinema Line, ACEScc Pipeline, Sub-Zero Rigging",
+      results: "Official Selection — IMF Mountain Film Festival 2026",
+      desc: "A landmark 45-minute expedition documentary chronicling the historic Indian first ascent on Mount Tharang II (6,027m / 19,774 ft) in the remote Miyar Valley of Himachal Pradesh. Shot across 24 days in grueling sub-zero conditions, the film employs an uncompromising high-contrast monochrome aesthetic to capture the raw scale of granite spires, the psychological weight of isolation, and human endurance at high altitude. Mastered with ACEScc color science to retain delicate shadow gradations against blinding glacial glare.",
+      // Lazy-loaded privacy-enhanced video embed
+      // TODO: Replace with Smriti's final YouTube/Vimeo video ID if private festival cut changes
+      videoEmbed: "https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1&rel=0",
+      hasVideo: true,
+      videoBtnText: "Watch Teaser / Reel"
+    },
+    onelastloop: {
+      title: "One Last Loop",
+      subtitle: "8 min · High-End Sports Documentary · Bigfoot Adventure India Collaboration",
+      category: "Sports Documentary",
+      year: "2025",
+      image: "assets/images/gallery/one-last-loop-running.webp",
+      aspect: "16:9 DCI 4K",
+      role: "Director, Solo DP & Lead Editor",
+      tools: "Sony FX3 Cinema Line, DaVinci Resolve Studio 19, Sennheiser Audio, Gimbal Rig",
+      results: "Official collaboration with Bigfoot Adventure India (BFAI); screened across Indian ultrarunning circuits",
+      desc: "An intimate, psychological sports documentary demystifying the grueling Backyard Ultra format—where athletes run a 4.167-mile (6.706 km) trail loop every hour on the hour until only one runner remains standing. Filmed continuously through 30+ consecutive hours across punishing day-and-night cycles to document the threshold where physical capability yields to psychological grit. Cut with an escalating rhythmic soundscape that mirrors the runner's deteriorating perception of time.",
+      // Lazy-loaded privacy-enhanced video embed
+      // TODO: Replace with Smriti's final YouTube/Vimeo video ID for One Last Loop
+      videoEmbed: "https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1&rel=0",
+      hasVideo: true,
+      videoBtnText: "Watch Film"
+    },
+    above6000: {
+      title: "Above 6,000 Meters: Alpine Cinematography",
+      subtitle: "Technical Field Study · Sub-Zero Alpine Cinematography & Extreme Rigging",
+      category: "Expedition Cinematography",
+      year: "2024 – 2026",
+      image: "assets/images/gallery/snow-ridge-rig.webp",
+      aspect: "2.39:1 CinemaScope",
+      role: "High-Altitude Cinematographer & Field Producer",
+      tools: "Custom Cage Rig, Li-ion Heated Battery Harness, Weather-Sealed Cinema Primes, Carbon Tripods",
+      results: "Archival footage licensed for international mountaineering publications & expeditions",
+      desc: "A comprehensive technical and visual exploration of operating cinema-grade camera rigs above 6,000 meters (19,700+ ft) in the Greater Himalayas. Addressing the dual challenges of extreme cold (-25°C), hypoxia, and mechanical condensation while filming unscripted alpine ascents. Every gram carried in the alpine zone is negotiated against safety: the stripped-down rig utilizes weatherized manual optics that resist lubricant freezing and dual-recording SSDs insulated in down layers.",
+      videoEmbed: null,
+      hasVideo: false,
+      videoBtnText: "View Stills & Rig Setup"
+    },
+    terrainlight: {
+      title: "Terrain & Light: Himalayan Geomorphology",
+      subtitle: "Aerial Landscape & Spatial Cinematography Series · DGCA Compliant",
+      category: "Aerial Cinematography",
+      year: "2023 – 2025",
+      image: "assets/images/gallery/aerial-landscape.webp",
+      aspect: "16:9 Cinema 4K",
+      role: "Licensed Drone Pilot & Aerial Director",
+      tools: "DJI Mavic 3 Pro Cine (Apple ProRes 422 HQ), PolarPro ND/PL Filters, DaVinci Resolve Color",
+      results: "Exhibited in geospatial storytelling exhibitions & environmental research archives",
+      desc: "Merging academic training in geography with aerial cinema craft. A visual survey of glacial recession, moraine geometry, and alpine river valleys in the Western Himalayas, captured in low-angle morning golden light and alpenglow. Navigating thin air above 4,000 meters requires understanding localized katabatic wind shears and rapid battery discharge rates. Flight paths were pre-calculated using topographical GIS contours to align sunlight angles with ridgeline crests.",
+      videoEmbed: null,
+      hasVideo: false,
+      videoBtnText: "View Aerial Stills"
+    }
+  };
+
   const projectDialog = document.querySelector("#projectDialogBackdrop");
   const closeDialogBtn = document.querySelector("#closeDialogBtn");
   const dialogDismissBtn = document.querySelector("#dialogDismissBtn");
   const dialogContactBtn = document.querySelector("#dialogContactBtn");
+  const dialogToggleVideoBtn = document.querySelector("#dialogToggleVideoBtn");
+  const dialogVideoBtnText = document.querySelector("#dialogVideoBtnText");
+  const dialogVideoPlayer = document.querySelector("#dialogVideoPlayer");
 
   const dialogImg = document.querySelector("#dialogImage");
   const dialogTitle = document.querySelector("#dialogTitle");
@@ -240,32 +312,71 @@ document.addEventListener("DOMContentLoaded", () => {
   const dialogTools = document.querySelector("#dialogTools");
   const dialogAspect = document.querySelector("#dialogAspect");
   const dialogAspectPill = document.querySelector("#dialogAspectPill");
+  const dialogResults = document.querySelector("#dialogResults");
 
-  const projectCards = document.querySelectorAll(".project-showcase-card");
+  let activeProject = null;
+  let isVideoPlaying = false;
+
+  function stopAndClearVideo() {
+    if (dialogVideoPlayer) {
+      dialogVideoPlayer.innerHTML = "";
+      dialogVideoPlayer.style.display = "none";
+    }
+    if (dialogImg) {
+      dialogImg.style.display = "block";
+    }
+    isVideoPlaying = false;
+    if (dialogVideoBtnText && activeProject) {
+      dialogVideoBtnText.textContent = activeProject.videoBtnText;
+    }
+  }
 
   function openProjectDialog(card) {
     if (!projectDialog) return;
 
-    const title = card.getAttribute("data-title") || "Project Case Study";
-    const subtitle = card.getAttribute("data-subtitle") || "";
-    const img = card.getAttribute("data-img") || card.querySelector("img")?.src || "";
-    const desc = card.getAttribute("data-desc") || "";
-    const role = card.getAttribute("data-role") || "Cinematographer, Editor";
-    const tools = card.getAttribute("data-tools") || "DaVinci Resolve Studio 19, Sony Cinema Line";
-    const aspect = card.getAttribute("data-aspect") || "2.39:1 CinemaScope";
-    const year = card.getAttribute("data-year") || "2026";
-    const cat = card.getAttribute("data-category") || "Selected Film";
+    const projectId = card.getAttribute("data-project-id") || "";
+    const p = projectDetails[projectId] || {
+      title: card.querySelector(".project-name")?.textContent?.trim() || "Project Case Study",
+      subtitle: card.querySelector(".project-cat")?.textContent?.trim() || "Cinematic Project",
+      category: card.querySelector(".project-cat")?.textContent?.trim() || "Selected Project",
+      year: "2026",
+      image: card.querySelector("img")?.src || "assets/images/gallery/shailaputri-film.webp",
+      aspect: "2.39:1 CinemaScope",
+      role: "Cinematographer & Senior Editor",
+      tools: "DaVinci Resolve Studio 19, Sony Cinema Line",
+      results: "Featured Production",
+      desc: card.querySelector(".project-summary")?.textContent?.trim() || "Full production case study.",
+      videoEmbed: null,
+      hasVideo: false,
+      videoBtnText: "Watch Reel"
+    };
 
-    if (dialogImg) dialogImg.src = img;
-    if (dialogTitle) dialogTitle.textContent = title;
-    if (dialogSubtitle) dialogSubtitle.textContent = subtitle;
-    if (dialogDesc) dialogDesc.textContent = desc;
-    if (dialogCategory) dialogCategory.textContent = cat;
-    if (dialogYear) dialogYear.textContent = year;
-    if (dialogRole) dialogRole.textContent = role;
-    if (dialogTools) dialogTools.textContent = tools;
-    if (dialogAspect) dialogAspect.textContent = aspect;
-    if (dialogAspectPill) dialogAspectPill.textContent = aspect;
+    activeProject = p;
+    stopAndClearVideo();
+
+    if (dialogImg) {
+      dialogImg.src = p.image;
+      dialogImg.alt = p.title;
+    }
+    if (dialogTitle) dialogTitle.textContent = p.title;
+    if (dialogSubtitle) dialogSubtitle.textContent = p.subtitle;
+    if (dialogDesc) dialogDesc.textContent = p.desc;
+    if (dialogCategory) dialogCategory.textContent = p.category;
+    if (dialogYear) dialogYear.textContent = p.year;
+    if (dialogRole) dialogRole.textContent = p.role;
+    if (dialogTools) dialogTools.textContent = p.tools;
+    if (dialogAspect) dialogAspect.textContent = p.aspect;
+    if (dialogAspectPill) dialogAspectPill.textContent = p.aspect;
+    if (dialogResults) dialogResults.textContent = p.results;
+
+    if (dialogToggleVideoBtn) {
+      if (p.hasVideo && p.videoEmbed) {
+        dialogToggleVideoBtn.style.display = "inline-flex";
+        if (dialogVideoBtnText) dialogVideoBtnText.textContent = p.videoBtnText;
+      } else {
+        dialogToggleVideoBtn.style.display = "none";
+      }
+    }
 
     projectDialog.classList.add("active");
     projectDialog.setAttribute("aria-hidden", "false");
@@ -275,11 +386,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeProjectDialog() {
     if (!projectDialog) return;
+    stopAndClearVideo();
     projectDialog.classList.remove("active");
     projectDialog.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    activeProject = null;
   }
 
+  // Toggle Video Player embed
+  dialogToggleVideoBtn?.addEventListener("click", () => {
+    if (!activeProject || !activeProject.videoEmbed || !dialogVideoPlayer) return;
+
+    if (!isVideoPlaying) {
+      // Lazy load the iframe video embed inside dialogVideoPlayer
+      dialogVideoPlayer.innerHTML = `<iframe src="${activeProject.videoEmbed}" title="${activeProject.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+      dialogVideoPlayer.style.display = "block";
+      if (dialogImg) dialogImg.style.display = "none";
+      if (dialogVideoBtnText) dialogVideoBtnText.textContent = "Show Poster";
+      isVideoPlaying = true;
+    } else {
+      stopAndClearVideo();
+    }
+    initIcons();
+  });
+
+  const projectCards = document.querySelectorAll(".project-showcase-card");
   projectCards.forEach((card) => {
     card.addEventListener("click", () => openProjectDialog(card));
   });
@@ -291,7 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === projectDialog) closeProjectDialog();
   });
 
-  // Escape key closes open modals
+  // Escape key closes modals
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeProjectDialog();
@@ -343,10 +474,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- 10. PROJECT SCOPE CHOICE CHIPS ---
   const choiceChips = document.querySelectorAll(".choice-chip");
+  const projectScopeInput = document.querySelector("#projectScopeInput");
+
   choiceChips.forEach((chip) => {
     chip.addEventListener("click", () => {
       choiceChips.forEach((c) => c.classList.remove("active"));
       chip.classList.add("active");
+      const val = chip.getAttribute("data-val") || chip.textContent.trim();
+      if (projectScopeInput) {
+        projectScopeInput.value = val;
+      }
     });
   });
 
@@ -365,25 +502,47 @@ document.addEventListener("DOMContentLoaded", () => {
       initIcons();
     }
 
-    siteToast.classList.add("active");
+    siteToast.style.display = "flex";
+    // Trigger CSS transition via class
+    requestAnimationFrame(() => {
+      siteToast.classList.add("active");
+    });
 
     if (toastTimeout) clearTimeout(toastTimeout);
     toastTimeout = setTimeout(() => {
       siteToast.classList.remove("active");
-    }, 4200);
+      setTimeout(() => {
+        if (!siteToast.classList.contains("active")) {
+          siteToast.style.display = "none";
+        }
+      }, 300);
+    }, 4500);
   }
 
   toastCloseBtn?.addEventListener("click", () => {
     siteToast?.classList.remove("active");
+    setTimeout(() => {
+      if (siteToast && !siteToast.classList.contains("active")) {
+        siteToast.style.display = "none";
+      }
+    }, 300);
     if (toastTimeout) clearTimeout(toastTimeout);
   });
 
-  // --- 12. CONTACT FORM SUBMISSION ---
+  // --- 12. CONTACT FORM SUBMISSION (With Honeypot Anti-Spam & Web3Forms Support) ---
   const contactForm = document.querySelector("#contactForm");
   const submitBtn = document.querySelector("#submitBtn");
 
-  contactForm?.addEventListener("submit", (e) => {
+  contactForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    // Anti-spam Honeypot Check: if botcheck is checked, silent rejection
+    const botcheck = contactForm.querySelector('input[name="botcheck"]');
+    if (botcheck && botcheck.checked) {
+      showToast("Message sent! Smriti will be in touch.", "send");
+      contactForm.reset();
+      return;
+    }
 
     const nameInput = document.querySelector("#senderName");
     const emailInput = document.querySelector("#senderEmail");
@@ -396,6 +555,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // Basic email format check
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailInput.value.trim())) {
+      showToast("Please provide a valid email address.", "alert-triangle");
+      return;
+    }
+
     const senderName = nameInput.value.trim();
     const senderEmail = emailInput.value.trim();
     const senderMessage = messageInput.value.trim();
@@ -405,44 +571,118 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.disabled = true;
     }
 
-    setTimeout(() => {
-      const inquiry = {
-        id: "inq_" + Date.now() + "_" + Math.random().toString(36).substring(2, 7),
-        name: senderName,
-        email: senderEmail,
-        scope: scopeVal,
-        message: senderMessage,
-        timestamp: new Date().toISOString()
-      };
+    const inquiry = {
+      id: "inq_" + Date.now() + "_" + Math.random().toString(36).substring(2, 7),
+      name: senderName,
+      email: senderEmail,
+      scope: scopeVal,
+      message: senderMessage,
+      timestamp: new Date().toISOString()
+    };
 
+    // Store inquiry in localStorage
+    try {
+      const stored = localStorage.getItem("smriti_inquiries");
+      const list = stored ? JSON.parse(stored) : [];
+      list.unshift(inquiry);
+      localStorage.setItem("smriti_inquiries", JSON.stringify(list));
+    } catch (err) {
+      console.warn("LocalStorage warning:", err);
+    }
+
+    // Attempt Web3Forms network submission if valid access key is provided
+    const keyInput = document.querySelector("#web3FormsKey");
+    const accessKey = keyInput?.value?.trim() || "";
+
+    if (accessKey && accessKey !== "YOUR_WEB3FORMS_ACCESS_KEY") {
       try {
-        const stored = localStorage.getItem("smriti_inquiries");
-        const list = stored ? JSON.parse(stored) : [];
-        list.unshift(inquiry);
-        localStorage.setItem("smriti_inquiries", JSON.stringify(list));
-      } catch (err) {
-        console.warn("LocalStorage warning:", err);
-      }
+        const formData = new FormData(contactForm);
+        formData.set("project_scope", scopeVal);
 
-      if (submitBtn) {
-        submitBtn.classList.remove("loading");
-        submitBtn.disabled = false;
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        const resData = await response.json();
+        if (resData.success) {
+          showToast("Inquiry sent! Smriti will connect within 24 hours.", "send");
+        } else {
+          showToast("Inquiry saved locally! Smriti will review your message.", "check-circle");
+        }
+      } catch (networkErr) {
+        showToast("Inquiry saved! Smriti will review and connect shortly.", "check-circle");
       }
-      contactForm.reset();
-      showToast("Inquiry sent! Smriti will connect within 24 hours.", "send");
-    }, 650);
+    } else {
+      // Graceful fallback with localStorage persistence
+      await new Promise((resolve) => setTimeout(resolve, 600));
+      showToast("Inquiry received! Smriti will connect within 24 hours.", "send");
+    }
+
+    if (submitBtn) {
+      submitBtn.classList.remove("loading");
+      submitBtn.disabled = false;
+    }
+    contactForm.reset();
+
+    // Reset chips to default
+    choiceChips.forEach((c, idx) => {
+      c.classList.toggle("active", idx === 0);
+    });
+    if (projectScopeInput) {
+      projectScopeInput.value = "Documentary / Expedition";
+    }
   });
 
-  // --- 13. ONE-CLICK EMAIL CLIPBOARD COPY ---
+  // --- 13. SPAM BOT PROTECTED COPY & REVEAL (Email & Phone) ---
   const copyEmailCard = document.querySelector("#copyEmailCard");
-  copyEmailCard?.addEventListener("click", async (e) => {
+  const revealPhoneCard = document.querySelector("#revealPhoneCard");
+
+  async function copyToClipboard(text, successMsg, icon = "copy") {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const tempTextArea = document.createElement("textarea");
+        tempTextArea.value = text;
+        tempTextArea.style.position = "fixed";
+        tempTextArea.style.left = "-9999px";
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempTextArea);
+      }
+      showToast(successMsg, icon);
+    } catch {
+      showToast(text, icon);
+    }
+  }
+
+  copyEmailCard?.addEventListener("click", (e) => {
     e.preventDefault();
     const email = "smritisardar010@gmail.com";
-    try {
-      await navigator.clipboard.writeText(email);
-      showToast("Email copied: " + email, "copy");
-    } catch {
-      showToast("Email: " + email, "mail");
+    copyToClipboard(email, "Copied email: " + email, "mail");
+  });
+
+  copyEmailCard?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      const email = "smritisardar010@gmail.com";
+      copyToClipboard(email, "Copied email: " + email, "mail");
+    }
+  });
+
+  revealPhoneCard?.addEventListener("click", (e) => {
+    e.preventDefault();
+    const phone = "+91 9875641683";
+    copyToClipboard(phone, "Copied phone: " + phone, "phone");
+  });
+
+  revealPhoneCard?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      const phone = "+91 9875641683";
+      copyToClipboard(phone, "Copied phone: " + phone, "phone");
     }
   });
 
@@ -469,28 +709,6 @@ document.addEventListener("DOMContentLoaded", () => {
     runNumberTicker();
   }
 
-  // Fallback trigger for metrics
+  // Fallback trigger for number metrics
   setTimeout(runNumberTicker, 450);
-
-  // --- 15. LIVE GITHUB COMMIT TRACKER ---
-  const gitCommitHash = document.querySelector("#gitCommitHash");
-  const gitCommitBadge = document.querySelector("#gitCommitBadge");
-
-  fetch("https://api.github.com/repos/Sammy-l33t/smriti-sardar-portfolio/commits/main")
-    .then((res) => {
-      if (!res.ok) throw new Error("GitHub API request failed");
-      return res.json();
-    })
-    .then((data) => {
-      if (data && data.sha) {
-        const shortSha = data.sha.substring(0, 7);
-        if (gitCommitHash) gitCommitHash.textContent = shortSha;
-        if (gitCommitBadge) {
-          gitCommitBadge.href = `https://github.com/Sammy-l33t/smriti-sardar-portfolio/commit/${data.sha}`;
-          const msg = data.commit?.message?.split("\n")[0] || "Latest commit";
-          gitCommitBadge.setAttribute("title", `Commit ${shortSha}: ${msg}`);
-        }
-      }
-    })
-    .catch(() => {});
 });

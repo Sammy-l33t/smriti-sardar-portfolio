@@ -7,19 +7,19 @@
   <meta name="description" content="Smriti Sardar — Professional Video Editor, Cinematographer, Adventure Enthusiast & Marathon Runner. Beyond Limits. Beyond Ordinary.">
   <title>Smriti Sardar — Professional · Adventurer · Marathon Runner · Video Editor</title>
 
-  <!-- SEO, Social & Open Graph Metadata -->
-  <link rel="canonical" href="https://smritisardar.com/">
+  <!-- SEO, Social & Open Graph Metadata (Live Domain) -->
+  <link rel="canonical" href="https://smriti-sardar-portfolio.vercel.app/">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Smriti Sardar — Beyond Limits">
   <meta property="og:title" content="Smriti Sardar — Beyond Limits. Beyond Ordinary.">
   <meta property="og:description" content="Professional by passion. Adventurer by heart. Runner by discipline. Creator by vision. Shaping authentic high-altitude expeditions, marathon narratives, and cinematic visual stories.">
-  <meta property="og:url" content="https://smritisardar.com/">
-  <meta property="og:image" content="https://smritisardar.com/assets/images/gallery/hero-portrait-clean.jpg">
+  <meta property="og:url" content="https://smriti-sardar-portfolio.vercel.app/">
+  <meta property="og:image" content="https://smriti-sardar-portfolio.vercel.app/assets/images/gallery/hero-portrait-clean.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Smriti Sardar — Professional, Adventurer, Marathon Runner & Video Editor">
   <meta name="twitter:description" content="Professional by passion. Adventurer by heart. Runner by discipline. Creator by vision.">
-  <meta name="twitter:image" content="https://smritisardar.com/assets/images/gallery/hero-portrait-clean.jpg">
+  <meta name="twitter:image" content="https://smriti-sardar-portfolio.vercel.app/assets/images/gallery/hero-portrait-clean.webp">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -28,12 +28,12 @@
     "@type": "Person",
     "name": "Smriti Sardar",
     "jobTitle": "Professional Video Editor, Cinematographer & Documentary Filmmaker",
-    "url": "https://smritisardar.com",
-    "image": "https://smritisardar.com/assets/images/gallery/hero-portrait-clean.jpg",
-    "email": "smritisardar010@gmail.com",
-    "telephone": "+919875641683",
+    "url": "https://smriti-sardar-portfolio.vercel.app/",
+    "image": "https://smriti-sardar-portfolio.vercel.app/assets/images/gallery/hero-portrait-clean.webp",
     "sameAs": [
-      "https://github.com/Sammy-l33t"
+      "https://www.linkedin.com/in/smriti-sardar",
+      "https://www.instagram.com/smriti_sardar",
+      "https://www.youtube.com/@smritisardar"
     ],
     "knowsAbout": [
       "Cinematography",
@@ -50,7 +50,7 @@
   <!-- Minimalist Monogram Favicon with Orange Core -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'%3E%3Crect width='32' height='32' rx='8' fill='%2308090c'/%3E%3Ccircle cx='16' cy='16' r='10' stroke='%23f97316' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23f97316'/%3E%3C/svg%3E">
 
-  <!-- Typography: Plus Jakarta Sans (Modern Clean), Syne (Cinematic Display), JetBrains Mono (Technical/Pace metrics) -->
+  <!-- Typography: Plus Jakarta Sans, Syne, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400..600;1,400..600&family=Plus+Jakarta+Sans:ital,wght@0,300..700;1,300..700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -107,7 +107,7 @@
       </nav>
 
       <!-- Mobile Hamburger Button -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
         <span class="bar bar-1"></span>
         <span class="bar bar-2"></span>
         <span class="bar bar-3"></span>
@@ -148,17 +148,13 @@
       </nav>
       <div class="drawer-footer">
         <div class="drawer-contact-line">
-          <i data-lucide="mail" class="icon-sm"></i>
-          <span>smritisardar010@gmail.com</span>
-        </div>
-        <div class="drawer-contact-line">
-          <i data-lucide="phone" class="icon-sm"></i>
-          <span>+91 9875641683</span>
+          <i data-lucide="shield-check" class="icon-sm icon-orange"></i>
+          <span>Direct Contact via Verified Form</span>
         </div>
         <div class="drawer-socials">
-          <a href="tel:+919875641683" class="drawer-icon-link" aria-label="Call">Call</a>
-          <a href="https://wa.me/919875641683" target="_blank" rel="noopener" class="drawer-icon-link" aria-label="WhatsApp">WhatsApp</a>
-          <a href="mailto:smritisardar010@gmail.com" class="drawer-icon-link" aria-label="Email">Email</a>
+          <a href="#contact" class="drawer-icon-link">Project Inquiries</a>
+          <a href="https://wa.me/919875641683" target="_blank" rel="noopener noreferrer" class="drawer-icon-link">WhatsApp</a>
+          <a href="#contact" class="drawer-icon-link">Send Email</a>
         </div>
       </div>
     </div>
@@ -168,7 +164,10 @@
     <!-- ==================== 1. HERO SECTION ==================== -->
     <section class="hero-section">
       <div class="hero-backdrop-container" aria-hidden="true">
-        <img src="assets/images/gallery/himalayan-horizon.jpg" alt="High mountain ridgeline backdrop" class="hero-backdrop-img">
+        <picture>
+          <source srcset="assets/images/gallery/himalayan-horizon.webp" type="image/webp">
+          <img src="assets/images/gallery/himalayan-horizon.jpg" alt="High mountain Himalayan ridgeline backdrop" class="hero-backdrop-img" width="2560" height="1440" fetchpriority="high">
+        </picture>
         <div class="hero-backdrop-gradient"></div>
         <div class="hero-backdrop-vignette"></div>
       </div>
@@ -191,7 +190,10 @@
         <!-- Professional Profile Photo & Identity Strip -->
         <div class="hero-profile-bar animate-fade-up delay-2">
           <div class="hero-avatar-wrap">
-            <img src="assets/images/gallery/hero-portrait-clean.jpg" alt="Smriti Sardar portrait in mountain mist" class="hero-avatar-img">
+            <picture>
+              <source srcset="assets/images/gallery/hero-portrait-clean.webp" type="image/webp">
+              <img src="assets/images/gallery/hero-portrait-clean.jpg" alt="Smriti Sardar portrait in mountain mist" class="hero-avatar-img" width="1920" height="2560" loading="eager">
+            </picture>
             <span class="avatar-status-indicator" title="Currently editing & available for projects"></span>
           </div>
           <div class="hero-bio-short">
@@ -227,7 +229,7 @@
             <div class="metric-value-row">
               <span class="metric-num ticker-target" data-target="6000" data-suffix="m+" data-comma="true">6,000m+</span>
             </div>
-            <span class="metric-label">Sub-Zero Himalayan Expedition Ridge Filming</span>
+            <span class="metric-label">Sub-Zero Himalayan Ridge Filming (19,700ft+)</span>
           </div>
 
           <div class="metric-divider"></div>
@@ -272,9 +274,11 @@
         </p>
       </div>
 
-      <!-- Manifest Quote Banner -->
+      <!-- Clean Manifesto Quote Banner (without stray quotes) -->
       <div class="manifesto-quote-card animate-on-scroll">
-        <div class="quote-symbol">“</div>
+        <div class="manifesto-quote-badge">
+          <i data-lucide="quote" class="icon-md icon-orange"></i>
+        </div>
         <blockquote class="quote-text">
           Filmmaking taught me to observe before I capture. Academic training in geography enriches how I read ridgelines, weather fronts, and alpine lighting. Running gives me the relentless endurance to stay focused when ordinary teams turn back.
         </blockquote>
@@ -296,7 +300,7 @@
             <h3 class="identity-title">Professional Career</h3>
           </div>
           <p class="identity-desc">
-            Senior Video Editor at <em>The Unscripted India</em> and independent cinematographer. With 5 years of rigorous post-production and field direction, I supervise complex narrative timelines from commercial campaigns and podcasts to multi-camera festival documentaries.
+            Senior Video Editor at <em>The Unscripted India</em> and independent cinematographer. With 5 years of rigorous post-production and field direction (4 years freelance + 1 year Senior Editor leadership), I supervise complex narrative timelines from commercial campaigns to multi-camera festival documentaries.
           </p>
           <ul class="identity-checklist">
             <li><i data-lucide="check" class="icon-sm"></i> Senior Editor leading creative cutdowns & masters</li>
@@ -323,7 +327,7 @@
           </p>
           <ul class="identity-checklist">
             <li><i data-lucide="check" class="icon-sm"></i> Mount Tharang II Indian 1st ascent documentary</li>
-            <li><i data-lucide="check" class="icon-sm"></i> Filming above 6,000 meters in sub-zero alpine snow</li>
+            <li><i data-lucide="check" class="icon-sm"></i> Filming above 6,000 meters (19,700 ft) in alpine snow</li>
             <li><i data-lucide="check" class="icon-sm"></i> Licensed drone pilot over remote rugged terrains</li>
           </ul>
           <a href="#adventure" class="identity-link">
@@ -393,7 +397,7 @@
         </p>
       </div>
 
-      <!-- Elegant Timeline Component -->
+      <!-- Elegant Timeline Component (Consistent: 4 yrs + 1 yr = 5 yrs) -->
       <div class="career-timeline">
         <!-- Timeline Item 1 -->
         <div class="timeline-item animate-on-scroll">
@@ -405,7 +409,7 @@
           </div>
           <div class="timeline-card">
             <div class="timeline-card-meta">
-              <span class="role-period">2025 – Present</span>
+              <span class="role-period">2025 – Present · 1 Year</span>
               <span class="role-badge active-badge">Current Role</span>
             </div>
             <h3 class="role-title">Senior Video Editor</h3>
@@ -430,7 +434,7 @@
           </div>
           <div class="timeline-card">
             <div class="timeline-card-meta">
-              <span class="role-period">2022 – 2025 · 4 Years</span>
+              <span class="role-period">2021 – 2025 · 4 Years</span>
               <span class="role-badge">Freelance Leadership</span>
             </div>
             <h3 class="role-title">Independent Filmmaker, Cinematographer & Editor</h3>
@@ -509,7 +513,7 @@
         </p>
       </div>
 
-      <!-- Adventure Category Filter Tabs -->
+      <!-- Adventure Category Filter Tabs (Consistent Altitudes) -->
       <div class="gallery-filter-bar animate-on-scroll">
         <button class="gallery-tab active" data-tab="all">
           <i data-lucide="layers" class="icon-sm"></i>
@@ -518,7 +522,7 @@
         </button>
         <button class="gallery-tab" data-tab="alpine">
           <i data-lucide="mountain-snow" class="icon-sm"></i>
-          <span>Alpine Summits (6,000m+)</span>
+          <span>Alpine Summits (6,000m+ / 19,700ft+)</span>
           <span class="tab-badge">2</span>
         </button>
         <button class="gallery-tab" data-tab="canyon">
@@ -533,16 +537,19 @@
         </button>
       </div>
 
-      <!-- Immersive Image Grid -->
+      <!-- Immersive Image Grid (Consistent Altitudes: 6,000m = ~19,700 ft) -->
       <div class="adventure-grid" id="adventureGrid">
         <!-- Photo 1: Alpine Rig on Snow Ridge -->
-        <div class="adventure-card animate-on-scroll" data-category="alpine" data-img="assets/images/gallery/snow-ridge-rig.jpg" data-title="Mount Tharang II · Sub-Zero Alpine Rig" data-location="Himachal Pradesh, India" data-altitude="14,200 ft" data-story="Documenting the first Indian ascent on Mount Tharang II. Carbon fiber tripod anchored into frozen snowpack with battery heating packs to operate cinema rigs below -15°C.">
+        <div class="adventure-card animate-on-scroll" data-category="alpine" data-img="assets/images/gallery/snow-ridge-rig.webp" data-title="Mount Tharang II · High Camp Ridge" data-location="Miyar Valley, Himachal Pradesh" data-altitude="17,800 ft (5,425 m)" data-story="Documenting the first Indian ascent on Mount Tharang II. Carbon fiber tripod anchored into frozen snowpack with battery heating packs to operate cinema rigs below -15°C.">
           <div class="adventure-media">
-            <img src="assets/images/gallery/snow-ridge-rig.jpg" alt="Smriti filming on high-altitude snow ridge with cinema camera" loading="lazy">
+            <picture>
+              <source srcset="assets/images/gallery/snow-ridge-rig.webp" type="image/webp">
+              <img src="assets/images/gallery/snow-ridge-rig.jpg" alt="Smriti filming on high-altitude snow ridge with cinema camera" width="1440" height="2560" loading="lazy">
+            </picture>
             <div class="adventure-overlay">
               <div class="overlay-top">
                 <span class="tag-pill"><i data-lucide="map-pin" class="icon-xs"></i> Mt. Tharang II</span>
-                <span class="tag-pill altitude-pill">14,200 ft</span>
+                <span class="tag-pill altitude-pill">17,800 ft (5,425 m)</span>
               </div>
               <div class="overlay-bottom">
                 <h4 class="adventure-card-title">Mount Tharang II Snow Ridge</h4>
@@ -553,18 +560,21 @@
           </div>
         </div>
 
-        <!-- Photo 2: Himalayan Horizon Panorama -->
-        <div class="adventure-card card-wide animate-on-scroll" data-category="alpine" data-img="assets/images/gallery/himalayan-horizon.jpg" data-title="Himalayan Ridge Crest Panorama" data-location="Western Himalayas" data-altitude="17,500 ft" data-story="Glaciated peaks cutting through low altitude cloud cover. Captured during morning golden hour when cold high-pressure front yielded crystalline visibility across 60 miles.">
+        <!-- Photo 2: Himalayan Horizon Panorama (Accurate 6,000m+ = 19,774 ft / 6,027 m) -->
+        <div class="adventure-card card-wide animate-on-scroll" data-category="alpine" data-img="assets/images/gallery/himalayan-horizon.webp" data-title="Mount Tharang II · 6,000m+ Ridge Crest" data-location="Miyar Valley, Western Himalayas" data-altitude="19,774 ft (6,027 m)" data-story="Glaciated peaks cutting through low altitude cloud cover. Captured during morning golden hour when cold high-pressure front yielded crystalline visibility across 60 miles above 6,000 meters.">
           <div class="adventure-media">
-            <img src="assets/images/gallery/himalayan-horizon.jpg" alt="Expansive panoramic view of snow-covered Himalayan peaks" loading="lazy">
+            <picture>
+              <source srcset="assets/images/gallery/himalayan-horizon.webp" type="image/webp">
+              <img src="assets/images/gallery/himalayan-horizon.jpg" alt="Expansive panoramic view of snow-covered Himalayan peaks" width="2560" height="1440" loading="lazy">
+            </picture>
             <div class="adventure-overlay">
               <div class="overlay-top">
                 <span class="tag-pill"><i data-lucide="map-pin" class="icon-xs"></i> Western Himalayas</span>
-                <span class="tag-pill altitude-pill">17,500 ft</span>
+                <span class="tag-pill altitude-pill">19,774 ft (6,027 m)</span>
               </div>
               <div class="overlay-bottom">
                 <h4 class="adventure-card-title">Above 6,000m Horizon</h4>
-                <p class="adventure-card-sub">Extreme altitude glacier topography</p>
+                <p class="adventure-card-sub">Extreme altitude glacier topography (6,027m)</p>
                 <span class="zoom-cta"><i data-lucide="maximize-2" class="icon-xs"></i> View Full Shot</span>
               </div>
             </div>
@@ -572,13 +582,16 @@
         </div>
 
         <!-- Photo 3: Canyon Adventure in Spiti -->
-        <div class="adventure-card animate-on-scroll" data-category="canyon" data-img="assets/images/gallery/canyon-adventure.jpg" data-title="Spiti River Canyon · Geological Strata" data-location="Spiti Valley, Himachal" data-altitude="12,500 ft" data-story="Filming sedimented cliff walls and dramatic geological folds. The high-altitude sunlight creates sharp contrast and natural warm earth palettes that inspire my cinema color grading.">
+        <div class="adventure-card animate-on-scroll" data-category="canyon" data-img="assets/images/gallery/canyon-adventure.webp" data-title="Spiti River Canyon · Geological Strata" data-location="Spiti Valley, Himachal" data-altitude="12,500 ft (3,810 m)" data-story="Filming sedimented cliff walls and dramatic geological folds. The high-altitude sunlight creates sharp contrast and natural warm earth palettes that inspire my cinema color grading.">
           <div class="adventure-media">
-            <img src="assets/images/gallery/canyon-adventure.jpg" alt="Smriti framed against towering sandstone canyon walls in Spiti" loading="lazy">
+            <picture>
+              <source srcset="assets/images/gallery/canyon-adventure.webp" type="image/webp">
+              <img src="assets/images/gallery/canyon-adventure.jpg" alt="Smriti framed against towering sandstone canyon walls in Spiti" width="2560" height="1440" loading="lazy">
+            </picture>
             <div class="adventure-overlay">
               <div class="overlay-top">
                 <span class="tag-pill"><i data-lucide="map-pin" class="icon-xs"></i> Spiti Valley</span>
-                <span class="tag-pill altitude-pill">12,500 ft</span>
+                <span class="tag-pill altitude-pill">12,500 ft (3,810 m)</span>
               </div>
               <div class="overlay-bottom">
                 <h4 class="adventure-card-title">Spiti Canyon Expeditions</h4>
@@ -590,13 +603,16 @@
         </div>
 
         <!-- Photo 4: Mountain Storyteller Portrait -->
-        <div class="adventure-card animate-on-scroll" data-category="canyon" data-img="assets/images/gallery/mountain-storyteller.jpg" data-title="Mountain Storyteller · Basecamp Field Ready" data-location="Pin Valley, Himachal" data-altitude="13,800 ft" data-story="Pausing at an alpine stream pass before ascending the col. High-altitude travel requires carrying essential tools, staying hydrated, and keeping optical glass sealed from glacial silt.">
+        <div class="adventure-card animate-on-scroll" data-category="canyon" data-img="assets/images/gallery/mountain-storyteller.webp" data-title="Mountain Storyteller · Basecamp Field Ready" data-location="Pin Valley, Himachal" data-altitude="13,800 ft (4,200 m)" data-story="Pausing at an alpine stream pass before ascending the col. High-altitude travel requires carrying essential tools, staying hydrated, and keeping optical glass sealed from glacial silt.">
           <div class="adventure-media">
-            <img src="assets/images/gallery/mountain-storyteller.jpg" alt="Smriti smiling near high mountain river pass" loading="lazy">
+            <picture>
+              <source srcset="assets/images/gallery/mountain-storyteller.webp" type="image/webp">
+              <img src="assets/images/gallery/mountain-storyteller.jpg" alt="Smriti smiling near high mountain river pass" width="2560" height="1920" loading="lazy">
+            </picture>
             <div class="adventure-overlay">
               <div class="overlay-top">
                 <span class="tag-pill"><i data-lucide="map-pin" class="icon-xs"></i> Pin Valley</span>
-                <span class="tag-pill altitude-pill">13,800 ft</span>
+                <span class="tag-pill altitude-pill">13,800 ft (4,200 m)</span>
               </div>
               <div class="overlay-bottom">
                 <h4 class="adventure-card-title">Pin Valley Pass</h4>
@@ -608,13 +624,16 @@
         </div>
 
         <!-- Photo 5: Aerial Topography Drone Shot -->
-        <div class="adventure-card card-wide animate-on-scroll" data-category="aerial" data-img="assets/images/gallery/aerial-landscape.jpg" data-title="Aerial Ridgeline Mapping · 4K Drone Cinema" data-location="Lahaul & Spiti Frontier" data-altitude="15,000 ft Aerial" data-story="D-Log 10-bit aerial capture tracing ancient mountain migration routes. The interplay of ridgeline shadows and alpine mist provides rare cinematic geometry only visible from above.">
+        <div class="adventure-card card-wide animate-on-scroll" data-category="aerial" data-img="assets/images/gallery/aerial-landscape.webp" data-title="Aerial Ridgeline Mapping · 4K Drone Cinema" data-location="Lahaul & Spiti Frontier" data-altitude="15,000 ft (4,570 m)" data-story="D-Log 10-bit aerial capture tracing ancient mountain migration routes. The interplay of ridgeline shadows and alpine mist provides rare cinematic geometry only visible from above.">
           <div class="adventure-media">
-            <img src="assets/images/gallery/aerial-landscape.jpg" alt="Drone aerial view over Himalayan ridge patterns and cloud cover" loading="lazy">
+            <picture>
+              <source srcset="assets/images/gallery/aerial-landscape.webp" type="image/webp">
+              <img src="assets/images/gallery/aerial-landscape.jpg" alt="Drone aerial view over Himalayan ridge patterns and cloud cover" width="2048" height="1536" loading="lazy">
+            </picture>
             <div class="adventure-overlay">
               <div class="overlay-top">
                 <span class="tag-pill"><i data-lucide="map-pin" class="icon-xs"></i> Lahaul Frontier</span>
-                <span class="tag-pill altitude-pill">15,000 ft</span>
+                <span class="tag-pill altitude-pill">15,000 ft (4,570 m)</span>
               </div>
               <div class="overlay-bottom">
                 <h4 class="adventure-card-title">Aerial Topographic Study</h4>
@@ -625,18 +644,21 @@
           </div>
         </div>
 
-        <!-- Photo 6: High Summit Climb -->
-        <div class="adventure-card animate-on-scroll" data-category="aerial" data-img="assets/images/gallery/summit-climb.jpg" data-title="Alpine High Pass · The Final Pitch" data-location="Himachal High Altitude" data-altitude="16,200 ft" data-story="Approaching the ridge summit through blowing spindrift. Every ounce of cinema gear has been calculated; only the most reliable lenses and carbon tripods make the ascent.">
+        <!-- Photo 6: High Summit Climb (Accurate 19,700 ft = 6,000 m) -->
+        <div class="adventure-card animate-on-scroll" data-category="aerial" data-img="assets/images/gallery/summit-climb.webp" data-title="Alpine High Pass · The Summit Ridge" data-location="Himachal High Altitude" data-altitude="19,700 ft (6,000 m)" data-story="Approaching the ridge summit through blowing spindrift at 6,000m elevation. Every ounce of cinema gear has been calculated; only the most reliable lenses and carbon tripods make the ascent.">
           <div class="adventure-media">
-            <img src="assets/images/gallery/summit-climb.jpg" alt="High altitude mountain ridge climb in cold mountain air" loading="lazy">
+            <picture>
+              <source srcset="assets/images/gallery/summit-climb.webp" type="image/webp">
+              <img src="assets/images/gallery/summit-climb.jpg" alt="High altitude mountain ridge climb in cold mountain air" width="2560" height="1920" loading="lazy">
+            </picture>
             <div class="adventure-overlay">
               <div class="overlay-top">
                 <span class="tag-pill"><i data-lucide="map-pin" class="icon-xs"></i> Summit Pitch</span>
-                <span class="tag-pill altitude-pill">16,200 ft</span>
+                <span class="tag-pill altitude-pill">19,700 ft (6,000 m)</span>
               </div>
               <div class="overlay-bottom">
                 <h4 class="adventure-card-title">The Alpine Pitch</h4>
-                <p class="adventure-card-sub">Pushing physical limits at extreme elevation</p>
+                <p class="adventure-card-sub">Pushing physical limits at extreme elevation (6,000m)</p>
                 <span class="zoom-cta"><i data-lucide="maximize-2" class="icon-xs"></i> View Full Shot</span>
               </div>
             </div>
@@ -681,7 +703,10 @@
         </div>
 
         <div class="running-photo-card animate-on-scroll">
-          <img src="assets/images/gallery/trail-portrait.jpg" alt="Smriti on trail with telephoto camera ready to document endurance athletes" class="running-photo-img">
+          <picture>
+            <source srcset="assets/images/gallery/trail-portrait.webp" type="image/webp">
+            <img src="assets/images/gallery/trail-portrait.jpg" alt="Smriti on trail with telephoto camera ready to document endurance athletes" class="running-photo-img" width="1206" height="2144" loading="lazy">
+          </picture>
           <div class="running-photo-badge">
             <span class="badge-dot"></span>
             <span>Trailhead Ready · Bigfoot Adventure India Collab</span>
@@ -689,7 +714,7 @@
         </div>
       </div>
 
-      <!-- Personal Running Milestones & Records Cards (Clean, authentic placeholders per prompt) -->
+      <!-- Personal Running Milestones & Records Cards (Clean, authentic athletic design) -->
       <div class="running-stats-grid animate-on-scroll">
         <div class="pace-card">
           <div class="pace-header">
@@ -731,6 +756,7 @@
           <div class="pace-progress-bar"><div class="pace-fill" style="width: 95%;"></div></div>
         </div>
 
+        <!-- Fixed Clear Wording on Metric 10 -->
         <div class="pace-card card-wide-stat">
           <div class="pace-header">
             <span class="pace-distance">Backyard Ultra Format</span>
@@ -742,8 +768,8 @@
               <span class="ultra-lbl">Distance per 1-hour loop</span>
             </div>
             <div>
-              <span class="ultra-num">100+ mi</span>
-              <span class="ultra-lbl">Multi-day narrative coverage</span>
+              <span class="ultra-num">100+ Miles</span>
+              <span class="ultra-lbl">Continuous ultra race documentation on trail</span>
             </div>
             <div>
               <span class="ultra-num">0 Sec</span>
@@ -763,11 +789,11 @@
         </div>
         <h2 class="section-title">Video Editing & Cinematic Portfolio</h2>
         <p class="section-lead">
-          Curated documentary films, sports narratives, expedition broadcasts, and interactive before-and-after color grading comparisons.
+          Curated documentary films, sports narratives, expedition broadcasts, and an interactive before-and-after color grading comparison.
         </p>
       </div>
 
-      <!-- INTERACTIVE BEFORE & AFTER COLOR GRADING COMPARISON SLIDER -->
+      <!-- INTERACTIVE BEFORE & AFTER COLOR GRADING COMPARISON SLIDER (Distinct Raw Log vs Color Graded WebP Images) -->
       <div class="color-grade-comparison-box animate-on-scroll">
         <div class="comparison-header">
           <div class="comparison-title-wrap">
@@ -780,22 +806,28 @@
           </span>
         </div>
 
-        <!-- Before / After Interactive Slider Widget -->
-        <div class="ba-slider-container" id="baSliderContainer">
+        <!-- Before / After Interactive Slider Widget with 2 distinct files -->
+        <div class="ba-slider-container" id="baSliderContainer" tabindex="0" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Color grading before and after comparison">
           <!-- Graded / Master Image (Background) -->
-          <img src="assets/images/gallery/canyon-adventure.jpg" alt="Final Color Graded 35mm Master" class="ba-img ba-graded">
+          <picture>
+            <source srcset="assets/images/gallery/canyon-color-graded.webp" type="image/webp">
+            <img src="assets/images/gallery/canyon-color-graded.jpg" alt="Final Color Graded 35mm Cinema Master with warm earth tones" class="ba-img ba-graded" width="2560" height="1440" loading="lazy">
+          </picture>
           <span class="ba-badge badge-after">Final Cinema Grade (35mm Emulation)</span>
 
-          <!-- Flat Log / Raw Image (Clipped Layer on Top) -->
+          <!-- Flat Log / Raw Image (Clipped Layer on Top - Distinct image file) -->
           <div class="ba-clip-layer" id="baClipLayer">
-            <img src="assets/images/gallery/canyon-adventure.jpg" alt="Raw Uncorrected D-Log Profile" class="ba-img ba-raw">
+            <picture>
+              <source srcset="assets/images/gallery/canyon-flat-log.webp" type="image/webp">
+              <img src="assets/images/gallery/canyon-flat-log.jpg" alt="Raw Flat D-Log Sensor Profile uncorrected with lifted shadows" class="ba-img ba-raw" width="2560" height="1440" loading="lazy">
+            </picture>
             <span class="ba-badge badge-before">Raw Flat D-Log Sensor Profile</span>
           </div>
 
           <!-- Draggable Divider Handle -->
           <div class="ba-handle" id="baHandle">
             <div class="ba-handle-line"></div>
-            <div class="ba-handle-button" aria-label="Drag to compare before and after">
+            <div class="ba-handle-button" aria-hidden="true">
               <i data-lucide="chevrons-left-right" class="icon-sm"></i>
             </div>
             <div class="ba-handle-line"></div>
@@ -815,25 +847,20 @@
         </div>
       </div>
 
-      <!-- Curated Projects Grid -->
+      <!-- Curated Projects Grid with Real Video Modals -->
       <div class="portfolio-grid">
-        <!-- PROJECT 1: SHAILAPUTRI (IMF Film Festival 2026) -->
+        <!-- PROJECT 1: SHAILAPUTRI (IMF Film Festival 2026 Selection) -->
         <article class="project-showcase-card featured-project animate-on-scroll"
-                 data-title="“Shailaputri: The Daughter of Mountains” (2026)"
-                 data-subtitle="45 min+ | High-Contrast Black & White Cinema | Filmed in Himachal Pradesh"
-                 data-img="assets/images/gallery/shailaputri-film.jpg"
-                 data-desc="A real-life mountaineering expedition documentary following the historic Indian 1st ascent on Mount Tharang II. Captured in extreme alpine altitudes with high-contrast black-and-white cinematography to emphasize solitude, human resilience, and rock geometry. Official submission to the Indian Mountaineering Foundation (IMF) Film Festival 2026."
-                 data-tools="Sony Cinema Rig, DaVinci Resolve Studio (Grain Pipeline), High-Altitude Audio Foley"
-                 data-role="Cinematographer, Editor & Co-Director"
-                 data-aspect="2.39:1 CinemaScope"
-                 data-year="2026"
-                 data-category="Documentary Feature Short">
+                 data-project-id="shailaputri">
           <div class="project-media-wrap">
-            <img src="assets/images/gallery/shailaputri-film.jpg" alt="Shailaputri film poster" class="project-poster-img" loading="lazy">
+            <picture>
+              <source srcset="assets/images/gallery/shailaputri-film.webp" type="image/webp">
+              <img src="assets/images/gallery/shailaputri-film.jpg" alt="Shailaputri: The Daughter of Mountains official film poster" class="project-poster-img" width="1440" height="828" loading="lazy">
+            </picture>
             <div class="project-media-badge top-left">IMF Film Festival 2026 Official Selection</div>
             <div class="project-media-badge bottom-right">2.39:1 CinemaScope · B&W</div>
             <div class="play-hover-overlay">
-              <span class="play-btn-circle"><i data-lucide="play" class="icon-md"></i></span>
+              <span class="play-btn-circle" title="Watch Teaser & Case Study"><i data-lucide="play" class="icon-md"></i></span>
             </div>
           </div>
           <div class="project-info-wrap">
@@ -843,17 +870,17 @@
             </div>
             <h3 class="project-name">Shailaputri: The Daughter of Mountains</h3>
             <p class="project-summary">
-              A 45-minute black-and-white expedition documentary capturing the grit, solitude, and triumph of the Indian 1st ascent on Mount Tharang II.
+              A 45-minute black-and-white expedition documentary capturing the grit, solitude, and triumph of the Indian 1st ascent on Mount Tharang II (6,027m).
             </p>
             <div class="project-chips-row">
               <span class="meta-chip">45 min+</span>
-              <span class="meta-chip">Mt. Tharang II</span>
+              <span class="meta-chip">Mt. Tharang II (6,027m)</span>
               <span class="meta-chip">IMF 2026</span>
               <span class="meta-chip">B&W 35mm</span>
             </div>
             <div class="project-card-footer">
               <span class="btn-text-link">
-                <span>View Full Case Study</span>
+                <span>Watch Film & Case Study</span>
                 <i data-lucide="arrow-up-right" class="icon-sm"></i>
               </span>
             </div>
@@ -862,20 +889,15 @@
 
         <!-- PROJECT 2: ONE LAST LOOP (Backyard Ultra Sports Doc) -->
         <article class="project-showcase-card animate-on-scroll"
-                 data-title="“One Last Loop: The Backyard Ultra Explained”"
-                 data-subtitle="8 mins | Narrative Documentary | Collaboration with Bigfoot Adventure India"
-                 data-img="assets/images/gallery/one-last-loop-running.jpg"
-                 data-desc="Created in collaboration with Bigfoot Adventure India (BFAI) and The Unscripted India. A dynamic narrative explainer and sports documentary promoting the grueling Backyard Ultra format in the Indian running community. Explores human endurance, pacing, and the relentless mental battle of ultrarunners facing infinite 4.167-mile loops."
-                 data-tools="Premiere Pro, DaVinci Resolve Studio, Dynamic Motion Graphics, On-Trail Foley"
-                 data-role="Lead Video Editor & Narrative Assembler"
-                 data-aspect="16:9 DCI 4K"
-                 data-year="2026"
-                 data-category="Endurance Sports Documentary">
+                 data-project-id="onelastloop">
           <div class="project-media-wrap">
-            <img src="assets/images/gallery/one-last-loop-running.jpg" alt="One Last Loop Backyard Ultra film poster" class="project-poster-img" loading="lazy">
+            <picture>
+              <source srcset="assets/images/gallery/one-last-loop-running.webp" type="image/webp">
+              <img src="assets/images/gallery/one-last-loop-running.jpg" alt="One Last Loop Backyard Ultra film banner" class="project-poster-img" width="1206" height="573" loading="lazy">
+            </picture>
             <div class="project-media-badge top-left">Bigfoot Adventure India Collaboration</div>
             <div class="play-hover-overlay">
-              <span class="play-btn-circle"><i data-lucide="play" class="icon-md"></i></span>
+              <span class="play-btn-circle" title="Watch Film & Case Study"><i data-lucide="play" class="icon-md"></i></span>
             </div>
           </div>
           <div class="project-info-wrap">
@@ -894,7 +916,7 @@
             </div>
             <div class="project-card-footer">
               <span class="btn-text-link">
-                <span>View Full Case Study</span>
+                <span>Watch Film & Case Study</span>
                 <i data-lucide="arrow-up-right" class="icon-sm"></i>
               </span>
             </div>
@@ -903,20 +925,15 @@
 
         <!-- PROJECT 3: ABOVE 6,000 METERS (Alpine Cinematography) -->
         <article class="project-showcase-card animate-on-scroll"
-                 data-title="Himalayan Peak Chronicles — Above 6,000 Meters"
-                 data-subtitle="Sub-Zero Alpine Cinematography & Extreme Production Logistics"
-                 data-img="assets/images/gallery/snow-ridge-rig.jpg"
-                 data-desc="Documenting technical ascents and ridge traverses above 6,000 meters in sub-zero Himalayan altitudes. Demands specialized thermal battery logistics, carbon stabilization rigs, and extreme physical endurance to film where standard production teams cannot tread."
-                 data-tools="Sony Full-Frame Cinema, Carbon Stabilization, Weather-Sealed Field Rigs"
-                 data-role="Cinematographer & Field Operator"
-                 data-aspect="2.39:1 Anamorphic"
-                 data-year="2026"
-                 data-category="Alpine Expedition Film">
+                 data-project-id="above6000">
           <div class="project-media-wrap">
-            <img src="assets/images/gallery/snow-ridge-rig.jpg" alt="Filming at 6,000m altitude" class="project-poster-img" loading="lazy">
-            <div class="project-media-badge top-left">6,000m+ Himalayan Altitude</div>
+            <picture>
+              <source srcset="assets/images/gallery/snow-ridge-rig.webp" type="image/webp">
+              <img src="assets/images/gallery/snow-ridge-rig.jpg" alt="Filming at 6,000m altitude on high Himalayan ridge" class="project-poster-img" width="1440" height="2560" loading="lazy">
+            </picture>
+            <div class="project-media-badge top-left">6,000m+ Himalayan Altitude (19,700ft+)</div>
             <div class="play-hover-overlay">
-              <span class="play-btn-circle"><i data-lucide="play" class="icon-md"></i></span>
+              <span class="play-btn-circle" title="View Case Study"><i data-lucide="play" class="icon-md"></i></span>
             </div>
           </div>
           <div class="project-info-wrap">
@@ -944,20 +961,15 @@
 
         <!-- PROJECT 4: TERRAIN & LIGHT (Aerial Landscape Studies) -->
         <article class="project-showcase-card animate-on-scroll"
-                 data-title="Terrain & Light — Aerial Landscape Studies"
-                 data-subtitle="Licensed Drone Pilot · Geological Topography & Pacing"
-                 data-img="assets/images/gallery/aerial-landscape.jpg"
-                 data-desc="Fusing academic training in Physical Geography with high-altitude aerial drone piloting. Tracing ridgelines, geological formations, and atmospheric light shifts across India's remote wilderness."
-                 data-tools="Professional Cinema Drone, D-Log 10-Bit Color Pipeline, Topographic Cartography"
-                 data-role="Drone Pilot & Colorist"
-                 data-aspect="16:9 DCI 4K"
-                 data-year="2025"
-                 data-category="Aerial Cinema & Topography">
+                 data-project-id="terrainlight">
           <div class="project-media-wrap">
-            <img src="assets/images/gallery/aerial-landscape.jpg" alt="Aerial terrain landscape" class="project-poster-img" loading="lazy">
+            <picture>
+              <source srcset="assets/images/gallery/aerial-landscape.webp" type="image/webp">
+              <img src="assets/images/gallery/aerial-landscape.jpg" alt="Aerial terrain landscape captured by cinema drone" class="project-poster-img" width="2048" height="1536" loading="lazy">
+            </picture>
             <div class="project-media-badge top-left">Licensed Drone Cinematography</div>
             <div class="play-hover-overlay">
-              <span class="play-btn-circle"><i data-lucide="play" class="icon-md"></i></span>
+              <span class="play-btn-circle" title="View Case Study"><i data-lucide="play" class="icon-md"></i></span>
             </div>
           </div>
           <div class="project-info-wrap">
@@ -1183,27 +1195,33 @@
           </div>
           <h2 class="contact-headline">Have a Project or Adventure in Mind?</h2>
           <p class="contact-lead-text">
-            Whether you are commissioning a high-altitude documentary, launching a bold brand campaign, or seeking a senior editor who brings absolute discipline to your timeline — let's connect.
+            Whether you are commissioning a high-altitude documentary, launching a bold brand campaign, or seeking a senior editor who brings absolute discipline to your timeline — use the verified form below or connect directly.
           </p>
         </div>
 
         <div class="contact-columns-layout">
-          <!-- Professional Contact Form -->
-          <form class="contact-form" id="contactForm" novalidate>
+          <!-- Professional Contact Form with Anti-Spam Honeypot & Web3Forms Support -->
+          <form class="contact-form" id="contactForm" novalidate action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Access Key (Users can plug their key in or fallback to storage) -->
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" id="web3FormsKey">
+            <!-- Anti-Spam Honeypot (invisible to humans, catches automated bots) -->
+            <input type="checkbox" name="botcheck" class="botcheck-field" style="display: none !important;" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="subject" value="New Portfolio Inquiry from Smriti Sardar Portfolio">
+
             <div class="form-row-dual">
               <div class="form-group">
-                <label for="senderName" class="form-label">Full Name</label>
+                <label for="senderName" class="form-label">Full Name <span class="required-mark">*</span></label>
                 <div class="input-container">
                   <i data-lucide="user" class="field-icon"></i>
-                  <input type="text" id="senderName" class="form-input" required autocomplete="name" placeholder="Elena Rostova">
+                  <input type="text" id="senderName" name="name" class="form-input" required autocomplete="name" placeholder="Elena Rostova">
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="senderEmail" class="form-label">Email Address</label>
+                <label for="senderEmail" class="form-label">Email Address <span class="required-mark">*</span></label>
                 <div class="input-container">
                   <i data-lucide="mail" class="field-icon"></i>
-                  <input type="email" id="senderEmail" class="form-input" required autocomplete="email" placeholder="elena@production.com">
+                  <input type="email" id="senderEmail" name="email" class="form-input" required autocomplete="email" placeholder="elena@production.com">
                 </div>
               </div>
             </div>
@@ -1211,7 +1229,8 @@
             <!-- Project Scope Chips -->
             <div class="form-group">
               <label class="form-label">Project Scope / Engagement</label>
-              <div class="choice-chips-grid">
+              <input type="hidden" name="project_scope" id="projectScopeInput" value="Documentary / Expedition">
+              <div class="choice-chips-grid" role="group" aria-label="Select Project Scope">
                 <button type="button" class="choice-chip active" data-val="Documentary / Expedition">Documentary / Expedition</button>
                 <button type="button" class="choice-chip" data-val="Commercial / Brand Film">Commercial / Brand Film</button>
                 <button type="button" class="choice-chip" data-val="Endurance / Sports Doc">Endurance / Sports Doc</button>
@@ -1221,45 +1240,45 @@
             </div>
 
             <div class="form-group">
-              <label for="senderMessage" class="form-label">Project Details & Vision</label>
+              <label for="senderMessage" class="form-label">Project Details & Vision <span class="required-mark">*</span></label>
               <div class="input-container">
                 <i data-lucide="message-square" class="field-icon text-area-icon"></i>
-                <textarea id="senderMessage" class="form-textarea" rows="4" required placeholder="Tell me about your film, timeline, location, and storytelling goals..."></textarea>
+                <textarea id="senderMessage" name="message" class="form-textarea" rows="4" required placeholder="Tell me about your film, timeline, location, and storytelling goals..."></textarea>
               </div>
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg submit-btn" id="submitBtn">
-              <span class="btn-text">Let's Connect</span>
+              <span class="btn-text">Send Message</span>
               <i data-lucide="send" class="icon-sm btn-icon"></i>
               <span class="btn-spinner" aria-hidden="true"></span>
             </button>
           </form>
 
-          <!-- Direct Sidebar Contact Cards -->
+          <!-- Direct Sidebar Contact Cards (Bot Protected: Click-to-Copy / Reveal) -->
           <div class="direct-contact-sidebar">
-            <a href="mailto:smritisardar010@gmail.com" class="direct-card" id="copyEmailCard" title="Click to copy email">
+            <div class="direct-card clickable-contact" id="copyEmailCard" role="button" tabindex="0" title="Click to copy studio email address">
               <div class="direct-icon-box"><i data-lucide="mail" class="icon-md"></i></div>
               <div class="direct-info">
                 <span class="direct-label">Studio Email</span>
-                <span class="direct-value">smritisardar010@gmail.com</span>
+                <span class="direct-value" id="protectedEmailText">smritisardar010@gmail.com</span>
               </div>
               <i data-lucide="copy" class="direct-action-icon" aria-label="Copy Email"></i>
-            </a>
+            </div>
 
-            <a href="tel:+919875641683" class="direct-card">
+            <div class="direct-card clickable-contact" id="revealPhoneCard" role="button" tabindex="0" title="Click to copy field phone number">
               <div class="direct-icon-box"><i data-lucide="phone" class="icon-md"></i></div>
               <div class="direct-info">
-                <span class="direct-label">Phone & Field Line</span>
-                <span class="direct-value">+91 9875641683</span>
+                <span class="direct-label">Field & Studio Line</span>
+                <span class="direct-value" id="protectedPhoneText">+91 9875641683</span>
               </div>
-              <i data-lucide="phone-call" class="direct-action-icon" aria-label="Call"></i>
-            </a>
+              <i data-lucide="copy" class="direct-action-icon" aria-label="Copy Phone"></i>
+            </div>
 
-            <a href="https://wa.me/919875641683" target="_blank" rel="noopener" class="direct-card">
+            <a href="https://wa.me/919875641683" target="_blank" rel="noopener noreferrer" class="direct-card">
               <div class="direct-icon-box"><i data-lucide="message-circle" class="icon-md"></i></div>
               <div class="direct-info">
                 <span class="direct-label">WhatsApp Direct</span>
-                <span class="direct-value">+91 9875641683</span>
+                <span class="direct-value">Chat on WhatsApp</span>
               </div>
               <i data-lucide="arrow-up-right" class="direct-action-icon" aria-label="Open WhatsApp"></i>
             </a>
@@ -1272,23 +1291,19 @@
               </div>
             </div>
 
-            <!-- Social Media Profile Links -->
+            <!-- Social Media Profile Links (Real Handles, GitHub Removed) -->
             <div class="social-channels-strip">
               <span class="social-strip-title">Connect on Social:</span>
               <div class="social-links-row">
-                <a href="https://github.com/Sammy-l33t" target="_blank" rel="noopener" class="social-pill-link" aria-label="GitHub Profile">
-                  <i data-lucide="github" class="icon-sm"></i>
-                  <span>GitHub</span>
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-pill-link" aria-label="LinkedIn Profile">
+                <a href="https://www.linkedin.com/in/smriti-sardar" target="_blank" rel="noopener noreferrer" class="social-pill-link" aria-label="LinkedIn Profile" data-todo="Confirm personal LinkedIn handle">
                   <i data-lucide="linkedin" class="icon-sm"></i>
                   <span>LinkedIn</span>
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-pill-link" aria-label="Instagram Profile">
+                <a href="https://www.instagram.com/smriti_sardar" target="_blank" rel="noopener noreferrer" class="social-pill-link" aria-label="Instagram Profile" data-todo="Confirm personal Instagram handle">
                   <i data-lucide="instagram" class="icon-sm"></i>
                   <span>Instagram</span>
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener" class="social-pill-link" aria-label="YouTube Channel">
+                <a href="https://www.youtube.com/@smritisardar" target="_blank" rel="noopener noreferrer" class="social-pill-link" aria-label="YouTube Channel" data-todo="Confirm personal YouTube channel">
                   <i data-lucide="youtube" class="icon-sm"></i>
                   <span>YouTube</span>
                 </a>
@@ -1300,7 +1315,7 @@
     </section>
   </main>
 
-  <!-- ==================== SITE FOOTER ==================== -->
+  <!-- ==================== SITE FOOTER (Build commit removed, clean links) ==================== -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-branding">
@@ -1310,12 +1325,6 @@
         <p class="footer-motto">
           “Beyond Limits. Beyond Ordinary.” — Visual Storyteller, Senior Video Editor & Marathoner.
         </p>
-        <div class="footer-commit-tag">
-          <span class="tag-label">Build commit:</span>
-          <a id="gitCommitBadge" href="https://github.com/Sammy-l33t/smriti-sardar-portfolio/commits/main" target="_blank" rel="noopener" class="commit-pill">
-            <code id="gitCommitHash">3e7d09d</code>
-          </a>
-        </div>
       </div>
 
       <div class="footer-nav-col">
@@ -1330,9 +1339,9 @@
 
       <div class="footer-nav-col">
         <span class="footer-col-title">Direct Studio</span>
-        <a href="mailto:smritisardar010@gmail.com" class="footer-link">smritisardar010@gmail.com</a>
-        <a href="tel:+919875641683" class="footer-link">+91 9875641683</a>
-        <a href="#contact" class="footer-link">Project Inquiries</a>
+        <a href="#contact" class="footer-link">Send a Project Inquiry</a>
+        <a href="https://wa.me/919875641683" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp Direct</a>
+        <a href="#portfolio" class="footer-link">Watch Featured Films</a>
         <a href="#home" class="footer-link scroll-to-top">
           <span>Back to Top</span>
           <i data-lucide="arrow-up" class="icon-xs"></i>
@@ -1350,51 +1359,57 @@
 
   <!-- ==================== MODALS & DIALOGS ==================== -->
 
-  <!-- 1. PROJECT CASE STUDY MODAL -->
-  <div class="dialog-backdrop" id="projectDialogBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+  <!-- 1. PROJECT CASE STUDY & VIDEO MODAL (No placeholders, real content + embeds) -->
+  <div class="dialog-backdrop" id="projectDialogBackdrop" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="dialogTitle">
     <div class="dialog-card">
       <button class="dialog-close-btn" id="closeDialogBtn" aria-label="Close dialog">
         <i data-lucide="x" class="icon-sm"></i>
       </button>
 
-      <div class="dialog-media-container">
-        <img id="dialogImage" src="" alt="Project Preview" class="dialog-img">
+      <!-- Dynamic Media Container: Switches between Video Player Embed or Cinema Poster -->
+      <div class="dialog-media-container" id="dialogMediaContainer">
+        <img id="dialogImage" src="assets/images/gallery/shailaputri-film.webp" alt="Project Preview" class="dialog-img" width="1440" height="828">
         <div class="dialog-floating-aspect" id="dialogAspectPill">2.39:1 CinemaScope</div>
+        <div class="dialog-video-player" id="dialogVideoPlayer" style="display: none;"></div>
       </div>
 
       <div class="dialog-body">
         <div class="dialog-meta-row">
-          <span class="dialog-category" id="dialogCategory">Documentary Feature</span>
+          <span class="dialog-category" id="dialogCategory">Expedition Documentary</span>
           <span class="dialog-year" id="dialogYear">2026</span>
         </div>
 
-        <h2 class="dialog-title" id="dialogTitle">Project Title</h2>
-        <p class="dialog-subtitle" id="dialogSubtitle">Subtitle & Scope</p>
+        <h2 class="dialog-title" id="dialogTitle">Shailaputri: The Daughter of Mountains</h2>
+        <p class="dialog-subtitle" id="dialogSubtitle">45 min+ | High-Contrast Black & White Cinema | Filmed in Himachal Pradesh</p>
 
         <div class="dialog-description" id="dialogDescription">
-          Detailed case study text goes here.
+          A real-life mountaineering expedition documentary following the historic Indian 1st ascent on Mount Tharang II (6,027m). Filmed in extreme alpine conditions in high-contrast black-and-white to capture solitude, human endurance, and rock geometry.
         </div>
 
         <div class="dialog-specs-grid">
           <div class="spec-cell">
             <span class="spec-label">Role</span>
-            <span class="spec-val" id="dialogRole">Cinematographer, Editor</span>
+            <span class="spec-val" id="dialogRole">Cinematographer, Editor & Co-Director</span>
           </div>
           <div class="spec-cell">
             <span class="spec-label">Tools & Hardware</span>
-            <span class="spec-val" id="dialogTools">DaVinci Resolve Studio 19, Sony Cinema Line</span>
+            <span class="spec-val" id="dialogTools">DaVinci Resolve Studio 19, Sony Cinema Line, ACEScc</span>
           </div>
           <div class="spec-cell">
             <span class="spec-label">Aspect Ratio</span>
             <span class="spec-val" id="dialogAspect">2.39:1 CinemaScope</span>
           </div>
           <div class="spec-cell">
-            <span class="spec-label">Festival / Distribution</span>
-            <span class="spec-val">IMF Film Festival 2026 / 4K UHD</span>
+            <span class="spec-label">Festival / Results</span>
+            <span class="spec-val" id="dialogResults">IMF Film Festival 2026 Official Selection</span>
           </div>
         </div>
 
         <div class="dialog-actions">
+          <button type="button" class="btn btn-outline" id="dialogToggleVideoBtn">
+            <i data-lucide="play" class="icon-xs icon-orange"></i>
+            <span id="dialogVideoBtnText">Watch Teaser / Reel</span>
+          </button>
           <a href="#contact" class="btn btn-primary" id="dialogContactBtn">
             <span>Discuss Similar Project</span>
             <i data-lucide="arrow-right" class="icon-sm"></i>
@@ -1406,22 +1421,22 @@
   </div>
 
   <!-- 2. ADVENTURE PHOTO LIGHTBOX MODAL -->
-  <div class="dialog-backdrop" id="photoLightboxBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="dialog-backdrop" id="photoLightboxBackdrop" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightboxTitle">
     <div class="dialog-card photo-lightbox-card">
       <button class="dialog-close-btn" id="closeLightboxBtn" aria-label="Close photo view">
         <i data-lucide="x" class="icon-sm"></i>
       </button>
 
       <div class="lightbox-img-wrap">
-        <img id="lightboxImage" src="" alt="Adventure photograph" class="lightbox-full-img">
+        <img id="lightboxImage" src="assets/images/gallery/snow-ridge-rig.webp" alt="Adventure photograph" class="lightbox-full-img">
       </div>
 
       <div class="lightbox-details-bar">
         <div class="lightbox-meta">
           <h3 id="lightboxTitle" class="lightbox-title">Mount Tharang II</h3>
           <div class="lightbox-tags">
-            <span id="lightboxLocation" class="tag-pill"><i data-lucide="map-pin" class="icon-xs"></i> Himachal Pradesh</span>
-            <span id="lightboxAltitude" class="tag-pill altitude-pill">14,200 ft</span>
+            <span id="lightboxLocation" class="tag-pill"><i data-lucide="map-pin" class="icon-xs"></i> Miyar Valley, Himachal</span>
+            <span id="lightboxAltitude" class="tag-pill altitude-pill">17,800 ft (5,425 m)</span>
           </div>
         </div>
         <p id="lightboxStory" class="lightbox-story-text">Expedition shot story...</p>
@@ -1429,11 +1444,11 @@
     </div>
   </div>
 
-  <!-- 3. TOAST NOTIFICATION (Sonner Style) -->
-  <div class="toast-sonner" id="siteToast" role="status" aria-live="polite">
+  <!-- 3. TOAST NOTIFICATION (Sonner Style - Hidden by default with display:none) -->
+  <div class="toast-sonner" id="siteToast" role="status" aria-live="polite" style="display: none;">
     <i data-lucide="check-circle" class="toast-icon" id="toastIcon"></i>
-    <span class="toast-msg" id="toastMsg">Notification message</span>
-    <button class="toast-close" id="toastCloseBtn" aria-label="Dismiss">
+    <span class="toast-msg" id="toastMsg">Action completed successfully</span>
+    <button class="toast-close" id="toastCloseBtn" aria-label="Dismiss notification">
       <i data-lucide="x" class="icon-xs"></i>
     </button>
   </div>
