@@ -2041,15 +2041,17 @@ img {
 }
 
 /* === UI, Layout, Framing & Modal Fixes === */
+html, body { overflow-x: hidden; max-width: 100%; }
 .ambient-blob-1 { right: 24px; }
 .hero-vibrant-section { min-height: auto; padding: calc(var(--header-height) + 28px) 24px 20px 24px; }
 .hero-interactive-stage { aspect-ratio: auto; flex-wrap: wrap; gap: 24px; max-width: 100%; justify-content: center; align-items: center; }
-.hero-3d-globe-canvas { position: relative; inset: auto; width: 320px; height: 320px; flex-shrink: 0; }
+.hero-3d-globe-canvas { position: relative; inset: auto; width: 320px; height: 320px; flex-shrink: 0; animation: subtleFloat 6s ease-in-out infinite; }
 .marquee-wrapper { margin: 8px 0 48px 0; }
 .world-card-professional .card-preview-img { object-fit: cover; object-position: top center; }
-.world-card-runner .card-preview-img { object-fit: contain; background: #0a0a0c; }
-.film-card-thumb { background-color: #0a0a0c; }
-.film-card-thumb img { object-fit: contain; }
+.world-card-runner .card-preview-img { object-fit: cover; object-position: center; }
+.film-card-thumb { background-color: #0a0a0c; overflow: hidden; }
+.film-card-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.4s ease; }
+.film-card:hover .film-card-thumb img { transform: scale(1.03); }
 .adventure-masonry-grid { grid-auto-flow: dense; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: stretch; }
 .adv-card-wide { grid-column: span 1; aspect-ratio: 4 / 3; height: 100%; }
 .running-track-canvas-card { padding: 20px; margin-bottom: 16px; }
@@ -2060,4 +2062,12 @@ img {
 .modal-close-trigger { position: absolute; top: 12px; right: 12px; z-index: 20; }
 .contact-headline { font-size: clamp(2rem, 3.6vw, 3rem); line-height: 1.1; }
 .contact-layout-cols { gap: 40px; }
-
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes subtleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.reveal-on-scroll { opacity: 0; transform: translateY(18px); transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+.world-card:hover, .film-card:hover, .adv-card:hover { transform: translateY(-4px); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+@media (max-width: 1024px) { .hero-interactive-stage { gap: 20px; } .hero-3d-globe-canvas { width: 280px; height: 280px; } .contact-layout-cols { grid-template-columns: 1fr; gap: 32px; } }
+@media (max-width: 768px) { .hero-vibrant-section { padding: calc(var(--header-height) + 20px) 16px 16px 16px; } .hero-3d-globe-canvas { width: 240px; height: 240px; } .adventure-masonry-grid { grid-template-columns: 1fr; } .modal-dialog-box { padding: 52px 16px 24px 16px; max-height: 92vh; } button, a, input, select, textarea, [role="button"], .modal-close-trigger { min-height: 44px; min-width: 44px; } }
+@media (hover: none), (pointer: coarse) { .custom-cursor-dot, .custom-cursor-ring { display: none !important; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } .reveal-on-scroll { opacity: 1; transform: none; } }
