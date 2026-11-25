@@ -2039,3 +2039,25 @@ img {
   outline: 2px solid var(--neon-lime-bright);
   outline-offset: 3px;
 }
+
+/* === UI, Layout, Framing & Modal Fixes === */
+.ambient-blob-1 { right: 24px; }
+.hero-vibrant-section { min-height: auto; padding: calc(var(--header-height) + 28px) 24px 20px 24px; }
+.hero-interactive-stage { aspect-ratio: auto; flex-wrap: wrap; gap: 24px; max-width: 100%; justify-content: center; align-items: center; }
+.hero-3d-globe-canvas { position: relative; inset: auto; width: 320px; height: 320px; flex-shrink: 0; }
+.marquee-wrapper { margin: 8px 0 48px 0; }
+.world-card-professional .card-preview-img { object-fit: cover; object-position: top center; }
+.world-card-runner .card-preview-img { object-fit: contain; background: #0a0a0c; }
+.film-card-thumb { background-color: #0a0a0c; }
+.film-card-thumb img { object-fit: contain; }
+.adventure-masonry-grid { grid-auto-flow: dense; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: stretch; }
+.adv-card-wide { grid-column: span 1; aspect-ratio: 4 / 3; height: 100%; }
+.running-track-canvas-card { padding: 20px; margin-bottom: 16px; }
+.modal-dialog-box { padding-top: 56px; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.25) #0b0d12; }
+.modal-dialog-box::-webkit-scrollbar { width: 8px; }
+.modal-dialog-box::-webkit-scrollbar-track { background: #0b0d12; }
+.modal-dialog-box::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.25); border-radius: 4px; }
+.modal-close-trigger { position: absolute; top: 12px; right: 12px; z-index: 20; }
+.contact-headline { font-size: clamp(2rem, 3.6vw, 3rem); line-height: 1.1; }
+.contact-layout-cols { gap: 40px; }
+
