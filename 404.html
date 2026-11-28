@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Horizon Not Found | Smriti Sardar</title>
+  <meta name="description" content="The page you are looking for does not exist in this elevation. Return to Smriti Sardar's portfolio.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e59b2c'/%3E%3Cpath d='M9 10c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v2H11v4h10a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2V10z' fill='%230c0e14'/%3E%3C/svg%3E">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=Space+Grotesk:wght@700;800&family=Syne:wght@800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .error-page-wrapper {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+      z-index: 10;
+    }
+    .error-code-glitch {
+      font-family: var(--font-display, 'Syne', sans-serif);
+      font-size: clamp(80px, 16vw, 180px);
+      font-weight: 800;
+      line-height: 0.9;
+      background: linear-gradient(135deg, #ffffff 30%, #f8be52 70%, #e59b2c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 24px;
+      letter-spacing: -0.05em;
+    }
+    .error-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 85, 0, 0.12);
+      border: 1px solid rgba(255, 85, 0, 0.3);
+      color: #ffaa00;
+      font-family: var(--font-mono, monospace);
+      font-size: 13px;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      margin-bottom: 24px;
+    }
+    .error-title {
+      font-family: var(--font-heading, sans-serif);
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+    .error-desc {
+      font-family: var(--font-body, sans-serif);
+      font-size: 16px;
+      color: #94a3b8;
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body style="background: var(--canvas-dark, #07090e); color: #f1f5f9; overflow-x: hidden;">
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="ambient-mesh-blob ambient-blob-1" aria-hidden="true"></div>
+  <div class="ambient-mesh-blob ambient-blob-2" aria-hidden="true"></div>
+
+  <main class="error-page-wrapper">
+    <div class="error-badge">
+      <span>ELEVATION: UNKNOWN · COORDINATES NOT FOUND</span>
+    </div>
+    
+    <div class="error-code-glitch">404</div>
+    
+    <h1 class="error-title">You've ventured beyond the mapped ridgeline.</h1>
+    <p class="error-desc">
+      The route, expedition story, or portfolio asset you were navigating toward has been moved, archived, or does not exist at this altitude. Let's get you back on course.
+    </p>
+
+    <div class="error-actions">
+      <a href="/" class="btn btn-lg btn-rainbow">
+        <span>Return To Basecamp</span>
+      </a>
+      <a href="/#contact" class="btn btn-lg btn-glass">
+        <span>Send Inquiry</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
