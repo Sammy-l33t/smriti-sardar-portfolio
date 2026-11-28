@@ -405,8 +405,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ctx.beginPath();
         ctx.arc(x, y, 5, 0, Math.PI * 2);
-        ctx.fillStyle = "#ccff00";
-        ctx.shadowColor = "#ccff00";
+        ctx.fillStyle = "#e59b2c";
+        ctx.shadowColor = "#e59b2c";
         ctx.shadowBlur = 8;
         ctx.fill();
         ctx.shadowBlur = 0;
@@ -520,9 +520,9 @@ document.addEventListener("DOMContentLoaded", () => {
       aspect: "2.39:1 CinemaScope",
       results: "Official Selection — Indian Mountaineering Foundation (IMF) Film Festival 2026",
       poster: "assets/images/gallery/shailaputri-film.webp",
-      videoEmbed: "https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1&rel=0",
+      videoSrc: "assets/videos/smriti-showreel.mp4",
       hasVideo: true,
-      videoText: "Watch Film Teaser"
+      videoText: "Watch Showreel Preview"
     },
     onelastloop: {
       title: "One Last Loop: The Backyard Ultra",
@@ -532,10 +532,10 @@ document.addEventListener("DOMContentLoaded", () => {
       tools: "Sony FX3, Gimbal Rig, DaVinci Resolve Studio 19, Sennheiser Audio",
       aspect: "16:9 DCI 4K",
       results: "Official collaboration with Bigfoot Adventure India (BFAI); screened across Indian ultrarunning circuits",
-      poster: "assets/images/gallery/one-last-loop-running.webp",
-      videoEmbed: "https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1&rel=0",
+      poster: "assets/images/gallery/snapgram_39f017dp.webp",
+      videoSrc: "assets/videos/smriti-showreel.mp4",
       hasVideo: true,
-      videoText: "Watch Sports Doc"
+      videoText: "Watch Film Teaser"
     },
     above6000: {
       title: "Above 6,000 Meters: Alpine Cinematography",
@@ -545,10 +545,10 @@ document.addEventListener("DOMContentLoaded", () => {
       tools: "Custom Cage Rig, Heated Battery Harness, Weather-Sealed Primes, Carbon Tripods",
       aspect: "2.39:1 CinemaScope",
       results: "Archival footage licensed for international alpine publications & expeditions",
-      poster: "assets/images/gallery/snow-ridge-rig.webp",
-      videoEmbed: null,
-      hasVideo: false,
-      videoText: "View Case Study"
+      poster: "assets/images/gallery/SAVE_20261025_212505.webp",
+      videoSrc: "assets/videos/expedition-film.mp4",
+      hasVideo: true,
+      videoText: "Watch Alpine Footage"
     },
     terrainlight: {
       title: "Terrain & Light: Himalayan Geomorphology",
@@ -558,10 +558,10 @@ document.addEventListener("DOMContentLoaded", () => {
       tools: "DJI Mavic 3 Pro Cine (ProRes 422 HQ), PolarPro Filters, DaVinci Resolve Studio",
       aspect: "16:9 Cinema 4K",
       results: "Exhibited in geospatial storytelling exhibitions & environmental archives",
-      poster: "assets/images/gallery/aerial-landscape.webp",
-      videoEmbed: null,
-      hasVideo: false,
-      videoText: "View Case Study"
+      poster: "assets/images/gallery/snapgram_vgon9l79.webp",
+      videoSrc: "assets/videos/drone-cinematic.mp4",
+      hasVideo: true,
+      videoText: "Watch Aerial Loop"
     }
   };
 
@@ -570,6 +570,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function stopVideo() {
     if (modalVideoPlayer) {
+      const vid = modalVideoPlayer.querySelector("video");
+      if (vid) {
+        vid.pause();
+        vid.removeAttribute("src");
+        vid.load();
+      }
       modalVideoPlayer.innerHTML = "";
       modalVideoPlayer.style.display = "none";
     }
@@ -599,7 +605,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (modalPosterImg) modalPosterImg.src = p.poster;
 
     if (modalToggleVideoBtn) {
-      if (p.hasVideo && p.videoEmbed) {
+      if (p.hasVideo && p.videoSrc) {
         modalToggleVideoBtn.style.display = "inline-flex";
         if (modalVideoBtnText) modalVideoBtnText.textContent = p.videoText;
       } else {
@@ -622,12 +628,12 @@ document.addEventListener("DOMContentLoaded", () => {
     currentProject = null;
   }
 
-  // Toggle video embed
+  // Toggle video player
   modalToggleVideoBtn?.addEventListener("click", () => {
-    if (!currentProject || !currentProject.videoEmbed || !modalVideoPlayer) return;
+    if (!currentProject || !currentProject.hasVideo || !currentProject.videoSrc || !modalVideoPlayer) return;
 
     if (!isVideoPlaying) {
-      modalVideoPlayer.innerHTML = `<iframe src="${currentProject.videoEmbed}" title="${currentProject.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+      modalVideoPlayer.innerHTML = `<video controls autoplay playsinline style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px; background: #000;"><source src="${currentProject.videoSrc}" type="video/mp4">Your browser does not support HTML5 video.</video>`;
       modalVideoPlayer.style.display = "block";
       if (modalPosterImg) modalPosterImg.style.display = "none";
       if (modalVideoBtnText) modalVideoBtnText.textContent = "Show Poster";
@@ -878,4 +884,34 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.reset();
     showToast("Message received! Smriti will connect within 24 hours.", "send");
   });
+
+  // --- 16. SCROLL REVEAL OBSERVER ---
+  function initScrollReveal() {
+    const revealEls = document.querySelectorAll(".reveal-on-scroll");
+    if (!revealEls.length) return;
+
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      revealEls.forEach((el) => el.classList.add("revealed"));
+      return;
+    }
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -40px 0px"
+      });
+
+      revealEls.forEach((el) => observer.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add("revealed"));
+    }
+  }
+  initScrollReveal();
 });
