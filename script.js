@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
             else ctx.lineTo(px, py);
           }
         }
-        ctx.strokeStyle = "rgba(0, 102, 255, 0.16)";
+        ctx.strokeStyle = "rgba(0, 140, 255, 0.35)";
         ctx.lineWidth = 1;
         ctx.stroke();
       }
@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Label
           ctx.font = `${Math.max(11, width * 0.024)}px JetBrains Mono, monospace`;
           ctx.fillStyle = "#ffffff";
-          ctx.fillText(pin.label, px + 12, py + 4);
+          const labelWidth = ctx.measureText(pin.label).width; const labelX = Math.min(Math.max(8, px + 12), width - labelWidth - 8); ctx.fillText(pin.label, labelX, py + 4);
         }
       });
 
@@ -337,10 +337,10 @@ document.addEventListener("DOMContentLoaded", () => {
       { km: 100, alt: 2480 },
     ];
 
-    function drawRouteProfile() {
+    let hoveredRouteIndex = -1; function drawRouteProfile() {
       ctx.clearRect(0, 0, cWidth, cHeight);
 
-      const padX = 40;
+      const padX = 54;
       const padY = 30;
       const graphW = cWidth - padX * 2;
       const graphH = cHeight - padY * 2;
@@ -355,7 +355,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const y = padY + (graphH / 4) * i;
         ctx.beginPath();
         ctx.moveTo(padX, y);
-        ctx.lineTo(cWidth - padX, y);
+        ctx.lineTo(cWidth - padX, y); const altVal = Math.round(maxAlt - ((maxAlt - minAlt) / 4) * i); ctx.font = "11px JetBrains Mono, monospace"; ctx.fillStyle = "rgba(255, 255, 255, 0.55)"; ctx.textAlign = "right"; ctx.textBaseline = "middle"; ctx.fillText(`${altVal}m`, padX - 8, y); ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
         ctx.stroke();
       }
 
@@ -413,10 +413,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ctx.font = "11px JetBrains Mono, monospace";
         ctx.fillStyle = "#94a3b8";
-        ctx.fillText(`${pt.km}km`, x - 12, cHeight - 10);
+        ctx.fillText(`${pt.km}km`, x - 12, cHeight - 10); if (pt === profile[profile.length - 1] && hoveredRouteIndex >= 0 && hoveredRouteIndex < profile.length) { const hp = profile[hoveredRouteIndex]; const hx = padX + (hp.km / 100) * graphW; const hNormY = (hp.alt - minAlt) / (maxAlt - minAlt); const hy = cHeight - padY - hNormY * graphH; ctx.beginPath(); ctx.moveTo(hx, padY); ctx.lineTo(hx, cHeight - padY); ctx.strokeStyle = "rgba(204, 255, 0, 0.35)"; ctx.lineWidth = 1; ctx.stroke(); ctx.beginPath(); ctx.arc(hx, hy, 8, 0, Math.PI * 2); ctx.strokeStyle = "#ccff00"; ctx.lineWidth = 2; ctx.stroke(); const tipText = `${hp.km}km • ${hp.alt}m`; ctx.font = "12px JetBrains Mono, monospace"; const tipW = ctx.measureText(tipText).width + 18; const tipH = 26; const tipX = Math.min(Math.max(padX, hx - tipW / 2), cWidth - tipW - 8); const tipY = Math.max(8, hy - tipH - 14); ctx.fillStyle = "rgba(15, 23, 42, 0.92)"; ctx.fillRect(tipX, tipY, tipW, tipH); ctx.strokeStyle = "#ccff00"; ctx.lineWidth = 1; ctx.strokeRect(tipX, tipY, tipW, tipH); ctx.fillStyle = "#ffffff"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(tipText, tipX + tipW / 2, tipY + tipH / 2); ctx.textAlign = "left"; ctx.textBaseline = "alphabetic"; }
       });
     }
-    drawRouteProfile();
+    drawRouteProfile(); const handleRoutePointer = (clientX) => { const rect = routeCanvas.getBoundingClientRect(); const dpr = window.devicePixelRatio || 1; const pointerX = (clientX - rect.left) * dpr; const padX = 54; const graphW = cWidth - padX * 2; let closest = -1; let minDist = Infinity; profile.forEach((pt, idx) => { const px = padX + (pt.km / 100) * graphW; const dist = Math.abs(pointerX - px); if (dist < minDist && dist <= Math.max(24 * dpr, graphW / (profile.length * 1.5))) { minDist = dist; closest = idx; } }); if (closest !== hoveredRouteIndex) { hoveredRouteIndex = closest; drawRouteProfile(); } }; routeCanvas.addEventListener("mousemove", (e) => handleRoutePointer(e.clientX)); routeCanvas.addEventListener("mouseleave", () => { if (hoveredRouteIndex !== -1) { hoveredRouteIndex = -1; drawRouteProfile(); } }); routeCanvas.addEventListener("touchstart", (e) => { if (e.touches[0]) handleRoutePointer(e.touches[0].clientX); }, { passive: true }); routeCanvas.addEventListener("touchmove", (e) => { if (e.touches[0]) handleRoutePointer(e.touches[0].clientX); }, { passive: true }); routeCanvas.addEventListener("touchend", () => { if (hoveredRouteIndex !== -1) { hoveredRouteIndex = -1; drawRouteProfile(); } });
   }
 
   // --- 8. BEFORE & AFTER COLOR GRADING SPLIT SLIDER ---
@@ -758,11 +758,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const toastIcon = document.querySelector("#toastIcon");
   let toastTimer = null;
 
-  function showToast(message, icon = "check-circle") {
+  function showToast(message, icon = "check-circle", type = "success") {
     if (!toastNotification) return;
     if (toastMsgText) toastMsgText.textContent = message;
     if (toastIcon) {
-      toastIcon.setAttribute("data-lucide", icon);
+      const toastType = type === "error" || icon === "alert-triangle" ? "error" : "success"; const activeToastIcon = document.querySelector("#toastIcon") || toastIcon; activeToastIcon.setAttribute("data-lucide", toastType === "error" ? "alert-triangle" : icon); initIcons(); const renderedToastIcon = document.querySelector("#toastIcon"); if (renderedToastIcon) { renderedToastIcon.style.color = toastType === "error" ? "#f59e0b" : ""; }
       initIcons();
     }
 
@@ -804,7 +804,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const copyEmailBtn = document.querySelector("#copyEmailBtn");
   copyEmailBtn?.addEventListener("click", () => {
     const email = "smritisardar010@gmail.com";
-    copyText(email, "Copied email: " + email, "mail");
+    copyText(email, "Copied email: " + email, "check-circle");
   });
 
   const copyPhoneBtn = document.querySelector("#copyPhoneBtn");
@@ -833,7 +833,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const messageInput = document.querySelector("#userMessage");
 
     if (!nameInput?.value.trim() || !emailInput?.value.trim() || !messageInput?.value.trim()) {
-      showToast("Please fill in all required fields.", "alert-triangle");
+      showToast("Please fill in all required fields.", "alert-triangle", "error");
       return;
     }
 
