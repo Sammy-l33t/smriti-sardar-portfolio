@@ -42,3 +42,4 @@ yarn-error.log*
 attachments/
 smriti_resume.pdf
 *.pdf
+!assets/docs/*.pdf
